@@ -1,10 +1,15 @@
 <?PHP
 include "controller/UtilisateurC.php";
+include "controller/PlanteC.php";
+
 
 	$utilisateurC=new UtilisateurC();
 
 	$list=$utilisateurC->afficherpromoanimaux ();
-	$list=$utilisateurC->afficherpromoanimaux ();
+
+	$PlantesC=new PlantesC();
+
+	$listU=$PlantesC->afficherpromoplante();
 
 ?>
 
@@ -494,7 +499,8 @@ include "controller/UtilisateurC.php";
 								<li class="active"><a href="#tshirt" data-toggle="tab">Animaux</a></li>
 								<li><a href="#blazers" data-toggle="tab">Nourriture</a></li>
 								<li><a href="#sunglass" data-toggle="tab">Plantes</a></li>
-                                <li><a href="#poloshirt" data-toggle="tab">Promotions</a></li>
+                                <li><a href="#promoplante" data-toggle="tab">Promotions Plantes</a></li> 
+								<li><a href="#promoanimaux" data-toggle="tab">Promotions animaux</a></li>
 								<li><a href="#kids" data-toggle="tab">Accessoires</a></li>
 								
 							</ul>
@@ -556,7 +562,38 @@ include "controller/UtilisateurC.php";
 							</div>
 
                             
+							<div class="tab-pane fade" id="promoanimaux" >
+								
+							   <?PHP
+							    
+				                  foreach($list as $user){
+									$prix = $user['prix'];
+									$prixr= $user['prix_promotions'];
+									$p= $prix *$prixr* 0.01;
+									$pe = $prix - $p;
+					             
+			                  ?>
+								
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+											<img src="images/<?= $user['image'] ?>">
+											<h2>Prix : <?PHP echo $pe ?>DT</h2> <div ><td>Solde : <?php echo $user['prix_promotions']; ?>%</td></div>
+												<p><?PHP echo $user['typee']; ?></p>
+												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+											
+										</div>
+									</div>
 							
+							
+								</div>
+								<?PHP
+			              	}
+							
+			                ?>
+							</div>		
 							<div class="tab-pane fade" id="blazers" >
 								<div class="col-sm-3">
 									<div class="product-image-wrapper">
@@ -721,11 +758,14 @@ include "controller/UtilisateurC.php";
 									</div>
 								</div>
 							</div>
-							<div class="tab-pane fade" id="poloshirt" >
+							<div class="tab-pane fade" id="promoplante" >
                             <?PHP
 							 $i=0;
-				foreach($list as $usr){
-					$i++;
+				foreach($listU as $usr){
+					$prix = $usr['prix'];
+						$prixr= $usr['prix_promoplante'];
+						$p= $prix *$prixr* 0.01;
+						$pe = $prix - $p;
 			                   ?>
                            
 
@@ -735,8 +775,8 @@ include "controller/UtilisateurC.php";
 										<div class="single-products">
 											<div class="productinfo text-center">
                                             <img src="images/<?= $usr['image'] ?>">
-												<h2>$56</h2> <div ><?php echo "a" ?></div>
-												<p>Easy Polo Black Edition</p>
+												<h2>Prix : <?PHP echo $pe ?>DT</h2> <div ><td>Solde : <?php echo $usr['prix_promoplante']; ?>%</td></div>
+												<p><?PHP echo $usr['nom']; ?></p>
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
 											

@@ -68,8 +68,6 @@
                     prix = :prix,
 					type = :type,
                     image = :image,
-                    dated = :dated,
-                    datef = :datef,
 					prix_promoplante = :prix_promoplante
 
 
@@ -83,8 +81,6 @@
 					'prix' => $promoplante->getprix(),
 					'type' => $promoplante->gettype(),
 					'image' => $promoplante->getimage(),
-                    'dated' => $promoplante->getdated(),
-                    'datef' => $promoplante->getdatef(),
                     'prix_promoplante' => $promoplante->getprix_promoplante(),
 
                 'id_promo' => $id_promo

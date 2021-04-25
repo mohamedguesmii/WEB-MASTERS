@@ -13,6 +13,8 @@
         isset($_POST["prix"]) &&
         isset($_POST["type"]) &&
         isset($_POST["image"]) &&
+		isset($_POST["dated"]) &&
+        isset($_POST["datef"]) &&
         isset($_POST["prix_promoplante"])  
 	){
 		if (
@@ -22,6 +24,8 @@
             !empty($_POST["prix"]) && 
             !empty($_POST["type"]) &&
 			!empty($_POST["image"]) &&
+			!empty($_POST["dated"]) &&
+			!empty($_POST["datef"]) &&
             !empty($_POST["prix_promoplante"])
 
         ) {
@@ -32,6 +36,8 @@
                 $_POST['prix'], 
                 $_POST['type'],
 				$_POST['image'],
+				$_POST['dated'],
+				$_POST['datef'],
                 $_POST['prix_promoplante']
 
 			);
@@ -230,15 +236,35 @@
                         </label>
                     </td>
                     <td>
-                        <input type="file" name="image" id="image"  value = "<?php echo $user['image']; ?>">
+                        <input type="text" name="image" id="image"  value = "<?php echo $user['image']; ?>" readonly>
 
                     </td>
                     
                 </tr>
 
+				<tr>
+                    <td>
+                        <label for="dated">Date Debut Promotions:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="date" name="dated" id="dated" >
+                    </td>
+                    
+                </tr>
+				<tr>
+                    <td>
+                        <label for="datef">Date Fin Promotions:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="date" name="datef" id="datef" >
+                    </td>
+                    
+                </tr>
                 <tr>
                     <td>
-                        <label for="prix_promoplante">prix_promotions:
+                        <label for="prix_promoplante">Solde:
                         </label>
                     </td>
                     <td>
@@ -290,4 +316,3 @@
 		
 </body>
 </html>
-

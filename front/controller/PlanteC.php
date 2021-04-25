@@ -8,7 +8,7 @@
 		
 		function recupereretat($id)
     {
-        $sql="SELECT * from plante where id=$id";
+        $sql="SELECT * from promoplante where id=$id";
         $db = config::getConnexion();
         try{
             $query=$db->prepare($sql);
@@ -121,8 +121,8 @@
 		}
 
 		function ajouterpromoplante($promoplante){
-			$sql="INSERT INTO promoplante (id, nom, longeur, prix, type, image ,dated ,datef,prix_promoplante) 
-			VALUES (:id,:nom,:longeur,:prix,:type,:image,:dated,:datef,:prix_promoplante)";
+			$sql="INSERT INTO promoplante (id, nom, longeur, prix, type, image ,prix_promoplante) 
+			VALUES (:id,:nom,:longeur,:prix,:type,:image,:prix_promoplante)";
 			$db = config::getConnexion();
 			try{
 				$query = $db->prepare($sql);
@@ -134,8 +134,6 @@
 					'prix' => $promoplante->getprix(),
 					'type' => $promoplante->gettype(),
 					'image' => $promoplante->getimage(),
-					'dated' => $promoplante->getdated(),
-					'datef' => $promoplante->getdatef(),
                     'prix_promoplante' => $promoplante->getprix_promoplante(),
 
 					

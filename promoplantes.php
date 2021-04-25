@@ -211,7 +211,10 @@
                     	<td><b>prix</b></td>
 						<td><b>type</b></td>
 						<td><b>image</b></td>
-                       <td><b>Prix apres Reduction</b></td>
+						<td><b>Date Debut Promotions</b></td>
+						<td><b>Date Debut Promotions</b></td>
+						<td><b>Solde</b></td>
+                        <td><b>Prix apres Reduction</b></td>
 						<td><b>Modifier</b></td>
 						<td><b>Supprimer</b></td>
                     </tr>
@@ -219,6 +222,10 @@
                 
 				<?PHP
 				foreach($list as $usr){
+					$prix = $usr['prix'];
+					$prixr= $usr['prix_promoplante'];
+					$p= $prix *$prixr* 0.01;
+					$pe = $prix - $p;
 			?>
            
 				<tr>
@@ -229,7 +236,10 @@
 					<td><?PHP echo $usr['prix']; ?></td>
 					<td><?PHP echo $usr['type']; ?></td>
 					<td><img src="images/<?= $usr['image'] ?>" width = "50" height = "50"></td>
+					<td><?PHP echo $usr['dated']; ?></td>
+					<td><?PHP echo $usr['datef']; ?></td>
 					<td><?PHP echo $usr['prix_promoplante']; ?></td>
+					<td><?PHP echo $pe ?></td>
 
 					<td>
 						<a href="modifierpromoplante.php?id_promo=<?PHP echo $usr['id_promo']; ?>"> <img src="https://img.icons8.com/fluent/48/000000/edit-file.png"/> </a>

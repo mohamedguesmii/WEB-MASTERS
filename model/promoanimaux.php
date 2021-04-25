@@ -11,10 +11,12 @@ class promoanimaux
 	private $categorie;
 	private $couleur;
 	private $image;
+	private $dated;
+	private $datef;
 	private $prix_promotions;
 	 
 
-	function __construct($id_animaux,$sex,$typee,$age,$prix,$categorie,$couleur,$image,$prix_promotions)
+	function __construct($id_animaux,$sex,$typee,$age,$prix,$categorie,$couleur,$image,$dated,$datef,$prix_promotions)
 				{
 		$this->id_animaux=$id_animaux ;
 		$this->sex=$sex;
@@ -24,6 +26,8 @@ class promoanimaux
 		$this->categorie=$categorie;
 		$this->couleur=$couleur;
 		$this->image=$image;
+		$this->dated=$dated;
+		$this->datef=$datef;	
 		$this->prix_promotions=$prix_promotions;
 
 		
@@ -61,6 +65,12 @@ class promoanimaux
 	function getimage(){
 		return $this->image;
 	}
+	function getdated(){
+		return $this->dated;
+	}
+	function getdatef(){
+		return $this->datef;
+	}
 	
 
 
@@ -92,6 +102,12 @@ function setsex($sex)
 	}
 	function setimage($image){
 		$this->image=$image;
+	}
+	function setdated($dated){
+		$this->image=$dated;
+	}
+	function setdatef($datef){
+		$this->image=$datef;
 	}
 	
 

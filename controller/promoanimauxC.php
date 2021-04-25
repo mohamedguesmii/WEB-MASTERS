@@ -54,6 +54,7 @@
 				die('Erreur: '.$e->getMessage());
 			}
 		}
+		
 		function modifierAnimaux($promoanimaux, $id_promoanimaux){
 			try {
 				$db = config::getConnexion();
@@ -67,6 +68,8 @@
 						categorie = :categorie,
 						couleur = :couleur,
 						image = :image,
+						dated = :dated,
+						datef = :datef,
                         prix_promotions = :prix_promotions
 
 					
@@ -81,6 +84,8 @@
 					'categorie' => $promoanimaux->getcategorie(),
 					'couleur' => $promoanimaux->getcouleur(),
 					'image' => $promoanimaux->getimage(),
+					'dated' => $promoanimaux->getdated(),
+					'datef' => $promoanimaux->getdatef(),
                     'prix_promotions' => $promoanimaux->getprix_promotions(),
 	
 					'id_promoanimaux' => $id_promoanimaux

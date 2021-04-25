@@ -134,8 +134,8 @@
 		}
 		
 		function ajouterpromoanimaux($promoanimaux){
-			$sql="INSERT INTO promoanimaux (id_animaux,sex, typee, age, prix, categorie, couleur,image ,prix_promotions) 
-			VALUES (:id_animaux,:sex,:typee,:age,:prix,:categorie,:couleur,:image,:prix_promotions)";
+			$sql="INSERT INTO promoanimaux (id_animaux,sex, typee, age, prix, categorie, couleur,image,dated,datef ,prix_promotions) 
+			VALUES (:id_animaux,:sex,:typee,:age,:prix,:categorie,:couleur,:image,:dated,:datef,:prix_promotions)";
 			$db = config::getConnexion();
 			try{
 				$query = $db->prepare($sql);
@@ -149,6 +149,8 @@
 					'categorie' => $promoanimaux->getCategorie(),
 					'couleur' => $promoanimaux->getCouleur(),
 					'image' => $promoanimaux->getimage(),
+					'dated' => $promoanimaux->getdated(),
+					'datef' => $promoanimaux->getdatef(),
                     'prix_promotions' => $promoanimaux->getprix_promotions(),
 
 					

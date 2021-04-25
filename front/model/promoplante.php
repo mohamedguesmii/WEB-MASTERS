@@ -7,13 +7,11 @@
 		private $prix = null;
 		private $type = null;
 		private $image = null;
-		private $dated = null;
-		private $datef = null;
         private $prix_promoplante = null;
 	
 		
 		
-	 function __construct(  $id, $nom,  $longeur,$prix, $type,$image,$dated , $datef , $prix_promoplante){
+	 function __construct( int $id,string $nom,  int $longeur, int $prix, string $type, string $image , string $prix_promoplante){
 			
 			$this->id=$id;
             $this->nom=$nom;
@@ -21,72 +19,56 @@
 			$this->prix=$prix;
 			$this->type=$type;
 			$this->image=$image;
-			$this->dated=$dated;
-			$this->datef=$datef;
             $this->prix_promoplante=$prix_promoplante ;
 		
 		}
 		
-        function getid_promoplante(){
+        function getid_promoplante(): int{
 			return $this->id_promoplante;
 		}
     
-        function getId(){
+        function getId(): int{
 			return $this->id;
 		}	
-	 function getnom(){
+	 function getnom(): string{
 			return $this->nom;
 		}
-		 function getlongeur(){
+		 function getlongeur(): int{
 			return $this->longeur;
 		}	
-		 function gettype(){
+		 function gettype(): string{
 			return $this->type;
 		}
-		 function getprix(){
+		 function getprix(): int{
 			return $this->prix;
 		}
-		 function getimage(){
+		 function getimage(): string{
 			return $this->image;
-		}
-		function getdated(){
-			return $this->dated;
-		}
-		function getdatef(){
-			return $this->datef;
 		}
         function getprix_promoplante(): string{
 			return $this->prix_promoplante;
 		}
 	
 
-        function setid( $id){
+        function setid(string $id): void{
 			$this->id=$id;
 		}
-		 function setnom( $nom){
+		 function setnom(string $nom): void{
 			$this->nom=$nom;
 		}
-		 function setlongeur( $longeur){
+		 function setlongeur( int $longeur): void{
 			$this->longeur=$longeur;
 		}
-		 function settype($type){
+		 function settype(string $type): void{
 			$this->type=$type;
 		}
-		 function setprix($prix){
+		 function setprix(int $prix): void{
 			$this->prix=$prix;
 		}
-		 function setimage($image){
+		 function setimage(string $image): void{
 			$this->image=$image;
 		}
-
-		function setdated($dated){
-			$this->dated=$dated;
-		}
-
-		function setdatef( $datef){
-			$this->datef=$datef;
-		}
-        function setprix_promoplante( $prix_promoplante){
+        function setprix_promoplante(string $prix_promoplante): void{
 			$this->prix_promoplante=$prix_promoplante;
 		}
 	

@@ -217,6 +217,9 @@
 						<td><b>Categorie</b></td>
                     	<td><b>Couleur</b></td>
 						<td><b>image</b></td>
+						<td><b>date debut promotions</b></td>
+						<td><b>date fin promotions</b></td>
+						<td><b>Solde</b></td>
                        <td><b>Prix apres Reduction</b></td>
 						<td><b>Modifier</b></td>
 						<td><b>Supprimer</b></td>
@@ -241,6 +244,9 @@
 					<td><?PHP echo $usr['categorie']; ?></td>
                     <td><?PHP echo $usr['couleur']; ?></td>
 					<td><img src="images/<?= $usr['image'] ?>" width = "50" height = "50"></td>
+					<td><?PHP echo $usr['dated']; ?></td>
+                    <td><?PHP echo $usr['datef']; ?></td>
+					<td><?PHP echo $usr['prix_promotions']; ?></td>
 					<td><?PHP echo $pe ?></td>
 
 					<td>

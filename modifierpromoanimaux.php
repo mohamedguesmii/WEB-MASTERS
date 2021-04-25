@@ -15,6 +15,9 @@
         isset($_POST["categorie"]) &&
 		isset($_POST["couleur"])  &&
 		isset($_POST["image"])  &&
+		isset($_POST["dated"])  &&
+		isset($_POST["datef"])  &&
+
         isset($_POST["prix_promotions"])  
 	){
 		if (
@@ -26,6 +29,8 @@
             !empty($_POST["categorie"]) &&
 			!empty($_POST["couleur"]) &&
 			!empty($_POST["image"]) &&
+			!empty($_POST["dated"]) &&
+			!empty($_POST["datef"]) &&
             !empty($_POST["prix_promotions"])
 
         ) {
@@ -38,6 +43,8 @@
                 $_POST['categorie'],
 				$_POST['couleur'],
 				$_POST['image'],
+				$_POST['dated'],
+				$_POST['datef'],
                 $_POST['prix_promotions']
 
 			);
@@ -181,7 +188,7 @@
             <table border="1" align="center">
 
                 <tr>
-                    <td rowspan='10' colspan='1'> </td>
+                    <td rowspan='12' colspan='1'> </td>
                     <td>
                         <label for="id_promoanimaux">id_promoanimaux:
                         </label>
@@ -210,7 +217,7 @@
                         </label>
                     </td>
                     <td>
-                        <input type="text" name="typee" value = "<?php echo $user['typee']; ?>" id="typee" >
+                        <input type="text" name="typee" value = "<?php echo $user['typee']; ?>" id="typee" readonly >
                     </td>
                     
                 </tr>
@@ -262,7 +269,29 @@
                         </label>
                     </td>
                     <td>
-                        <input type="file" name="image" id="image"  value = "<?php echo $user['image']; ?>">
+                        <input type="text" name="image" id="image"  value = "<?php echo $user['image']; ?>" readonly>
+
+                    </td>
+                    
+                </tr>
+				<tr>
+                    <td>
+                        <label for="dated">Date debut promotion:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="date" name="dated" id="dated"  >
+
+                    </td>
+                    
+                </tr>
+				<tr>
+                    <td>
+                        <label for="datef">Date fin promotion:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="date" name="datef" id="datef"  >
 
                     </td>
                     
@@ -270,7 +299,7 @@
 
                 <tr>
                     <td>
-                        <label for="prix_promotions">prix_promotions:
+                        <label for="prix_promotions">Solde:
                         </label>
                     </td>
                     <td>
