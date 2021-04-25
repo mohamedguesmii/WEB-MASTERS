@@ -177,10 +177,16 @@
     </div>
 
  <form action="" method="POST">	
+ <div class="row">
+            <div class="col-md-0.5">
+			</div>
+			<br>
     <div class="container">
 
         <div class="row">
-            <div class="col-md-1"></div>
+            <div class="col-md-1">
+			</div>
+			
             <div class="col-md-6">
                 <div class="container text-center">
              <div class="container">
@@ -188,25 +194,26 @@
             <div class="col-md-12"></div>
         </div>
         <div class="d-flex justify-content-center">
-        	<br> <div class="col-md-5"></div>
+        	<br> <div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>dddddd<td></div>
             <form action="" method="post" class="w-50">
 			<div class="pt-4">
                     <?php inputElement("<i class='fas fa-book'></i>","type", "type",""); ?>
                 </div><br>
-                <div class="col-md-5"></div>
+				
+                <div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>dddddd<td></div>
                 <div class="pt-4">
                     <?php inputElement("<i class='fas fa-book'></i>","description", "description",""); ?>
                 </div><br>
-                <div class="col-md-5"></div>
+				 <div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>dddddd<td></div>
                 <div class="pt-4">
-                   
+                  
                         <?php inputElement2("<i class='fas fa-table'></i>","date debut", "date",""); ?>
 						<div class="pt-4">
-						<br><div class="col-md-5"></div>
+						<br><div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>dddddd<td> </div>
                         <?php inputElement2("<i class='fas fa-table'></i>","date fin", "datef",""); ?>
 						
             
-            <br><div class="col-md-5"></div>
+            <br><div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>dddddd<td></div>
                     <div class="pt-4">
                         <?php inputElement("<i class='fas fa-location-arrow'></i>","Adresse", "lieu",""); ?>
                     </div>

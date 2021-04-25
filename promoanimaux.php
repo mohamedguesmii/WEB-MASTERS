@@ -225,6 +225,10 @@
                 
 				<?PHP
 				foreach($list as $usr){
+					$prix = $usr['prix'];
+					$prixr= $usr['prix_promotions'];
+					$p= $prix *$prixr* 0.01;
+					$pe = $prix - $p;
 			?>
            
 				<tr>
@@ -237,7 +241,7 @@
 					<td><?PHP echo $usr['categorie']; ?></td>
                     <td><?PHP echo $usr['couleur']; ?></td>
 					<td><img src="images/<?= $usr['image'] ?>" width = "50" height = "50"></td>
-					<td><?PHP echo $usr['prix_promotions']; ?></td>
+					<td><?PHP echo $pe ?></td>
 
 					<td>
 						<a href="modifierpromoanimaux.php?id_promoanimaux=<?PHP echo $usr['id_promoanimaux']; ?>"> <img src="https://img.icons8.com/fluent/48/000000/edit-file.png"/> </a>

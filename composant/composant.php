@@ -21,7 +21,7 @@ function inputElement2($icon, $placeholder, $name, $value){
                         <div class=\"input-group-prepend\">
                             <div class=\"input-group-text bg-warning\">$icon</div>
                         </div>
-                        <input type=\"date\" name='$name'  value='$value' autocomplete=\"off\" placeholder='$placeholder' required class=\"form-control\" id=\"inlineFormInputGroup\" placeholder=\"Username\">
+                        <input    type=\"date\" name='$name'  value='$value' autocomplete=\"off\" placeholder='$placeholder' required class=\"form-control\" id=\"inlineFormInputGroup\" placeholder=\"Username\">
                     </div>
     
     ";

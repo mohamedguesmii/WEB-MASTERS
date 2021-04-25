@@ -2,9 +2,9 @@
 include "controller/UtilisateurC.php";
 
 	$utilisateurC=new UtilisateurC();
-	$listeUsers=$utilisateurC->afficherUtilisateurs();
 
-	$list=$utilisateurC->afficherpromoanimaux();
+	$list=$utilisateurC->afficherpromoanimaux ();
+	$list=$utilisateurC->afficherpromoanimaux ();
 
 ?>
 
@@ -721,18 +721,21 @@ include "controller/UtilisateurC.php";
 									</div>
 								</div>
 							</div>
-							
-                            <?PHP
-				foreach($list as $usr){
-			                   ?>
-           
 							<div class="tab-pane fade" id="poloshirt" >
+                            <?PHP
+							 $i=0;
+				foreach($list as $usr){
+					$i++;
+			                   ?>
+                           
+
+							
 								<div class="col-sm-3">
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
                                             <img src="images/<?= $usr['image'] ?>">
-												<h2>$56</h2>
+												<h2>$56</h2> <div ><?php echo "a" ?></div>
 												<p>Easy Polo Black Edition</p>
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
@@ -742,11 +745,17 @@ include "controller/UtilisateurC.php";
 								</div>
 								
 								
-							</div>
-                           
+							
+							
+                            
                             <?PHP
 			              	}
+							
 			                ?>
+</div>
+
+
+
 						</div>
                         
 					</div><!--/category-tab-->
