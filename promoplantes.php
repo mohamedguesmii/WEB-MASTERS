@@ -1,7 +1,16 @@
-<?php
- require_once ("composant/composant.php");
+<?PHP
+	include "controller/PlanteC.php";
+	require_once ("composant/composant.php");
+
+	$PlantesC=new PlantesC();
+	$listeUsers=$PlantesC->displayPlantes();
+
+	$list=$PlantesC->afficherpromoplante();
 
 ?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -106,18 +115,143 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li ><a href="ajouterevenement.php"><em class="fa fa-plus-square">&nbsp;</em>Ajouter Evenement</a></li>
+		<li ><a href="ajouterevenement.php"><em class="fa fa-plus-square">&nbsp;</em>Ajouter Evenement</a></li>
 			<li><a href="evenement.php"><em class="fa fa-book-open">&nbsp;</em> Afficher Evenement</a></li>
-			<li><a href="promoanimaux.php"><em class="fa fa-paw">&nbsp;</em> Promotions Animaux</a></li>
-			<li><a href="promoplantes.php"><em  class="fab fa-pagelines" aria-hidden="true">&nbsp;</em> Promotions Plantes</a></li>
-
-		
+			<li><a href="promoanimaux.php"><em class="fa fa-paw">&nbsp;</em> Promotions animaux</a></li>
+            <li><a href="promoplantes.php"><em  class="fab fa-pagelines" aria-hidden="true">&nbsp;</em> Promotions Plantes</a></li>
+	
 		
 			
 		</div><!--/.row-->
-		
+		<div class="container">
+        <div class="row">
+            <div class="col-md-12"></div>
+        </div>
+    </div>
+    <div class="container"> 
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+                <div class="container text-center">
+             <div class="container">
+        <div class="row">
+            <div class="col-md-12"></div>
+        </div>
+        <div class="d-flex justify-content-center">
+        	<br> <div class="col-md-5"></div>
+            
+
+                
+            </form>
+
+        </div>
+  <br>
          <!-- Bootstrap table  -->
-         
+         <div >
+            <table class="table table-striped table-dark">
+               
+               <tr>
+               <h2>Liste Des Plantes </h2>
+               </tr>
+                    <tr >
+                        <td><b>ID plante </b> </td>
+                        <td><b>nom</b> </td>
+						<td><b>longeur</b> </td>
+                        <td><b>prix</b></td>
+                        <td><b>type</b></td>
+						<td><b>image</b></td>
+                        <td><b>Ajouter Promotions</b></td>
+						
+
+						
+                    </tr>
+                
+                
+				<?PHP
+				foreach($listeUsers as $user){
+			?>
+           
+				<tr>
+					<td><?PHP echo $user['id']; ?></td>
+                    <td><?PHP echo $user['nom']; ?></td>
+					<td><?PHP echo $user['longeur']; ?></td>
+					<td><?PHP echo $user['prix']; ?></td>
+					<td><?PHP echo $user['type']; ?></td>
+					<td><img src="images/<?= $user['image'] ?>" width = "50" height = "50"></td>
+
+
+					
+					<td>
+						<a href="ajouterpromoplantes.php?id=<?PHP echo $user['id']; ?>"> <img src="https://img.icons8.com/fluent/48/000000/add-property.png"/> </a>
+						
+					</td>
+					
+				</tr>
+			<?PHP
+				}
+			?>
+
+
+              
+            </table>
+            
+        </div>
+        <div >
+            <table class="table table-striped table-dark">
+               
+               <tr>
+               <h2>Liste Des Plantes avec Promotions</h2>
+               </tr>
+                    <tr >
+					   
+					   <td><b>ID Promotions </b> </td>
+                        <td><b>ID plantes </b> </td>
+						<td><b>nom</b> </td>
+            			<td><b>longeur</b></td>
+                    	<td><b>prix</b></td>
+						<td><b>type</b></td>
+						<td><b>image</b></td>
+                       <td><b>Prix apres Reduction</b></td>
+						<td><b>Modifier</b></td>
+						<td><b>Supprimer</b></td>
+                    </tr>
+                
+                
+				<?PHP
+				foreach($list as $usr){
+			?>
+           
+				<tr>
+                    <td><?PHP echo $usr['id_promo']; ?></td>
+					<td><?PHP echo $usr['id']; ?></td>
+					<td><?PHP echo $usr['nom']; ?></td>
+					<td><?PHP echo $usr['longeur']; ?></td>
+					<td><?PHP echo $usr['prix']; ?></td>
+					<td><?PHP echo $usr['type']; ?></td>
+					<td><img src="images/<?= $usr['image'] ?>" width = "50" height = "50"></td>
+					<td><?PHP echo $usr['prix_promoplante']; ?></td>
+
+					<td>
+						<a href="modifierpromoplante.php?id_promo=<?PHP echo $usr['id_promo']; ?>"> <img src="https://img.icons8.com/fluent/48/000000/edit-file.png"/> </a>
+						
+					</td>
+					<td>
+						<form method="POST" action="supprimerpromoplantes.php">
+						<button type="submit" style="background-color:transparent; border-color:transparent;"> 
+						<img src="https://img.icons8.com/color/48/000000/delete-forever.png"/>
+                         </button>	
+						<input type="hidden" value=<?PHP echo $usr['id_promo']; ?> name="id_promo">
+						</form>
+					</td>	
+				</tr>
+			<?PHP
+				}
+			?>
+
+              
+            </table>
+            
+        </div>
 
         
 

@@ -1,49 +1,43 @@
 <?php
 
-	include "controller/UtilisateurC.php";
-	include_once 'Model/Utilisateur.php';
+    include "controller/PlanteC.php";
+	include_once 'Model/Plante.php';
 
-	$UtilisateurC = new UtilisateurC();
+	$PlantesC = new PlantesC();
 	$error = "";
 	
 	if (
-		isset($_POST["id_animaux"]) && 
-		isset($_POST["sex"]) && 
-        isset($_POST["typee"]) &&
-        isset($_POST["age"]) &&
+		isset($_POST["id"]) && 
+		isset($_POST["nom"]) && 
+        isset($_POST["longeur"]) &&
         isset($_POST["prix"]) &&
-        isset($_POST["categorie"]) &&
-		isset($_POST["couleur"])  &&
-		isset($_POST["image"])  &&
-        isset($_POST["prix_promotions"])  
+        isset($_POST["type"]) &&
+        isset($_POST["image"]) &&
+        isset($_POST["prix_promoplante"])  
 	){
 		if (
-			!empty($_POST["id_animaux"]) && 
-			!empty($_POST["sex"]) && 
-            !empty($_POST["typee"]) && 
-            !empty($_POST["age"]) && 
-            !empty($_POST["prix"]) &&
-            !empty($_POST["categorie"]) &&
-			!empty($_POST["couleur"]) &&
+			!empty($_POST["id"]) && 
+			!empty($_POST["nom"]) && 
+            !empty($_POST["longeur"]) && 
+            !empty($_POST["prix"]) && 
+            !empty($_POST["type"]) &&
 			!empty($_POST["image"]) &&
-            !empty($_POST["prix_promotions"])
+            !empty($_POST["prix_promoplante"])
 
         ) {
-            $user = new promoanimaux(
-				$_POST['id_animaux'],
-				$_POST['sex'],
-                $_POST['typee'],
-                $_POST['age'], 
-                $_POST['prix'],
-                $_POST['categorie'],
-				$_POST['couleur'],
+            $user = new promoplante(
+				$_POST['id'],
+				$_POST['nom'],
+                $_POST['longeur'],
+                $_POST['prix'], 
+                $_POST['type'],
 				$_POST['image'],
-                $_POST['prix_promotions']
+                $_POST['prix_promoplante']
 
 			);
 			
-            $UtilisateurC->ajouterpromoanimaux($user);
-			header('Location:promoanimaux.php');
+            $PlantesC->ajouterpromoplante($user);
+			header('Location:promoplantes.php');
 
         }
         else
@@ -158,7 +152,7 @@
 		<li ><a href="ajouterevenement.php"><em class="fa fa-plus-square">&nbsp;</em>Ajouter Evenement</a></li>
 			<li><a href="evenement.php"><em class="fa fa-book-open">&nbsp;</em> Afficher Evenement</a></li>
 			<li><a href="promoanimaux.php"><em class="fa fa-paw">&nbsp;</em> Promotions animaux</a></li>
-			<li><a href="promoplantes.php"><em  class="fab fa-pagelines" aria-hidden="true">&nbsp;</em> Promotions Plantes</a></li>
+            <li><a href="promoplantes.php"><em  class="fab fa-pagelines" aria-hidden="true">&nbsp;</em> Promotions Plantes</a></li>
 	
 		
 			
@@ -174,8 +168,8 @@
         </div>
 
     	<?php
-			if (isset($_GET['id_animaux'])){
-				$user = $UtilisateurC->recupereretat($_GET['id_animaux']);
+			if (isset($_GET['id'])){
+				$user = $PlantesC->recupereretat($_GET['id']);
 				
 		?>
 		<form action="" method="POST">
@@ -184,37 +178,27 @@
                 <tr>
                     <td rowspan='9' colspan='1'> </td>
                     <td>
-                        <label for="id_animaux">id_animaux:
+                        <label for="id">id:
                         </label>
                     </td>
-                    <td><input type="text" name="id_animaux" id="id_animaux" value = "<?php echo $user['id_animaux']; ?>" maxlength="20" readonly></td>
+                    <td><input type="text" name="id" id="id" value = "<?php echo $user['id']; ?>" maxlength="20" readonly></td>
                 </tr>
                
                 <tr>
                     <td>
-                        <label for="sex">sex:
+                        <label for="nom">nom:
                         </label>
                     </td>
-                    <td><input type="text" name="sex" id="sex" value = "<?php echo $user['sex']; ?>" maxlength="20" readonly></td>
+                    <td><input type="text" name="nom" id="nom" value = "<?php echo $user['nom']; ?>" maxlength="20" readonly></td>
                 </tr>
                 
                 <tr>
                     <td>
-                        <label for="typee">typee:
+                        <label for="longeur">longeur:
                         </label>
                     </td>
                     <td>
-                        <input type="text" name="typee" value = "<?php echo $user['typee']; ?>" id="typee" >
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td>
-                        <label for="age">age:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="age" id="age" value = "<?php echo $user['age']; ?>" readonly>
+                        <input type="text" name="longeur" value = "<?php echo $user['longeur']; ?>" id="longeur" >
                     </td>
                     
                 </tr>
@@ -225,31 +209,21 @@
                     </td>
                     <td>
                         <input type="text" name="prix" id="prix" value = "<?php echo $user['prix']; ?>" readonly>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>
+                        <label for="type">type:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="text" name="type" id="type" value = "<?php echo $user['type']; ?>" readonly>
 						                   
                     </td>
                     
                 </tr>
-                <tr>
-                    <td>
-                        <label for="categorie">Categorie:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="categorie" id="categorie" value = "<?php echo $user['categorie']; ?>" readonly>>
-                    </td>
-                    
-                </tr>
-                 
-                <tr>
-                    <td>
-                        <label for="couleur">couleur:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="couleur" id="couleur" value = "<?php echo $user['couleur']; ?>" readonly>
-                    </td>
-                    
-                </tr>
+                
 				<tr>
                     <td>
                         <label for="image">image:
@@ -264,11 +238,11 @@
 
                 <tr>
                     <td>
-                        <label for="prix_promotions">prix_promotions:
+                        <label for="prix_promoplante">prix_promotions:
                         </label>
                     </td>
                     <td>
-                        <input type="text" name="prix_promotions" id="prix_promotions" >
+                        <input type="text" name="prix_promoplante" id="prix_promoplante" >
                     </td>
                     
                 </tr>

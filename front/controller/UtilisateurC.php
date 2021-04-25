@@ -132,7 +132,6 @@
 				die('Erreur: '.$e->getMessage());
 			}	
 		}
-		
 		function ajouterpromoanimaux($promoanimaux){
 			$sql="INSERT INTO promoanimaux (id_animaux,sex, typee, age, prix, categorie, couleur,image ,prix_promotions) 
 			VALUES (:id_animaux,:sex,:typee,:age,:prix,:categorie,:couleur,:image,:prix_promotions)";

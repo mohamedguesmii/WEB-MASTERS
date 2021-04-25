@@ -1,9 +1,9 @@
 <?php
 
-	include "controller/UtilisateurC.php";
-	include_once 'Model/Utilisateur.php';
+    include "controller/promoanimauxC.php";
+	include_once 'Model/promoanimaux.php';
 
-	$UtilisateurC = new UtilisateurC();
+	$promoanimauxC = new promoanimauxC();
 	$error = "";
 	
 	if (
@@ -41,8 +41,7 @@
                 $_POST['prix_promotions']
 
 			);
-			
-            $UtilisateurC->ajouterpromoanimaux($user);
+            $promoanimauxC->modifierAnimaux($user, $_GET['id_promoanimaux']);
 			header('Location:promoanimaux.php');
 
         }
@@ -158,7 +157,7 @@
 		<li ><a href="ajouterevenement.php"><em class="fa fa-plus-square">&nbsp;</em>Ajouter Evenement</a></li>
 			<li><a href="evenement.php"><em class="fa fa-book-open">&nbsp;</em> Afficher Evenement</a></li>
 			<li><a href="promoanimaux.php"><em class="fa fa-paw">&nbsp;</em> Promotions animaux</a></li>
-			<li><a href="promoplantes.php"><em  class="fab fa-pagelines" aria-hidden="true">&nbsp;</em> Promotions Plantes</a></li>
+            <li><a href="promoplantes.php"><em  class="fab fa-pagelines" aria-hidden="true">&nbsp;</em> Promotions Plantes</a></li>
 	
 		
 			
@@ -174,23 +173,30 @@
         </div>
 
     	<?php
-			if (isset($_GET['id_animaux'])){
-				$user = $UtilisateurC->recupereretat($_GET['id_animaux']);
+			if (isset($_GET['id_promoanimaux'])){
+				$user = $promoanimauxC->recupererAnimaux($_GET['id_promoanimaux']);
 				
 		?>
 		<form action="" method="POST">
             <table border="1" align="center">
 
                 <tr>
-                    <td rowspan='9' colspan='1'> </td>
+                    <td rowspan='10' colspan='1'> </td>
+                    <td>
+                        <label for="id_promoanimaux">id_promoanimaux:
+                        </label>
+                    </td>
+                    <td><input type="text" name="id_promoanimaux" id="id_promoanimaux" value = "<?php echo $user['id_promoanimaux']; ?>" maxlength="20" readonly></td>
+                </tr>
+               
+                <tr>
                     <td>
                         <label for="id_animaux">id_animaux:
                         </label>
                     </td>
                     <td><input type="text" name="id_animaux" id="id_animaux" value = "<?php echo $user['id_animaux']; ?>" maxlength="20" readonly></td>
                 </tr>
-               
-                <tr>
+				<tr>
                     <td>
                         <label for="sex">sex:
                         </label>

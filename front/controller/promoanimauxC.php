@@ -65,9 +65,8 @@
 						age = :age,
 						prix = :prix,
 						categorie = :categorie,
-						couleur = :couleur,
-						image = :image,
-                        prix_promotions = :prix_promotions
+						couleur = :couleur
+                        prix_promotions = :prix_promotions,
 
 					
 					WHERE id_promoanimaux = :id_promoanimaux'
