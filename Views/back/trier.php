@@ -4,7 +4,7 @@ include_once '../../Model/Plante.php';
 include_once '../../Controller/PlanteC.php';
 
 $PlanteC=new PlantesC() ;
-$liste=$PlanteC->displayPlantes();
+$liste=$PlanteC->trierPlantes();
  
 
 ?>
@@ -27,7 +27,7 @@ $liste=$PlanteC->displayPlantes();
                     <th ><i class="fa fa-user"></i> Prix</th>
                     <th><i class="fa fa-calendar-o"></i> Type</th>
                     <th><i class="fa fa-calendar-o"></i> image</th>
-                    <th><b>Trier Prix </b></th>
+
                     <th></th>
                   </tr>
                 </thead>
@@ -56,7 +56,6 @@ $liste=$PlanteC->displayPlantes();
 					        </ul>
                       
                    </td>
-                   
                   </tr>
 				  </td>
                   </tr>

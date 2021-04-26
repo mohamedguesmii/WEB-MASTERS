@@ -3,12 +3,23 @@
 	require_once '../../Model/Plante.php';
 
 	class PlantesC {
-		
-		function addPlantes($plantes){
+
+
+
+		function trierplantes(){
 			
+			$sql="SELECT * FROM plante ORDER BY prix DESC";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
 
-
-
+		function addPlantes($plantes){
 		$sql="INSERT INTO plante (nom, longeur, prix, type, image) 
 			VALUES (:nom,:longeur,:prix,:type,:image)";
 			$db = config::getConnexion();
@@ -92,7 +103,17 @@
 				die('Erreur: '.$e->getMessage());
 			}
 		}
+	
+	
+	
+	
+	
 	}
+
+
+
+
+
 
 
 

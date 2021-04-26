@@ -5,6 +5,19 @@
 
 	class PlantesC {
 
+		function trierplantes(){
+			
+			$sql="SELECT * FROM accessoires ORDER BY prix DESC";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
+
         
 		function addPlantes($plantes){
 			$sql="INSERT INTO accessoires (categories, matiere, prix, image) 
