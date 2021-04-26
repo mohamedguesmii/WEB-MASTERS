@@ -7,22 +7,22 @@ function verif() {
 date1 = new Date(date1);
 date2 =new Date(date2);
 var test = date1.getFullYear() ;   
-var test2 = date2.getFullYear() ;    
+var test2 = date2.getFullYear() ; 
+var testm = date1.getMonth();
+var test2m  = date2.getMonth();
 
-if (test > test2)
+var testj = date1.getDay(); 
+var test2j =date2.getDay();
+
+
+if (test > test2 || testm > test2m  || testj > test2j)
 {
-    alert('Vous avez selection un date incorrect!!') ;
+  alert("Dates à vérifier") ;
+    return false ; 
+
 }
 else 
 {  
-    alert('valid' +test + "" +test2);
+    return true ;
 }
-
-
-
-    
-
-    
-
-
 }

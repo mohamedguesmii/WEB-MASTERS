@@ -310,7 +310,7 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" value="Envoyer" onclick="verif();"> 
+                        <input type="submit" value="Envoyer" onclick="return verif();"> 
                     </td>
                     <td>
                         <input type="reset" value="Annuler" >

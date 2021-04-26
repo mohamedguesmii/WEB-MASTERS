@@ -15,6 +15,7 @@
 		isset($_POST["type"]) && 
         isset($_POST["description"]) && 
         isset($_POST["lieu"]) && 
+		isset($_POST["categorie"]) && 
         isset($_POST["date"]) &&
 		isset($_POST["datef"])
 
@@ -23,6 +24,7 @@
 			!empty($_POST["type"]) && 
             !empty($_POST["description"]) && 
             !empty($_POST["lieu"]) && 
+			!empty($_POST["categorie"]) && 
             !empty($_POST["date"]) &&
 			!empty($_POST["datef"])
 
@@ -31,6 +33,7 @@
 				$_POST['type'],
                 $_POST['description'],
                 $_POST['lieu'],
+				$_POST['categorie'],
                 $_POST['date'],
 				$_POST['datef']
 
@@ -75,7 +78,8 @@
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-	<script src="controleeve.js"></script>
+	<script src="scripte.js"></script>
+
 </head>
 <body>
 
@@ -197,31 +201,82 @@
         	<br> <div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir type :<td></div>
             <form action="" method="post" class="w-50">
 			<div class="pt-4">
-                    <?php inputElement("<i class='fas fa-book'></i>","type", "type",""); ?>
-                </div><br>
+				   <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
+                        </div>
+					   <select name="type" id="type" class="form-control"  >
+					     <option value="select">Evenement&emsp;&emsp;&emsp;&emsp;&emsp;</option>
+						 <option>Grand Espaces </option>
+						 <option> Team building</option> 
+						 <option>Salon     professionnel</option>
+						</select>
+
+                     </div>  
+			    </div><br>
 				
                 <div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir Description :<td></div>
                 <div class="pt-4">
-                    <?php inputElement("<i class='fas fa-book'></i>","description", "description",""); ?>
+				   <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-book'></i></div>
+                        </div>
+                        <input type="text" name="description" id="description" value="" class="form-control" placeholder="description" required> 
+                     </div>  
+				   
                 </div><br>
 				 <div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir Date Debut :<td></div>
                 <div class="pt-4">
                   
-                        <?php inputElement2("<i class='fas fa-table'></i>","date debut", "date",""); ?>
-						<div class="pt-4">
+					   <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-table'></i></div>
+                        </div>
+                        <input type="date"  name="date" id="date" value="" class="form-control" placeholder="date debut" required>
+                     </div>  
+				<div class="pt-4">
 						<br><div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir Date Fin :<td> </div>
-                        <?php inputElement2("<i class='fas fa-table'></i>","date fin", "datef",""); ?>
-						
+						<div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-table'></i></div>
+                        </div>
+                       <div> <input type="date" name="datef" id="datef" value="" class="form-control" placeholder="date fin" required> </div>
+                     </div>  
             
             <br><div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir Adresse :<td></div>
                     <div class="pt-4">
-                        <?php inputElement("<i class='fas fa-location-arrow'></i>","Adresse", "lieu",""); ?>
+					   <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-location-arrow'></i></i></div>
+                        </div>
+                        <input type="text" name="lieu" id="lieu" value="" class="form-control" placeholder="Adresse" required>
+                     </div>  
+                    </div>
+                </div>
+				<br><div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir categorie :<td></div>
+                    <div class="pt-4">
+					   <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-book'></i></i></div>
+                        </div>
+                      
+					  
+					  <select name="categorie" id="categorie" value="" class="form-control" required >
+					    <option value="choix">Votre Choix</option>
+						 <option>liés aux animaux </option>
+						 <option>liés aux plantes</option> 
+						 <option>administrative&emsp;&emsp;&emsp;</option>
+						 </select>
+					 </div>  
                     </div>
                 </div>
            <br>
+           <br>
+		  
                 <div class=" ">
-                        <?php buttonElement("btn-create","btn btn-success","<i class='fas fa-plus'></i>","create","data-toggle='tooltip' data-placement='bottom' title='Envoyer'"); ?>
-                        <?php buttonElement("btn-read","btn btn-primary","<i class='fas fa-sync'></i>","read","data-toggle='tooltip' data-placement='bottom' title='Actualiser'"); ?>
+						<button name="create" data-toggle="tooltip" data-placement="bottom" title="Envoyer" class="btn btn-success" id="btn-create" onclick="return verif1();" ><i class='fas fa-plus'></i></button>
+
+					    <?php buttonElement("btn-read","btn btn-primary","<i class='fas fa-sync'></i>","read","data-toggle='tooltip' data-placement='bottom' title='Actualiser'"); ?>
                        
                 </div>
 

@@ -155,14 +155,36 @@
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
-						<h2>Information de l'evenement</h2>
+						<h2>Information des evenements</h2>
 						<div >
             <table class="table table-striped table-dark">
                
                    
 				<?PHP
 				foreach($listeUsers as $user){
+					
 			?>
+			   	
+				<tr>
+					<div class="row">
+					<div class="coll">
+					<td><b><h1>Evenement</h1> </b> </td>
+					</div>
+					<div class="row">
+					<td></td>
+					</div>
+					</div>
+				</tr>
+				<tr>
+					<div class="row">
+					<div class="coll">
+					<td><b>categorie</b> </td>
+					</div>
+					<div class="row">
+					<td><?PHP echo $user['categorie']; ?></td>
+					</div>
+					</div>
+				</tr>
 				<tr>
 					<div class="row">
 					<div class="coll">
@@ -213,12 +235,27 @@
 					</div>
 					</div>
 				</tr>
-					
+				
+               
 					
 					
 				</tr>
+				<tr>
+					<div class="row">
+					<div class="coll">
+					<td><b><br></b> </td>
+					</div>
+					<div class="row">
+					<td><br></td>
+					</div>
+					</div>
+				</tr>
+				
+				
+							
 			<?PHP
-				}
+				
+			}
 			?>
 
               

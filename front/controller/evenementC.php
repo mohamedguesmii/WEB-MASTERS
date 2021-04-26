@@ -28,7 +28,7 @@ class evenementC {
     function afficherevenement()
     {
         //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
-        $sql="SElECT * From evenement";
+        $sql="SElECT * From evenement WHERE categorie='liés aux plante' OR categorie='liés aux animaux'";
         $db = config::getConnexion();
         try
         {

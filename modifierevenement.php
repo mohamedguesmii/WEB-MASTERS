@@ -9,6 +9,7 @@
 		isset($_POST["type"]) && 
 		isset($_POST["description"]) && 
         isset($_POST["lieu"]) &&
+		isset($_POST["categorie"]) &&
         isset($_POST["date"]) &&
 		isset($_POST["datef"])  
 	){
@@ -16,6 +17,7 @@
 			!empty($_POST["type"]) && 
             !empty($_POST["description"]) && 
             !empty($_POST["lieu"]) && 
+			!empty($_POST["categorie"]) && 
             !empty($_POST["date"]) &&
 			!empty($_POST["datef"])
 
@@ -24,6 +26,7 @@
 				$_POST['type'],
                 $_POST['description'],
                 $_POST['lieu'], 
+				$_POST['categorie'], 
                 $_POST['date'],
 				$_POST['datef']
 
@@ -190,10 +193,17 @@
 				</tr>
                 <tr>
                     <td>
-                        <label for="lieu">lieu:
+                        <label for="lieu">Adresse:
                         </label>
                     </td>
                     <td><input type="text" name="lieu" id="lieu" maxlength="20" value = "<?php echo $user['lieu']; ?>"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="categorie">Categorie:
+                        </label>
+                    </td>
+                    <td><input type="text" name="categorie" id="categorie" maxlength="20" value = "<?php echo $user['categorie']; ?>"></td>
                 </tr>
                 
                 <tr>

@@ -70,6 +70,8 @@
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	<script src="scripts.js"></script>
+
 </head>
 <body>
 
@@ -278,7 +280,7 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" value="Envoyer"> 
+                        <input type="submit" value="Envoyer" onclick="return verif();"> 
                     </td>
                     <td>
                         <input type="reset" value="Annuler" >

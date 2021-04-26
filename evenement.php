@@ -153,8 +153,11 @@
                         <td><b>lieu</b></td>
 						<td><b>Date debut</b></td>
 						<td><b>Date fin</b></td>
+						<td><b>Categorie</b></td>
                         <td><b>Edit</b></td>
 						<td><b>Supprimer</b></td>
+						<td><b>Trier Date </b></td>
+
                     </tr>
                 
                 
@@ -168,6 +171,8 @@
 					<td><?PHP echo $user['lieu']; ?></td>
 					<td><?PHP echo $user['date']; ?></td>
 					<td><?PHP echo $user['datef']; ?></td>
+					<td><?PHP echo $user['categorie']; ?></td>
+
 
 					
 					<td>
@@ -182,6 +187,14 @@
 						<input type="hidden" value=<?PHP echo $user['id']; ?> name="id">
 						</form>
 					</td>
+					<td>
+					<ul>
+					<li><a href="tri.php">Tri Croissant </a></li>
+			   	    <li><a href="tri2.php">Tri Decroissant</a></li>
+ 						 
+					</ul>						
+					</td>
+					
 				</tr>
 			<?PHP
 				}

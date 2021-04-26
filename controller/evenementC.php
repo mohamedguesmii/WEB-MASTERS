@@ -1,5 +1,5 @@
 <?php
-	include "config.php";
+	include_once "config.php";
 	require_once 'Model/evenement.php';
 
 
@@ -65,8 +65,10 @@ class evenementC {
                     type = :type, 
                     description = :description, 
                     lieu = :lieu,
+                    categorie = :categorie,
                     date = :date,
                     datef = :datef
+                   
 
                    
                 WHERE id = :id'
@@ -75,8 +77,10 @@ class evenementC {
                 'type' => $evenement->gettype(),
                 'description' => $evenement->getdescription(),
                 'lieu' => $evenement->getlieu(),
+                'categorie' => $evenement->getcategorie(),
                 'date' => $evenement->getdate(),
                 'datef' => $evenement->getdatef(),
+               
 
                 'id' => $id
             ]);
@@ -87,8 +91,8 @@ class evenementC {
     }
 
     function ajouterevenement($evenement){
-        $sql="INSERT INTO evenement (type,description, lieu, date,datef) 
-        VALUES (:type,:description,:lieu,:date,:datef)";
+        $sql="INSERT INTO evenement (type,description, lieu,categorie, date,datef) 
+        VALUES (:type,:description,:lieu,:categorie,:date,:datef)";
         $db = config::getConnexion();
         try{
             $query = $db->prepare($sql);
@@ -97,8 +101,10 @@ class evenementC {
                 'type' => $evenement->gettype(),
                 'description' => $evenement->getdescription(),
                 'lieu' => $evenement->getlieu(),
+                'categorie' => $evenement->getcategorie(),
                 'date' => $evenement->getdate(),
-                'datef' => $evenement->getdatef(),
+                'datef' => $evenement->getdatef()
+
 
                 
             ]);			
@@ -107,6 +113,32 @@ class evenementC {
             echo 'Erreur: '.$e->getMessage();
         }			
     }
+    function trierevenement(){
+			
+        $sql="SELECT * FROM evenement ORDER BY date DESC";
+        $db = config::getConnexion();
+        try{
+            $liste = $db->query($sql);
+            return $liste;
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }	
+    }
+
+    function trierevenement2(){
+			
+        $sql="SELECT * FROM evenement ORDER BY date ASC";
+        $db = config::getConnexion();
+        try{
+            $liste = $db->query($sql);
+            return $liste;
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }	
+    }
+
 
 }
 
