@@ -248,7 +248,7 @@
                         </label>
                     </td>
                     <td>
-                        <input type="date" name="dated" id="dated" >
+                        <input type="date" name="dated" id="dated" required>
                     </td>
                     
                 </tr>
@@ -258,7 +258,7 @@
                         </label>
                     </td>
                     <td>
-                        <input type="date" name="datef" id="datef" >
+                        <input type="date" name="datef" id="datef" required>
                     </td>
                     
                 </tr>
@@ -268,7 +268,7 @@
                         </label>
                     </td>
                     <td>
-                        <input type="text" name="prix_promoplante" id="prix_promoplante" >
+                        <input type="number" name="prix_promoplante" id="prix_promoplante"  min="1" max="100" required>
                     </td>
                     
                 </tr>

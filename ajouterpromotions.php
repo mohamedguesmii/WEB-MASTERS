@@ -77,6 +77,8 @@
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	<script src="scripts.js"></script>
+
 </head>
 <body>
 
@@ -242,7 +244,7 @@
                         </label>
                     </td>
                     <td>
-                        <input type="text" name="categorie" id="categorie" value = "<?php echo $user['categorie']; ?>" readonly>>
+                        <input type="text" name="categorie" id="categorie" value = "<?php echo $user['categorie']; ?>" readonly	>
                     </td>
                     
                 </tr>
@@ -275,7 +277,7 @@
                         </label>
                     </td>
                     <td>
-                        <input type="date" name="dated" id="dated"  >
+                        <input type="date" name="dated" id="dated" required >
 
                     </td>
                     
@@ -286,7 +288,7 @@
                         </label>
                     </td>
                     <td>
-                        <input type="date" name="datef" id="datef"  >
+                        <input type="date" name="datef" id="datef" required >
 
                     </td>
                     
@@ -298,7 +300,7 @@
                         </label>
                     </td>
                     <td>
-                        <input type="text" name="prix_promotions" id="prix_promotions" >
+                        <input type="number" name="prix_promotions" id="prix_promotions"   min="1" max="100" required>
                     </td>
                     
                 </tr>
@@ -308,7 +310,7 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" value="Envoyer"> 
+                        <input type="submit" value="Envoyer" onclick="verif();"> 
                     </td>
                     <td>
                         <input type="reset" value="Annuler" >
