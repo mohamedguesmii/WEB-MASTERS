@@ -11,18 +11,24 @@ var test2 = date2.getFullYear() ;
 var testm = date1.getMonth();
 var test2m  = date2.getMonth();
 
+
 var testj = date1.getDay(); 
 var test2j =date2.getDay();
 
+var d1 = date1.getTime();
+var d2 = date2.getTime();
 
-if (test > test2 || testm > test2m  || testj > test2j)
+
+
+if (d1 > d2)
 {
-  alert("Dates à vérifier") ;
+  alert("Dates à vérifier" ) ;
     return false ; 
 
 }
 else 
-{  
+{    
+
     return true ;
 }
 }

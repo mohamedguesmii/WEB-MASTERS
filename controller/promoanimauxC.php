@@ -1,6 +1,6 @@
 <?PHP
-	include "config.php";
-	require_once 'model/promoanimaux.php';
+	include "../config.php";
+	require_once '../model/promoanimaux.php';
 
 	class promoanimauxC {
 		

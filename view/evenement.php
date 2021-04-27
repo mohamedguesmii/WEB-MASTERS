@@ -1,45 +1,14 @@
-<?php
-	include "controller/evenementC.php";
-	include_once 'Model/evenement.php';
+<?PHP
+	include "../controller/evenementC.php";
+	require_once ("composant/composant.php");
 
-	$evenementC = new evenementC();
-	$error = "";
-	
-	if (
-		isset($_POST["type"]) && 
-		isset($_POST["description"]) && 
-        isset($_POST["lieu"]) &&
-		isset($_POST["categorie"]) &&
-        isset($_POST["date"]) &&
-		isset($_POST["datef"])  
-	){
-		if (
-			!empty($_POST["type"]) && 
-            !empty($_POST["description"]) && 
-            !empty($_POST["lieu"]) && 
-			!empty($_POST["categorie"]) && 
-            !empty($_POST["date"]) &&
-			!empty($_POST["datef"])
-
-        ) {
-            $user = new evenement(
-				$_POST['type'],
-                $_POST['description'],
-                $_POST['lieu'], 
-				$_POST['categorie'], 
-                $_POST['date'],
-				$_POST['datef']
-
-			);
-			
-            $evenementC->modifierevenement($user, $_GET['id']);
-			header('Location:evenement.php');
-        }
-        else
-            $error = "Missing information";
-	}
+	$utilisateurC=new evenementC();
+	$listeUsers=$utilisateurC->afficherevenement();
 
 ?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +19,9 @@
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
-	
+	<link href="styles.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+   
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 	<!--[if lt IE 9]>
@@ -142,107 +113,105 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-		<li ><a href="ajouterevenement.php"><em class="fa fa-plus-square">&nbsp;</em>Ajouter Evenement</a></li>
+			<li ><a href="ajouterevenement.php"><em class="fa fa-plus-square">&nbsp;</em>Ajouter Evenement</a></li>
 			<li><a href="evenement.php"><em class="fa fa-book-open">&nbsp;</em> Afficher Evenement</a></li>
 			<li><a href="promoanimaux.php"><em class="fa fa-paw">&nbsp;</em> Promotions animaux</a></li>
 			<li><a href="promoplantes.php"><em  class="fab fa-pagelines" aria-hidden="true">&nbsp;</em> Promotions Plantes</a></li>
-	
-		
-			
+
 		</div><!--/.row-->
-	
-		<div>  
-		<td>aa</td>
-		<td>aa</td>
-		<td>aa</td>
-		<td>aa</td>
-		<?php
-			if (isset($_GET['id'])){
-				$user = $evenementC->recupereretat($_GET['id']);
-				
-		?>
-		<form action="" method="POST">
-            <table align="center">
-                <tr>
-                    
-                    <td>
-                        <label for="id">id:
-                        </label>
-                    </td>
-                    <td>
-						<input type="text" name="id" id="id"  value = "<?php echo $user['id']; ?>" disabled>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label for="type">type:
-						</label>
-					</td>
-					<td>
-						<input type="text" name="type" id="type" maxlength="20" value = "<?php echo $user['type']; ?>">
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label for="description">description:
-						</label>
-					</td>
-					<td>
-						<input type="text" name="description" id="description" maxlength="20" value = "<?php echo $user['description']; ?>">
-					</td>
-				</tr>
-                <tr>
-                    <td>
-                        <label for="lieu">Adresse:
-                        </label>
-                    </td>
-                    <td><input type="text" name="lieu" id="lieu" maxlength="20" value = "<?php echo $user['lieu']; ?>"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="categorie">Categorie:
-                        </label>
-                    </td>
-                    <td><input type="text" name="categorie" id="categorie" maxlength="20" value = "<?php echo $user['categorie']; ?>"></td>
-                </tr>
+		<div class="container">
+        <div class="row">
+            <div class="col-md-12"></div>
+        </div>
+    </div>
+    <div class="container"> 
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+                <div class="container text-center">
+             <div class="container">
+        <div class="row">
+            <div class="col-md-12"></div>
+        </div>
+        <div class="d-flex justify-content-center">
+        	<br> <div class="col-md-5"></div>
+            
+
                 
-                <tr>
-                    <td>
-                        <label for="date">date debut:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="date" name="date" id="date"  value = "<?php echo $user['date']; ?>">
-                    </td>
-                </tr>
-				<tr>
-                    <td>
-                        <label for="datef">date fin:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="date" name="datef" id="datef"  value = "<?php echo $user['datef']; ?>">
-                    </td>
-                </tr>
+            </form>
+
+        </div>
+  <br>
+         <!-- Bootstrap table  -->
+         <div >
+            <table class="table table-striped table-dark">
+               
+                    <tr >
+                        <td><b>ID</b> </td>
+						<td><b>Type</b> </td>
+                        <td><b>description</b></td>
+                        <td><b>lieu</b></td>
+						<td><b>Date debut</b></td>
+						<td><b>Date fin</b></td>
+						<td><b>Categorie</b></td>
+                        <td><b>Edit</b></td>
+						<td><b>Supprimer</b></td>
+						<td><b>Trier Date </b></td>
+
+                    </tr>
                 
                 
-                <tr>
-                    <td></td>
-                    <td>
-                        <input type="submit" value="Modifier" name = "modifer"> 
-                    </td>
-                    <td>
-                        <input type="reset" value="Annuler" >
-                    </td>
-                </tr>
-            </table>
-        </form>
-		<?php
-		}
-		?>
-		</div>
+				<?PHP
+				foreach($listeUsers as $user){
+			?>
+				<tr>
+					<td><?PHP echo $user['id']; ?></td>
+					<td><?PHP echo $user['type']; ?></td>
+					<td><?PHP echo $user['description']; ?></td>
+					<td><?PHP echo $user['lieu']; ?></td>
+					<td><?PHP echo $user['date']; ?></td>
+					<td><?PHP echo $user['datef']; ?></td>
+					<td><?PHP echo $user['categorie']; ?></td>
+
+
+					
+					<td>
+						<a href="modifierevenement.php?id=<?PHP echo $user['id']; ?>"> <img src="https://img.icons8.com/fluent/48/000000/edit-file.png"/> </a>
+						
+					</td>
+					<td>
+						<form method="POST" action="supprimerevenement.php">
+						<button type="submit" style="background-color:transparent; border-color:transparent;"> 
+						<img src="https://img.icons8.com/color/48/000000/delete-forever.png"/>
+                         </button>	
+						<input type="hidden" value=<?PHP echo $user['id']; ?> name="id">
+						</form>
+					</td>
+					<td>
+					<ul>
+					<li><a href="tri.php">Tri Croissant </a></li>
+			   	    <li><a href="tri2.php">Tri Decroissant</a></li>
+ 						 
+					</ul>						
+					</td>
+					
+				</tr>
+			<?PHP
+				}
+			?>
+
+              
+           </table>
+        </div>
+
+        
+
+
+    </div>
+            </div>
+        </div>
+    </div>
 	</div>	<!--/.main-->
-	
 	
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

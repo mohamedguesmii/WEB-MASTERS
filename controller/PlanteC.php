@@ -1,8 +1,8 @@
 <?PHP
-	include_once 'config.php';
-	require_once 'Model/Promoplante.php';
+	include_once '../config.php';
+	require_once '../Model/Promoplante.php';
 
-	require_once 'Model/Plante.php';
+	require_once '../Model/Plante.php';
 
 	class PlantesC {
 		

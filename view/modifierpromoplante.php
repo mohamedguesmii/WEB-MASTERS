@@ -1,56 +1,48 @@
 <?php
 
-	include "controller/UtilisateurC.php";
-	include_once 'Model/Utilisateur.php';
+    include "../controller/promoplanteC.php";
+	include_once '../Model/promoplante.php';
 
-	$UtilisateurC = new UtilisateurC();
+	$PlantesC = new PlantesC();
 	$error = "";
 	
 	if (
-		isset($_POST["id_animaux"]) && 
-		isset($_POST["sex"]) && 
-        isset($_POST["typee"]) &&
-        isset($_POST["age"]) &&
+		isset($_POST["id"]) && 
+		isset($_POST["nom"]) && 
+        isset($_POST["longeur"]) &&
         isset($_POST["prix"]) &&
-        isset($_POST["categorie"]) &&
-		isset($_POST["couleur"])  &&
-		isset($_POST["image"])  &&
-		isset($_POST["dated"])  &&
-		isset($_POST["datef"])  &&
-
-        isset($_POST["prix_promotions"])  
+        isset($_POST["type"]) &&
+        isset($_POST["image"]) &&
+		isset($_POST["dated"]) &&
+        isset($_POST["datef"]) &&
+        isset($_POST["prix_promoplante"])  
 	){
 		if (
-			!empty($_POST["id_animaux"]) && 
-			!empty($_POST["sex"]) && 
-            !empty($_POST["typee"]) && 
-            !empty($_POST["age"]) && 
-            !empty($_POST["prix"]) &&
-            !empty($_POST["categorie"]) &&
-			!empty($_POST["couleur"]) &&
+			!empty($_POST["id"]) && 
+			!empty($_POST["nom"]) && 
+            !empty($_POST["longeur"]) && 
+            !empty($_POST["prix"]) && 
+            !empty($_POST["type"]) &&
 			!empty($_POST["image"]) &&
 			!empty($_POST["dated"]) &&
 			!empty($_POST["datef"]) &&
-            !empty($_POST["prix_promotions"])
+            !empty($_POST["prix_promoplante"])
 
         ) {
-            $user = new promoanimaux(
-				$_POST['id_animaux'],
-				$_POST['sex'],
-                $_POST['typee'],
-                $_POST['age'], 
-                $_POST['prix'],
-                $_POST['categorie'],
-				$_POST['couleur'],
+            $user = new promoplante(
+				$_POST['id'],
+				$_POST['nom'],
+                $_POST['longeur'],
+                $_POST['prix'], 
+                $_POST['type'],
 				$_POST['image'],
 				$_POST['dated'],
 				$_POST['datef'],
-                $_POST['prix_promotions']
+                $_POST['prix_promoplante']
 
 			);
-			
-            $UtilisateurC->ajouterpromoanimaux($user);
-			header('Location:promoanimaux.php');
+            $PlantesC->modifierpromoplante($user, $_GET['id_promo']);
+			header('Location:promoplantes.php');
 
         }
         else
@@ -77,8 +69,6 @@
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-	<script src="scripts.js"></script>
-
 </head>
 <body>
 
@@ -167,7 +157,7 @@
 		<li ><a href="ajouterevenement.php"><em class="fa fa-plus-square">&nbsp;</em>Ajouter Evenement</a></li>
 			<li><a href="evenement.php"><em class="fa fa-book-open">&nbsp;</em> Afficher Evenement</a></li>
 			<li><a href="promoanimaux.php"><em class="fa fa-paw">&nbsp;</em> Promotions animaux</a></li>
-			<li><a href="promoplantes.php"><em  class="fab fa-pagelines" aria-hidden="true">&nbsp;</em> Promotions Plantes</a></li>
+            <li><a href="promoplantes.php"><em  class="fab fa-pagelines" aria-hidden="true">&nbsp;</em> Promotions Plantes</a></li>
 	
 		
 			
@@ -183,47 +173,44 @@
         </div>
 
     	<?php
-			if (isset($_GET['id_animaux'])){
-				$user = $UtilisateurC->recupereretat($_GET['id_animaux']);
+			if (isset($_GET['id_promo'])){
+				$user = $PlantesC->recupereretat2($_GET['id_promo']);
 				
 		?>
 		<form action="" method="POST">
             <table border="1" align="center">
 
                 <tr>
-                    <td rowspan='11' colspan='1'> </td>
+                    <td rowspan='10' colspan='1'> </td>
                     <td>
-                        <label for="id_animaux">id_animaux:
+                        <label for="id_promo">id_promo:
                         </label>
                     </td>
-                    <td><input type="text" name="id_animaux" id="id_animaux" value = "<?php echo $user['id_animaux']; ?>" maxlength="20" readonly></td>
+                    <td><input type="text" name="id_promo" id="id_promo" value = "<?php echo $user['id_promo']; ?>" maxlength="20" disabled></td>
                 </tr>
                
                 <tr>
                     <td>
-                        <label for="sex">sex:
+                        <label for="id">id:
                         </label>
                     </td>
-                    <td><input type="text" name="sex" id="sex" value = "<?php echo $user['sex']; ?>" maxlength="20" readonly></td>
+                    <td><input type="text" name="id" id="id" value = "<?php echo $user['id']; ?>" maxlength="20" readonly ></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="nom">nom:
+                        </label>
+                    </td>
+                    <td><input type="text" name="nom" id="nom" value = "<?php echo $user['nom']; ?>" maxlength="20"  readonly></td>
                 </tr>
                 
                 <tr>
                     <td>
-                        <label for="typee">typee:
+                        <label for="longeur">longeur:
                         </label>
                     </td>
                     <td>
-                        <input type="text" name="typee" value = "<?php echo $user['typee']; ?>" id="typee" >
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td>
-                        <label for="age">age:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="age" id="age" value = "<?php echo $user['age']; ?>" readonly>
+                        <input type="text" name="longeur" value = "<?php echo $user['longeur']; ?>" id="longeur" readonly>
                     </td>
                     
                 </tr>
@@ -234,73 +221,59 @@
                     </td>
                     <td>
                         <input type="text" name="prix" id="prix" value = "<?php echo $user['prix']; ?>" readonly>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>
+                        <label for="type">type:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="text" name="type" id="type" value = "<?php echo $user['type']; ?>" readonly>
 						                   
                     </td>
                     
                 </tr>
-                <tr>
-                    <td>
-                        <label for="categorie">Categorie:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="categorie" id="categorie" value = "<?php echo $user['categorie']; ?>" readonly	>
-                    </td>
-                    
-                </tr>
-                 
-                <tr>
-                    <td>
-                        <label for="couleur">couleur:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="couleur" id="couleur" value = "<?php echo $user['couleur']; ?>" readonly>
-                    </td>
-                    
-                </tr>
+                
 				<tr>
                     <td>
                         <label for="image">image:
                         </label>
                     </td>
                     <td>
-                        <input type="text" name="image" id="image"  value = "<?php echo $user['image']; ?>" readonly>
-
-                    </td>
-                    
-                </tr>
-
-				<tr>
-                    <td>
-                        <label for="dated">Date debut promotion:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="date" name="dated" id="dated" required >
+                        <input type="text" name="image" id="image"  value = "<?php echo $user['image']; ?>"readonly>
 
                     </td>
                     
                 </tr>
 				<tr>
                     <td>
-                        <label for="datef">Date fin promotion:
+                        <label for="dated">Date Debut Promotions:
                         </label>
                     </td>
                     <td>
-                        <input type="date" name="datef" id="datef" required >
-
+                        <input type="date" name="dated" id="dated" >
                     </td>
                     
                 </tr>
-
+				<tr>
+                    <td>
+                        <label for="datef">Date Fin Promotions:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="date" name="datef" id="datef" >
+                    </td>
+                    
+                </tr>
                 <tr>
                     <td>
-                        <label for="prix_promotions">Solde:
+                        <label for="prix_promoplante">Solde:
                         </label>
                     </td>
                     <td>
-                        <input type="number" name="prix_promotions" id="prix_promotions"   min="1" max="100" required>
+                        <input type="text" name="prix_promoplante" id="prix_promoplante" value = "<?php echo $user['prix_promoplante']; ?>" >
                     </td>
                     
                 </tr>
@@ -310,7 +283,7 @@
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" value="Envoyer" onclick="return verif();"> 
+                        <input type="submit" value="Envoyer"> 
                     </td>
                     <td>
                         <input type="reset" value="Annuler" >

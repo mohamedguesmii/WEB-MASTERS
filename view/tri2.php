@@ -1,5 +1,5 @@
 <?PHP
-	include "controller/evenementC.php";
+	include "../controller/evenementC.php";
 	require_once ("composant/composant.php");
 
 	$utilisateurC=new evenementC();

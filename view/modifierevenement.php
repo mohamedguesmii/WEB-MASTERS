@@ -1,16 +1,45 @@
-<?PHP
-	include "controller/UtilisateurC.php";
-	require_once ("composant/composant.php");
+<?php
+	include "../controller/evenementC.php";
+	include_once '../Model/evenement.php';
 
-	$utilisateurC=new UtilisateurC();
-	$listeUsers=$utilisateurC->afficherUtilisateurs();
+	$evenementC = new evenementC();
+	$error = "";
+	
+	if (
+		isset($_POST["type"]) && 
+		isset($_POST["description"]) && 
+        isset($_POST["lieu"]) &&
+		isset($_POST["categorie"]) &&
+        isset($_POST["date"]) &&
+		isset($_POST["datef"])  
+	){
+		if (
+			!empty($_POST["type"]) && 
+            !empty($_POST["description"]) && 
+            !empty($_POST["lieu"]) && 
+			!empty($_POST["categorie"]) && 
+            !empty($_POST["date"]) &&
+			!empty($_POST["datef"])
 
-	$list=$utilisateurC->afficherpromoanimaux();
+        ) {
+            $user = new evenement(
+				$_POST['type'],
+                $_POST['description'],
+                $_POST['lieu'], 
+				$_POST['categorie'], 
+                $_POST['date'],
+				$_POST['datef']
+
+			);
+			
+            $evenementC->modifierevenement($user, $_GET['id']);
+			header('Location:evenement.php');
+        }
+        else
+            $error = "Missing information";
+	}
 
 ?>
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,9 +50,7 @@
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
-	<link href="styles.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-   
+	
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 	<!--[if lt IE 9]>
@@ -117,168 +144,105 @@
 		<ul class="nav menu">
 		<li ><a href="ajouterevenement.php"><em class="fa fa-plus-square">&nbsp;</em>Ajouter Evenement</a></li>
 			<li><a href="evenement.php"><em class="fa fa-book-open">&nbsp;</em> Afficher Evenement</a></li>
-			<li><a href="promoanimaux.php"><em class="fa fa-paw">&nbsp;</em> Promotions animaux</a></li>	
+			<li><a href="promoanimaux.php"><em class="fa fa-paw">&nbsp;</em> Promotions animaux</a></li>
 			<li><a href="promoplantes.php"><em  class="fab fa-pagelines" aria-hidden="true">&nbsp;</em> Promotions Plantes</a></li>
-
+	
 		
 			
 		</div><!--/.row-->
-		<div class="container">
-        <div class="row">
-            <div class="col-md-12"></div>
-        </div>
-    </div>
-    <div class="container"> 
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-6">
-                <div class="container text-center">
-             <div class="container">
-        <div class="row">
-            <div class="col-md-12"></div>
-        </div>
-        <div class="d-flex justify-content-center">
-        	<br> <div class="col-md-5"></div>
-            
-
-                
-            </form>
-
-        </div>
-  <br>
-         <!-- Bootstrap table  -->
-         <div >
-            <table class="table table-striped table-dark">
-               
-               <tr>
-               <h2>Liste Des Animaux </h2>
-               </tr>
-                    <tr >
-                        <td><b>ID animaux </b> </td>
-						<td><b>Sex</b> </td>
-                        <td><b>type</b></td>
-                        <td><b>age</b></td>
-						<td><b>Prix</b></td>
-						<td><b>Categorie</b></td>
-                        <td><b>Couleur</b></td>
-						<td><b>image</b></td>
-                        <td><b>Ajouter Promotions</b></td>
-						
-
-						
-                    </tr>
-                
-                
-				<?PHP
-				foreach($listeUsers as $user){
-			?>
-           
-				<tr>
-					<td><?PHP echo $user['id_animaux']; ?></td>
-					<td><?PHP echo $user['sex']; ?></td>
-					<td><?PHP echo $user['typee']; ?></td>
-					<td><?PHP echo $user['age']; ?></td>
-					<td><?PHP echo $user['prix']; ?></td>
-					<td><?PHP echo $user['categorie']; ?></td>
-                 	<td><?PHP echo $user['couleur']; ?></td>
-					<td><img src="images/<?= $user['image'] ?>" width = "50" height = "50"></td>
-
-
-					
-					<td>
-						<a href="ajouterpromotions.php?id_animaux=<?PHP echo $user['id_animaux']; ?>"> <img src="https://img.icons8.com/fluent/48/000000/add-property.png"/> </a>
-						
+	
+		<div>  
+		<td>aa</td>
+		<td>aa</td>
+		<td>aa</td>
+		<td>aa</td>
+		<?php
+			if (isset($_GET['id'])){
+				$user = $evenementC->recupereretat($_GET['id']);
+				
+		?>
+		<form action="" method="POST">
+            <table align="center">
+                <tr>
+                    
+                    <td>
+                        <label for="id">id:
+                        </label>
+                    </td>
+                    <td>
+						<input type="text" name="id" id="id"  value = "<?php echo $user['id']; ?>" disabled>
 					</td>
-					
 				</tr>
-			<?PHP
-				}
-			?>
-
-
-              
-            </table>
-            
-        </div>
-        <div >
-            <table class="table table-striped table-dark">
-               
-               <tr>
-               <h2>Liste Des Animaux avec Promotions</h2>
-               </tr>
-                    <tr >
-					   
-					   <td><b>ID Promotions </b> </td>
-                        <td><b>ID animaux </b> </td>
-						<td><b>Sex</b> </td>
-            			<td><b>type</b></td>
-                    	<td><b>age</b></td>
-						<td><b>Prix</b></td>
-						<td><b>Categorie</b></td>
-                    	<td><b>Couleur</b></td>
-						<td><b>image</b></td>
-						<td><b>date debut promotions</b></td>
-						<td><b>date fin promotions</b></td>
-						<td><b>Solde</b></td>
-                       <td><b>Prix apres Reduction</b></td>
-						<td><b>Modifier</b></td>
-						<td><b>Supprimer</b></td>
-                    </tr>
-                
-                
-				<?PHP
-				foreach($list as $usr){
-					$prix = $usr['prix'];
-					$prixr= $usr['prix_promotions'];
-					$p= $prix *$prixr* 0.01;
-					$pe = $prix - $p;
-			?>
-           
 				<tr>
-                    <td><?PHP echo $usr['id_promoanimaux']; ?></td>
-					<td><?PHP echo $usr['id_animaux']; ?></td>
-					<td><?PHP echo $usr['sex']; ?></td>
-					<td><?PHP echo $usr['typee']; ?></td>
-					<td><?PHP echo $usr['age']; ?></td>
-					<td><?PHP echo $usr['prix']; ?></td>
-					<td><?PHP echo $usr['categorie']; ?></td>
-                    <td><?PHP echo $usr['couleur']; ?></td>
-					<td><img src="images/<?= $usr['image'] ?>" width = "50" height = "50"></td>
-					<td><?PHP echo $usr['dated']; ?></td>
-                    <td><?PHP echo $usr['datef']; ?></td>
-					<td><?PHP echo $usr['prix_promotions']; ?></td>
-					<td><?PHP echo $pe ?></td>
-
 					<td>
-						<a href="modifierpromoanimaux.php?id_promoanimaux=<?PHP echo $usr['id_promoanimaux']; ?>"> <img src="https://img.icons8.com/fluent/48/000000/edit-file.png"/> </a>
-						
+						<label for="type">type:
+						</label>
 					</td>
 					<td>
-						<form method="POST" action="supprimerpromotions.php">
-						<button type="submit" style="background-color:transparent; border-color:transparent;"> 
-						<img src="https://img.icons8.com/color/48/000000/delete-forever.png"/>
-                         </button>	
-						<input type="hidden" value=<?PHP echo $usr['id_promoanimaux']; ?> name="id_promoanimaux">
-						</form>
-					</td>	
+						<input type="text" name="type" id="type" maxlength="20" value = "<?php echo $user['type']; ?>">
+					</td>
 				</tr>
-			<?PHP
-				}
-			?>
-
-              
+				<tr>
+					<td>
+						<label for="description">description:
+						</label>
+					</td>
+					<td>
+						<input type="text" name="description" id="description" maxlength="20" value = "<?php echo $user['description']; ?>">
+					</td>
+				</tr>
+                <tr>
+                    <td>
+                        <label for="lieu">Adresse:
+                        </label>
+                    </td>
+                    <td><input type="text" name="lieu" id="lieu" maxlength="20" value = "<?php echo $user['lieu']; ?>"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="categorie">Categorie:
+                        </label>
+                    </td>
+                    <td><input type="text" name="categorie" id="categorie" maxlength="20" value = "<?php echo $user['categorie']; ?>"></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <label for="date">date debut:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="date" name="date" id="date"  value = "<?php echo $user['date']; ?>">
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        <label for="datef">date fin:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="date" name="datef" id="datef"  value = "<?php echo $user['datef']; ?>">
+                    </td>
+                </tr>
+                
+                
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Modifier" name = "modifer"> 
+                    </td>
+                    <td>
+                        <input type="reset" value="Annuler" >
+                    </td>
+                </tr>
             </table>
-            
-        </div>
-
-        
-
-
-    </div>
-            </div>
-        </div>
-    </div>
+        </form>
+		<?php
+		}
+		?>
+		</div>
 	</div>	<!--/.main-->
+	
 	
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

@@ -1,7 +1,7 @@
 <?PHP
-	include_once "config.php";
-	require_once 'model/promoanimaux.php';
-	require_once 'model/utilisateur.php';
+	include_once "../config.php";
+	require_once '../model/promoanimaux.php';
+	require_once '../model/utilisateur.php';
 
 	class UtilisateurC {
 

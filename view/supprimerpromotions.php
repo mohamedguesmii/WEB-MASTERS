@@ -1,5 +1,5 @@
 <?PHP
-	include "controller/UtilisateurC.php";
+	include "../controller/UtilisateurC.php";
 	require_once ("composant/composant.php");
 
 	$UtilisateurC=new UtilisateurC();

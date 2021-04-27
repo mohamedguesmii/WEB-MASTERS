@@ -1,5 +1,5 @@
 <?PHP
-    include "controller/PlanteC.php";
+    include "../controller/PlanteC.php";
 	require_once ("composant/composant.php");
 
 	$PlantesC=new PlantesC();

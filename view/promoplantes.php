@@ -1,9 +1,11 @@
 <?PHP
-	include "controller/evenementC.php";
+	include "../controller/PlanteC.php";
 	require_once ("composant/composant.php");
 
-	$utilisateurC=new evenementC();
-	$listeUsers=$utilisateurC->trierevenement();
+	$PlantesC=new PlantesC();
+	$listeUsers=$PlantesC->displayPlantes();
+
+	$list=$PlantesC->afficherpromoplante();
 
 ?>
 
@@ -113,11 +115,13 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li ><a href="ajouterevenement.php"><em class="fa fa-plus-square">&nbsp;</em>Ajouter Evenement</a></li>
+		<li ><a href="ajouterevenement.php"><em class="fa fa-plus-square">&nbsp;</em>Ajouter Evenement</a></li>
 			<li><a href="evenement.php"><em class="fa fa-book-open">&nbsp;</em> Afficher Evenement</a></li>
 			<li><a href="promoanimaux.php"><em class="fa fa-paw">&nbsp;</em> Promotions animaux</a></li>
-			<li><a href="promoplantes.php"><em  class="fab fa-pagelines" aria-hidden="true">&nbsp;</em> Promotions Plantes</a></li>
-
+            <li><a href="promoplantes.php"><em  class="fab fa-pagelines" aria-hidden="true">&nbsp;</em> Promotions Plantes</a></li>
+	
+		
+			
 		</div><!--/.row-->
 		<div class="container">
         <div class="row">
@@ -146,61 +150,117 @@
          <div >
             <table class="table table-striped table-dark">
                
+               <tr>
+               <h2>Liste Des Plantes </h2>
+               </tr>
                     <tr >
-                        <td><b>ID</b> </td>
-						<td><b>Type</b> </td>
-                        <td><b>description</b></td>
-                        <td><b>lieu</b></td>
-						<td><b>Date debut</b></td>
-						<td><b>Date fin</b></td>
-						<td><b>Categorie</b></td>
-                        <td><b>Edit</b></td>
-						<td><b>Supprimer</b></td>
-						<td><b>Trier Date</b></td>
+                        <td><b>ID plante </b> </td>
+                        <td><b>nom</b> </td>
+						<td><b>longeur</b> </td>
+                        <td><b>prix</b></td>
+                        <td><b>type</b></td>
+						<td><b>image</b></td>
+                        <td><b>Ajouter Promotions</b></td>
+						
 
+						
                     </tr>
                 
                 
 				<?PHP
 				foreach($listeUsers as $user){
 			?>
+           
 				<tr>
 					<td><?PHP echo $user['id']; ?></td>
+                    <td><?PHP echo $user['nom']; ?></td>
+					<td><?PHP echo $user['longeur']; ?></td>
+					<td><?PHP echo $user['prix']; ?></td>
 					<td><?PHP echo $user['type']; ?></td>
-					<td><?PHP echo $user['description']; ?></td>
-					<td><?PHP echo $user['lieu']; ?></td>
-					<td><?PHP echo $user['date']; ?></td>
-					<td><?PHP echo $user['datef']; ?></td>
-					<td><?PHP echo $user['categorie']; ?></td>
+					<td><img src="images/<?= $user['image'] ?>" width = "50" height = "50"></td>
 
 
 					
 					<td>
-						<a href="modifierevenement.php?id=<?PHP echo $user['id']; ?>"> <img src="https://img.icons8.com/fluent/48/000000/edit-file.png"/> </a>
+						<a href="ajouterpromoplantes.php?id=<?PHP echo $user['id']; ?>"> <img src="https://img.icons8.com/fluent/48/000000/add-property.png"/> </a>
+						
+					</td>
+					
+				</tr>
+			<?PHP
+				}
+			?>
+
+
+              
+            </table>
+            
+        </div>
+        <div >
+            <table class="table table-striped table-dark">
+               
+               <tr>
+               <h2>Liste Des Plantes avec Promotions</h2>
+               </tr>
+                    <tr >
+					   
+					   <td><b>ID Promotions </b> </td>
+                        <td><b>ID plantes </b> </td>
+						<td><b>nom</b> </td>
+            			<td><b>longeur</b></td>
+                    	<td><b>prix</b></td>
+						<td><b>type</b></td>
+						<td><b>image</b></td>
+						<td><b>Date Debut Promotions</b></td>
+						<td><b>Date Debut Promotions</b></td>
+						<td><b>Solde</b></td>
+                        <td><b>Prix apres Reduction</b></td>
+						<td><b>Modifier</b></td>
+						<td><b>Supprimer</b></td>
+                    </tr>
+                
+                
+				<?PHP
+				foreach($list as $usr){
+					$prix = $usr['prix'];
+					$prixr= $usr['prix_promoplante'];
+					$p= $prix *$prixr* 0.01;
+					$pe = $prix - $p;
+			?>
+           
+				<tr>
+                    <td><?PHP echo $usr['id_promo']; ?></td>
+					<td><?PHP echo $usr['id']; ?></td>
+					<td><?PHP echo $usr['nom']; ?></td>
+					<td><?PHP echo $usr['longeur']; ?></td>
+					<td><?PHP echo $usr['prix']; ?></td>
+					<td><?PHP echo $usr['type']; ?></td>
+					<td><img src="images/<?= $usr['image'] ?>" width = "50" height = "50"></td>
+					<td><?PHP echo $usr['dated']; ?></td>
+					<td><?PHP echo $usr['datef']; ?></td>
+					<td><?PHP echo $usr['prix_promoplante']; ?>%</td>
+					<td><?PHP echo $pe ?></td>
+
+					<td>
+						<a href="modifierpromoplante.php?id_promo=<?PHP echo $usr['id_promo']; ?>"> <img src="https://img.icons8.com/fluent/48/000000/edit-file.png"/> </a>
 						
 					</td>
 					<td>
-						<form method="POST" action="supprimerevenement.php">
+						<form method="POST" action="supprimerpromoplantes.php">
 						<button type="submit" style="background-color:transparent; border-color:transparent;"> 
 						<img src="https://img.icons8.com/color/48/000000/delete-forever.png"/>
                          </button>	
-						<input type="hidden" value=<?PHP echo $user['id']; ?> name="id">
+						<input type="hidden" value=<?PHP echo $usr['id_promo']; ?> name="id_promo">
 						</form>
-					</td>
-					<td>
-					<ul>
-					<li><a href="tri.php">Tri Croissant </a></li>
-	     		    <li><a href="tri2.php">Tri Decroissant</a></li>
- 						 
-					</ul>						
-					</td>
+					</td>	
 				</tr>
 			<?PHP
 				}
 			?>
 
               
-           </table>
+            </table>
+            
         </div>
 
         
