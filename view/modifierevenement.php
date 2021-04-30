@@ -11,7 +11,9 @@
         isset($_POST["lieu"]) &&
 		isset($_POST["categorie"]) &&
         isset($_POST["date"]) &&
-		isset($_POST["datef"])  
+		isset($_POST["datef"])  &&
+		isset($_POST["image"])  
+
 	){
 		if (
 			!empty($_POST["type"]) && 
@@ -19,7 +21,9 @@
             !empty($_POST["lieu"]) && 
 			!empty($_POST["categorie"]) && 
             !empty($_POST["date"]) &&
-			!empty($_POST["datef"])
+			!empty($_POST["datef"]) &&
+			!empty($_POST["image"]) 
+
 
         ) {
             $user = new evenement(
@@ -28,7 +32,9 @@
                 $_POST['lieu'], 
 				$_POST['categorie'], 
                 $_POST['date'],
-				$_POST['datef']
+				$_POST['datef'],
+				$_POST['image']
+
 
 			);
 			
@@ -222,6 +228,15 @@
                     </td>
                     <td>
                         <input type="date" name="datef" id="datef"  value = "<?php echo $user['datef']; ?>">
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        <label for="image">Image:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="text" name="image" id="image"  value = "<?php echo $user['image']; ?>">
                     </td>
                 </tr>
                 

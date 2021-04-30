@@ -41,6 +41,100 @@ class evenementC {
         }   
     }
 
+    function afficherevenement1()
+    {
+        //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
+        $sql="SElECT * From evenement WHERE categorie='liés aux plantes' OR categorie='liés aux animaux' LIMIT 0,1";
+        $db = config::getConnexion();
+        try
+        {
+        $liste=$db->query($sql);
+        return $liste;
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }   
+    }
+
+    function afficherevenement2()
+    {
+        //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
+        $sql="SElECT * From evenement WHERE categorie='liés aux plantes' OR categorie='liés aux animaux' LIMIT 1,1";
+        $db = config::getConnexion();
+        try
+        {
+        $liste=$db->query($sql);
+        return $liste;
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }   
+    }
+
+    function afficherevenement3()
+    {
+        //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
+        $sql="SElECT * From evenement WHERE categorie='liés aux plantes' OR categorie='liés aux animaux' LIMIT 2,1";
+        $db = config::getConnexion();
+        try
+        {
+        $liste=$db->query($sql);
+        return $liste;
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }   
+    }
+    function afficherevenement4()
+    {
+        //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
+        $sql="SElECT * From evenement WHERE categorie='liés aux plantes' OR categorie='liés aux animaux' LIMIT 0,1";
+        $db = config::getConnexion();
+        try
+        {
+        $liste=$db->query($sql);
+        return $liste;
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }   
+    }
+    function afficherevenement5()
+    {
+        //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
+        $sql="SElECT * From evenement WHERE categorie='liés aux plantes' OR categorie='liés aux animaux' LIMIT 1,1";
+        $db = config::getConnexion();
+        try
+        {
+        $liste=$db->query($sql);
+        return $liste;
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }   
+    }
+
+    function afficherevenement6()
+    {
+        //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
+        $sql="SElECT * From evenement WHERE categorie='liés aux plantes' OR categorie='liés aux animaux' LIMIT 2,2";
+        $db = config::getConnexion();
+        try
+        {
+        $liste=$db->query($sql);
+        return $liste;
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }   
+    }
+
     function supprimerevenement($evenement)
     {
         $sql="DELETE FROM evenement where id= :id ";

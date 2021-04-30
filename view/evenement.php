@@ -154,6 +154,7 @@
 						<td><b>Date debut</b></td>
 						<td><b>Date fin</b></td>
 						<td><b>Categorie</b></td>
+						<td><b>Image</b></td>
                         <td><b>Edit</b></td>
 						<td><b>Supprimer</b></td>
 						<td><b>Trier Date </b></td>
@@ -172,6 +173,8 @@
 					<td><?PHP echo $user['date']; ?></td>
 					<td><?PHP echo $user['datef']; ?></td>
 					<td><?PHP echo $user['categorie']; ?></td>
+					<td><img src="images/<?= $user['image'] ?>" width = "50" height = "50"></td>
+
 
 
 					

@@ -8,10 +8,12 @@ class evenement
 	private $date;
 	private $datef;
 	private $categorie;
+	private $image;
+
 
 	 
 
-	function __construct($type,$description,$lieu,$categorie,$date,$datef)
+	function __construct($type,$description,$lieu,$categorie,$date,$datef,$image)
 				{
 					$this->type=$type ;
 		$this->description=$description;
@@ -19,6 +21,8 @@ class evenement
 		$this->categorie=$categorie;
 		$this->date=$date;
 		$this->datef=$datef;
+		$this->image=$image;
+
 
 
 		
@@ -45,6 +49,9 @@ class evenement
 	function getdatef(){
 		return $this->datef;
 	}
+	function getimage(){
+		return $this->image;
+	}
 	
 	
 
@@ -67,6 +74,9 @@ function setdescription($description)
 	}
 	function setdatef($datef){
 		$this->datef=$datef;
+	}
+	function setimage($image){
+		$this->image=$image;
 	}
 	
 	

@@ -67,7 +67,8 @@ class evenementC {
                     lieu = :lieu,
                     categorie = :categorie,
                     date = :date,
-                    datef = :datef
+                    datef = :datef,
+                    image = :image
                    
 
                    
@@ -80,6 +81,8 @@ class evenementC {
                 'categorie' => $evenement->getcategorie(),
                 'date' => $evenement->getdate(),
                 'datef' => $evenement->getdatef(),
+                'image' => $evenement->getimage(),
+
                
 
                 'id' => $id
@@ -91,8 +94,8 @@ class evenementC {
     }
 
     function ajouterevenement($evenement){
-        $sql="INSERT INTO evenement (type,description, lieu,categorie, date,datef) 
-        VALUES (:type,:description,:lieu,:categorie,:date,:datef)";
+        $sql="INSERT INTO evenement (type,description, lieu,categorie, date,datef,image) 
+        VALUES (:type,:description,:lieu,:categorie,:date,:datef,:image)";
         $db = config::getConnexion();
         try{
             $query = $db->prepare($sql);
@@ -103,7 +106,9 @@ class evenementC {
                 'lieu' => $evenement->getlieu(),
                 'categorie' => $evenement->getcategorie(),
                 'date' => $evenement->getdate(),
-                'datef' => $evenement->getdatef()
+                'datef' => $evenement->getdatef(),
+                'image' => $evenement->getimage()
+
 
 
                 

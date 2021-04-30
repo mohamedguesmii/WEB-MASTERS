@@ -17,7 +17,9 @@
         isset($_POST["lieu"]) && 
 		isset($_POST["categorie"]) && 
         isset($_POST["date"]) &&
-		isset($_POST["datef"])
+		isset($_POST["datef"]) &&
+		isset($_POST["image"])
+
 
     ) {
         if ( 
@@ -26,7 +28,9 @@
             !empty($_POST["lieu"]) && 
 			!empty($_POST["categorie"]) && 
             !empty($_POST["date"]) &&
-			!empty($_POST["datef"])
+			!empty($_POST["datef"]) &&
+			!empty($_POST["image"])
+
 
         ) {
             $user = new evenement( 
@@ -35,7 +39,9 @@
                 $_POST['lieu'],
 				$_POST['categorie'],
                 $_POST['date'],
-				$_POST['datef']
+				$_POST['datef'],
+				$_POST['image'] 
+
 
 
             );
@@ -270,6 +276,15 @@
 					 </div>  
                     </div>
                 </div>
+				<div class="pt-4">
+						<br><div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir l'image :<td> </div>
+						<div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-table'></i></div>
+                        </div>
+                       <div> <input type="file" name="image" id="image" value="" class="form-control" placeholder="image"  required>  </div>
+                     </div> 
+					 
            <br>
            <br>
 		  
