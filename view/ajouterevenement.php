@@ -269,9 +269,9 @@
 					  
 					  <select name="categorie" id="categorie" value="" class="form-control" required >
 					    <option value="choix">Votre Choix</option>
-						 <option>liés aux animaux </option>
-						 <option>liés aux plantes</option> 
-						 <option>administrative&emsp;&emsp;&emsp;</option>
+						 <option>lies aux animaux </option>
+						 <option>lies aux plantes</option> 
+						 <option>administrative<p>&emsp;&emsp;&emsp;</p></option>
 						 </select>
 					 </div>  
                     </div>

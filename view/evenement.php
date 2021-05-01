@@ -207,7 +207,14 @@
            </table>
         </div>
 
-        
+		<div >
+                <a href="pdfevenement.php" download="pdfevenement.php" class="btn btn-lg btn-outline">
+                    <i class="fa fa-download"></i> Telecharger La liste 
+                </a>
+				<a href="pdfevenement.php"  class="btn btn-lg btn-outline">
+				<i class="fas fa-file-pdf"></i></i> Consulter la liste 
+                </a>
+            </div>
 
 
     </div>
