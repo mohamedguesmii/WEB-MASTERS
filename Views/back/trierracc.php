@@ -4,7 +4,7 @@ require_once 'header.php';
 include_once '../../Controller/accessoiresC.php';
 
 $accessoiresC=new PlantesC() ;
-$liste=$accessoiresC->displayPlantes();
+$liste=$accessoiresC->trieraccessoires();
  
 
 ?>
@@ -47,8 +47,8 @@ $liste=$accessoiresC->displayPlantes();
                     <td>
                       <button class="btn btn-danger btn-xs" onclick="window.location.href = 'supprimeracc.php?id=<?= $accessoires->id ?>';"> <i class="fa fa-trash-o "></i></button>
 					            <button class="btn btn-success btn-xs" onclick="window.location.href = 'modifieracc.php?id=<?= $accessoires->id ?>';"> <i class="fa fa-pencil "></i></button>
-                    <li><a href="trieracc.php">Tri Croissant </a></li>
-			   	          <li><a href="trierracc.php">Tri Decroissant</a></li>
+                                <li><a href="trieracc.php">Tri Croissant </a></li>
+			   	                <li><a href="trierracc.php">Tri Decroissant</a></li>
                       
                    </td>
                   </tr>

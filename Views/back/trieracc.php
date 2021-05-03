@@ -4,7 +4,7 @@ require_once 'header.php';
 include_once '../../Controller/accessoiresC.php';
 
 $accessoiresC=new PlantesC() ;
-$liste=$accessoiresC->displayPlantes();
+$liste=$accessoiresC->trieraccessoiresasc();
  
 
 ?>

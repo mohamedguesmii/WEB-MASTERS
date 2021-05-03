@@ -42,7 +42,7 @@ $liste=$PlanteC->trierPlantes();
 				          	<td><?= $plante->longeur ?></td>
 					          <td><?= $plante->prix ?></td>
 					          <td><?= $plante->type ?></td>
-                   <td><a href=""><img src="images/home/<?= $plante->image ?>" alt=""></a>
+                   <td><a href=""><img src="image/home/<?= $plante->image ?>" alt="" height="100" width="150"></a>
  
 
                    </td>
@@ -52,7 +52,7 @@ $liste=$PlanteC->trierPlantes();
 					            <button class="btn btn-success btn-xs" onclick="window.location.href = 'modifier.php?id=<?= $plante->id ?>';"> <i class="fa fa-pencil "></i></button>
                       <ul>
 					          <li><a href="trier.php">Tri Croissant </a></li>
-			   	          <li><a href="tri2.php">Tri Decroissant</a></li>
+			   	          <li><a href="trierr.php">Tri Decroissant</a></li>
 					        </ul>
                       
                    </td>

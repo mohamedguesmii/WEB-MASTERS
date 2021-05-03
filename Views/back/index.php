@@ -33,6 +33,10 @@ include_once '../../Controller/PlanteC.php';
     
       }
 	  ?>
+
+
+
+?>
 	 
 
         <div class="row justify-content-center">
@@ -46,10 +50,14 @@ include_once '../../Controller/PlanteC.php';
 <div class='container'>
 <div class="row justify-content-center">
 <form class="contact__form" method="post" action="">
-<div class="row">
-<div class="col-md-4 form-group">    
-<label for="nom">Nom:</label>
-        <input name="nom" type="text" class="form-control" placeholder="Tapez votre nom" required>
+
+
+<div class="col-12 mt-4">   
+    </div>
+    <div class="row">
+    <div class="col-md-4 form-group">    
+    <label for="nom">Nom:</label>
+        <input  name="nom" type="text"  Min="5" Max="30"  class="form-control" placeholder="Tapez votre nom" required>
     </div>
     <div class="col-md-4 form-group"> 
 	<label for="longeur">Longeur:</label>   
@@ -61,7 +69,7 @@ include_once '../../Controller/PlanteC.php';
 		
       <div class="col-md-4 form-group">  
 	  <label for="prix">Prix:</label>  
-        <input name="prix" type="text" class="form-control" placeholder="Tapez le prix" required>
+        <input name="prix" type="text" Min="1"  class="form-control" placeholder="Tapez le prix" required>
     </div>
 	
     <div class="col-md-4 form-group">

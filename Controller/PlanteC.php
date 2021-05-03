@@ -5,6 +5,29 @@
 	class PlantesC {
 
 
+		public function recherche_user($u){
+			$sql="SELECT * from plante where id= :z ";
+			$db=config::getConnexion();
+			$req=$db->prepare($sql);
+			$req->bindValue(':z',$u);
+			try
+			{
+				$req->execute();
+			   // $query->execute();
+		return $req;
+				
+		
+			}
+			catch(Exeption $e)
+			{
+				die('Erreur: '.$e->getMessage());
+			}
+		
+		}
+
+
+		
+
 
 		function trierplantes(){
 			
@@ -18,6 +41,20 @@
 				die('Erreur: '.$e->getMessage());
 			}	
 		}
+		function trierplantesasc(){
+			
+			$sql="SELECT * FROM plante ORDER BY prix ASC";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
+		
+
 
 		function addPlantes($plantes){
 		$sql="INSERT INTO plante (nom, longeur, prix, type, image) 

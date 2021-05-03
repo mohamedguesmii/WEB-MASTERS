@@ -5,9 +5,21 @@
 
 	class PlantesC {
 
-		function trierplantes(){
+		function trieraccessoires(){
 			
 			$sql="SELECT * FROM accessoires ORDER BY prix DESC";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
+		function trieraccessoiresasc(){
+			
+			$sql="SELECT * FROM accessoires ORDER BY prix ASC";
 			$db = config::getConnexion();
 			try{
 				$liste = $db->query($sql);

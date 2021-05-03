@@ -13,11 +13,15 @@ $liste=$PlanteC->displayPlantes();
     <section id="main-content">
       <section class="wrapper">
         <h3><i class="fa fa-angle-right"></i> Table de Plante</h3>
+        
         <div class="row mt">
           <div class="col-md-12">
             <div class="content-panel">
               <table class="table table-striped table-advance table-hover">
                 <h4><i class="fa fa-users"></i> Plante Info</h4>
+                <label>search</label>
+<input type="text" name="search"  class="form-control" placeholder="Rechercher">
+<input type="submit" name="search" >
                 <hr> 
                 <thead>
                   <tr>
@@ -25,9 +29,11 @@ $liste=$PlanteC->displayPlantes();
                     <th><i class="fa fa-user"></i> Nom </th>
                     <th><i class="fa fa-user"></i> Longeur</th>
                     <th ><i class="fa fa-user"></i> Prix</th>
-                    <th><i class="fa fa-calendar-o"></i> Type</th>
-                    <th><i class="fa fa-calendar-o"></i> image</th>
-                    <th><b>Trier Prix </b></th>
+                    <th><i class="fa fa-user"></i> Type</th>
+                    <th><i class="fa fa-user"></i> image</th>
+                    <th><b><i class="fa fa-calendar-o"></i>   Trier Prix </b></th>
+                    <th><b><i class="fa fa-calendar-o"></i>   statistiques des plantes selon le type </b></th>
+
                     <th></th>
                   </tr>
                 </thead>
@@ -42,20 +48,22 @@ $liste=$PlanteC->displayPlantes();
 				          	<td><?= $plante->longeur ?></td>
 					          <td><?= $plante->prix ?></td>
 					          <td><?= $plante->type ?></td>
-                   <td><a href=""><img src="images/home/<?= $plante->image ?>" alt=""></a>
- 
+                    <td><a href=""><img src="image/home/<?= $plante->image ?>" alt="" height ="100" width="150"></a>
+                  
 
-                   </td>
+                    </td>
                   
                     <td>
                       <button class="btn btn-danger btn-xs" onclick="window.location.href = 'supprimer.php?id=<?= $plante->id ?>';"> <i class="fa fa-trash-o "></i></button>
 					            <button class="btn btn-success btn-xs" onclick="window.location.href = 'modifier.php?id=<?= $plante->id ?>';"> <i class="fa fa-pencil "></i></button>
                       <ul>
-					          <li><a href="trier.php">Tri Croissant </a></li>
-			   	          <li><a href="tri2.php">Tri Decroissant</a></li>
-					        </ul>
-                      
-                   </td>
+					              <li><a href="trier.php">Tri Croissant </a></li>
+			   	              <li><a href="trier1.php">Tri Decroissant</a></li>
+					           </ul>
+                     <td>
+                     <li><a href="stats.php"> statistiques des plantes selon le prix d'achat </a></li>
+                     </td>
+                    </td>
                    
                   </tr>
 				  </td>
