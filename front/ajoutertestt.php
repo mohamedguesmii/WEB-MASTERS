@@ -25,7 +25,7 @@ $error = "";
         );
         
         $evenementC->ajouterparticipe($user);
-        header('Location:promoanimaux.php');
+        header('Location:evenement.php');
 
     }
     else
@@ -35,58 +35,3 @@ $error = "";
 
  
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Display</title>
-</head>
-    <body>
-        
-        
-        <div id="error">
-            <?php echo $error; ?>
-        </div>
-        <?php	
-        if (isset($_GET['id'])){
-		$user = $evenementC->recupereretat($_GET['id']);
-				
-		?>
-        
-        <form action="" method="POST">
-            <table border="1" align="center">
-
-                <tr>
-                    <td rowspan='4' ></td>
-                    <td>
-                        <label for="id">id
-                        </label>
-                    </td>
-                    <td><input type="text" name="id" id="id"  value="<?php echo $user['id']; ?>" readonly></td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <label for="nbre_participant">nbre participant:
-                        </label>
-                    </td>
-                    <td><input type="number" name="nbre_participant" id="nbre_participant"   min="1" max="10"  required></td>
-                </tr>
-                
-                
-                <tr>
-                    <td></td>
-                    <td>
-                        <input type="submit" value="Envoyer"> 
-                    </td>
-                    <td>
-                        <input type="reset" value="Annuler" >
-                    </td>
-                </tr>
-            </table>
-        </form>
-        <?php } ?>
-    </body>
-</html>
