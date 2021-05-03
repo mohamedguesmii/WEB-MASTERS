@@ -2,14 +2,28 @@
 	include "../controller/UtilisateurC.php";
 	require_once ("composant/composant.php");
 
-	$utilisateurC=new UtilisateurC();
-	$listeUsers=$utilisateurC->afficherUtilisateurs();
+	
 
-	$list=$utilisateurC->afficherpromoanimaux();
+
+   if(isset($_POST['choix']) )
+    { if  ($_POST['choix']=='categorie'){
+		$UtilisateurC=new UtilisateurC();
+	$allusers =$UtilisateurC->recherchercategorie($_POST['Search']) ;
+	}
+
+		if  ($_POST['choix']=='sex'){
+			$UtilisateurC=new UtilisateurC();
+        $allusers =$UtilisateurC->recherchersex($_POST['Search']) ;
+		}
+		
+ 	
+	 
+
+
+
+    
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -148,60 +162,7 @@
 
         </div>
   <br>
-         <!-- Bootstrap table  -->
-         <div >
-            <table class="table table-striped table-dark">
-               
-               <tr>
-               <h2>Liste Des Animaux </h2>
-               </tr>
-                    <tr >
-                        <td><b>ID animaux </b> </td>
-						<td><b>Sex</b> </td>
-                        <td><b>type</b></td>
-                        <td><b>age</b></td>
-						<td><b>Prix</b></td>
-						<td><b>Categorie</b></td>
-                        <td><b>Couleur</b></td>
-						<td><b>image</b></td>
-                        <td><b>Ajouter Promotions</b></td>
-						
-
-						
-                    </tr>
-                
-                
-				<?PHP
-				foreach($listeUsers as $user){
-			?>
-           
-				<tr>
-					<td><?PHP echo $user['id_animaux']; ?></td>
-					<td><?PHP echo $user['sex']; ?></td>
-					<td><?PHP echo $user['typee']; ?></td>
-					<td><?PHP echo $user['age']; ?></td>
-					<td><?PHP echo $user['prix']; ?></td>
-					<td><?PHP echo $user['categorie']; ?></td>
-                 	<td><?PHP echo $user['couleur']; ?></td>
-					<td><img src="images/<?= $user['image'] ?>" width = "50" height = "50"></td>
-
-
-					
-					<td>
-						<a href="ajouterpromotions.php?id_animaux=<?PHP echo $user['id_animaux']; ?>"> <img src="https://img.icons8.com/fluent/48/000000/add-property.png"/> </a>
-						
-					</td>
-					
-				</tr>
-			<?PHP
-				}
-			?>
-
-
-              
-            </table>
-            
-        </div>
+        
         <div >
             <table class="table table-striped table-dark">
                
@@ -229,7 +190,7 @@
                 
                 
 				<?PHP
-				foreach($list as $usr){
+				foreach($allusers as $usr){
 					$prix = $usr['prix'];
 					$prixr= $usr['prix_promotions'];
 					$p= $prix *$prixr* 0.01;
@@ -265,7 +226,7 @@
 					</td>	
 				</tr>
 			<?PHP
-				}
+				} }
 			?>
 
               
@@ -273,16 +234,7 @@
             
         </div>
 
-        <form method="POST" action="recherche2.php">
-	<select  placeholder="sujet" name="choix" id="choix" >
-              <option>Select</option>
-			  <option>categorie</option>
-              <option>sex</option>
-              </select>
-    <input type="text"  name="Search" name="Search"  placeholder="Search" >
-	
-     <input type="submit" class="btn btn-outline-primary" onclick="return verif3();"></i>
-      </form>	
+        
 
     </div>
             </div>

@@ -223,6 +223,30 @@
 				die('Erreur: '.$e->getMessage());
 			}
 		}
+		function recherchersex($sex){
+			$sql="SELECT * From promoanimaux WHERE sex= '$sex' ";
+			$db = config::getConnexion();
+			try{
+			$liste=$db->query($sql);
+			return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
+		
+		function recherchercategorie($categorie){
+			$sql="SELECT * From promoanimaux WHERE categorie = '$categorie' ";
+			$db = config::getConnexion();
+			try{
+			$liste=$db->query($sql);
+			return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
+	
 		
 	}
 ?>

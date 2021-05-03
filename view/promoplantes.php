@@ -30,6 +30,8 @@
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	<script src="scriptee.js"></script>
+
 </head>
 <body>
 
@@ -263,7 +265,17 @@
             
         </div>
 
-        
+		<form method="POST" action="recherche.php">
+	<select  placeholder="sujet" name="choix" id="choix" >
+              <option>Select</option>
+			  <option>type</option>
+              <option>nom</option>
+              </select>
+    <input type="text"  name="Search" name="Search"  placeholder="Search" >
+	
+     <input type="submit" class="btn btn-outline-primary" onclick="return verif3();"></i>
+</form>	
+	
 
 
     </div>
@@ -271,6 +283,8 @@
         </div>
     </div>
 	</div>	<!--/.main-->
+	
+	
 	
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

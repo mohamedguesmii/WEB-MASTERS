@@ -201,7 +201,26 @@ class evenementC {
             echo 'Erreur: '.$e->getMessage();
         }			
     }
+    function ajouterparticipe($participe){
+        $sql="INSERT INTO participe (id,nbre_participant) 
+        VALUES (:id,:nbre_participant)";
+        $db = config::getConnexion();
+        try{
+            $query = $db->prepare($sql);
+        
+            $query->execute([
+                'id' => $participe->getid_evenement(),
+                'nbre_participant' => $participe->getnbre_participant(),
+                
+                
 
+                
+            ]);			
+        }
+        catch (Exception $e){
+            echo 'Erreur: '.$e->getMessage();
+        }			
+    }
 }
 
 	

@@ -1,6 +1,8 @@
 <?PHP
-	include "controller/evenementC.php";
+	include_once "controller/evenementC.php";
 	require_once ("composant/composant.php");
+	
+
 
 	$utilisateurC=new evenementC();
 	$listeUsers=$utilisateurC->afficherevenement1();
@@ -11,7 +13,8 @@
     $listerrr=$utilisateurC->afficherevenement6();
 
 
-
+	
+	
 
 
 ?>
@@ -312,6 +315,16 @@
                         <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>
                             Close
                         </button>
+						<button type="button" class="btn btn-default" ><i class="fa fa-times"></i>
+                            Participer
+							<td>
+						<a href="ajoutertestt.php?id=<?PHP echo $us['id']; ?>"> <img src="https://img.icons8.com/fluent/48/000000/add-property.png"/> </a>
+						<div class="col-2">
+      	             	<a href="#?id=<?PHP echo $us['id']; ?>" data-toggle="modal" data-target="#add" class="btn btn-primary btn-sm">Participer</a>
+      					</div>
+					</td>
+							
+                        </button>
                     </div>
                 </div>
                 
@@ -367,6 +380,7 @@
                         <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>
                             Close
                         </button>
+						
                     </div>
                 </div>
                 
@@ -492,10 +506,12 @@
 		        </style>
 				<div class="contenir">
 				<a href="email.php"><button class="btn btn1">Inviter Participant via Email</button></a>
-					
+				<a href="email.php"><button class="btn btn1">Participer</button></a>
+	
 				</div>
 				
 			</div>
+			
 			
 	
 
@@ -507,7 +523,8 @@
 <br>
 </div>
 
-    
+
+       
 	
 	<footer id="footer"><!--Footer-->
 		<div class="footer-top">
@@ -667,6 +684,47 @@
 		
 	</footer><!--/Footer-->
 	
+	<!-- Add Product Modal start -->
+	
+<div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Valider Participation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	  
+        <form id="add-product-form" action="">
+        	<div class="row">
+        		<div class="col-12">
+        			<div class="form-group">
+		        		<label>id</label>
+		        		<input type="text" name="id"  id="id"  value="<?php echo $user['id']; ?>" class="form-control"  readonly>
+		        	</div>
+        		</div>
+        		
+            <div class="col-12">
+              <div class="form-group">
+                <label>Nombre des Participant</label>
+                <input type="number" name="nbre_participant" id="nbre_participant" class="form-control" placeholder="Entrer le Nombres des Participants">
+              </div>
+            </div>
+        		</div>
+        		<div class="col-12">
+        			<button type="submit" >Participer</button>
+        		</div>
+        	</div>
+        	
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Add Product Modal end -->
+
 
   
     <script src="js/jquery.js"></script>

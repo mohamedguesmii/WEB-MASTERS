@@ -157,7 +157,6 @@
 						<td><b>Image</b></td>
                         <td><b>Edit</b></td>
 						<td><b>Supprimer</b></td>
-						<td><b>Trier Date </b></td>
 
                     </tr>
                 
@@ -191,11 +190,7 @@
 						</form>
 					</td>
 					<td>
-					<ul>
-					<li><a href="tri.php">Tri Croissant </a></li>
-			   	    <li><a href="tri2.php">Tri Decroissant</a></li>
- 						 
-					</ul>						
+											
 					</td>
 					
 				</tr>
@@ -206,7 +201,7 @@
               
            </table>
         </div>
-
+		
 		<div >
                 <a href="pdfevenement.php" download="pdfevenement.php" class="btn btn-lg btn-outline">
                     <i class="fa fa-download"></i> Telecharger La liste 
@@ -214,7 +209,9 @@
 				<a href="pdfevenement.php"  class="btn btn-lg btn-outline">
 				<i class="fas fa-file-pdf"></i></i> Consulter la liste 
                 </a>
-            </div>
+				<a href="tri.php">Tri Croissant Selon Date </a></li>
+			   	    <a href="tri2.php">Tri Decroissant Selon Date</a></li>
+         </div>
 
 
     </div>

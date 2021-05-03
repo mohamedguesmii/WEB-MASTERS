@@ -47,24 +47,24 @@ include "../controller/evenementC.php";
         $pdf->Ln();
         $pdf->SetFont('Times','B',12);
         $pdf->Cell(20,10,'ID',1,0,'C');
-        $pdf->Cell(40,10,'Type',1,0,'C');
-        $pdf->Cell(75,10,'Description',1,0,'C');
-        $pdf->Cell(50,10,'Lieu',1,0,'C');
-        $pdf->Cell(25,10,'date debut',1,0,'C');
-        $pdf->Cell(25,10,'date fin',1,0,'C');
-        $pdf->Cell(45,10,'Categorie',1,0,'C');
+        $pdf->Cell(50,10,'Type',1,0,'C');
+        $pdf->Cell(80,10,'Description',1,0,'C');
+        $pdf->Cell(25,10,'Lieu',1,0,'C');
+        $pdf->Cell(30,10,'date debut',1,0,'C');
+        $pdf->Cell(30,10,'date fin',1,0,'C');
+        $pdf->Cell(50,10,'Categorie',1,0,'C');
         
     
          
         foreach($listeUsers as $user)
             {              $pdf->Ln();
                          $pdf->Cell(20,10,$user['id'],1,0,'C');
-                         $pdf->Cell(40,10,$user['type'],1,0,'C');
-                         $pdf->Cell(75,10,$user['description'],1,0,'C');
-                         $pdf->Cell(50,10,$user['lieu'],1,0,'C');
-                         $pdf->Cell(25,10,$user['date'],1,0,'C');
-                         $pdf->Cell(25,10,$user['datef'],1,0,'C');
-                         $pdf->Cell(45,10,$user['categorie'],1,0,'C');
+                         $pdf->Cell(50,10,$user['type'],1,0,'C');
+                         $pdf->Cell(80,10,$user['description'],1,0,'C');
+                         $pdf->Cell(25,10,$user['lieu'],1,0,'C');
+                         $pdf->Cell(30,10,$user['date'],1,0,'C');
+                         $pdf->Cell(30,10,$user['datef'],1,0,'C');
+                         $pdf->Cell(50,10,$user['categorie'],1,0,'C');
 
 
 

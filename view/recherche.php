@@ -1,15 +1,29 @@
 <?PHP
-	include "../controller/UtilisateurC.php";
+	include "../controller/PlanteC.php";
 	require_once ("composant/composant.php");
 
-	$utilisateurC=new UtilisateurC();
-	$listeUsers=$utilisateurC->afficherUtilisateurs();
+	
 
-	$list=$utilisateurC->afficherpromoanimaux();
+
+   if(isset($_POST['choix']) )
+    { if  ($_POST['choix']=='type'){
+		$PlantesC=new PlantesC();
+	$allusers =$PlantesC->recherchertype($_POST['Search']) ;
+	}
+
+		if  ($_POST['choix']=='nom'){
+			$PlantesC=new PlantesC();
+        $allusers =$PlantesC->recherchernom($_POST['Search']) ;
+		}
+		
+ 	
+	 
+
+
+
+    
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -30,8 +44,6 @@
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-	<script src="scriptee.js"></script>
-
 </head>
 <body>
 
@@ -119,9 +131,9 @@
 		<ul class="nav menu">
 		<li ><a href="ajouterevenement.php"><em class="fa fa-plus-square">&nbsp;</em>Ajouter Evenement</a></li>
 			<li><a href="evenement.php"><em class="fa fa-book-open">&nbsp;</em> Afficher Evenement</a></li>
-			<li><a href="promoanimaux.php"><em class="fa fa-paw">&nbsp;</em> Promotions animaux</a></li>	
-			<li><a href="promoplantes.php"><em  class="fab fa-pagelines" aria-hidden="true">&nbsp;</em> Promotions Plantes</a></li>
-
+			<li><a href="promoanimaux.php"><em class="fa fa-paw">&nbsp;</em> Promotions animaux</a></li>
+            <li><a href="promoplantes.php"><em  class="fab fa-pagelines" aria-hidden="true">&nbsp;</em> Promotions Plantes</a></li>
+	
 		
 			
 		</div><!--/.row-->
@@ -148,147 +160,90 @@
 
         </div>
   <br>
-         <!-- Bootstrap table  -->
-         <div >
-            <table class="table table-striped table-dark">
-               
-               <tr>
-               <h2>Liste Des Animaux </h2>
-               </tr>
-                    <tr >
-                        <td><b>ID animaux </b> </td>
-						<td><b>Sex</b> </td>
-                        <td><b>type</b></td>
-                        <td><b>age</b></td>
-						<td><b>Prix</b></td>
-						<td><b>Categorie</b></td>
-                        <td><b>Couleur</b></td>
-						<td><b>image</b></td>
-                        <td><b>Ajouter Promotions</b></td>
-						
-
-						
-                    </tr>
-                
-                
-				<?PHP
-				foreach($listeUsers as $user){
-			?>
-           
-				<tr>
-					<td><?PHP echo $user['id_animaux']; ?></td>
-					<td><?PHP echo $user['sex']; ?></td>
-					<td><?PHP echo $user['typee']; ?></td>
-					<td><?PHP echo $user['age']; ?></td>
-					<td><?PHP echo $user['prix']; ?></td>
-					<td><?PHP echo $user['categorie']; ?></td>
-                 	<td><?PHP echo $user['couleur']; ?></td>
-					<td><img src="images/<?= $user['image'] ?>" width = "50" height = "50"></td>
-
-
-					
-					<td>
-						<a href="ajouterpromotions.php?id_animaux=<?PHP echo $user['id_animaux']; ?>"> <img src="https://img.icons8.com/fluent/48/000000/add-property.png"/> </a>
-						
-					</td>
-					
-				</tr>
-			<?PHP
-				}
-			?>
-
-
-              
-            </table>
-            
-        </div>
+        
+        
+        
         <div >
             <table class="table table-striped table-dark">
                
                <tr>
-               <h2>Liste Des Animaux avec Promotions</h2>
+               
+               <h2>Liste Des Plantes avec Promotions</h2>
+               
                </tr>
                     <tr >
 					   
 					   <td><b>ID Promotions </b> </td>
-                        <td><b>ID animaux </b> </td>
-						<td><b>Sex</b> </td>
-            			<td><b>type</b></td>
-                    	<td><b>age</b></td>
-						<td><b>Prix</b></td>
-						<td><b>Categorie</b></td>
-                    	<td><b>Couleur</b></td>
+                        <td><b>ID plantes </b> </td>
+						<td><b>nom</b> </td>
+            			<td><b>longeur</b></td>
+                    	<td><b>prix</b></td>
+						<td><b>type</b></td>
 						<td><b>image</b></td>
-						<td><b>date debut promotions</b></td>
-						<td><b>date fin promotions</b></td>
+						<td><b>Date Debut Promotions</b></td>
+						<td><b>Date Debut Promotions</b></td>
 						<td><b>Solde</b></td>
-                       <td><b>Prix apres Reduction</b></td>
+                        <td><b>Prix apres Reduction</b></td>
 						<td><b>Modifier</b></td>
 						<td><b>Supprimer</b></td>
                     </tr>
                 
                 
 				<?PHP
-				foreach($list as $usr){
-					$prix = $usr['prix'];
-					$prixr= $usr['prix_promotions'];
+
+                foreach($allusers as $usr){ 
+                    $prix = $usr['prix'];
+					$prixr= $usr['prix_promoplante'];
 					$p= $prix *$prixr* 0.01;
 					$pe = $prix - $p;
 			?>
            
 				<tr>
-                    <td><?PHP echo $usr['id_promoanimaux']; ?></td>
-					<td><?PHP echo $usr['id_animaux']; ?></td>
-					<td><?PHP echo $usr['sex']; ?></td>
-					<td><?PHP echo $usr['typee']; ?></td>
-					<td><?PHP echo $usr['age']; ?></td>
+                    <td><?PHP echo $usr['id_promo']; ?></td>
+					<td><?PHP echo $usr['id']; ?></td>
+					<td><?PHP echo $usr['nom']; ?></td>
+					<td><?PHP echo $usr['longeur']; ?></td>
 					<td><?PHP echo $usr['prix']; ?></td>
-					<td><?PHP echo $usr['categorie']; ?></td>
-                    <td><?PHP echo $usr['couleur']; ?></td>
+					<td><?PHP echo $usr['type']; ?></td>
 					<td><img src="images/<?= $usr['image'] ?>" width = "50" height = "50"></td>
 					<td><?PHP echo $usr['dated']; ?></td>
-                    <td><?PHP echo $usr['datef']; ?></td>
-					<td><?PHP echo $usr['prix_promotions']; ?>%</td>
+					<td><?PHP echo $usr['datef']; ?></td>
+					<td><?PHP echo $usr['prix_promoplante']; ?>%</td>
 					<td><?PHP echo $pe ?></td>
 
 					<td>
-						<a href="modifierpromoanimaux.php?id_promoanimaux=<?PHP echo $usr['id_promoanimaux']; ?>"> <img src="https://img.icons8.com/fluent/48/000000/edit-file.png"/> </a>
+						<a href="modifierpromoplante.php?id_promo=<?PHP echo $usr['id_promo']; ?>"> <img src="https://img.icons8.com/fluent/48/000000/edit-file.png"/> </a>
 						
 					</td>
 					<td>
-						<form method="POST" action="supprimerpromotions.php">
+						<form method="POST" action="supprimerpromoplantes.php">
 						<button type="submit" style="background-color:transparent; border-color:transparent;"> 
 						<img src="https://img.icons8.com/color/48/000000/delete-forever.png"/>
                          </button>	
-						<input type="hidden" value=<?PHP echo $usr['id_promoanimaux']; ?> name="id_promoanimaux">
+						<input type="hidden" value=<?PHP echo $usr['id_promo']; ?> name="id_promo">
 						</form>
 					</td>	
 				</tr>
 			<?PHP
-				}
-			?>
+				} }
+           ?>
 
               
             </table>
             
         </div>
 
-        <form method="POST" action="recherche2.php">
-	<select  placeholder="sujet" name="choix" id="choix" >
-              <option>Select</option>
-			  <option>categorie</option>
-              <option>sex</option>
-              </select>
-    <input type="text"  name="Search" name="Search"  placeholder="Search" >
+				
 	
-     <input type="submit" class="btn btn-outline-primary" onclick="return verif3();"></i>
-      </form>	
+
 
     </div>
             </div>
         </div>
     </div>
 	</div>	<!--/.main-->
+	
+	
 	
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

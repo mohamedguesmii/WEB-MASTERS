@@ -211,5 +211,29 @@
             $e->getMessage();
         }
     }
+	 
+	function recherchernom($nom){
+		$sql="SELECT * From promoplante WHERE nom= '$nom' ";
+		$db = config::getConnexion();
+		try{
+		$liste=$db->query($sql);
+		return $liste;
+		}
+		catch (Exception $e){
+			die('Erreur: '.$e->getMessage());
+		}	
+	}
+	
+	function recherchertype($type){
+		$sql="SELECT * From promoplante WHERE type = '$type' ";
+		$db = config::getConnexion();
+		try{
+		$liste=$db->query($sql);
+		return $liste;
+		}
+		catch (Exception $e){
+			die('Erreur: '.$e->getMessage());
+		}	
+	}
 
 	}
