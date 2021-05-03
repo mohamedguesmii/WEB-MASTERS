@@ -13,51 +13,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="style.css" rel="stylesheet">
-    <title>Table</title>
+    <title>Table Commandes</title>
 </head>
-
-
-
 <body>
 
-    <h1>Commandes</h1>
 
-    <hr>
-	
-
-    <table>
-	
-	<tr id="header">
-            <th>ID</th>			
-            <th>ID CLIENT</th>
-            <th>PAIMENT</th>
-            <th>TOTAL</th>
-			
-			
-        </tr>
-  
-	
-  <?PHP
-				foreach($listecommandes as $commandes){
-			?>
-				<tr>
-					<td><?PHP echo $commandes['idCommande']; ?></td>
-					<td><?PHP echo $commandes['idClient']; ?></td>
-					<td><?PHP echo $commandes['paiment']; ?></td>
-					<td><?PHP echo $commandes['montant']; ?></td>
-					
-					
-					
-				</tr>
-				
-			<?PHP
-				}
-			?>
-  
-			
-    </table>
-				
-				
 
 </body>
 
@@ -75,6 +35,7 @@
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
+	
 	
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -133,6 +94,66 @@
 			
 		</div><!--/.row-->
 	</div>	<!--/.main-->
+
+	<body>
+
+    <h1>Commandes</h1>
+
+    <hr>
+	
+<div>
+    <table>
+	
+	<tr id="header">
+            <th>ID</th>			
+            <th>ID CLIENT</th>
+            <th>PAIMENT</th>
+            <th>TOTAL</th>
+			
+			
+        </tr>
+  
+	
+  <?PHP
+				foreach($listecommandes as $commandes){
+			?>
+				<tr>
+					<td><?PHP echo $commandes['idCommande']; ?></td>
+					<td><?PHP echo $commandes['idClient']; ?></td>
+					<td><?PHP echo $commandes['paiment']; ?></td>
+					<td><?PHP echo $commandes['montant']; ?></td>
+					
+					
+					
+				</tr>
+				
+			<?PHP
+				}
+			?>
+  
+			
+    </table>
+</div>
+<div >
+                <a href="pdfevenement.php" download="pdfevenement.php" class="btn btn-lg btn-outline">
+                    <i class="fa fa-download"></i> Telecharger La liste 
+                </a>
+				<a href="pdfevenement.php"  class="btn btn-lg btn-outline">
+				<i class="fas fa-file-pdf"></i></i> 
+                </a>
+				<a href="tri.php">Tri Croissant Selon TOTAL </a></li>
+			   	    <a href="tri2.php">Tri Decroissant Selon TOTAL</a></li>
+         </div>
+
+
+    </div>
+            </div>
+        </div>
+    </div>
+	</div>
+	
+				
+
 	
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
