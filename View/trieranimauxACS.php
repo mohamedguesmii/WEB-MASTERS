@@ -29,6 +29,15 @@
 		
 		<hr>
 		<table border=1 align = 'center'>
+		<td>
+						<a href="trianimaux.php">Tri(DESC)</a>
+						</td>
+						<td>
+						<a href="trieranimauxACS.php">Tri(ASC)</a>
+						</td>
+						<td>
+						<a href="chart.php">Statistique</a>
+						</td>
 			<tr>
 				<th>id</th>
 				<th>sex</th>
@@ -62,12 +71,7 @@
 					<td>
 					<a href="modifieranimaux.php?id=<?PHP echo $user['id']; ?>"> Modifier </a>
 					</td>
-					<td>
-						<a href="trianimaux.php">Tri Prix(DESC)</a>
-						</td>
-						<td>
-						<a href="trieranimauxACS.php">Tri Prix (ASC)</a>
-						</td>
+					
 				</tr>
 			<?PHP
 				}

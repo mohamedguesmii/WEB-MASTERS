@@ -29,6 +29,15 @@
 		
 		<hr>
 		<table border=1 align = 'center'>
+			<td>
+					<a href="trinourriture.php">Tri Prix(DESC)</a>
+					</td>
+					<td>
+						<a href="triernourritureASC.php">Tri Prix(ASC)</a>
+						</td>
+											<td>
+					<a href="chartN.php">Statistique</a>
+					</td>
 			<tr>
 				<th>id</th>
 				<th>nom</th>
@@ -50,6 +59,7 @@
 					<td><?PHP echo $user['prix']; ?></td>
 					<td><?PHP echo $user['categorie']; ?></td>
 					<td><?PHP echo $user['quantity']; ?></td>
+				
 					<td><img src="../images/<?= $user['image'] ?>" width = "150" height = "150"></td>
 					
 					<td>
@@ -63,12 +73,7 @@
 					<a href="modifiernourriture.php?id=<?PHP echo $user['id']; ?>"> Modifier </a>
 						
 					</td>
-					<td>
-					<a href="trinourriture.php">Tri Prix(DESC)</a>
-					</td>
-					<td>
-						<a href="trieranimauxASC.php">Tri Prix(ASC)</a>
-						</td>
+				
 				</tr>
 			<?PHP
 				}

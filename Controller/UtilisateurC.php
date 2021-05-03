@@ -125,7 +125,7 @@
 	class NourritureC {
 		
 		function ajouterNourriture($Nourriture){
-			$sql="INSERT INTO nourriture (nom, prix, categorie, quantity, image) 
+			$sql="INSERT INTO nourriture (nom, prix, categorie, quantity ,image) 
 			VALUES (:nom,:prix,:categorie,:quantity,:image)";
 			$db = config::getConnexion();
 			try{
@@ -137,6 +137,7 @@
 					'categorie' => $Nourriture->getCategorie(),
 					'quantity' => $Nourriture->getQuantity(),
 					'image' => $Nourriture->getImage(),
+					
 				]);			
 			}
 			catch (Exception $e){

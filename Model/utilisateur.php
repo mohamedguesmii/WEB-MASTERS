@@ -71,7 +71,7 @@
 		}
 		
 	}
-	class Nourriture{
+	class Nourriture {
 		private ?int $id = null;
 		private ?string $nom = null;
 		private ?string $prix = null;
@@ -87,6 +87,7 @@
 			$this->prix=$prix;
 			$this->categorie=$categorie;
 			$this->quantity=$quantity;
+			$this->dateexp=$dateexp;
 			$this->image=$image;
 		
 			
@@ -107,6 +108,7 @@
 		function getQuantity(): int{
 			return $this->quantity;
 		}
+		
 		function getImage(): string{
 			return $this->image;
 		}
@@ -125,6 +127,7 @@
 		function setQuantity(int $quantity): void{
 			$this->quantity=$quantity;
 		}
+		
 		function setImage(int $image): void{
 			$this->image=$image;
 		}

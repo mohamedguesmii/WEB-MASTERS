@@ -86,24 +86,40 @@
 
 <center>
 		<table>
-		<td><label>sexe</label></td>
-		<td><input type="texte" name="sex" id="sex"   placeholder="Sexe" required /> </td>
-		</tr>
-		<tr>
-		<td><label>type</label></td>
-		<td><input type="texte" name="typee" id="typee"  placeholder="Type" required /> </td>
-		</tr>
+			<tr>
+		<td> <label for="sex">Sexe </label> </td>
+	<td> <select name="sex" id="sex">
+	<option value="male">male</option>
+	<option value="female">female</option>
+	
+	</select>
+	</td>
+	</tr>
+					<tr>
+		<td> <label for="typee">Race </label> </td>
+	<td> <select name="typee" id="typee">
+	<option value="chiwawa">chiwawa</option>
+	<option value="berger allmend">berger allmend</option>
+	<option value="labrador">labrador</option>
+	<option value="huskey">huskey</option>
+	<option value="siamois">siamois</option>
+	<option value="ragdol">ragdol</option>
+		<option value="Accenteur mouchet">Accenteur mouchet</option>
+	
+	</select>
+	</td>
+	</tr>
 		<tr>
 		<td><label>age</label></td>
-		<td><input type="number" name="age" id="age" placeholder="Age" required /> </td>
+		<td><input type="number" name="age" id="age" Min="1" Max="15" placeholder="Age" required /> </td>
 		</tr>
 		<tr>
 		<td> <label> prix</label> </td>
-	<td> <input type="number" name="prix" id="prix"  placeholder="Prix" required ></td>
+	<td> <input type="number" name="prix" id="prix" min="10" placeholder="Prix" required ></td>
 	</tr>
 	
 		<tr>
-		<td> <label for="categorie">categorie </label> </td>
+		<td> <label for="categorie">Categorie </label> </td>
 	<td> <select name="categorie">
 	<option value="chien">Chien</option>
 	<option value="chat">Chat</option>
@@ -113,8 +129,14 @@
 	</tr>
 	
 		<tr>
-		<td> <label> couleur</label> </td>
-	<td> <input type="text" name="couleur" id="couleur"  placeholder="couleur" required ></td>
+		<td> <label for="couleur">Couleur </label> </td>
+	<td> <select name="couleur" id="couleur">
+	<option value="jaune">jaune</option>
+	<option value="noir">noir</option>
+	<option value="rouge">rouge</option>
+	<option value="bleu">bleu</option>
+	</select>
+	</td>
 	</tr>
 		<tr>
 		<td> <label> Image</label> </td>

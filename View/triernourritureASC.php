@@ -29,6 +29,15 @@
 		
 		<hr>
 		<table border=1 align = 'center'>
+		<td>
+					<a href="trinourriture.php">Tri Prix(DESC)</a>
+					</td>
+										<td>
+					<a href="triernourritureASC.php">Tri Prix(ASC)</a>
+					</td>
+										<td>
+					<a href="chartN.php">Statistique</a>
+					</td>
 			<tr>
 				<th>id</th>
 				<th>nom</th>
@@ -63,12 +72,7 @@
 					<a href="modifiernourriture.php?id=<?PHP echo $user['id']; ?>"> Modifier </a>
 						
 					</td>
-					<td>
-					<a href="trinourriture.php">Tri Prix(DESC)</a>
-					</td>
-										<td>
-					<a href="triernourritureASC.php">Tri Prix(ASC)</a>
-					</td>
+					
 				</tr>
 			<?PHP
 				}

@@ -77,11 +77,11 @@
 		
 		<tr>
 		<td><label>nom</label></td>
-		<td><input type="texte" name="nom" id="nom" placeholder="Nom" required /> </td>
+		<td><input type="texte" name="nom" id="nom" max="30" placeholder="Nom" required /> </td>
 		</tr>
 		<tr>
 		<td><label>prix</label></td>
-		<td><input type="number" name="prix" id="prix"  placeholder="Prix" required /> </td>
+		<td><input type="number" name="prix" id="prix"  min="5" placeholder="Prix" required /> </td>
 		</tr>
 		<tr>
 		<td> <label for="categorie">categorie </label> </td>
@@ -95,7 +95,7 @@
 
 		<tr>
 		<td><label>quantity</label></td>
-		<td><input type="number" name="quantity" id="quantity" placeholder="quantity" required /> </td>
+		<td><input type="number" name="quantity" id="quantity" max="50" min="5" placeholder="quantity" required /> </td>
 		</tr>
 		<tr>
 		<td><label>image</label></td>
