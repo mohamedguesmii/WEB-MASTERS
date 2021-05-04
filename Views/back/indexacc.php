@@ -47,11 +47,26 @@ include_once '../../Controller/accessoiresC.php';
 <div class="row">
 <div class="col-md-4 form-group">    
 <label for="categories">categories:</label>
-        <input name="categories" type="text" class="form-control" placeholder="Tapez votre categorie" required>
+<select name="categories" id="categories" class="form-control"  >
+					     <option value="select">Selectionnez la categorie &emsp;&emsp;&emsp;&emsp;&emsp;</option>
+						 <option> Plantes </option>
+                         <option>  Animaux</option>
+						</select>
     </div>
     <div class="col-md-4 form-group"> 
 	<label for="matiere">matiere:</label>   
-        <input name="matiere" type="text" class="form-control" placeholder="Tapez la matiere" required>
+    <select name="matiere" id="matiere" class="form-control"  >
+					     <option value="select">Selectionnez la matiere animaux &emsp;&emsp;&emsp;&emsp;&emsp;</option>
+						 <option>  collier chien </option>
+                         <option>  panier chien </option>
+                         <option>  harnais chien </option>
+						</select>
+                        <select name="matiere" id="matiere" class="form-control"  >
+					     <option value="select">Selectionnez la matiere plantes &emsp;&emsp;&emsp;&emsp;&emsp;</option>
+						 <option>  greffage plante </option>
+                         <option>  etagere plante </option>
+                         <option>  cache bois plante  </option>
+						</select>
     </div>
 	</div>
 	

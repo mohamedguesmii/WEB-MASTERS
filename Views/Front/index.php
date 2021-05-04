@@ -111,7 +111,7 @@ $liste=$PlanteC->displayPlantes();
 					<div class="col-sm-3">
 						<div class="search_box pull-right">
 						<form action="index.php" method="post">
-							<input type="text" placeholder="Search"/>
+							<input type="text" placeholder="Search" href="search.php" />
 							</form>
 
 
@@ -595,14 +595,13 @@ $liste=$PlanteC->displayPlantes();
 				</ol>
 			</div>
 			<div class="table-responsive cart_info">
-				<table class="table table-condensed">
+				<table class="table table-condensed" >
 					<thead>
 						<tr class="cart_menu">
 							<td class="image">image</td>
-							<td class="description">type</td>
-							<td class="price">prix</td>
+							
 							<td class="quantity">Nom</td>
-							<td class="total">Longueur</td>
+							
 							<td></td>
 						</tr>
 					</thead>
@@ -617,17 +616,13 @@ $liste=$PlanteC->displayPlantes();
 							<td class="cart_product">
 								<a href=""><img src="images/home/<?= $plante->image ?>" alt="" height="300" width="400"></a>
 							</td>
-							<td class="cart_description">
-								<p> ID: <?= $plante->id ?></p>
-							</td>
-							<td class="cart_price">
-								<p><?= $plante->prix ?></p>
-							</td>
+							
+							
 							<td class="cart_quantity">
 							<p><?= $plante->nom ?></p>
 								<td class="cart_product">
-								<p><?= $plante->nom ?></p>	
-								<?= $plante->longeur ?>
+									
+								
 								
 								</div>
 							</td>

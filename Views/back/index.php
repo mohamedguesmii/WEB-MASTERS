@@ -49,19 +49,48 @@ include_once '../../Controller/PlanteC.php';
   
 <div class='container'>
 <div class="row justify-content-center">
-<form class="contact__form" method="post" action="">
-
-
+<form class="contact__form" method="post" action=""  > 
 <div class="col-12 mt-4">   
     </div>
     <div class="row">
     <div class="col-md-4 form-group">    
     <label for="nom">Nom:</label>
-        <input  name="nom" type="text"  Min="5" Max="30"  class="form-control" placeholder="Tapez votre nom" required>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
+                        </div>
+    <select name="type" id="type" class="form-control"  >
+					     <option value="select">Selectionnez nom du plante &emsp;&emsp;&emsp;&emsp;&emsp;</option>
+						 <option>plante ail des ours </option>
+						 <option>plante paquerette </option> 
+						 <option>plante plantain-laneole</option>
+                         <option>plante sureau-noir</option>
+                         <option>plante verte</option>
+                         <option>plante viollettes</option>
+                         <option>plante vivace fleur</option>
+                         <option>plante 1</option>
+                         <option>plante 2</option>
+                         <option>plante 3</option>
+                         <option>plante 4</option>
+						</select>
     </div>
     <div class="col-md-4 form-group"> 
 	<label for="longeur">Longeur:</label>   
-        <input name="longeur" type="text" class="form-control" placeholder="Tapez la longeur" required>
+    <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
+                        </div>
+    <select name="longeur" id="longeur" class="form-control"  >
+					     <option value="select">Selectionnez la longueur de plante &emsp;&emsp;&emsp;&emsp;&emsp;</option>
+						 <option>0.5 M </option>
+						 <option>1 M </option> 
+						 <option>1.5 M</option>
+                         <option>2 M</option>
+                         <option>2.5 M</option>
+                         <option>3 M</option>
+                         <option>3.5 M</option>
+                         <option>4 M</option>
+                         <option>4.5 M</option>
+                         <option>5 M</option>
+						</select>
     </div>
 	</div>
 	
@@ -74,7 +103,18 @@ include_once '../../Controller/PlanteC.php';
 	
     <div class="col-md-4 form-group">
     <label for="type">type:</label>
-        <input name="type" type="text" class="form-control" placeholder="Tapez le type" required>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class="fas fa-book" color="rouge"></i></div>
+                        </div>
+    
+    <select name="type" id="type" class="form-control"  >
+					     <option value="select">Selectionnez type de plante &emsp;&emsp;&emsp;&emsp;&emsp;</option>
+						 <option>Coreopsis </option>
+						 <option>Herbes </option> 
+						 <option>Forgéres</option>
+                         <option>garras</option>
+                         <option>graminés</option>
+						</select>
     </div>
 	</div>
 	<div class="row">
