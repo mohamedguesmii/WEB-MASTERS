@@ -317,7 +317,7 @@
                             Close
                         </button>
 						<div class="col-2">
-      	             	<a href="login.php"   class="btn btn-default"> </i>Participer</a>
+      	             	<a href="#" data-toggle="modal" data-target="#add"  class="btn btn-default"> </i>Participer</a>
       					</div>
 					</td>
 							
@@ -379,7 +379,7 @@
                             Close
                         </button>
 						<div class="col-2">
-      	             	<a href="login.php"    class="btn btn-default"> </i>Participer</a>
+      	             	<a href="#" data-toggle="modal" data-target="#add2"  class="btn btn-default"> </i>Participer</a>
       					</div>
 					</td>
 							
@@ -440,7 +440,7 @@
                             Close
                         </button>
 						<div class="col-2">
-      	             	<a href="login.php"   class="btn btn-default"> </i>Participer</a>
+      	             	<a href="#" data-toggle="modal" data-target="#add3"  class="btn btn-default"> </i>Participer</a>
       					</div>
 					</td>
 							
@@ -653,10 +653,128 @@
 		
 	</footer><!--/Footer-->
 	
+	<!-- Add Product Modal start -->
 	
-
+<div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Valider Participation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	  
+        <form id="add-product-form" action="ajoutertestt.php" method="POST">
+        	<div class="row">
+        		<div class="col-12">
+        			<div class="form-group">
+		        		<label>id</label>
+		        		<input type="text" name="id"  id="id"  value="<?php echo $us['id']; ?>" class="form-control"  readonly>
+		        	</div>
+        		</div>
+        		
+            <div class="col-12">
+              <div class="form-group">
+                <label>Nombre des Participant</label>
+                <input type="number" name="nbre_participant" id="nbre_participant" class="form-control" placeholder="Entrer le Nombres des Participants" min="1" max="10" required>
+              </div>
+            </div>
+        		</div>
+        		<div class="col-12">
+				<input type="submit" value="Envoyer"> 
+				        		</div>
+        	</div>
+        	
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Add Product Modal end -->
+ 
+ 	<!-- Add 2 Modal start -->
 	
+<div class="modal fade" id="add2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Valider Participation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	  
+        <form id="add-product-form" action="ajoutertestt.php" method="POST">
+        	<div class="row">
+        		<div class="col-12">
+        			<div class="form-group">
+		        		<label>id</label>
+		        		<input type="text" name="id"  id="id"  value="<?php echo $uss['id']; ?>" class="form-control"  readonly>
+		        	</div>
+        		</div>
+        		
+            <div class="col-12">
+              <div class="form-group">
+                <label>Nombre des Participant</label>
+                <input type="number" name="nbre_participant" id="nbre_participant" class="form-control" placeholder="Entrer le Nombres des Participants"  min="1" max="10" required>
+              </div>
+            </div>
+        		</div>
+        		<div class="col-12">
+				<input type="submit" value="Envoyer"> 
+				        		</div>
+        	</div>
+        	
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Add 2  Modal end -->
 
+<!-- Add 3 Modal start -->
+	
+<div class="modal fade" id="add3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Valider Participation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	  
+        <form id="add-product-form" action="ajoutertestt.php" method="POST">
+        	<div class="row">
+        		<div class="col-12">
+        			<div class="form-group">
+		        		<label>id</label>
+		        		<input type="text" name="id"  id="id"  value="<?php echo $u['id']; ?>" class="form-control"  readonly>
+		        	</div>
+        		</div>
+        		
+            <div class="col-12">
+              <div class="form-group">
+                <label>Nombre des Participant</label>
+                <input type="number" name="nbre_participant" id="nbre_participant" class="form-control" placeholder="Entrer le Nombres des Participants"  min="1" max="10" required>
+              </div>
+            </div>
+        		</div>
+        		<div class="col-12">
+				<input type="submit" value="Envoyer"> 
+				        		</div>
+        	</div>
+        	
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Add 3  Modal end -->
 
   
     <script src="js/jquery.js"></script>
