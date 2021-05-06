@@ -20,6 +20,30 @@
             die('Erreur: '.$e->getMessage());
         }
     }
+	function trierAnimaux(){
+			
+			$sql="SELECT * FROM animaux ORDER BY prix DESC";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
+				function trierAnimauxASC(){
+			
+			$sql="SELECT * FROM animaux ORDER BY prix ASC";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
 
 		
 		function ajouterUtilisateur($Utilisateur){
@@ -80,7 +104,7 @@
 						age = :age,
 						prix = :prix,
 						categorie = :categorie,
-						couleur = :couleur
+						couleur = :couleur,
 						image = :image
 					
 					WHERE id_animaux = :id_animaux'

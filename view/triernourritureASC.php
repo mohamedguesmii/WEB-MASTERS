@@ -1,11 +1,10 @@
 <?PHP
-		include "../controller/UtilisateurC.php";
+	include "../controller/UtilisateurC.php";
 
-        $utilisateurC=new NourritureC();
-        $listeUsers=$utilisateurC->afficherNourriture();
+	$utilisateurC=new NourritureC();
+	$listeUsers=$utilisateurC->trierNourritureASC();
+
 ?>
-
-
 
 <!DOCTYPE html>
 <html>

@@ -246,6 +246,15 @@
 			?>
               
            </table>
+		   <td>
+					<a href="trianimaux.php">Tri Prix(DESC)</a>
+					</td>
+					<td>
+						<a href="trieranimauxACS.php">Tri Prix(ASC)</a>
+						</td>
+											<td>
+					<a href="chart.php">Statistique</a>
+					</td>
         </div>
 		
 		

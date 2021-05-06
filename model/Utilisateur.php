@@ -71,5 +71,69 @@
 		}
 		
 	}
+	class Nourriture {
+		private ?int $id = null;
+		private ?string $nom = null;
+		private ?string $prix = null;
+		private ?string $categorie = null;
+		private ?int $quantity = null;
+		private ?string $image = null;
+		
+
+		
+		function __construct(string $nom, int $prix, string $categorie, int $quantity, string $image){
+			
+			$this->nom=$nom;
+			$this->prix=$prix;
+			$this->categorie=$categorie;
+			$this->quantity=$quantity;
+			
+			$this->image=$image;
+		
+			
+		}
+		
+		function getId(): int{
+			return $this->id;
+		}
+		function getNom(): string{
+			return $this->nom;
+		}
+		function getPrix(): int{
+			return $this->prix;
+		}
+		function getCategorie(): string{
+			return $this->categorie;
+		}
+		function getQuantity(): int{
+			return $this->quantity;
+		}
+		
+		function getImage(): string{
+			return $this->image;
+		}
+		
+		
+
+		function setNom(string $nom): void{
+			$this->nom=$nom;
+		}
+		function setPrix(string $prix): void{
+			$this->prix=$prix;
+		}
+		function setCategorie(string $categorie): void{
+			$this->categorie=$categorie;
+		}
+		function setQuantity(int $quantity): void{
+			$this->quantity=$quantity;
+		}
+		
+		function setImage(int $image): void{
+			$this->image=$image;
+		}
+		
+		
+	}
+	
 
 ?>

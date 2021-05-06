@@ -1,11 +1,10 @@
 <?PHP
-		include "../controller/UtilisateurC.php";
+	include "../controller/UtilisateurC.php";
 
-        $utilisateurC=new NourritureC();
-        $listeUsers=$utilisateurC->afficherNourriture();
+	$utilisateurC=new UtilisateurC();
+	$listeUsers=$utilisateurC->trierAnimaux();
+
 ?>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -202,13 +201,16 @@
                
             <tr>
 				<th>id</th>
-				<th>nom</th>
+				<th>sex</th>
+				<th>type</th>
+				<th>age</th>
 				<th>prix</th>
 				<th>categorie</th>
-				<th>quantity</th>
+				<th>couleur</th>
 				<th>image</th>
-				<th>Modifier</th>
-				<th>Supprimer</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+			
 			</tr>
                 
                 
@@ -216,29 +218,27 @@
 				foreach($listeUsers as $user){
 			?>
 				<tr>
-					<td><?PHP echo $user['id']; ?></td>
-					<td><?PHP echo $user['nom']; ?></td>
+					<td><?PHP echo $user['id_animaux']; ?></td>
+					<td><?PHP echo $user['sex']; ?></td>
+					<td><?PHP echo $user['typee']; ?></td>
+					<td><?PHP echo $user['age']; ?></td>
 					<td><?PHP echo $user['prix']; ?></td>
 					<td><?PHP echo $user['categorie']; ?></td>
-					<td><?PHP echo $user['quantity']; ?></td>
-				
+					<td><?PHP echo $user['couleur']; ?></td>
 					<td><img src="images/<?= $user['image'] ?>" width = "50" height = "50"></td>
-					<td>
-					<a href="modifiernourriture.php?id=<?PHP echo $user['id']; ?>"><img src="https://img.icons8.com/fluent/48/000000/edit-file.png"/> </a></a>
-						
-					</td>
 					
 					<td>
-						<form method="POST" action="supprimernourriture.php">
-							<button type="submit" name="supprimer" value="supprimer" style="background-color:transparent; border-color:transparent;"> 
+					<a href="modifieranimaux.php?id_animaux=<?PHP echo $user['id_animaux']; ?>"><img src="https://img.icons8.com/fluent/48/000000/edit-file.png"/> </a></a>
+					</td>
+					<td>
+						<form method="POST" action="supprimeranimaux.php">
+                        <button type="submit" name="supprimer" value="supprimer" style="background-color:transparent; border-color:transparent;"> 
 						<img src="https://img.icons8.com/color/48/000000/delete-forever.png"/>
                          </button>
-					
-						<input type="hidden" value=<?PHP echo $user['id']; ?> name="id">
+						<input type="hidden" value=<?PHP echo $user['id_animaux']; ?> name="id_animaux">
 						</form>
 					</td>
-					
-				
+						
 				</tr>
 			<?PHP
 				}
@@ -246,13 +246,13 @@
               
            </table>
 		   <td>
-					<a href="trinourriture.php">Tri Prix(DESC)</a>
+					<a href="trianimaux.php">Tri Prix(DESC)</a>
 					</td>
 					<td>
-						<a href="triernourritureASC.php">Tri Prix(ASC)</a>
+						<a href="trieranimauxACS.php">Tri Prix(ASC)</a>
 						</td>
 											<td>
-					<a href="chartN.php">Statistique</a>
+					<a href="chart.php">Statistique</a>
 					</td>
         </div>
 		

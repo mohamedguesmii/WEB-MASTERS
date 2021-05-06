@@ -1,15 +1,18 @@
 <?PHP
-		include "../controller/UtilisateurC.php";
+	$con = mysqli_connect("localhost","root","","webmaster");
+	if($con){
+		echo "connected";
+	}
 
-        $utilisateurC=new NourritureC();
-        $listeUsers=$utilisateurC->afficherNourriture();
+
+
 ?>
 
 
-
-<!DOCTYPE html>
 <html>
-<head>
+  <head>
+  <center>
+  
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Lumino - Dashboard</title>
@@ -25,9 +28,41 @@
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-</head>
-<body>
 
+  
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['nom', 'quantity'],
+		  <?php
+		  $sql="SELECT * FROM nourriture";
+		  $fire = mysqli_query($con,$sql);
+		  while($result = mysqli_fetch_assoc($fire)){
+			   echo"['".$result['nom']."',".$result['quantity']."],";
+		  }
+		  
+		  ?>
+      
+        ]);
+
+        var options = {
+          title: 'NOM DES NOURRITURE PAR QUANTITY'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+	<a href="affichernourriture.php">Afficher Nourriture</a>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -98,7 +133,7 @@
 				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
 			</div>
 			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Moetaz</div>
+				<div class="profile-usertitle-name">Chedi</div>
 				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
 			</div>
 			<div class="clear"></div>
@@ -109,7 +144,7 @@
 				<input type="text" class="form-control" placeholder="Search">
 			</div>
 		</form>
-		<ul class="nav menu">
+			<ul class="nav menu">
 			<li class="nav-item">
                                             <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu1" aria-controls="submenu1"><i class="fas fa-paw"></i>&nbsp;Gestion Animaux</a>
                                             <div id="submenu1" class="collapse submenu" style="">
@@ -173,96 +208,6 @@
 
 		</ul>
 		</div><!--/.row-->
-		<div class="container">
-        <div class="row">
-            <div class="col-md-12"></div>
-        </div>
-    </div>
-    <div class="container"> 
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-6">
-                <div class="container text-center">
-             <div class="container">
-        <div class="row">
-            <div class="col-md-12"></div>
-        </div>
-        <div class="d-flex justify-content-center">
-        	<br> <div class="col-md-5"></div>
-            
-
-                
-            </form>
-
-        </div>
-  <br>
-         <!-- Bootstrap table  -->
-         <div >
-            <table class="table table-striped table-dark">
-               
-            <tr>
-				<th>id</th>
-				<th>nom</th>
-				<th>prix</th>
-				<th>categorie</th>
-				<th>quantity</th>
-				<th>image</th>
-				<th>Modifier</th>
-				<th>Supprimer</th>
-			</tr>
-                
-                
-            <?PHP
-				foreach($listeUsers as $user){
-			?>
-				<tr>
-					<td><?PHP echo $user['id']; ?></td>
-					<td><?PHP echo $user['nom']; ?></td>
-					<td><?PHP echo $user['prix']; ?></td>
-					<td><?PHP echo $user['categorie']; ?></td>
-					<td><?PHP echo $user['quantity']; ?></td>
-				
-					<td><img src="images/<?= $user['image'] ?>" width = "50" height = "50"></td>
-					<td>
-					<a href="modifiernourriture.php?id=<?PHP echo $user['id']; ?>"><img src="https://img.icons8.com/fluent/48/000000/edit-file.png"/> </a></a>
-						
-					</td>
-					
-					<td>
-						<form method="POST" action="supprimernourriture.php">
-							<button type="submit" name="supprimer" value="supprimer" style="background-color:transparent; border-color:transparent;"> 
-						<img src="https://img.icons8.com/color/48/000000/delete-forever.png"/>
-                         </button>
-					
-						<input type="hidden" value=<?PHP echo $user['id']; ?> name="id">
-						</form>
-					</td>
-					
-				
-				</tr>
-			<?PHP
-				}
-			?>
-              
-           </table>
-		   <td>
-					<a href="trinourriture.php">Tri Prix(DESC)</a>
-					</td>
-					<td>
-						<a href="triernourritureASC.php">Tri Prix(ASC)</a>
-						</td>
-											<td>
-					<a href="chartN.php">Statistique</a>
-					</td>
-        </div>
-		
-		
-
-
-    </div>
-            </div>
-        </div>
-    </div>
 	</div>	<!--/.main-->
 	
 	<script src="js/jquery-1.11.1.min.js"></script>
@@ -284,6 +229,7 @@
 	});
 };
 	</script>
-		
-</body>
+	</form>
+		</center>
+  </body>
 </html>
