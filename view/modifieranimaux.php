@@ -1,69 +1,53 @@
 <?php
+	include "../Controller/UtilisateurC.php";
+	include_once '../Model/utilisateur.php';
 
-	include "../controller/UtilisateurC.php";
-	include_once '../Model/Utilisateur.php';
-
-	$UtilisateurC = new UtilisateurC();
+	$utilisateurC = new UtilisateurC();
 	$error = "";
 	
 	if (
-		isset($_POST["id_animaux"]) && 
 		isset($_POST["sex"]) && 
         isset($_POST["typee"]) &&
-        isset($_POST["age"]) &&
+        isset($_POST["age"]) && 
         isset($_POST["prix"]) &&
-        isset($_POST["categorie"]) &&
-		isset($_POST["couleur"])  &&
-		isset($_POST["image"])  &&
-		isset($_POST["dated"])  &&
-		isset($_POST["datef"])  &&
+		isset($_POST["categorie"]) &&
+		isset($_POST["couleur"]) &&
+		isset($_POST["image"])
 
-        isset($_POST["prix_promotions"])  
+        
 	){
 		if (
-			!empty($_POST["id_animaux"]) && 
-			!empty($_POST["sex"]) && 
+            !empty($_POST["sex"]) && 
             !empty($_POST["typee"]) && 
             !empty($_POST["age"]) && 
             !empty($_POST["prix"]) &&
             !empty($_POST["categorie"]) &&
-			!empty($_POST["couleur"]) &&
-			!empty($_POST["image"]) &&
-			!empty($_POST["dated"]) &&
-			!empty($_POST["datef"]) &&
-            !empty($_POST["prix_promotions"])
-
+             !empty($_POST["couleur"]) &&
+              !empty($_POST["image"])			 
+            
         ) {
-            $user = new promoanimaux(
-				$_POST['id_animaux'],
-				$_POST['sex'],
-                $_POST['typee'],
-                $_POST['age'], 
+            $user = new Utilisateur(
+                $_POST['sex'],
+                $_POST['typee'], 
+                $_POST['age'],
                 $_POST['prix'],
-                $_POST['categorie'],
+				$_POST['categorie'],
 				$_POST['couleur'],
-				$_POST['image'],
-				$_POST['dated'],
-				$_POST['datef'],
-                $_POST['prix_promotions']
-
+				$_POST['image']
+                
 			);
 			
-            $UtilisateurC->ajouterpromoanimaux($user);
-			header('Location:promoanimaux.php');
-
+            $utilisateurC->modifierAnimaux($user, $_GET['id_animaux']);
+            header('refresh:5;url=afficheranimaux.php');
         }
         else
             $error = "Missing information";
 	}
 
 ?>
-
-
-<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
+	<head>
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Lumino - Dashboard</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -78,11 +62,112 @@
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-	<script src="css/scripts.js"></script>
-</head>
-<body>
+	<link rel="stylesheet" href="style.css">
+		<title>Modifier Animaux</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
 
-	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+	<body>
+        <hr>
+        
+        <div id="error">
+            <?php echo $error; ?>
+        </div>
+		
+		<?php
+			if (isset($_GET['id_animaux'])){
+				$user = $utilisateurC->recupererAnimaux($_GET['id_animaux']);
+				
+		?>
+		<form action="" method="POST">
+            <table align="center">
+                <tr>
+                    
+                    <td>
+                        <label for="id_animaux">Id:
+                        </label>
+                    </td>
+                    <td>
+						<input type="text" name="id_animaux" id="id_animaux"  value = "<?php echo $user['id_animaux']; ?>" readonly>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="sex">Sexe:
+						</label>
+					</td>
+					<td>
+						<input type="text" name="sex" id="sex" maxlength="20" value = "<?php echo $user['sex']; ?>">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="typee">Type::
+						</label>
+					</td>
+					<td>
+						<input type="text" name="typee" id="typee" maxlength="20" value = "<?php echo $user['typee']; ?>">
+					</td>
+				</tr>
+                <tr>
+                    <td>
+                        <label for="prix">Prix:
+                        </label>
+                    </td>
+                    <td><input type="number" name="prix" id="prix" maxlength="20" value = "<?php echo $user['prix']; ?>"></td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <label for="age">Age:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="number" name="age" id="age"  value = "<?php echo $user['age']; ?>">
+                    </td>
+                </tr>
+				<tr>
+		            <td> <label for="categorie">categorie </label> </td>
+	                    <td>    <select name="categorie">
+	                                 <option value="chien">Chien</option>
+	                                 <option value="chat">Chat</option>
+	                                 <option value="oiseau">Oiseau</option>
+	                    </td>   </select>
+	                </td>
+	            </tr>
+                 
+				
+				<tr>
+                    <td>
+                        <label for="couleur">Couleur:
+                        </label>
+                    </td>
+                    <td>
+                        <input type="text" name="couleur" id="couleur"  value = "<?php echo $user['couleur']; ?>">
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        <label for="image">Image
+                        </label>
+                    </td>
+                    <td>
+                        <input type="file" name="image" id="image"  value = "<?php echo $user['image']; ?>">
+                    </td>
+                </tr>
+                <tr>
+               
+                    <td>
+                        <input type="submit" value="Modifier" name = "modifer" href="afficheranimaux.php"> 
+                    </td>
+                    <td>
+                        <input type="reset" value="Annuler" >
+                    </td>
+					
+                </tr>
+            </table>
+			<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse"><span class="sr-only">Toggle navigation</span>
@@ -152,7 +237,7 @@
 				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
 			</div>
 			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Moetaz</div>
+				<div class="profile-usertitle-name">Chedi</div>
 				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
 			</div>
 			<div class="clear"></div>
@@ -163,7 +248,7 @@
 				<input type="text" class="form-control" placeholder="Search">
 			</div>
 		</form>
-		<ul class="nav menu">
+        <ul class="nav menu">
 			<li class="nav-item">
                                             <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu1" aria-controls="submenu1"><i class="fas fa-paw"></i>&nbsp;Gestion Animaux</a>
                                             <div id="submenu1" class="collapse submenu" style="">
@@ -226,163 +311,13 @@
 
 
 		</ul>
-			
 		</div><!--/.row-->
-		</div><!--/.row-->
-		<div>  
-		<td>aa</td>
-		<td>aa</td>
-		<td>aa</td>
-		<td>aa</td>
-        <div id="error">
-            <?php echo $error; ?>
-        </div>
-
-    	<?php
-			if (isset($_GET['id_animaux'])){
-				$user = $UtilisateurC->recupereretat($_GET['id_animaux']);
-				
-		?>
-		<form action="" method="POST">
-            <table border="1" align="center">
-
-                <tr>
-                    <td rowspan='11' colspan='1'> </td>
-                    <td>
-                        <label for="id_animaux">id_animaux:
-                        </label>
-                    </td>
-                    <td><input type="text" name="id_animaux" id="id_animaux" value = "<?php echo $user['id_animaux']; ?>" maxlength="20" readonly></td>
-                </tr>
-               
-                <tr>
-                    <td>
-                        <label for="sex">sex:
-                        </label>
-                    </td>
-                    <td><input type="text" name="sex" id="sex" value = "<?php echo $user['sex']; ?>" maxlength="20" readonly></td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <label for="typee">typee:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="typee" value = "<?php echo $user['typee']; ?>" id="typee" readonly>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td>
-                        <label for="age">age:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="age" id="age" value = "<?php echo $user['age']; ?>" readonly>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td>
-                        <label for="prix">prix:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="prix" id="prix" value = "<?php echo $user['prix']; ?>" readonly>
-						                   
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td>
-                        <label for="categorie">Categorie:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="categorie" id="categorie" value = "<?php echo $user['categorie']; ?>" readonly	>
-                    </td>
-                    
-                </tr>
-                 
-                <tr>
-                    <td>
-                        <label for="couleur">couleur:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="couleur" id="couleur" value = "<?php echo $user['couleur']; ?>" readonly>
-                    </td>
-                    
-                </tr>
-				<tr>
-                    <td>
-                        <label for="image">image:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="image" id="image"  value = "<?php echo $user['image']; ?>" readonly>
-
-                    </td>
-                    
-                </tr>
-
-				<tr>
-                    <td>
-                        <label for="dated">Date debut promotion:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="date" name="dated" id="dated" required >
-
-                    </td>
-                    
-                </tr>
-				<tr>
-                    <td>
-                        <label for="datef">Date fin promotion:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="date" name="datef" id="datef" required >
-
-                    </td>
-                    
-                </tr>
-
-                <tr>
-                    <td>
-                        <label for="prix_promotions">Solde:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="number" name="prix_promotions" id="prix_promotions"   min="1" max="100" required>
-                    </td>
-                    
-                </tr>
-                
-               
-                
-                <tr>
-                    <td></td>
-                    <td>
-                        <input type="submit" value="Envoyer" onclick="return verif();"> 
-                    </td>
-                    <td>
-                        <input type="reset" value="Annuler" >
-                    </td>
-                </tr>
-            </table>
-        </form>
-		<?php
-		}
-		?>
-
-		</div>
 	</div>	<!--/.main-->
-	
-	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
 	<script src="js/jquery-1.11.1.min.js"></script>
+	
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/chart.min.js"></script>
 	<script src="js/chart-data.js"></script>
@@ -400,8 +335,10 @@
 	scaleFontColor: "#c5c7cc"
 	});
 };
-	</script>
-		
-</body>
-</html>
 
+        </form>
+		<?php
+		}
+		?>
+	</body>
+</html>

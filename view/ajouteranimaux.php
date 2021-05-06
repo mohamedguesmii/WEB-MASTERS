@@ -1,66 +1,54 @@
 <?php
+    include_once '../Model/utilisateur.php';
+    include_once '../Controller/UtilisateurC.php';
 
-	include "../controller/UtilisateurC.php";
-	include_once '../Model/Utilisateur.php';
+    $error = "";
 
-	$UtilisateurC = new UtilisateurC();
-	$error = "";
-	
-	if (
-		isset($_POST["id_animaux"]) && 
-		isset($_POST["sex"]) && 
+    // create user
+    $user = null;
+
+    // create an instance of the controller
+    $userC = new UtilisateurC();
+    if (
+        isset($_POST["sex"]) && 
         isset($_POST["typee"]) &&
-        isset($_POST["age"]) &&
+        isset($_POST["age"]) && 
         isset($_POST["prix"]) &&
-        isset($_POST["categorie"]) &&
-		isset($_POST["couleur"])  &&
-		isset($_POST["image"])  &&
-		isset($_POST["dated"])  &&
-		isset($_POST["datef"])  &&
-
-        isset($_POST["prix_promotions"])  
-	){
-		if (
-			!empty($_POST["id_animaux"]) && 
-			!empty($_POST["sex"]) && 
+		isset($_POST["categorie"]) &&
+		isset($_POST["couleur"]) &&
+		isset($_POST["image"]))
+		
+        
+     {
+        if (
+            !empty($_POST["sex"]) && 
             !empty($_POST["typee"]) && 
             !empty($_POST["age"]) && 
             !empty($_POST["prix"]) &&
-            !empty($_POST["categorie"]) &&
+			!empty($_POST["categorie"]) &&
 			!empty($_POST["couleur"]) &&
-			!empty($_POST["image"]) &&
-			!empty($_POST["dated"]) &&
-			!empty($_POST["datef"]) &&
-            !empty($_POST["prix_promotions"])
-
+            !empty($_POST["image"])
         ) {
-            $user = new promoanimaux(
-				$_POST['id_animaux'],
-				$_POST['sex'],
-                $_POST['typee'],
-                $_POST['age'], 
+            $user = new Utilisateur(
+                $_POST['sex'],
+                $_POST['typee'], 
+                $_POST['age'],
                 $_POST['prix'],
-                $_POST['categorie'],
+				$_POST['categorie'],
 				$_POST['couleur'],
 				$_POST['image'],
-				$_POST['dated'],
-				$_POST['datef'],
-                $_POST['prix_promotions']
-
-			);
-			
-            $UtilisateurC->ajouterpromoanimaux($user);
-			header('Location:promoanimaux.php');
-
+				
+                
+            );
+            $userC->ajouterUtilisateur($user);
+            header('Location:afficheranimaux.php');
         }
         else
             $error = "Missing information";
-	}
+    }
 
+    
 ?>
-
-
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -71,17 +59,92 @@
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-   
+   <link rel="stylesheet" href="style.css">
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 	<!--[if lt IE 9]>
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-	<script src="css/scripts.js"></script>
 </head>
-<body>
 
+    <body>
+	 <center>
+       
+		</center>
+        <hr>
+        
+        <div id="error">
+            <?php echo $error; ?>
+        </div>
+	<form name="f1" action="" method="POST">
+
+<center>
+		<table>
+			<tr>
+		<td> <label for="sex">Sexe </label> </td>
+	<td> <select name="sex" id="sex">
+	<option value="male">male</option>
+	<option value="female">female</option>
+	
+	</select>
+	</td>
+	</tr>
+					<tr>
+		<td> <label for="typee">Race </label> </td>
+	<td> <select name="typee" id="typee">
+	<option value="chiwawa">chiwawa</option>
+	<option value="berger allmend">berger allmend</option>
+	<option value="labrador">labrador</option>
+	<option value="huskey">huskey</option>
+	<option value="siamois">siamois</option>
+	<option value="ragdol">ragdol</option>
+		<option value="Accenteur mouchet">Accenteur mouchet</option>
+	
+	</select>
+	</td>
+	</tr>
+		<tr>
+		<td><label>age</label></td>
+		<td><input type="number" name="age" id="age" Min="1" Max="15" placeholder="Age" required /> </td>
+		</tr>
+		<tr>
+		<td> <label> prix</label> </td>
+	<td> <input type="number" name="prix" id="prix" min="10" placeholder="Prix" required ></td>
+	</tr>
+	
+		<tr>
+		<td> <label for="categorie">Categorie </label> </td>
+	<td> <select name="categorie">
+	<option value="chien">Chien</option>
+	<option value="chat">Chat</option>
+	<option value="oiseau">Oiseau</option>
+	</select>
+	</td>
+	</tr>
+	
+		<tr>
+		<td> <label for="couleur">Couleur </label> </td>
+	<td> <select name="couleur" id="couleur">
+	<option value="jaune">jaune</option>
+	<option value="noir">noir</option>
+	<option value="rouge">rouge</option>
+	<option value="bleu">bleu</option>
+	</select>
+	</td>
+	</tr>
+		<tr>
+		<td> <label> Image</label> </td>
+	<td> <input type="file" name="image" id="image"  placeholder="image" required ></td>
+	</tr>
+		
+	
+		
+		</table>
+		</center>
+		<center>
+		<input type="submit" value="submit">
+</center>
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -152,7 +215,7 @@
 				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
 			</div>
 			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Moetaz</div>
+				<div class="profile-usertitle-name">Chedi</div>
 				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
 			</div>
 			<div class="clear"></div>
@@ -163,7 +226,7 @@
 				<input type="text" class="form-control" placeholder="Search">
 			</div>
 		</form>
-		<ul class="nav menu">
+        <ul class="nav menu">
 			<li class="nav-item">
                                             <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu1" aria-controls="submenu1"><i class="fas fa-paw"></i>&nbsp;Gestion Animaux</a>
                                             <div id="submenu1" class="collapse submenu" style="">
@@ -226,161 +289,8 @@
 
 
 		</ul>
-			
 		</div><!--/.row-->
-		</div><!--/.row-->
-		<div>  
-		<td>aa</td>
-		<td>aa</td>
-		<td>aa</td>
-		<td>aa</td>
-        <div id="error">
-            <?php echo $error; ?>
-        </div>
-
-    	<?php
-			if (isset($_GET['id_animaux'])){
-				$user = $UtilisateurC->recupereretat($_GET['id_animaux']);
-				
-		?>
-		<form action="" method="POST">
-            <table border="1" align="center">
-
-                <tr>
-                    <td rowspan='11' colspan='1'> </td>
-                    <td>
-                        <label for="id_animaux">id_animaux:
-                        </label>
-                    </td>
-                    <td><input type="text" name="id_animaux" id="id_animaux" value = "<?php echo $user['id_animaux']; ?>" maxlength="20" readonly></td>
-                </tr>
-               
-                <tr>
-                    <td>
-                        <label for="sex">sex:
-                        </label>
-                    </td>
-                    <td><input type="text" name="sex" id="sex" value = "<?php echo $user['sex']; ?>" maxlength="20" readonly></td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <label for="typee">typee:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="typee" value = "<?php echo $user['typee']; ?>" id="typee" readonly>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td>
-                        <label for="age">age:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="age" id="age" value = "<?php echo $user['age']; ?>" readonly>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td>
-                        <label for="prix">prix:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="prix" id="prix" value = "<?php echo $user['prix']; ?>" readonly>
-						                   
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td>
-                        <label for="categorie">Categorie:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="categorie" id="categorie" value = "<?php echo $user['categorie']; ?>" readonly	>
-                    </td>
-                    
-                </tr>
-                 
-                <tr>
-                    <td>
-                        <label for="couleur">couleur:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="couleur" id="couleur" value = "<?php echo $user['couleur']; ?>" readonly>
-                    </td>
-                    
-                </tr>
-				<tr>
-                    <td>
-                        <label for="image">image:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="image" id="image"  value = "<?php echo $user['image']; ?>" readonly>
-
-                    </td>
-                    
-                </tr>
-
-				<tr>
-                    <td>
-                        <label for="dated">Date debut promotion:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="date" name="dated" id="dated" required >
-
-                    </td>
-                    
-                </tr>
-				<tr>
-                    <td>
-                        <label for="datef">Date fin promotion:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="date" name="datef" id="datef" required >
-
-                    </td>
-                    
-                </tr>
-
-                <tr>
-                    <td>
-                        <label for="prix_promotions">Solde:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="number" name="prix_promotions" id="prix_promotions"   min="1" max="100" required>
-                    </td>
-                    
-                </tr>
-                
-               
-                
-                <tr>
-                    <td></td>
-                    <td>
-                        <input type="submit" value="Envoyer" onclick="return verif();"> 
-                    </td>
-                    <td>
-                        <input type="reset" value="Annuler" >
-                    </td>
-                </tr>
-            </table>
-        </form>
-		<?php
-		}
-		?>
-
-		</div>
 	</div>	<!--/.main-->
-	
 	
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -400,8 +310,9 @@
 	scaleFontColor: "#c5c7cc"
 	});
 };
+
 	</script>
+	</form>
 		
 </body>
 </html>
-

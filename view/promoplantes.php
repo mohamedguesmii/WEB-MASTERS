@@ -117,10 +117,39 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			
 			<li class="nav-item">
-                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu1" aria-controls="submenu1"><i class="fas fa-calendar-check"></i>&nbsp;Gestion Evenement</a>
+                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu1" aria-controls="submenu1"><i class="fas fa-paw"></i>&nbsp;Gestion Animaux</a>
                                             <div id="submenu1" class="collapse submenu" style="">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="ajouteranimaux.php"> <em class="fa fa-plus-square">&nbsp;</em>Ajouter Animaux</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="afficheranimaux.php"> <em class="fa fa-book-open">&nbsp;</em>Afficher Animaux</a>
+                                                    </li>
+                                                    
+                                                </ul>
+                                            </div>
+             </li>
+
+			 <li class="nav-item">
+                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu2" aria-controls="submenu2"> <i class="fas fa-bone"></i> &nbsp;</em>Gestion Nouriture</a>
+                                            <div id="submenu2" class="collapse submenu" style="">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="ajouternourriture.php"> <em class="fa fa-paw">&nbsp;</em>Ajouter Nouriture</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="affichernourriture.php"> <em  class="fab fa-pagelines" aria-hidden="true">&nbsp;</em>Afficher Nouriture</a>
+                                                    </li>
+                                                   
+                                                </ul>
+                                            </div>
+             </li>
+
+			<li class="nav-item">
+                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu3" aria-controls="submenu3"><i class="fas fa-calendar-check"></i>&nbsp;Gestion Evenement</a>
+                                            <div id="submenu3" class="collapse submenu" style="">
                                                 <ul class="nav flex-column">
                                                     <li class="nav-item">
                                                         <a class="nav-link" href="ajouterevenement.php"> <em class="fa fa-plus-square">&nbsp;</em>Ajouter Evenement</a>
@@ -134,8 +163,8 @@
              </li>
 
 			 <li class="nav-item">
-                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu2" aria-controls="submenu2"> <em class="fas fa-percentage">&nbsp;</em>Gestion Promotions</a>
-                                            <div id="submenu2" class="collapse submenu" style="">
+                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu4" aria-controls="submenu4"> <em class="fas fa-percentage">&nbsp;</em>Gestion Promotions</a>
+                                            <div id="submenu4" class="collapse submenu" style="">
                                                 <ul class="nav flex-column">
                                                     <li class="nav-item">
                                                         <a class="nav-link" href="promoanimaux.php"> <em class="fa fa-paw">&nbsp;</em>Promotions Animaux</a>
