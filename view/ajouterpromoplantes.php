@@ -162,7 +162,7 @@
 			<li><a href="promoanimaux.php"><em class="fa fa-paw">&nbsp;</em> Promotions animaux</a></li>
             <li><a href="promoplantes.php"><em  class="fab fa-pagelines" aria-hidden="true">&nbsp;</em> Promotions Plantes</a></li>
 	
-		
+			
 			
 		</div><!--/.row-->
 		</div><!--/.row-->
