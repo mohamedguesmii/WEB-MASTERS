@@ -922,19 +922,19 @@ h1.page-header {
   font-size: 16px;
   height: 46px !important; }
 
-.datepicker table tr td.old, .datepicker table tr td.new {
+.datepicker table tr .old, .datepicker table tr .new {
   color: #c5c7cc; }
 
-.datepicker table tr td {
+.datepicker table tr  {
   padding: 10px !important; }
 
-.datepicker table tr td.active, .datepicker table tr td.active:hover, .datepicker table tr td.active.disabled, .datepicker table tr td.active.disabled:hover, .datepicker table tr td.active:hover, .datepicker table tr td.active:hover:hover, .datepicker table tr td.active.disabled:hover, .datepicker table tr td.active.disabled:hover:hover, .datepicker table tr td.active:focus, .datepicker table tr td.active:hover:focus, .datepicker table tr td.active.disabled:focus, .datepicker table tr td.active.disabled:hover:focus, .datepicker table tr td.active:active, .datepicker table tr td.active:hover:active, .datepicker table tr td.active.disabled:active, .datepicker table tr td.active.disabled:hover:active, .datepicker table tr td.active.active, .datepicker table tr td.active:hover.active, .datepicker table tr td.active.disabled.active, .datepicker table tr td.active.disabled:hover.active, .open .dropdown-toggle.datepicker table tr td.active, .open .dropdown-toggle.datepicker table tr td.active:hover, .open .dropdown-toggle.datepicker table tr td.active.disabled, .open .dropdown-toggle.datepicker table tr td.active.disabled:hover {
+.datepicker table tr .active, .datepicker table tr .active:hover, .datepicker table tr .active.disabled, .datepicker table tr .active.disabled:hover, .datepicker table tr .active:hover, .datepicker table tr .active:hover:hover, .datepicker table tr .active.disabled:hover, .datepicker table tr .active.disabled:hover:hover, .datepicker table tr .active:focus, .datepicker table tr .active:hover:focus, .datepicker table tr .active.disabled:focus, .datepicker table tr .active.disabled:hover:focus, .datepicker table tr .active:active, .datepicker table tr .active:hover:active, .datepicker table tr .active.disabled:active, .datepicker table tr .active.disabled:hover:active, .datepicker table tr .active.active, .datepicker table tr .active:hover.active, .datepicker table tr .active.disabled.active, .datepicker table tr .active.disabled:hover.active, .open .dropdown-toggle.datepicker table tr .active, .open .dropdown-toggle.datepicker table tr .active:hover, .open .dropdown-toggle.datepicker table tr .active.disabled, .open .dropdown-toggle.datepicker table tr .active.disabled:hover {
   color: #ffffff;
   background-color: #30a5ff;
   text-shadow: none;
   border-color: #285e8e; }
 
-.datepicker table tr td span:hover, .datepicker thead tr:first-child th:hover, .datepicker tfoot tr th:hover, .datepicker table tr td.day:hover, .datepicker table tr td.day.focused {
+.datepicker table tr  span:hover, .datepicker thead tr:first-child th:hover, .datepicker tfoot tr th:hover, .datepicker table tr .day:hover, .datepicker table tr .day.focused {
   background: rgba(0, 0, 0, 0.05); }
 
 .todo-list {
@@ -1008,10 +1008,10 @@ h1.page-header {
   font-weight: 300;
   font-size: 16px; }
 
-.fixed-table-container tbody td {
+.fixed-table-container tbody  {
   border: 1px solid #e9ecf2; }
 
-.fixed-table-container tbody td:last-child {
+.fixed-table-container tbody :last-child {
   border-right: none; }
 
 .table > thead > tr > th {

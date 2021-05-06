@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
                 else
             {
             $count=count($_SESSION['cart']);
-            $_SESSION['cart'][$count]=array('Item_Name'=>$_POST['Item_Name'],'Price'=>$_POST['price'],'Quantity'=>1);
+            $_SESSION['cart'][$count]=array('Item_Name'=>$_POST['Item_Name'],'Item_id'=>$_POST['Item_id'],'Price'=>$_POST['price'],'Quantity'=>1);
             echo "<script>
            
             window.location.href='index.php';
@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         }
                 else
                 {
-                $_SESSION['cart'][0]=array('Item_Name'=>$_POST['Item_Name'],'Price'=>$_POST['price'],'Quantity'=>1);
+                $_SESSION['cart'][0]=array('Item_Name'=>$_POST['Item_Name'],'Item_id'=>$_POST['Item_id'],'Price'=>$_POST['price'],'Quantity'=>1);
                  echo"<script>
            
                  window.location.href='index.php';

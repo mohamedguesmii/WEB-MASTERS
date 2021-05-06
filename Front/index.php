@@ -311,6 +311,7 @@
 											
 											<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
                                             <input type="hidden" name="Item_Name" value='Cat'>
+											<input type="hidden" name="Item_id" value='1'>
                                             <input type="hidden" name="price" value="66">
 											</div>
 										<div class="product-overlay">
@@ -318,6 +319,7 @@
                                             <h2>$66</h2>
 												<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
                                                 <input type="hidden" name="Item_Name" value='Cat'>
+												<input type="hidden" name="Item_id" value='1'>
                                                 <input type="hidden" name="price" value="66">
 											</div>
 										</div>
@@ -340,7 +342,8 @@
 										<h2>$54</h2>
 										
 										<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                        <input type="hidden" name="Item_Name" value='Rat'>
+                                        <input type="hidden" name="Item_Name" value='Mouse'>
+										<input type="hidden" name="Item_id" value='2'>
                                         <input type="hidden" name="price" value="54">
 									</div>
 									<div class="product-overlay">
@@ -348,7 +351,8 @@
 											<h2>$54</h2>
 											
 											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                            <input type="hidden" name="Item_Name" value='Rat'>
+                                            <input type="hidden" name="Item_Name" value='Mouse'>
+											<input type="hidden" name="Item_id" value='2'>
                                             <input type="hidden" name="price" value="54">
 										</div>
 									</div>
@@ -372,6 +376,7 @@
 										
 										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
                                         <input type="hidden" name="Item_Name" value='DOG'>
+										<input type="hidden" name="Item_id" value='3'>
                                         <input type="hidden" name="price" value="60">
 									</div>
 									<div class="product-overlay">
@@ -380,6 +385,7 @@
 											
 											<button type ="submit"  name="addtocart"class="btn btn-default add-to-cart">Add to cart</button>
                                             <input type="hidden" name="Item_Name" value='DOG'>
+											<input type="hidden" name="Item_id" value='3'>
                                             <input type="hidden" name="price" value="60">
 										</div>
 									</div>
@@ -403,6 +409,7 @@
 										
 										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
                                         <input type="hidden" name="Item_Name" value='Bird'>
+										<input type="hidden" name="Item_id" value='4'>
                                         <input type="hidden" name="price" value="56">
 									</div>
 									<div class="product-overlay">
@@ -411,6 +418,7 @@
 											
 											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
                                             <input type="hidden" name="Item_Name" value='Bird'>
+											<input type="hidden" name="Item_id" value='4'>
                                             <input type="hidden" name="price" value="56">
 										</div>
 									</div>
@@ -435,6 +443,7 @@
 										
 										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
                                         <input type="hidden" name="Item_Name" value='Tortoise'>
+										<input type="hidden" name="Item_id" value='5'>
                                         <input type="hidden" name="price" value="39">
 									</div>
 									<div class="product-overlay">
@@ -443,6 +452,7 @@
 											
 											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
                                             <input type="hidden" name="Item_Name" value='Tortoise'>
+											<input type="hidden" name="Item_id" value='5'>
                                             <input type="hidden" name="price" value="39">
 										</div>
 									</div>
@@ -462,11 +472,12 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/home/6.jpg" alt="" />
+										<img src="images/home/an4.jpg" alt="" />
 										<h2>$46</h2>
 										
 										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                        <input type="hidden" name="Item_Name" value='Cat2'>
+                                        <input type="hidden" name="Item_Name" value='Rabbit'>
+										<input type="hidden" name="Item_id" value='6'>
                                         <input type="hidden" name="price" value="46">
 									</div>
 									<div class="product-overlay">
@@ -474,7 +485,8 @@
 											<h2>$46</h2>
 											
 											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                            <input type="hidden" name="Item_Name" value='Cat2'>
+                                            <input type="hidden" name="Item_Name" value='Rabit'>
+											<input type="hidden" name="Item_id" value='6'>
                                             <input type="hidden" name="price" value="46">
 										</div>
 									</div>

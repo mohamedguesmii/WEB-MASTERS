@@ -2,6 +2,7 @@
 class Ligne{
     private ?int $idLigne=null;
     private ?string $produit=null;
+    private ?int $idProduit=null;
     private ?int $idCommande=null;
    
    
@@ -12,6 +13,10 @@ class Ligne{
     return $this->idLingne;
     }
 
+    public function getidProduit():int{
+        return $this->idProduit;
+        }
+    
     public function getidCommandee():int{
         return $this->idCommande;
     }
@@ -23,11 +28,13 @@ class Ligne{
 
 
 
-    public function  __construct ($produit,$idCommande){
+    public function  __construct ($produit,$idProduit,$idCommande){
     
       
         $this->produit=$produit;
+        $this->idProduit=$idProduit;
         $this->idCommande=$idCommande;
+
      
 
        }

@@ -1,5 +1,11 @@
 <?php
 include_once "manage_cart.php";
+
+						include_once "../model/Commandes.php";
+						include "../controller/CommandesC.php";
+						include_once "../model/Ligne.php";
+						include "../controller/LigneC.php";
+
 ?>
 
 
@@ -157,6 +163,7 @@ include_once "manage_cart.php";
                      <tr>
                      <th scope="col">Serial No</th>
                      <th scope="col">Item Name</th>
+					 <th scope="col">Item ID</th>
                      <th scope="col">Item Price</th>
                      <th scope="col">Quantity</th>
 					 <th scope="col">Montant</th>
@@ -169,6 +176,7 @@ include_once "manage_cart.php";
                          <?php
                         $total=0;
 						$produit="";
+						$idP="";
 
                         if(isset($_SESSION['cart']))
                         {
@@ -177,11 +185,15 @@ include_once "manage_cart.php";
                             $sr=$key+1;
                             $prod = $value['Item_Name']. " * $value[Quantity] ";
 							$produit=$produit."+ ".$prod;
+							$idP=$idP.$value['Item_id'];
+							
+
 							$total=$total+($value['Price']*$value['Quantity']);
                             echo"
                             <tr>
                             <td>$sr</td>
                             <td>$value[Item_Name]</td>
+							<td>$value[Item_id]</td>
                             <td>$value[Price]<input type='hidden' class='iprice' value='$value[Price]' </td>
                             <td>
 							 <form action='manage_cart.php' method='POST'>
@@ -198,6 +210,7 @@ include_once "manage_cart.php";
                             </td>
                             </tr>
                             ";   
+
                         }
                     }
                         ?>
@@ -236,12 +249,7 @@ include_once "manage_cart.php";
 				<div class="col-sm-6">
 					<div class="chose_area">
 						<?php
-						include_once "manage_cart.php";
-						include_once "../model/Commandes.php";
-						include "../controller/CommandesC.php";
-						include_once "../model/Ligne.php";
-						include "../controller/LigneC.php";
-
+						
  						if(isset($_POST['cli'])
  						&& isset($_POST['paiment'])
  
@@ -257,21 +265,48 @@ include_once "manage_cart.php";
 	 
 						$client = $_POST['cli'];
 						$paiment = $_POST['paiment'];
+						$C1 = new Commandes($_POST['cli'],$_POST['paiment'],$total);
+						$CO = new CommandesC();
+						$CO->ajouter_commande($C1);
+						
+						$db=config::getConnexion();
+						$id=$db->lastInsertId ();
 
-			$C1 = new Commandes($_POST['cli'],$_POST['paiment'],$total);
-			$CO = new CommandesC();
-			$CO->ajouter_commande($C1);
-			
-			$db=config::getConnexion();
-			$id=$db->lastInsertId ();
-			//echo"Last inserted id is $id";
+						foreach($_SESSION['cart']as $key => $value)
+                        {
+                            $sr=$key+1;
+                            $prod = $value['Item_Name']. " * $value[Quantity] ";
+							$produit=$produit."+ ".$prod;
+							$idP=$value['Item_id'];
+							
+
+							$total=$total+($value['Price']*$value['Quantity']);
+
+							$L0 = new LigneC();			
+							$L1= new Ligne($prod,$idP,$id);
+							
+							
+							$L0->ajouter_Ligne($L1);
+						}
+
 		
 			
-			$L0 = new LigneC();			
-			$L1= new Ligne($produit,$id);
+			//echo"Last inserted id is $id";
+	
+
+
+	
+
+		//	for($i=0;$i<strlen($idP);$i++){
+			//	$idProd=substr($idP,$i,1);
+				
+
 			
+			//}
+		
+		
 			
-			$L0->ajouter_Ligne($L1);
+		
 
 $suc=1;  
 
@@ -308,7 +343,7 @@ $suc=1;
 						
 								<li class="single_field">
 									<label>Produit</label>	
-									<input type="text" id="produit" name="produit" class="text right" value="<?php echo $produit;?>"disabled ></input>
+									<textarea  id="produit" name="produit" class="text right" rows="4" cols="50" placeholder="<?php echo $produit;?>"disabled ></textarea>
 								</li>
 							
 								</ul>

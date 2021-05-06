@@ -7,25 +7,6 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="style.css" rel="stylesheet">
-    <title>Table Commandes</title>
-</head>
-<body>
-
-
-
-</body>
-
-</html>
-
-
-
-<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -35,8 +16,9 @@
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
-	
-	
+	<link href="styles.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+   
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 	<!--[if lt IE 9]>
@@ -58,20 +40,22 @@
 					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
 						<em class="fa fa-envelope"></em><span class="label label-danger"></span>
 					</a>
-					
+						
+					</li>
+					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+						<em class="fa fa-bell"></em><span class="label label-info"></span>
+					</a>
 				
-				</ul>
 			</div>
 		</div><!-- /.container-fluid -->
 	</nav>
-	
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<div class="profile-sidebar">
 			<div class="profile-userpic">
 				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
 			</div>
 			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Skander</div>
+				<div class="profile-usertitle-name">KARMAN</div>
 				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
 			</div>
 			<div class="clear"></div>
@@ -83,66 +67,79 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li class=""><a href="afficherLivraison.php"><em class="fa fa-dashboard">&nbsp;</em>AFFICHER LIVRAISON</a></li>
-			<li class=""><a href="TraiterDemLivraison.php"><em class="fa fa-dashboard">&nbsp;</em>Traiter Livraison</a></li>
-			<li class="active" ><a href="afficherCommande.php"><em class="fa fa-calendar">&nbsp;</em> AFFICHER COMMANDES</a></li>
-			<li class=""><a href="TraiterCommande.php"><em class="fa fa-dashboard">&nbsp;</em>Traiter Commandes</a></li>
-			<li class=""><a href="trierCommandeDESC.php"><em class="fa fa-dashboard">&nbsp;</em>Trier Commandes DESC</a></li>
-			<li class=""><a href="trierCommandeASC.php"><em class="fa fa-dashboard">&nbsp;</em>Trier Commandes ASC</a></li>
-		
-		
-			
+			<li  class="active"><a href="afficherCommande.php"><em class="fa fa-calendar">&nbsp;</em>Afficher Commandes</a></li>
+			<li><a href="TraiterCommande.php"><em class="fa fa-book-open">&nbsp;</em>Traiter Commandes</a></li>
+			<li><a href="afficherLivraison.php"><em class="fa fa-paw">&nbsp;</em> Afficher Livraison</a></li>
+			<li><a href="TraiterDemLivraison.php"><em  class="fab fa-pagelines" aria-hidden="true">&nbsp;</em>Traiter Livraison</a></li>
+			<li ><a href="afficherLigne.php"><em class="fa fa-calendar">&nbsp;</em>Afficher Ligne</a></li>
+
 		</div><!--/.row-->
-	</div>	<!--/.main-->
+		<div class="container">
+        <div class="row">
+            <div class="col-md-12"></div>
+        </div>
+    </div>
+    <div class="container"> 
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+                <div class="container text-center">
+             <div class="container">
+        <div class="row">
+            <div class="col-md-12"></div>
+        </div>
+        <div class="d-flex justify-content-center">
+        	<br> <div class="col-md-5"></div>
+            
 
-	<body>
+                
+            </form>
 
-    <h1>Commandes</h1>
-
-    <hr>
-	
-<div>
-    <table>
-	
-	<tr id="header">
-            <th>ID</th>			
-            <th>ID CLIENT</th>
-            <th>PAIMENT</th>
-            <th>TOTAL</th>
-			
-			
-        </tr>
-  
-	
-  <?PHP
-				foreach($listecommandes as $commandes){
+        </div>
+  <br>
+         <!-- Bootstrap table  -->
+		<div >
+            <table class="table table-striped table-dark">
+               
+                    <tr >
+                        <td><b>ID Commande</b> </td>
+						<td><b>ID Client</b> </td>
+                        <td><b>PAIMENT</b></td>
+                        <td><b>MONTANT</b></td>
+						<td><b>DEM ANNULATION</b></td>
+						
+					
+					
+                    </tr>
+                
+                
+				<?PHP
+				foreach($listecommandes as $user){
 			?>
 				<tr>
-					<td><?PHP echo $commandes['idCommande']; ?></td>
-					<td><?PHP echo $commandes['idClient']; ?></td>
-					<td><?PHP echo $commandes['paiment']; ?></td>
-					<td><?PHP echo $commandes['montant']; ?></td>
+					<td><?PHP echo $user['idCommande']; ?></td>
+					<td><?PHP echo $user['idClient']; ?></td>
+					<td><?PHP echo $user['paiment']; ?></td>
+					<td><?PHP echo $user['montant']; ?></td>
+					<td><?PHP echo $user['DemAnnulation']; ?></td>
 					
-					
-					
+
 				</tr>
-				
 			<?PHP
 				}
 			?>
-  
-			
-    </table>
-</div>
-<div >
-                <a href="pdfevenement.php" download="pdfevenement.php" class="btn btn-lg btn-outline">
+
+              
+           </table>
+        </div>
+		
+		<div >
+		<a href="trierCommandeDESC.php">TRIER DESC TOTAL</a></li>
+                <a href="pdfcommande.php" download="pdfcommande.php" class="btn btn-lg btn-outline">
                     <i class="fa fa-download"></i> Telecharger La liste 
                 </a>
-				<a href="pdfevenement.php"  class="btn btn-lg btn-outline">
-				<i class="fas fa-file-pdf"></i></i> 
-                </a>
-				<a href="tri.php">Tri Croissant Selon TOTAL </a></li>
-			   	    <a href="tri2.php">Tri Decroissant Selon TOTAL</a></li>
+				<a href="trierCommandeASC.php">TRIER ASC TOTAL </a></li>
+			   	    
          </div>
 
 
@@ -150,10 +147,14 @@
             </div>
         </div>
     </div>
-	</div>
-	
-				
+		
+		
 
+    </div>
+            </div>
+        </div>
+    </div>
+	</div>	<!--/.main-->
 	
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -177,6 +178,3 @@
 		
 </body>
 </html>
-
-
-

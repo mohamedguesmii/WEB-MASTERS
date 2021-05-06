@@ -6,64 +6,6 @@
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="style.css" rel="stylesheet">
-    <title>Table</title>
-</head>
-
-
-
-<body>
-
-    <h1>LIVRAISON</h1>
-    <hr>
-
-    <table>
-	<tr id="header">
-            <th>ID</th>			
-            <th>NOM</th>
-            <th>TEL</th>
-            <th>ADRESSE</th>
-            <th>EMAIL</th>
-			<th>DEM ANNULATION</th>
-			<th>supprimer</th>
-        </tr>
-  
-	
-  <?PHP
-				foreach($listelivraisons as $livraisons){
-			?>
-				<tr>
-					<td><?PHP echo $livraisons['id_livraison']; ?></td>
-					<td><?PHP echo $livraisons['nom']; ?></td>
-					<td><?PHP echo $livraisons['tel']; ?></td>
-					<td><?PHP echo $livraisons['email']; ?></td>
-					<td><?PHP echo $livraisons['adresse']; ?></td>
-					<td><?PHP echo $livraisons['DemAnnulation']; ?></td>
-					
-					<td>
-						<form method="POST" action="supprimerLivraison.php">
-						<input type="submit" name="supprimer" value="supprimer">
-						<input type="hidden" value=<?PHP echo $livraisons['id_livraison']; ?> name="id_livraison">
-						</form>
-					</td>
-				</tr>
-			<?PHP
-				}
-			?>
-  
-			
-    </table>
-
-</body>
-
-</html>
-
 
 
 <!DOCTYPE html>
@@ -71,12 +13,14 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Lumino - Dashboard</title>
+	<title>Traiter Livraison</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
-	
+	<link href="styles.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+   
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 	<!--[if lt IE 9]>
@@ -98,55 +42,12 @@
 					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
 						<em class="fa fa-envelope"></em><span class="label label-danger"></span>
 					</a>
-						<ul class="dropdown-menu dropdown-messages">
-							<li>
-								<div class="dropdown-messages-box"><a href="profile.html" class="pull-left">
-									<img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
-									</a>
-									<div class="message-body"><small class="pull-right">3 mins ago</small>
-										<a href="#"><strong>John Doe</strong> commented on <strong>your photo</strong>.</a>
-									<br /><small class="text-muted">1:24 pm - 25/03/2015</small></div>
-								</div>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<div class="dropdown-messages-box"><a href="profile.html" class="pull-left">
-									<img alt="image" class="img-circle" src="http://placehold.it/40/30a5ff/fff">
-									</a>
-									<div class="message-body"><small class="pull-right">1 hour ago</small>
-										<a href="#">New message from <strong>Jane Doe</strong>.</a>
-									<br /><small class="text-muted">12:27 pm - 25/03/2015</small></div>
-								</div>
-							</li>
-							<li class="divider"></li>
-							<li>
-								<div class="all-button"><a href="#">
-									<em class="fa fa-inbox"></em> <strong>All Messages</strong>
-								</a></div>
-							</li>
-						</ul>
+						
 					</li>
 					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
 						<em class="fa fa-bell"></em><span class="label label-info"></span>
 					</a>
-						<ul class="dropdown-menu dropdown-alerts">
-							<li><a href="#">
-								<div><em class="fa fa-envelope"></em> 1 New Message
-									<span class="pull-right text-muted small">3 mins ago</span></div>
-							</a></li>
-							<li class="divider"></li>
-							<li><a href="#">
-								<div><em class="fa fa-heart"></em> 12 New Likes
-									<span class="pull-right text-muted small">4 mins ago</span></div>
-							</a></li>
-							<li class="divider"></li>
-							<li><a href="#">
-								<div><em class="fa fa-user"></em> 5 New Followers
-									<span class="pull-right text-muted small">4 mins ago</span></div>
-							</a></li>
-						</ul>
-					</li>
-				</ul>
+				
 			</div>
 		</div><!-- /.container-fluid -->
 	</nav>
@@ -156,7 +57,7 @@
 				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
 			</div>
 			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Skander</div>
+				<div class="profile-usertitle-name">KARMAN</div>
 				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
 			</div>
 			<div class="clear"></div>
@@ -168,14 +69,93 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li class=""><a href="afficherLivraison.php"><em class="fa fa-dashboard">&nbsp;</em>AFFICHER LIVRAISON</a></li>
-			<li class="active"><a href="TraiterDemLivraison.php"><em class="fa fa-dashboard">&nbsp;</em>Traiter Livraison</a></li>
-			<li class=""><a href="afficherCommande.php"><em class="fa fa-calendar">&nbsp;</em> AFFICHER COMMANDES</a></li>
-			<li class=""><a href="TraiterCommande.php"><em class="fa fa-dashboard">&nbsp;</em>Traiter Commandes</a></li>
-		
-		
-			
+			<li ><a href="afficherCommande.php"><em class="fa fa-calendar">&nbsp;</em>Afficher Commandes</a></li>
+			<li><a href="TraiterCommande.php"><em class="fa fa-book-open">&nbsp;</em>Traiter Commandes</a></li>
+			<li><a href="afficherLivraison.php"><em class="fa fa-paw">&nbsp;</em> Afficher Livraison</a></li>
+			<li class="active"><a href="TraiterDemLivraison.php"><em  class="fab fa-pagelines" aria-hidden="true">&nbsp;</em>Traiter Livraison</a></li>
+			<li ><a href="afficherLigne.php"><em class="fa fa-calendar">&nbsp;</em>Afficher Ligne</a></li>
+
 		</div><!--/.row-->
+		<div class="container">
+        <div class="row">
+            <div class="col-md-12"></div>
+        </div>
+    </div>
+    <div class="container"> 
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+                <div class="container text-center">
+             <div class="container">
+        <div class="row">
+            <div class="col-md-12"></div>
+        </div>
+        <div class="d-flex justify-content-center">
+        	<br> <div class="col-md-5"></div>
+            
+
+                
+            </form>
+
+        </div>
+  <br>
+         <!-- Bootstrap table  -->
+		<div >
+		
+            <table class="table table-striped table-dark">
+               
+                    <tr >
+                        <td><b>ID Livraison</b> </td>
+						<td><b>NOM</b> </td>
+                        <td><b>TEL</b></td>
+                        <td><b>ADRESSE</b></td>
+						<td><b>EMAIL</b></td>
+						<td><b>DEM ANNULATION</b></td>
+						<td><b>SUPPRIMER</b></td>
+                    </tr>
+                
+                
+				<?PHP
+				foreach($listelivraisons as $user){
+			?>
+				<tr>
+					<td><?PHP echo $user['id_livraison']; ?></td>
+					<td><?PHP echo $user['nom']; ?></td>
+					<td><?PHP echo $user['tel']; ?></td>
+					<td><?PHP echo $user['adresse']; ?></td>
+					<td><?PHP echo $user['email']; ?></td>
+					<td><?PHP echo $user['DemAnnulation']; ?></td>
+					<td>
+						<form method="POST" action="SupprimerLivraison.php">
+						<button type="submit" style="background-color:transparent; border-color:transparent;"> 
+						<img src="https://img.icons8.com/color/48/000000/delete-forever.png"/>
+                         </button>	
+						<input type="hidden" value=<?PHP echo $user['id_livraison']; ?> name="id_livraison">
+						</form>
+					</td>
+					
+				</tr>
+			<?PHP
+				}
+			?>
+
+              
+           </table>
+        </div>
+		
+	
+
+    </div>
+            </div>
+        </div>
+    </div>
+		
+		
+
+    </div>
+            </div>
+        </div>
+    </div>
 	</div>	<!--/.main-->
 	
 	<script src="js/jquery-1.11.1.min.js"></script>
