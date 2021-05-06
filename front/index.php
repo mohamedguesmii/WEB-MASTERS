@@ -1,3 +1,18 @@
+<?PHP
+include "../controller/UtilisateurC.php";
+include "../controller/PlanteC.php";
+
+
+	$utilisateurC=new UtilisateurC();
+
+	$list=$utilisateurC->afficherpromoanimaux ();
+
+	$PlantesC=new PlantesC();
+
+	$listU=$PlantesC->afficherpromoplante();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,7 +106,7 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.php" class="active">Home</a></li>
+								<li><a href="index.html" class="active">Home</a></li>
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                     
@@ -254,11 +269,39 @@
 									</div>
 								</div>
 							</div>
+
+                            <div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#promotions">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Promotions
+										</a>
+									</h4>
+								</div>
+								<div id="promotions" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#poloshirt">Animaux</a></li>
+											<li><a href="#"> Plantes</a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title"><a href="#">Accesoires</a></h4>
 								</div>
 							</div>
+                            
 							
 						</div><!--/category-products-->
 					
@@ -456,6 +499,8 @@
 								<li class="active"><a href="#tshirt" data-toggle="tab">Animaux</a></li>
 								<li><a href="#blazers" data-toggle="tab">Nourriture</a></li>
 								<li><a href="#sunglass" data-toggle="tab">Plantes</a></li>
+                                <li><a href="#promoplante" data-toggle="tab">Promotions Plantes</a></li> 
+								<li><a href="#promoanimaux" data-toggle="tab">Promotions animaux</a></li>
 								<li><a href="#kids" data-toggle="tab">Accessoires</a></li>
 								
 							</ul>
@@ -515,7 +560,40 @@
 									</div>
 								</div>
 							</div>
+
+                            
+							<div class="tab-pane fade" id="promoanimaux" >
+								
+							   <?PHP
+							    
+				                  foreach($list as $user){
+									$prix = $user['prix'];
+									$prixr= $user['prix_promotions'];
+									$p= $prix *$prixr* 0.01;
+									$pe = $prix - $p;
+					             
+			                  ?>
+								
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+											<img src="images/<?= $user['image'] ?>">
+											<h2>Prix : <?PHP echo $pe ?>DT</h2> <div ><td>Solde : <?php echo $user['prix_promotions']; ?>%</td></div>
+												<p><?PHP echo $user['typee']; ?></p>
+												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+											
+										</div>
+									</div>
 							
+							
+								</div>
+								<?PHP
+			              	}
+							
+			                ?>
+							</div>		
 							<div class="tab-pane fade" id="blazers" >
 								<div class="col-sm-3">
 									<div class="product-image-wrapper">
@@ -680,62 +758,46 @@
 									</div>
 								</div>
 							</div>
+							<div class="tab-pane fade" id="promoplante" >
+                            <?PHP
+							 $i=0;
+				foreach($listU as $usr){
+					$prix = $usr['prix'];
+						$prixr= $usr['prix_promoplante'];
+						$p= $prix *$prixr* 0.01;
+						$pe = $prix - $p;
+			                   ?>
+                           
+
 							
-							<div class="tab-pane fade" id="poloshirt" >
 								<div class="col-sm-3">
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-												<img src="images/home/gallery2.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
+                                            <img src="images/<?= $usr['image'] ?>">
+												<h2>Prix : <?PHP echo $pe ?>DT</h2> <div ><td>Solde : <?php echo $usr['prix_promoplante']; ?>%</td></div>
+												<p><?PHP echo $usr['nom']; ?></p>
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
 											
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="images/home/gallery4.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="images/home/gallery3.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="images/home/gallery1.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-							</div>
+								
+								
+							
+							
+                            
+                            <?PHP
+			              	}
+							
+			                ?>
+</div>
+
+
+
 						</div>
+                        
 					</div><!--/category-tab-->
 					
 					<div class="recommended_items"><!--recommended_items-->
