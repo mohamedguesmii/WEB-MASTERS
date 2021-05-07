@@ -1,6 +1,7 @@
 <?php
     include_once '../Model/utilisateur.php';
     include_once '../Controller/UtilisateurC.php';
+	require_once ("composant/composant.php");
 
     $error = "";
 
@@ -51,100 +52,27 @@
 ?>
 <html>
 <head>
-<meta charset="utf-8">
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Lumino - Dashboard</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
+	<link href="styles.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-   <link rel="stylesheet" href="style.css">
+   
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 	<!--[if lt IE 9]>
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	<script src="css/scripte.js"></script>
+
 </head>
+<body>
 
-    <body>
-	 <center>
-       
-		</center>
-        <hr>
-        
-        <div id="error">
-            <?php echo $error; ?>
-        </div>
-	<form name="f1" action="" method="POST">
-
-<center>
-		<table>
-			<tr>
-		<td> <label for="sex">Sexe </label> </td>
-	<td> <select name="sex" id="sex">
-	<option value="male">male</option>
-	<option value="female">female</option>
-	
-	</select>
-	</td>
-	</tr>
-					<tr>
-		<td> <label for="typee">Race </label> </td>
-	<td> <select name="typee" id="typee">
-	<option value="chiwawa">chiwawa</option>
-	<option value="berger allmend">berger allmend</option>
-	<option value="labrador">labrador</option>
-	<option value="huskey">huskey</option>
-	<option value="siamois">siamois</option>
-	<option value="ragdol">ragdol</option>
-		<option value="Accenteur mouchet">Accenteur mouchet</option>
-	
-	</select>
-	</td>
-	</tr>
-		<tr>
-		<td><label>age</label></td>
-		<td><input type="number" name="age" id="age" Min="1" Max="15" placeholder="Age" required /> </td>
-		</tr>
-		<tr>
-		<td> <label> prix</label> </td>
-	<td> <input type="number" name="prix" id="prix" min="10" placeholder="Prix" required ></td>
-	</tr>
-	
-		<tr>
-		<td> <label for="categorie">Categorie </label> </td>
-	<td> <select name="categorie">
-	<option value="chien">Chien</option>
-	<option value="chat">Chat</option>
-	<option value="oiseau">Oiseau</option>
-	</select>
-	</td>
-	</tr>
-	
-		<tr>
-		<td> <label for="couleur">Couleur </label> </td>
-	<td> <select name="couleur" id="couleur">
-	<option value="jaune">jaune</option>
-	<option value="noir">noir</option>
-	<option value="rouge">rouge</option>
-	<option value="bleu">bleu</option>
-	</select>
-	</td>
-	</tr>
-		<tr>
-		<td> <label> Image</label> </td>
-	<td> <input type="file" name="image" id="image"  placeholder="image" required ></td>
-	</tr>
-		
-	
-		
-		</table>
-		</center>
-		<center>
-		<input type="submit" value="submit">
-</center>
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -215,7 +143,7 @@
 				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
 			</div>
 			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Chedi</div>
+				<div class="profile-usertitle-name">Moetaz</div>
 				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
 			</div>
 			<div class="clear"></div>
@@ -294,7 +222,7 @@
                                                         <a class="nav-link" href="afficherCommande.php"> <em class="fas fa-shopping-cart">&nbsp;</em>AFfficher Commandes</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="promoplantes.php"> <em  class="fas fa-shopping-cart" aria-hidden="true">&nbsp;</em>Traiter Commandes</a>
+                                                        <a class="nav-link" href="TraiterCommande.php"> <em  class="fas fa-shopping-cart" aria-hidden="true">&nbsp;</em>Traiter Commandes</a>
                                                     </li>
 													<li class="nav-item">
                                                         <a class="nav-link" href="afficherLigne.php"> <em  class="fas fa-shopping-cart" aria-hidden="true">&nbsp;</em>Afficher Ligne</a>
@@ -310,7 +238,7 @@
                                                         <a class="nav-link" href="afficherLivraison.php"> <em class="fas fa-truck">&nbsp;</em>Afficher Livraison</a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="promoplantes.php"> <em  class="fas fa-truck" aria-hidden="true">&nbsp;</em>Traiter Livraison</a>
+                                                        <a class="nav-link" href="TraiterDemLivraison.php"> <em  class="fas fa-truck" aria-hidden="true">&nbsp;</em>Traiter Livraison</a>
                                                     </li>
                                                    
                                                 </ul>
@@ -320,7 +248,154 @@
 
 
 		</ul>
+		
+			
 		</div><!--/.row-->
+
+		<div class="container">
+        <div class="row">
+            <div class="col-md-12"></div>
+        </div>
+    </div>
+
+ <form  name="f1" action="" method="POST">	
+ <div class="row">
+            <div class="col-md-0.5">
+			</div>
+			<br>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-1">
+			</div>
+			
+            <div class="col-md-6">
+                <div class="container text-center">
+             <div class="container">
+        <div class="row">
+            <div class="col-md-12"></div>
+        </div>
+        <div class="d-flex justify-content-center">
+        	<br> <div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir Sexe :<td></div>
+            <form action="" method="post" class="w-50">
+			<div class="pt-4">
+				   <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
+                        </div>
+					   <select name="sex" id="sex" class="form-control"  >
+					     <option value="select">Male&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>
+	                     <option value="female">Female</option>
+						</select>
+
+                     </div>  
+			    </div><br>
+				
+                <div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir Le Type :<td></div>
+                <div class="pt-4">
+				   <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
+                        </div>
+					   <select name="typee" id="typee" class="form-control"  >
+					     <option value="chiwawa">chiwawa&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>
+							<option value="berger allmend">berger allmend</option>
+							<option value="labrador">labrador</option>
+							<option value="huskey">huskey</option>
+							<option value="siamois">siamois</option>
+							<option value="ragdol">ragdol</option>
+							<option value="Accenteur mouchet">Accenteur mouchet</option>
+						</select>
+
+                     </div>  
+			        </div><br>
+					<div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir Age :<td></div>
+                <div class="pt-4">
+				   <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
+                        </div>
+						<input type="number"  name="age" id="age"  class="form-control" placeholder="Age" Min="1" Max="15" required>
+
+
+                     </div>  
+			        </div><br>
+				 <div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir  Prix :<td></div>
+                <div class="pt-4">
+                  
+					   <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-table'></i></div>
+                        </div>
+                        <input type="number"  name="prix" id="prix"  class="form-control" placeholder="Prix" required>
+                     </div>  
+				<div class="pt-4">
+						<br><div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir Categorie :<td> </div>
+						<div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-table'></i></div>
+                        </div>
+						<select name="categorie" id="categorie" class="form-control"  >
+					     <option value="chien">Chien&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>
+						<option value="chat">Chat</option>
+						<option value="oiseau">Oiseau</option>
+						</select>
+                     </div> <br>
+            
+  				<div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir Adresse :<td></div>
+                    <div class="pt-4">
+					   <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-location-arrow'></i></i></div>
+                        </div>
+						<select name="couleur" id="couleur" class="form-control"  >
+					     <option value="chien">jaune&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>
+						 <option value="noir">noir</option>
+						<option value="rouge">rouge</option>
+							<option value="bleu">bleu</option>
+						</select>
+                     </div>  
+                    </div>
+                </div>
+				<br>
+				<div class="pt-4">
+						<br><div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir l'image :<td> </div>
+						<div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-table'></i></div>
+                        </div>
+                       <div> <input type="file" name="image" id="image" value="" class="form-control" placeholder="image"  required>  </div>
+                     </div> 
+					 
+           <br>
+           <br>
+		  
+                <div class=" ">
+						<button type="submit" value="submit" data-toggle="tooltip" data-placement="bottom" title="Envoyer" class="btn btn-success" id="btn-create"  ><i class='fas fa-plus'></i></button>
+
+					    <?php buttonElement("btn-read","btn btn-primary","<i class='fas fa-sync'></i>","reset","data-toggle='tooltip' data-placement='bottom' title='Actualiser'"); ?>
+                       
+                </div>
+
+                
+            </form>
+
+        </div>
+ 
+ 
+ 
+ </form>
+ <br>
+         <!-- Bootstrap table  -->
+        
+
+        
+
+
+    </div>
+            </div>
+        </div>
+    </div>
 	</div>	<!--/.main-->
 	
 	<script src="js/jquery-1.11.1.min.js"></script>
@@ -341,9 +416,7 @@
 	scaleFontColor: "#c5c7cc"
 	});
 };
-
 	</script>
-	</form>
 		
 </body>
 </html>
