@@ -4,6 +4,7 @@ include "../controller/PlanteC.php";
 
 
 	$utilisateurC=new UtilisateurC();
+<<<<<<< Updated upstream
 
 	$list=$utilisateurC->afficherpromoanimaux ();
 
@@ -11,11 +12,29 @@ include "../controller/PlanteC.php";
 
 	$listU=$PlantesC->afficherpromoplante();
 
+=======
+	$list=$utilisateurC->afficherpromoanimaux ();
+
+	$PlantesC=new PlantesC();
+	$listU=$PlantesC->afficherpromoplante();
+
+
+	$utilisateurC=new UtilisateurC();
+	$listeUsers=$utilisateurC->afficherUtilisateurs();
+	
+
+	$utilisateurC=new NourritureC();
+	$listeUser=$utilisateurC->afficherNourriture();
+>>>>>>> Stashed changes
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -37,6 +56,10 @@ include "../controller/PlanteC.php";
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+<<<<<<< Updated upstream
+=======
+	<?php session_start(); ?> 
+>>>>>>> Stashed changes
 </head><!--/head-->
 
 <body>
@@ -80,7 +103,11 @@ include "../controller/PlanteC.php";
 							
 								
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+<<<<<<< Updated upstream
 								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+=======
+								<li><a href="AjouterCommande.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+>>>>>>> Stashed changes
 								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
@@ -106,12 +133,20 @@ include "../controller/PlanteC.php";
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
+<<<<<<< Updated upstream
 								<li><a href="index.html" class="active">Home</a></li>
+=======
+								<li><a href="index.php" class="active">Home</a></li>
+>>>>>>> Stashed changes
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                     
 										<li><a href="checkout.html">Checkout</a></li> 
+<<<<<<< Updated upstream
 										<li><a href="cart.html">Cart</a></li> 
+=======
+										<li><a href="AjouterCommande.php">Cart</a></li> 
+>>>>>>> Stashed changes
 										<li><a href="login.html">Login</a></li> 
                                     </ul>
                                 </li> 
@@ -336,13 +371,21 @@ include "../controller/PlanteC.php";
 				</div>
 				
 				<div class="col-sm-9 padding-right">
+<<<<<<< Updated upstream
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">SOME OF WHAT WE OFFRE</h2>
 						<div class="col-sm-4">
+=======
+				<div class="features_items"><!--features_items-->
+						<h2 class="title text-center">SOME OF WHAT WE OFFRE</h2>
+						<div class="col-sm-4">
+                        <form action="manage_cart.php" method="POST">
+>>>>>>> Stashed changes
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
 											<img src="images/home/1.jpg" alt="" />
+<<<<<<< Updated upstream
 											<h2>$56</h2>
 											
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -352,6 +395,22 @@ include "../controller/PlanteC.php";
 												<h2>$56</h2>
 											
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+=======
+                                            <h2>$66</h2>
+											
+											<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+                                            <input type="hidden" name="Item_Name" value='Cat'>
+											<input type="hidden" name="Item_id" value='1'>
+                                            <input type="hidden" name="price" value="66">
+											</div>
+										<div class="product-overlay">
+											<div class="overlay-content">
+                                            <h2>$66</h2>
+												<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+                                                <input type="hidden" name="Item_Name" value='Cat'>
+												<input type="hidden" name="Item_id" value='1'>
+                                                <input type="hidden" name="price" value="66">
+>>>>>>> Stashed changes
 											</div>
 										</div>
 								</div>
@@ -362,12 +421,20 @@ include "../controller/PlanteC.php";
 									</ul>
 								</div>
 							</div>
+<<<<<<< Updated upstream
 						</div>
 						<div class="col-sm-4">
+=======
+                            </form>
+						</div>
+						<div class="col-sm-4">
+                        <form action="manage_cart.php" method="POST">
+>>>>>>> Stashed changes
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
 										<img src="images/home/2.jpg" alt="" />
+<<<<<<< Updated upstream
 										<h2>$56</h2>
 										
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -377,6 +444,23 @@ include "../controller/PlanteC.php";
 											<h2>$56</h2>
 											
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+=======
+										<h2>$54</h2>
+										
+										<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+                                        <input type="hidden" name="Item_Name" value='Mouse'>
+										<input type="hidden" name="Item_id" value='2'>
+                                        <input type="hidden" name="price" value="54">
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<h2>$54</h2>
+											
+											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+                                            <input type="hidden" name="Item_Name" value='Mouse'>
+											<input type="hidden" name="Item_id" value='2'>
+                                            <input type="hidden" name="price" value="54">
+>>>>>>> Stashed changes
 										</div>
 									</div>
 								</div>
@@ -387,12 +471,20 @@ include "../controller/PlanteC.php";
 									</ul>
 								</div>
 							</div>
+<<<<<<< Updated upstream
 						</div>
 						<div class="col-sm-4">
+=======
+                            </form>
+						</div>
+						<div class="col-sm-4">
+                        <form action="manage_cart.php" method="POST">
+>>>>>>> Stashed changes
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
 										<img src="images/home/3.jpg" alt="" />
+<<<<<<< Updated upstream
 										<h2>$56</h2>
 										
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -402,6 +494,23 @@ include "../controller/PlanteC.php";
 											<h2>$56</h2>
 											
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+=======
+										<h2>$60</h2>
+										
+										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+                                        <input type="hidden" name="Item_Name" value='DOG'>
+										<input type="hidden" name="Item_id" value='3'>
+                                        <input type="hidden" name="price" value="60">
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<h2>$60</h2>
+											
+											<button type ="submit"  name="addtocart"class="btn btn-default add-to-cart">Add to cart</button>
+                                            <input type="hidden" name="Item_Name" value='DOG'>
+											<input type="hidden" name="Item_id" value='3'>
+                                            <input type="hidden" name="price" value="60">
+>>>>>>> Stashed changes
 										</div>
 									</div>
 								</div>
@@ -412,21 +521,42 @@ include "../controller/PlanteC.php";
 									</ul>
 								</div>
 							</div>
+<<<<<<< Updated upstream
 						</div>
 						<div class="col-sm-4">
+=======
+                            </form>
+						</div>
+						<div class="col-sm-4">
+                        <form action="manage_cart.php" method="POST">
+>>>>>>> Stashed changes
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
 										<img src="images/home/4.jpg" alt="" />
 										<h2>$56</h2>
 										
+<<<<<<< Updated upstream
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+=======
+										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+                                        <input type="hidden" name="Item_Name" value='Bird'>
+										<input type="hidden" name="Item_id" value='4'>
+                                        <input type="hidden" name="price" value="56">
+>>>>>>> Stashed changes
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
 											<h2>$56</h2>
 											
+<<<<<<< Updated upstream
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+=======
+											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+                                            <input type="hidden" name="Item_Name" value='Bird'>
+											<input type="hidden" name="Item_id" value='4'>
+                                            <input type="hidden" name="price" value="56">
+>>>>>>> Stashed changes
 										</div>
 									</div>
 									<img src="images/home/new.png" class="new" alt="" />
@@ -438,12 +568,20 @@ include "../controller/PlanteC.php";
 									</ul>
 								</div>
 							</div>
+<<<<<<< Updated upstream
 						</div>
 						<div class="col-sm-4">
+=======
+                        </form>
+						</div>
+						<div class="col-sm-4">
+                        <form action="manage_cart.php" method="POST">
+>>>>>>> Stashed changes
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
 										<img src="images/home/5.jpg" alt="" />
+<<<<<<< Updated upstream
 										<h2>$56</h2>
 										
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -453,6 +591,23 @@ include "../controller/PlanteC.php";
 											<h2>$56</h2>
 											
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+=======
+										<h2>$39</h2>
+										
+										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+                                        <input type="hidden" name="Item_Name" value='Tortoise'>
+										<input type="hidden" name="Item_id" value='5'>
+                                        <input type="hidden" name="price" value="39">
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<h2>$39</h2>
+											
+											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+                                            <input type="hidden" name="Item_Name" value='Tortoise'>
+											<input type="hidden" name="Item_id" value='5'>
+                                            <input type="hidden" name="price" value="39">
+>>>>>>> Stashed changes
 										</div>
 									</div>
 									<img src="images/home/sale.png" class="new" alt="" />
@@ -464,6 +619,7 @@ include "../controller/PlanteC.php";
 									</ul>
 								</div>
 							</div>
+<<<<<<< Updated upstream
 						</div>
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
@@ -479,6 +635,31 @@ include "../controller/PlanteC.php";
 											<h2>$56</h2>
 											
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+=======
+                            </form>
+						</div>
+						<div class="col-sm-4">
+                            <form action="manage_cart.php" method="POST">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="images/home/an4.jpg" alt="" />
+										<h2>$46</h2>
+										
+										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+                                        <input type="hidden" name="Item_Name" value='Rabbit'>
+										<input type="hidden" name="Item_id" value='6'>
+                                        <input type="hidden" name="price" value="46">
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<h2>$46</h2>
+											
+											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+                                            <input type="hidden" name="Item_Name" value='Rabit'>
+											<input type="hidden" name="Item_id" value='6'>
+                                            <input type="hidden" name="price" value="46">
+>>>>>>> Stashed changes
 										</div>
 									</div>
 								</div>
@@ -489,6 +670,10 @@ include "../controller/PlanteC.php";
 									</ul>
 								</div>
 							</div>
+<<<<<<< Updated upstream
+=======
+                            </form>
+>>>>>>> Stashed changes
 						</div>
 						
 					</div><!--features_items-->
@@ -506,11 +691,26 @@ include "../controller/PlanteC.php";
 							</ul>
 						</div>
 						<div class="tab-content">
+<<<<<<< Updated upstream
 							<div class="tab-pane fade active in" id="tshirt" >
+=======
+
+						
+
+							<div class="tab-pane fade active in" id="tshirt" >
+							<form action="manage_cart.php" method="POST">
+							<?PHP
+							    
+								foreach($listeUsers as $user){
+								
+							   
+							?>
+>>>>>>> Stashed changes
 								<div class="col-sm-3">
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
+<<<<<<< Updated upstream
 												<img src="images/home/an1.jpg" alt="" />
 												<h2>$56</h2>
 												
@@ -555,11 +755,31 @@ include "../controller/PlanteC.php";
 											
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
+=======
+											<img src="images/<?= $user['image'] ?>">
+												<h2> <?php echo $user['prix']."DT"; ?></h2>
+												<p><?PHP echo $user['typee']; ?></p>
+																		
+											<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+                                            <input type="hidden" name="Item_Name" value='<?php echo $user['typee']; ?>'>
+											<input type="hidden" name="Item_id" value='<?php echo $user['id_animaux']; ?>'>
+                                            <input type="hidden" name="price" value="<?php echo $user['prix']; ?>">
+												</div>
+>>>>>>> Stashed changes
 											
 										</div>
 									</div>
 								</div>
+<<<<<<< Updated upstream
 							</div>
+=======
+								<?PHP
+			              	}
+							
+			                ?>
+							</div>
+							</form>
+>>>>>>> Stashed changes
 
                             
 							<div class="tab-pane fade" id="promoanimaux" >
@@ -595,10 +815,20 @@ include "../controller/PlanteC.php";
 			                ?>
 							</div>		
 							<div class="tab-pane fade" id="blazers" >
+<<<<<<< Updated upstream
+=======
+							<?PHP
+							    
+								foreach($listeUser as $user){
+								  
+							   
+							?>
+>>>>>>> Stashed changes
 								<div class="col-sm-3">
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
+<<<<<<< Updated upstream
 												<img src="images/home/an5.jpg" alt="" />
 												<h2>$56</h2>
 											
@@ -641,12 +871,26 @@ include "../controller/PlanteC.php";
 												<img src="images/home/n1.jpg" alt="" />
 												<h2>$56</h2>
 												
+=======
+											<img src="images/<?= $user['image'] ?>">
+											<h2> <?php echo $user['prix']."DT"; ?></h2>
+												<p><?PHP echo $user['nom']; ?></p>
+											
+>>>>>>> Stashed changes
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
 											
 										</div>
 									</div>
 								</div>
+<<<<<<< Updated upstream
+=======
+								<?PHP
+			              	}
+							
+			                ?>
+							
+>>>>>>> Stashed changes
 							</div>
 							
 							<div class="tab-pane fade" id="sunglass" >

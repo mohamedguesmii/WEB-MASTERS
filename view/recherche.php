@@ -129,7 +129,11 @@
 		</form>
 		<ul class="nav menu">
 			<li class="nav-item">
+<<<<<<< Updated upstream
                                             <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu1" aria-controls="submenu1"><i class="fas fa-paw"></i>&nbsp;Gestion Animaux</a>
+=======
+                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu1" aria-controls="submenu1"><i class="fas fa-calendar-check"></i>&nbsp;Gestion Animaux</a>
+>>>>>>> Stashed changes
                                             <div id="submenu1" class="collapse submenu" style="">
                                                 <ul class="nav flex-column">
                                                     <li class="nav-item">
@@ -144,7 +148,11 @@
              </li>
 
 			 <li class="nav-item">
+<<<<<<< Updated upstream
                                             <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu2" aria-controls="submenu2"> <i class="fas fa-bone"></i> &nbsp;</em>Gestion Nouriture</a>
+=======
+                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu2" aria-controls="submenu2"> <em class="fas fa-percentage">&nbsp;</em>Gestion Nouriture</a>
+>>>>>>> Stashed changes
                                             <div id="submenu2" class="collapse submenu" style="">
                                                 <ul class="nav flex-column">
                                                     <li class="nav-item">
@@ -187,6 +195,40 @@
                                                 </ul>
                                             </div>
              </li>
+<<<<<<< Updated upstream
+=======
+			 <li class="nav-item">
+                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu5" aria-controls="submenu5"> <em class="fas fa-shopping-cart">&nbsp;</em>Gestion Commandes</a>
+                                            <div id="submenu5" class="collapse submenu" style="">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="afficherCommande.php"> <em class="fas fa-shopping-cart">&nbsp;</em>AFfficher Commandes</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="TraiterCommande.php"> <em  class="fas fa-shopping-cart" aria-hidden="true">&nbsp;</em>Traiter Commandes</a>
+                                                    </li>
+													<li class="nav-item">
+                                                        <a class="nav-link" href="afficherLigne.php"> <em  class="fas fa-shopping-cart" aria-hidden="true">&nbsp;</em>Afficher Ligne</a>
+                                                    </li>
+                                                   
+                                                </ul>
+                                            </div>
+											<li class="nav-item">
+                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu6" aria-controls="submenu6"> <em class="fas fa-truck">&nbsp;</em>Gestion Livraison</a>
+                                            <div id="submenu6" class="collapse submenu" style="">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="afficherLivraison.php"> <em class="fas fa-truck">&nbsp;</em>Afficher Livraison</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="TraiterDemLivraison.php"> <em  class="fas fa-truck" aria-hidden="true">&nbsp;</em>Traiter Livraison</a>
+                                                    </li>
+                                                   
+                                                </ul>
+                                            </div>
+             </li>
+             </li>
+>>>>>>> Stashed changes
 
 
 		</ul>
