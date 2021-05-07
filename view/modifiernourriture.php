@@ -227,15 +227,6 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-<<<<<<< Updated upstream
-			
-				<li class="active"><a href="modifiernourriture.php"><em class="fa fa-dashboard">&nbsp;</em>Modifier Nourriture</a></li>
-			
-			
-		
-			<div class="col-sm-12">
-				<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
-=======
 			<li class="nav-item">
                                             <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu1" aria-controls="submenu1"><i class="fas fa-calendar-check"></i>&nbsp;Gestion Animaux</a>
                                             <div id="submenu1" class="collapse submenu" style="">
@@ -329,7 +320,6 @@
 
 
 		</ul>
->>>>>>> Stashed changes
 			</div>
 		</div><!--/.row-->
 	</div>	<!--/.main-->

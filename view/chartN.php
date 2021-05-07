@@ -144,15 +144,9 @@
 				<input type="text" class="form-control" placeholder="Search">
 			</div>
 		</form>
-<<<<<<< Updated upstream
-			<ul class="nav menu">
-			<li class="nav-item">
-                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu1" aria-controls="submenu1"><i class="fas fa-paw"></i>&nbsp;Gestion Animaux</a>
-=======
 		<ul class="nav menu">
 			<li class="nav-item">
                                             <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu1" aria-controls="submenu1"><i class="fas fa-calendar-check"></i>&nbsp;Gestion Animaux</a>
->>>>>>> Stashed changes
                                             <div id="submenu1" class="collapse submenu" style="">
                                                 <ul class="nav flex-column">
                                                     <li class="nav-item">
@@ -167,11 +161,7 @@
              </li>
 
 			 <li class="nav-item">
-<<<<<<< Updated upstream
-                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu2" aria-controls="submenu2"> <i class="fas fa-bone"></i> &nbsp;</em>Gestion Nouriture</a>
-=======
                                             <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu2" aria-controls="submenu2"> <em class="fas fa-percentage">&nbsp;</em>Gestion Nouriture</a>
->>>>>>> Stashed changes
                                             <div id="submenu2" class="collapse submenu" style="">
                                                 <ul class="nav flex-column">
                                                     <li class="nav-item">
@@ -214,8 +204,6 @@
                                                 </ul>
                                             </div>
              </li>
-<<<<<<< Updated upstream
-=======
 			 <li class="nav-item">
                                             <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu5" aria-controls="submenu5"> <em class="fas fa-shopping-cart">&nbsp;</em>Gestion Commandes</a>
                                             <div id="submenu5" class="collapse submenu" style="">
@@ -247,7 +235,6 @@
                                             </div>
              </li>
              </li>
->>>>>>> Stashed changes
 
 
 		</ul>
