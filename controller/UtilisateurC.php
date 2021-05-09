@@ -1,77 +1,44 @@
 <?PHP
 	include_once "../config.php";
-	require_once '../model/promoanimaux.php';
-	require_once '../model/utilisateur.php';
+	require_once '../model/Utilisateur.php';
 
 	class UtilisateurC {
-
-		function recupereretat($id_animaux)
-    {
-        $sql="SELECT * from animaux where id_animaux=$id_animaux";
-        $db = config::getConnexion();
-        try{
-            $query=$db->prepare($sql);
-            $query->execute();
-
-            $user=$query->fetch();
-            return $user;
-        }
-        catch (Exception $e){
-            die('Erreur: '.$e->getMessage());
-        }
-    }
-	function trierAnimaux(){
-			
-			$sql="SELECT * FROM animaux ORDER BY prix DESC";
-			$db = config::getConnexion();
-			try{
-				$liste = $db->query($sql);
-				return $liste;
-			}
-			catch (Exception $e){
-				die('Erreur: '.$e->getMessage());
-			}	
-		}
-				function trierAnimauxASC(){
-			
-			$sql="SELECT * FROM animaux ORDER BY prix ASC";
-			$db = config::getConnexion();
-			try{
-				$liste = $db->query($sql);
-				return $liste;
-			}
-			catch (Exception $e){
-				die('Erreur: '.$e->getMessage());
-			}	
-		}
-
 		
-		function ajouterUtilisateur($Utilisateur){
-			$sql="INSERT INTO animaux (sex, typee, age, prix, categorie, couleur,image) 
-			VALUES (:sex,:typee,:age,:prix,:categorie,:couleur,:image)";
+		function ajouterUtilisateur($nom,$prenom,$date,$email,$role,$telephone,$login,$password,$adresse){
+			$sql="INSERT INTO Utilisateur (Nom, Prenom, Date_de_naissance,Email, Adresse, Telephone, Login, Password, Role, Active)
+			VALUES ('$nom','$prenom','$date','$email','$adresse','$telephone','$login','$password','$role',0)";
 			$db = config::getConnexion();
 			try{
 				$query = $db->prepare($sql);
 			
-				$query->execute([
-					'sex' => $Utilisateur->getSex(),
-					'typee' => $Utilisateur->getTypee(),
-					'age' => $Utilisateur->getAge(),
-					'prix' => $Utilisateur->getPrix(),
-					'categorie' => $Utilisateur->getCategorie(),
-					'couleur' => $Utilisateur->getCouleur(),
-					'image' => $Utilisateur->getimage(),
-					
-				]);			
+				$query->execute();			
 			}
 			catch (Exception $e){
 				echo 'Erreur: '.$e->getMessage();
 			}			
 		}
-		
+		function modifierUtilisateur($id,$nom,$prenom,$date,$email,$telephone,$adresse){
+			try {
+				$db= config::getConnexion();
+				$query = $db->prepare(
+					"UPDATE Utilisateur SET
+					Nom = '$nom',
+					Prenom = '$prenom',
+					Email = '$email',
+					Adresse = '$adresse',
+					
+					Date_de_naissance = '$date',
+					Telephone = '$telephone'
+					WHERE ID = '$id'"
+				);
+		   $query->execute();
+			 echo $query->rowCount() . "records UPDATER" ;
+			} catch (PDOException $e) {
+				 $e->getMessage();
+		   }
+	   }
 		function afficherUtilisateurs(){
-			
-			$sql="SELECT * FROM animaux";
+			$sql="SELECT * FROM Utilisateur where Active =1";
 			$db = config::getConnexion();
 			try{
 				$liste = $db->query($sql);
@@ -81,72 +48,9 @@
 				die('Erreur: '.$e->getMessage());
 			}	
 		}
-		function supprimerAnimaux($id_animaux){
-			$sql="DELETE FROM animaux WHERE id_animaux= :id_animaux";
-			$db = config::getConnexion();
-			$req=$db->prepare($sql);
-			$req->bindValue(':id_animaux',$id_animaux);
-			try{
-				$req->execute();
-			}
-			catch (Exception $e){
-				die('Erreur: '.$e->getMessage());
-			}
-		}
 
-		function modifierAnimaux($Utilisateur, $id_animaux){
-			try {
-				$db = config::getConnexion();
-				$query = $db->prepare(
-					'UPDATE animaux SET 
-						sex = :sex, 
-						typee = :typee,
-						age = :age,
-						prix = :prix,
-						categorie = :categorie,
-						couleur = :couleur,
-						image = :image
-					
-					WHERE id_animaux = :id_animaux'
-				);
-				$query->execute([
-					'sex' => $Utilisateur->getSex(),
-					'typee' => $Utilisateur->getTypee(),
-					'age' => $Utilisateur->getAge(),
-					'prix' => $Utilisateur->getPrix(),
-					'categorie' => $Utilisateur->getCategorie(),
-					'couleur' => $Utilisateur->getCouleur(),
-					'image' => $Utilisateur->getimage(),
-
-	
-					'id_animaux' => $id_animaux
-				]);
-				echo $query->rowCount() . " records UPDATED successfully <br>";
-			} catch (PDOException $e) {
-				$e->getMessage();
-			}
-		}
-
-		function recupererAnimaux($id_animaux){
-			$sql="SELECT * from animaux where id_animaux=$id_animaux";
-			$db = config::getConnexion();
-			try{
-				$query=$db->prepare($sql);
-				$query->execute();
-
-				$user=$query->fetch();
-				return $user;
-			}
-			catch (Exception $e){
-				die('Erreur: '.$e->getMessage());
-			}
-		}
-
-	
-
-		function afficherpromoanimaux(){
-			
-			$sql="SELECT * FROM promoanimaux";
+		function afficherNotActiveUtilisateurs(){
+			$sql="SELECT * FROM Utilisateur where Active =0";
 			$db = config::getConnexion();
 			try{
 				$liste = $db->query($sql);
@@ -156,161 +60,9 @@
 				die('Erreur: '.$e->getMessage());
 			}	
 		}
-		
-		function ajouterpromoanimaux($promoanimaux){
-			$sql="INSERT INTO promoanimaux (id_animaux,sex, typee, age, prix, categorie, couleur,image,dated,datef ,prix_promotions) 
-			VALUES (:id_animaux,:sex,:typee,:age,:prix,:categorie,:couleur,:image,:dated,:datef,:prix_promotions)";
-			$db = config::getConnexion();
-			try{
-				$query = $db->prepare($sql);
-			
-				$query->execute([
-                    'id_animaux' => $promoanimaux->getid_animaux(),
-					'sex' => $promoanimaux->getSex(),
-					'typee' => $promoanimaux->getTypee(),
-					'age' => $promoanimaux->getAge(),
-					'prix' => $promoanimaux->getPrix(),
-					'categorie' => $promoanimaux->getCategorie(),
-					'couleur' => $promoanimaux->getCouleur(),
-					'image' => $promoanimaux->getimage(),
-					'dated' => $promoanimaux->getdated(),
-					'datef' => $promoanimaux->getdatef(),
-                    'prix_promotions' => $promoanimaux->getprix_promotions(),
 
-					
-				]);			
-			}
-			catch (Exception $e){
-				echo 'Erreur: '.$e->getMessage();
-			}			
-		}
-
-		function supprimeranimau($id_promoanimaux){
-			$sql="DELETE FROM promoanimaux WHERE id_promoanimaux= :id_promoanimaux";
-			$db = config::getConnexion();
-			$req=$db->prepare($sql);
-			$req->bindValue(':id_promoanimaux',$id_promoanimaux);
-			try{
-				$req->execute();
-			}
-			catch (Exception $e){
-				die('Erreur: '.$e->getMessage());
-			}
-		}
-
-		function modifieranimau($promoanimaux, $id_promoanimaux){
-			try {
-				$db = config::getConnexion();
-				$query = $db->prepare(
-					'UPDATE promoanimaux SET 
-						id_animaux = :id_animaux,
-                        sex = :sex, 
-						typee = :typee,
-						age = :age,
-						prix = :prix,
-						categorie = :categorie,
-						couleur = :couleur,
-						image = :image
-                        prix_promotions = :prix_promotions,
-
-					
-					WHERE id_promoanimaux = :id_promoanimaux'
-				);
-				$query->execute([
-                    'id_animaux' => $promoanimaux->getid_animaux(),
-					'sex' => $promoanimaux->getSex(),
-					'typee' => $promoanimaux->getTypee(),
-					'age' => $promoanimaux->getAge(),
-					'prix' => $promoanimaux->getPrix(),
-					'categorie' => $promoanimaux->getCategorie(),
-					'couleur' => $promoanimaux->getCouleur(),
-                    'prix_promotions' => $promoanimaux->getprix_promotions(),
-	
-					'id_promoanimaux' => $id_promoanimaux
-				]);
-				echo $query->rowCount() . " records UPDATED successfully <br>";
-			} catch (PDOException $e) {
-				$e->getMessage();
-			}
-		}
-		function recupereranimau($id_promoanimaux){
-			$sql="SELECT * from promoanimaux where id_promoanimaux=$id_promoanimaux";
-			$db = config::getConnexion();
-			try{
-				$query=$db->prepare($sql);
-				$query->execute();
-
-				$user=$query->fetch();
-				return $user;
-			}
-			catch (Exception $e){
-				die('Erreur: '.$e->getMessage());
-			}
-		}
-		function recherchersex($sex){
-			$sql="SELECT * From promoanimaux WHERE sex= '$sex' ";
-			$db = config::getConnexion();
-			try{
-			$liste=$db->query($sql);
-			return $liste;
-			}
-			catch (Exception $e){
-				die('Erreur: '.$e->getMessage());
-			}	
-		}
-		
-		function recherchercategorie($categorie){
-			$sql="SELECT * From promoanimaux WHERE categorie = '$categorie' ";
-			$db = config::getConnexion();
-			try{
-			$liste=$db->query($sql);
-			return $liste;
-			}
-			catch (Exception $e){
-				die('Erreur: '.$e->getMessage());
-			}	
-		}
-	
-		
-	}
-
-	class NourritureC {
-		
-		function ajouterNourriture($Nourriture){
-			$sql="INSERT INTO nourriture (nom, prix, categorie, quantity ,image) 
-			VALUES (:nom,:prix,:categorie,:quantity,:image)";
-			$db = config::getConnexion();
-			try{
-				$query = $db->prepare($sql);
-			
-				$query->execute([
-					'nom' => $Nourriture->getNom(),
-					'prix' => $Nourriture->getPrix(),
-					'categorie' => $Nourriture->getCategorie(),
-					'quantity' => $Nourriture->getQuantity(),
-					'image' => $Nourriture->getImage(),
-					
-				]);			
-			}
-			catch (Exception $e){
-				echo 'Erreur: '.$e->getMessage();
-			}			
-		}
-		
-		function afficherNourriture(){
-			
-			$sql="SELECT * FROM nourriture";
-			$db = config::getConnexion();
-			try{
-				$liste = $db->query($sql);
-				return $liste;
-			}
-			catch (Exception $e){
-				die('Erreur: '.$e->getMessage());
-			}	
-		}
-		function supprimerNourriture($id){
-			$sql="DELETE FROM nourriture WHERE id= :id";
+		function supprimerUtilisateur($id){
+			$sql="DELETE FROM Utilisateur WHERE ID= :id";
 			$db = config::getConnexion();
 			$req=$db->prepare($sql);
 			$req->bindValue(':id',$id);
@@ -321,71 +73,92 @@
 				die('Erreur: '.$e->getMessage());
 			}
 		}
-				function modifierNourriture($Utilisateur, $id){
+
+		function validerUtilisateur($id,$email,$name){
+			$sql="UPDATE Utilisateur SET ACTIVE = 1 WHERE ID= :id";
+			$db = config::getConnexion();
+			$req=$db->prepare($sql);
+			$req->bindValue(':id',$id);
+			try{
+				$req->execute();
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}
+		}
+
+function login($email,$password){
+	$sql = "SELECT * FROM `Utilisateur` WHERE Login='$email' and Password = '$password' and ACTIVE = '1'";
+	 $db= config::getConnexion();
+     try{
+        $query=$db->prepare($sql);
+        $query->execute();
+		$count=$query->rowCount();
+
+		if($count==0) {
+			  $message = "Incorrect";
+			  return $message;
+        }else {
+			  $x=$query->fetch();
+			  return $x;
+      	}
+       	}
+            catch (Exception $e){
+			   $message=" ".$e->getMessage();
+			   return  $message;
+       	}
+      }
+
+	  function checkmail($email){
+		$sql = "SELECT * FROM `Utilisateur` WHERE Email='$email'";
+		 $db= config::getConnexion();
+		 try{
+			$query=$db->prepare($sql);
+			$query->execute();
+			$count=$query->rowCount();
+	
+			if($count==0) {
+				  $message = "Incorrect";
+				  return $message;
+			}else {
+				  $x=$query->fetch();
+				  return $x["ID"];
+			  }
+			   }
+				catch (Exception $e){
+				   $message=" ".$e->getMessage();
+				   return  $message;
+			   }
+	   }
+
+	   function updatePassword($id,$password){
+			$sql="UPDATE Utilisateur set Password='$password' where ID='$id' ";
+			$db = config::getConnexion();
+			try{
+				$query = $db->prepare($sql);
+			
+				$query->execute();			
+			}
+			catch (Exception $e){
+				echo 'Erreur: '.$e->getMessage();
+			}			
+		}
+
+		
+		function getUserByPrenom($Prenom) {
 			try {
 				$db = config::getConnexion();
 				$query = $db->prepare(
-					'UPDATE nourriture SET 
-						nom = :nom, 
-						prix = :prix,
-						categorie = :categorie,
-						quantity =:quantity,
-						image =:image
-					
-					WHERE id = :id'
+					'SELECT * FROM Utilisateur WHERE  Prenom= :Prenom'
 				);
 				$query->execute([
-					'nom' => $Utilisateur->getNom(),
-					'prix' => $Utilisateur->getPrix(),
-					'categorie' => $Utilisateur->getCategorie(),
-					'quantity' => $Utilisateur->getQuantity(),
-					'image' => $Utilisateur->getImage(),
-	
-					'id' => $id
+				
+					'Prenom' => $Prenom 
 				]);
-				echo $query->rowCount() . " records UPDATED successfully <br>";
+				return $query->fetch();
 			} catch (PDOException $e) {
 				$e->getMessage();
 			}
+		  }
 		}
-		function recupererNourriture($id){
-			$sql="SELECT * from nourriture where id=$id";
-			$db = config::getConnexion();
-			try{
-				$query=$db->prepare($sql);
-				$query->execute();
-
-				$user=$query->fetch();
-				return $user;
-			}
-			catch (Exception $e){
-				die('Erreur: '.$e->getMessage());
-			}
-		}
-		function trierNourriture(){
-			
-			$sql="SELECT * FROM nourriture ORDER BY prix DESC";
-			$db = config::getConnexion();
-			try{
-				$liste = $db->query($sql);
-				return $liste;
-			}
-			catch (Exception $e){
-				die('Erreur: '.$e->getMessage());
-			}	
-		}
-			function trierNourritureASC(){
-			
-			$sql="SELECT * FROM nourriture ORDER BY prix ASC";
-			$db = config::getConnexion();
-			try{
-				$liste = $db->query($sql);
-				return $liste;
-			}
-			catch (Exception $e){
-				die('Erreur: '.$e->getMessage());
-			}	
-		}
-		
-	}
 ?>

@@ -1,6 +1,6 @@
 <?php
-    include_once '../Model/utilisateur.php';
-    include_once '../Controller/UtilisateurC.php';
+    include_once '../Model/Animaux.php';
+    include_once '../Controller/AnimauxC.php';
 
     $error = "";
 

@@ -1,139 +1,72 @@
 <?PHP
 	class Utilisateur{
-		private ?int $id_animaux = null;
-		private ?string $sex = null;
-		private ?string $typee = null;
-		private ?int $age = null;
-		private ?int $prix = null;
-		private ?string $categorie = null;
-		private ?string $couleur = null;
-		private ?string $image = null;
-
+		private $id = null;
+		private $nom = null;
+		private $prenom = null;
+		private $email = null;
+		private $login = null;
+		private $password = null;
 		
-		function __construct(string $sex, string $typee, int $age, int $prix, string $categorie, string $couleur,string $image){
+		function __construct( $id, $nom, $prenom, $email,$login,$password){
 			
-			$this->sex=$sex;
-			$this->typee=$typee;
-			$this->age=$age;
-			$this->prix=$prix;
-			$this->categorie=$categorie;
-			$this->couleur=$couleur;
-			$this->image=$image;
 			
-		}
-		
-		function getid_animaux(): int{
-			return $this->id_animaux;
-		}
-		function getSex(): string{
-			return $this->sex;
-		}
-		function getTypee(): string{
-			return $this->typee;
-		}
-		function getAge(): int{
-			return $this->age;
-		}
-		function getPrix(): int{
-			return $this->prix;
-		}
-		function getCategorie(): string{
-			return $this->categorie;
-		}
-		function getCouleur(): string{
-			return $this->couleur;
-		}
-		function getimage(): string{
-			return $this->image;
-		}
-		
-
-		function setSex(string $sex): void{
-			$this->sex=$sex;
-		}
-		function setTypee(string $typee): void{
-			$this->typee=$typee;
-		}
-		function setAge(int $age): void{
-			$this->age=$age;
-		}
-		function setPrix(int $prix): void{
-			$this->prix=$prix;
-		}
-		function setCategorie(int $categorie): void{
-			$this->categorie=$categorie;
-		}
-		function setCouleur(int $couleur): void{
-			$this->couleur=$couleur;
-		}
-		function setimage(int $image): void{
-			$this->image=$image;
-		}
-		
-	}
-	class Nourriture {
-		private ?int $id = null;
-		private ?string $nom = null;
-		private ?string $prix = null;
-		private ?string $categorie = null;
-		private ?int $quantity = null;
-		private ?string $image = null;
-		
-
-		
-		function __construct(string $nom, int $prix, string $categorie, int $quantity, string $image){
-			
+			$this->id=$id;
 			$this->nom=$nom;
-			$this->prix=$prix;
-			$this->categorie=$categorie;
-			$this->quantity=$quantity;
-			
-			$this->image=$image;
-		
-			
+			$this->prenom=$prenom;
+			$this->email=$email;
+			$this->login=$login;
+			$this->password=$password;
 		}
 		
-		function getId(): int{
-			return $this->id;
+		function getId()
+		{
+		return $this->id ;
 		}
-		function getNom(): string{
-			return $this->nom;
+		function getNom()
+		 {
+			 return $this->nom;
 		}
-		function getPrix(): int{
-			return $this->prix;
+		function getPrenom()
+		 {
+			return $this->prenom;
 		}
-		function getCategorie(): string{
-			return $this->categorie;
+		function getLogin() 
+		{
+			 return $this->login;
 		}
-		function getQuantity(): int{
-			return $this->quantity;
+		function getEmail() 
+		{
+			 return $this->email;
 		}
-		
-		function getImage(): string{
-			return $this->image;
+		function getPassword() 
+		{
+			return $this->password;
 		}
-		
-		
 
-		function setNom(string $nom): void{
+		
+		function setid($id) 
+		{
+			$this->id=$id;
+		}
+		function setNom($nom)
+		{
 			$this->nom=$nom;
 		}
-		function setPrix(string $prix): void{
-			$this->prix=$prix;
+		function setPrenom($prenom) 
+		{
+			$this->prenom=$prenom;
 		}
-		function setCategorie(string $categorie): void{
-			$this->categorie=$categorie;
+		function setLogin($login) 
+		{
+			$this->login=$login;
 		}
-		function setQuantity(int $quantity): void{
-			$this->quantity=$quantity;
+		function setEmail($email)
+		{
+			$this->email=$email;
 		}
-		
-		function setImage(int $image): void{
-			$this->image=$image;
+		function setPassword($password) 
+		{
+			$this->password=$password;
 		}
-		
-		
 	}
-	
-
 ?>
