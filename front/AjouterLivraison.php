@@ -54,7 +54,7 @@ $error="Missing Information";
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 
-	<script src="js/livraison.js"></script>
+	<script src="script.js"></script>
 
 </head><!--/head-->
 
@@ -196,9 +196,7 @@ $LC->ajouter_livraison($L1);
 							<p>Livraison Information</p>
 							<form action="" method="POST">
                                 <input type="text" name="nom" id="nom" placeholder="Full Name">
-								<input type="email" name="email" id="email" placeholder="Email*" pattern=".+@gmail.com ||.+@outlook.com||.+@esprit.tn" size="40" required>
-								
-      
+								<input type="email" name="email" id="email" placeholder="Email*">
                                 <input type="text" name="tel" id="tel" placeholder="Mobile Phone">
                                     <select name="adresse" id="adresse">
 										<option>-- Region --</option>
