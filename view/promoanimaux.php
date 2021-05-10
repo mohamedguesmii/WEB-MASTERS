@@ -1,11 +1,12 @@
 <?PHP
-	include "../controller/UtilisateurC.php";
+	include_once '../Model/Animaux.php';
+    include_once '../Controller/AnimauxC.php';
 	require_once ("composant/composant.php");
 
-	$utilisateurC=new UtilisateurC();
-	$listeUsers=$utilisateurC->afficherUtilisateurs();
+	$AnimauxC=new AnimauxC();
+	$listeUsers=$AnimauxC->afficherAnimaux();
 
-	$list=$utilisateurC->afficherpromoanimaux();
+	$list=$AnimauxC->afficherpromoanimaux();
 
 ?>
 

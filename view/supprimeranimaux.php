@@ -1,7 +1,7 @@
 <?PHP
-	include "../controller/UtilisateurC.php";
+	include "../controller/AnimauxC.php";
 
-	$utilisateurC=new UtilisateurC();
+	$utilisateurC=new AnimauxC();
 	
 	if (isset($_POST["id_animaux"])){
 		$utilisateurC->supprimerAnimaux($_POST["id_animaux"]);

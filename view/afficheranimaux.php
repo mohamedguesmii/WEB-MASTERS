@@ -1,8 +1,8 @@
 <?PHP
-		include "../controller/UtilisateurC.php";
+		include "../controller/AnimauxC.php";
 
-        $utilisateurC=new UtilisateurC();
-        $listeUsers=$utilisateurC->afficherUtilisateurs();
+        $AnimauxC=new AnimauxC();
+        $listeUsers=$AnimauxC->afficherAnimaux();
 ?>
 
 

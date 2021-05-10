@@ -1,17 +1,17 @@
 <?PHP
-include "../controller/UtilisateurC.php";
+include "../controller/AnimauxC.php";
 include "../controller/PlanteC.php";
 
 
-	$utilisateurC=new UtilisateurC();
+	$utilisateurC=new AnimauxC();
 	$list=$utilisateurC->afficherpromoanimaux ();
 
 	$PlantesC=new PlantesC();
 	$listU=$PlantesC->afficherpromoplante();
 
 
-	$utilisateurC=new UtilisateurC();
-	$listeUsers=$utilisateurC->afficherUtilisateurs();
+	$utilisateurC=new AnimauxC();
+	$listeUsers=$utilisateurC->afficherAnimaux();
 	
 
 	$utilisateurC=new NourritureC();
