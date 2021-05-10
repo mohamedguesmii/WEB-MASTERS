@@ -321,7 +321,7 @@ $suc=1;
 						<ul class="user_info">
 							<li class="single_field">
 								<label>Client:</label>
-								<input type="number" name="cli" id="cli" placeholder="ID Client">
+								<input type="number" name="cli" id="cli" placeholder="ID Client" required> 
 								
 							</li>
 							
