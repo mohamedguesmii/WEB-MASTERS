@@ -1,8 +1,8 @@
 <?php
-	include "../Controller/UtilisateurC.php";
-	include_once '../Model/utilisateur.php';
+	include "../Controller/AnimauxC.php";
+	include_once '../Model/Animaux.php';
 
-	$utilisateurC = new UtilisateurC();
+	$utilisateurC = new AnimauxC();
 	$error = "";
 	
 	if (
@@ -26,7 +26,7 @@
               !empty($_POST["image"])			 
             
         ) {
-            $user = new Utilisateur(
+            $user = new Animaux(
                 $_POST['sex'],
                 $_POST['typee'], 
                 $_POST['age'],

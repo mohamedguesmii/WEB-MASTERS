@@ -1,5 +1,5 @@
 <?PHP
-	include "../controller/UtilisateurC.php";
+	include "../controller/AnimauxC.php";
 	require_once ("composant/composant.php");
 
 	
@@ -7,12 +7,12 @@
 
    if(isset($_POST['choix']) )
     { if  ($_POST['choix']=='categorie'){
-		$UtilisateurC=new UtilisateurC();
+		$UtilisateurC=new AnimauxC();
 	$allusers =$UtilisateurC->recherchercategorie($_POST['Search']) ;
 	}
 
 		if  ($_POST['choix']=='sex'){
-			$UtilisateurC=new UtilisateurC();
+			$UtilisateurC=new AnimauxC();
         $allusers =$UtilisateurC->recherchersex($_POST['Search']) ;
 		}
 		
