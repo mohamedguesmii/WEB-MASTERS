@@ -1,6 +1,6 @@
 <?php
-	include "../Controller/UtilisateurC.php";
-	include_once '../Model/utilisateur.php';
+	include "../Controller/AnimauxC.php";
+	include_once '../Model/Animaux.php';
 
 	$nourritureC = new NourritureC();
 	$error = "";
