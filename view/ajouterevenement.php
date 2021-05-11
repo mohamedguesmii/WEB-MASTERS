@@ -348,7 +348,6 @@
         </div>
         <div class="d-flex justify-content-center">
         	<br> <div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir type :<td></div>
-            <form action="" method="post" class="w-50">
 			<div class="pt-4">
 				   <div class="input-group mb-2">
                         <div class="input-group-prepend">
@@ -439,7 +438,7 @@
                 </div>
 
                 
-            </form>
+          
 
         </div>
  

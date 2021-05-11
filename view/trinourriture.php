@@ -1,5 +1,5 @@
 <?PHP
-	include "../controller/UtilisateurC.php";
+	include "../controller/AnimauxC.php";
 
 	$utilisateurC=new NourritureC();
 	$listeUsers=$utilisateurC->trierNourriture();

@@ -340,7 +340,7 @@
                             <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
                         </div>
 					   <select name="sex" id="sex" class="form-control"  >
-					     <option value="select">Male&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>
+					     <option value="Male">Male&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>
 	                     <option value="female">Female</option>
 						</select>
 
