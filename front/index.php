@@ -88,7 +88,7 @@ include "../controller/PlanteC.php";
 								
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 								<li><a href="AjouterCommande.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
 					</div>
@@ -119,7 +119,7 @@ include "../controller/PlanteC.php";
                                     
 										<li><a href="checkout.html">Checkout</a></li> 
 										<li><a href="AjouterCommande.php">Cart</a></li> 
-										<li><a href="login.html">Login</a></li> 
+										<li><a href="login.php">Login</a></li> 
                                     </ul>
                                 </li> 
 							
