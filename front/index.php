@@ -1,21 +1,29 @@
 <?PHP
-include "../controller/UtilisateurC.php";
+include "../controller/AnimauxC.php";
 include "../controller/PlanteC.php";
 
 
-	$utilisateurC=new UtilisateurC();
+
+
+
+	$utilisateurC=new AnimauxC();
 	$list=$utilisateurC->afficherpromoanimaux ();
 
 	$PlantesC=new PlantesC();
 	$listU=$PlantesC->afficherpromoplante();
 
 
-	$utilisateurC=new UtilisateurC();
-	$listeUsers=$utilisateurC->afficherUtilisateurs();
+	$utilisateurC=new AnimauxC();
+	$listeUsers=$utilisateurC->afficherAnimaux();
 	
 
 	$utilisateurC=new NourritureC();
 	$listeUser=$utilisateurC->afficherNourriture();
+
+	
+
+	$utilisateurC=new PlantesC();
+	$listepla=$utilisateurC->displayPlantes();
 ?>
 
 <!DOCTYPE html>
@@ -88,7 +96,7 @@ include "../controller/PlanteC.php";
 								
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 								<li><a href="AjouterCommande.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
 					</div>
@@ -119,7 +127,7 @@ include "../controller/PlanteC.php";
                                     
 										<li><a href="checkout.html">Checkout</a></li> 
 										<li><a href="AjouterCommande.php">Cart</a></li> 
-										<li><a href="login.html">Login</a></li> 
+										<li><a href="login.php">Login</a></li> 
                                     </ul>
                                 </li> 
 							
@@ -659,12 +667,19 @@ include "../controller/PlanteC.php";
 							</div>
 							
 							<div class="tab-pane fade" id="sunglass" >
+							<?PHP
+							    
+								foreach($listepla as $user){
+								  
+							   
+							?>
 								<div class="col-sm-3">
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-												<img src="images/home/plantes2.jpg" alt="" />
-												<h2>$56</h2>
+											<img src="images/<?= $user['image'] ?>">
+											<h2> <?php echo $user['prix']."DT"; ?></h2>
+												<p><?PHP echo $user['nom']; ?></p>
 												
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
@@ -672,101 +687,39 @@ include "../controller/PlanteC.php";
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="images/home/plante1.jpg" alt="" />
-												<h2>$56</h2>
-												
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="images/home/plante3.jpg" alt="" />
-												<h2>$56</h2>
-												
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="images/home/plante4.jpg" alt="" />
-												<h2>$56</h2>
-												
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-							</div>
+								<?PHP
+			              	}
 							
-							<div class="tab-pane fade" id="kids" >
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="images/home/acc1.jpg" alt="" />
-												<h2>$56</h2>
-												
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="images/home/acc2.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="images/home/acc3.jpg" alt="" />
-												<h2>$56</h2>
-												
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="images/home/acc4.jpg" alt="" />
-												<h2>$56</h2>
-												
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
+			                ?>
+							
 							</div>
+							<div class="tab-pane fade" id="kids" >
+							<?PHP
+							    
+								foreach($listeacc as $user){
+								  
+							   
+							?>
+
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+											<img src="images/<?= $user['image'] ?>">
+											<h2> <?php echo $user['prix']."DT"; ?></h2>
+												<p><?PHP echo $user['categories']; ?></p>
+												
+												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+											
+										</div>
+									</div>
+									<?PHP
+			              	}
+							
+			                ?>
+								</div>
+								
 							<div class="tab-pane fade" id="promoplante" >
                             <?PHP
 							 $i=0;

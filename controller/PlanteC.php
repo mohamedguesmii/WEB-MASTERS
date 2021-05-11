@@ -5,6 +5,35 @@
 	require_once '../Model/Plante.php';
 
 	class PlantesC {
+
+		function trierplantes(){
+			
+			$sql="SELECT * FROM plante ORDER BY prix DESC";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
+		function trierplantesasc(){
+			
+			$sql="SELECT * FROM plante ORDER BY prix ASC";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
+
+
+
+
 		
 		function recupereretat($id)
     {

@@ -1,6 +1,6 @@
 <?php
-    include_once '../Model/utilisateur.php';
-    include_once '../Controller/UtilisateurC.php';
+    include_once '../Model/Animaux.php';
+    include_once '../Controller/AnimauxC.php';
 	require_once ("composant/composant.php");
 
     $error = "";
@@ -9,7 +9,7 @@
     $user = null;
 
     // create an instance of the controller
-    $userC = new UtilisateurC();
+    $userC = new AnimauxC();
     if (
         isset($_POST["sex"]) && 
         isset($_POST["typee"]) &&
@@ -30,7 +30,7 @@
 			!empty($_POST["couleur"]) &&
             !empty($_POST["image"])
         ) {
-            $user = new Utilisateur(
+            $user = new Animaux(
                 $_POST['sex'],
                 $_POST['typee'], 
                 $_POST['age'],
@@ -340,7 +340,7 @@
                             <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
                         </div>
 					   <select name="sex" id="sex" class="form-control"  >
-					     <option value="select">Male&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>
+					     <option value="Male">Male&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>
 	                     <option value="female">Female</option>
 						</select>
 

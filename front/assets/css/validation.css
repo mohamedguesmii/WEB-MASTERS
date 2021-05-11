@@ -1,0 +1,124 @@
+
+.h2-validation {
+	font-family: "Poppins";
+	font-weight: 500;
+	font-size: 18px;
+	margin: 3px 0;
+}
+
+.p-validation,
+ .span-validation {
+	font-family: "Avenir";
+	font-size: 12px;
+	color: rgba(34, 34, 34, 0.5);
+	margin: 5px 0;
+}
+
+.cards-container
+{
+	width: 100%;
+}
+
+.card {
+	background-color: #fff;
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+	border-radius: 20px;
+	display: flex;
+	flex-direction: row;
+	padding: 30px;
+	margin-left: 30px !important;
+	width: 40%;
+	float: left;
+	min-height: 130px;
+	margin: 20px 10px;
+	transition: all 0.5s ease;
+}
+
+.card:hover {
+	box-shadow: 8px 28px 50px rgba(39, 44, 49, 0.07),
+		1px 6px 12px rgba(39, 44, 49, 0.04);
+	transform: translate3D(0, -1px, 0) scale(1.02);
+	transition: all 0.5s ease;
+}
+
+.profile_img {
+	width: 80px;
+	height: 80px;
+
+	object-fit: cover;
+	object-position: 50% 50%;
+
+	border-radius: 100%;
+}
+
+.flag_wrapper {
+	width: 25px;
+	height: 25px;
+	background-color: #f2f2f2;
+	border-radius: 100%;
+	position: relative;
+	top: -30px;
+	left: 55px;
+}
+
+.flag {
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto auto;
+}
+
+.left {
+	margin-right: 12.5px;
+}
+.right {
+	margin-left: 12.5px;
+}
+
+.interests {
+	margin-top: 10px;
+}
+
+.interests_title {
+	color: #222222;
+	margin-bottom: 5px;
+}
+
+.interests_item {
+	padding: 5px 15px;
+	margin-right: 5px;
+	line-height: 35px;
+	background-color: #e6e6e6;
+	border-radius: 5px;
+}
+
+.product-bottom-details {
+    overflow: hidden;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.product-bottom-details div {
+    float: left;
+    width: 50%;
+}
+
+.product-links {
+    text-align: right;
+}
+
+.product-links a {
+    display: inline-block;
+    margin-left: 5px;
+    color: #e1e1e1;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.product-links a:hover {
+    color: #fbb72c;
+}

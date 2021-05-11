@@ -1,9 +1,10 @@
 <?php
 
-	include "../controller/UtilisateurC.php";
-	include_once '../Model/Utilisateur.php';
+	include "../controller/AnimauxC.php";
+	include_once '../Model/Animaux.php';
+	require_once ("composant/composant.php");
 
-	$UtilisateurC = new UtilisateurC();
+	$UtilisateurC = new AnimauxC();
 	$error = "";
 	
 	if (
@@ -65,7 +66,7 @@
 <head>
 <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Lumino - Dashboard</title>
+	<title>NATUREPET</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
@@ -315,12 +316,12 @@
 </ul>
 			
 		</div><!--/.row-->
-		</div><!--/.row-->
-		<div>  
-		<td>aa</td>
-		<td>aa</td>
-		<td>aa</td>
-		<td>aa</td>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"></div>
+        </div>
+    </div>
+    <div>  
         <div id="error">
             <?php echo $error; ?>
         </div>
@@ -330,144 +331,167 @@
 				$user = $UtilisateurC->recupereretat($_GET['id_animaux']);
 				
 		?>
-		<form action="" method="POST">
-            <table border="1" align="center">
 
-                <tr>
-                    <td rowspan='11' colspan='1'> </td>
-                    <td>
-                        <label for="id_animaux">id_animaux:
-                        </label>
-                    </td>
-                    <td><input type="text" name="id_animaux" id="id_animaux" value = "<?php echo $user['id_animaux']; ?>" maxlength="20" readonly></td>
-                </tr>
-               
-                <tr>
-                    <td>
-                        <label for="sex">sex:
-                        </label>
-                    </td>
-                    <td><input type="text" name="sex" id="sex" value = "<?php echo $user['sex']; ?>" maxlength="20" readonly></td>
-                </tr>
+ <form action="" method="POST">	
+ <div class="row">
+            <div class="col-md-0.5">
+			</div>
+			<br>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-1">
+			</div>
+			
+            <div class="col-md-6">
+                <div class="container text-center">
+             <div class="container">
+        <div class="row">
+            <div class="col-md-12"></div>
+        </div>
+        <div class="d-flex justify-content-center">
+        	<br> <div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>ID Animaux :<td></div>
+			<div class="pt-4">
+				   <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
+                        </div>
+                        <input type="text" name="id_animaux" id="id_animaux" value = "<?php echo $user['id_animaux']; ?>" class="form-control" readonly> 
+
+                     </div>  
+			    </div><br>
+				
+                <div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Sexe :<td></div>
+                <div class="pt-4">
+				   <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-book'></i></div>
+                        </div>
+                        <input type="text" name="sex" id="sex" value = "<?php echo $user['sex']; ?>" maxlength="20" readonly class="form-control" placeholder="Sex" readonly> 
+                     </div>  
+				   
+                </div><br>
+				 <div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Type :<td></div>
+                <div class="pt-4">
+                  
+					   <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-table'></i></div>
+                        </div>
+                        <input type="text"  name="typee" id="typee" value = "<?php echo $user['typee']; ?>" class="form-control"  readonly>
+                     </div>  
+				<div class="pt-4">
+						<br><div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Age :<td> </div>
+						<div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-table'></i></div>
+                        </div>
+                       <div> <input type="text" name="age" id="age"  class="form-control" value = "<?php echo $user['age']; ?>" readonly> </div>
+                     </div>  
+            
+            <br><div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Prix :<td></div>
+                    <div class="pt-4">
+					   <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-location-arrow'></i></i></div>
+                        </div>
+                        <input type="text" name="prix" id="prix" value = "<?php echo $user['prix']; ?>" class="form-control" readonly>
+                     </div>  
+                    </div>
+                </div>
+				<br><div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Categorie :<td></div>
+                    <div class="pt-4">
+					   <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-book'></i></i></div>
+                        </div>
+                        <input type="text" name="categorie" id="categorie" value = "<?php echo $user['categorie']; ?>"  class="form-control" readonly>
+
+					 </div>  
+                    </div>
+                </div>
+				<div class="pt-4">
+						<br><div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Couleur :<td> </div>
+						<div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-table'></i></div>
+                        </div>
+                       <div> <input type="text" name="couleur" id="couleur" value = "<?php echo $user['couleur']; ?>"  class="form-control" readonly >  </div>
+                     </div> 
+					 
+           <br>
+           <div class="pt-4">
+						<br><div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Image :<td> </div>
+						<div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-table'></i></div>
+                        </div>
+                       <div> <input type="text" name="image" id="image" value = "<?php echo $user['image']; ?>"   class="form-control" readonly >  </div>
+                     </div> 
+					 
+           <br>
+           <div class="pt-4">
+						<br><div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Date debut promotion: :<td> </div>
+						<div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-table'></i></div>
+                        </div>
+                       <div> <input type="date" name="dated" id="dated" value =""  class="form-control" required>  </div>
+                     </div> 
+					 
+           <br>
+           <div class="pt-4">
+						<br><div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Date fin promotion :<td> </div>
+						<div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-table'></i></div>
+                        </div>
+                       <div> <input type="date" name="datef" id="datef" value = "" class="form-control" required>  </div>
+                     </div> 
+					 
+           <br>
+           <div class="pt-4">
+						<br><div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir Solde :<td> </div>
+						<div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-table'></i></div>
+                        </div>
+                       <div> <input type="number" name="prix_promotions" id="prix_promotions" value = "" class="form-control" min="1" max="100" required><p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p> </div>
+                     </div> 
+					 
+        
+        
+		  
+                <div class=" ">
+						<button name="create" data-toggle="tooltip" data-placement="bottom" title="Envoyer" class="btn btn-success" id="btn-create" onclick="return verif();" ><i class='fas fa-plus'></i></button>
+
+					    <?php buttonElement("btn-read","btn btn-primary","<i class='fas fa-sync'></i>","read","data-toggle='tooltip' data-placement='bottom' title='Actualiser'"); ?>
+                       
+                </div>
+
                 
-                <tr>
-                    <td>
-                        <label for="typee">typee:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="typee" value = "<?php echo $user['typee']; ?>" id="typee" readonly>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td>
-                        <label for="age">age:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="age" id="age" value = "<?php echo $user['age']; ?>" readonly>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td>
-                        <label for="prix">prix:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="prix" id="prix" value = "<?php echo $user['prix']; ?>" readonly>
-						                   
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td>
-                        <label for="categorie">Categorie:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="categorie" id="categorie" value = "<?php echo $user['categorie']; ?>" readonly	>
-                    </td>
-                    
-                </tr>
-                 
-                <tr>
-                    <td>
-                        <label for="couleur">couleur:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="couleur" id="couleur" value = "<?php echo $user['couleur']; ?>" readonly>
-                    </td>
-                    
-                </tr>
-				<tr>
-                    <td>
-                        <label for="image">image:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="text" name="image" id="image"  value = "<?php echo $user['image']; ?>" readonly>
 
-                    </td>
-                    
-                </tr>
-
-				<tr>
-                    <td>
-                        <label for="dated">Date debut promotion:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="date" name="dated" id="dated" required >
-
-                    </td>
-                    
-                </tr>
-				<tr>
-                    <td>
-                        <label for="datef">Date fin promotion:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="date" name="datef" id="datef" required >
-
-                    </td>
-                    
-                </tr>
-
-                <tr>
-                    <td>
-                        <label for="prix_promotions">Solde:
-                        </label>
-                    </td>
-                    <td>
-                        <input type="number" name="prix_promotions" id="prix_promotions"   min="1" max="100" required>
-                    </td>
-                    
-                </tr>
-                
-               
-                
-                <tr>
-                    <td></td>
-                    <td>
-                        <input type="submit" value="Envoyer" onclick="return verif();"> 
-                    </td>
-                    <td>
-                        <input type="reset" value="Annuler" >
-                    </td>
-                </tr>
-            </table>
-        </form>
-		<?php
+        </div>
+ 
+ 
+ 
+ </form>
+ <?php
 		}
 		?>
 
-		</div>
+		  <br>
+         <!-- Bootstrap table  -->
+        
+
+        
+
+
+    </div>
+            </div>
+        </div>
+    </div>
 	</div>	<!--/.main-->
-	
 	
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -491,4 +515,3 @@
 		
 </body>
 </html>
-

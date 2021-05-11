@@ -1,6 +1,8 @@
 <?php
-    include_once '../Model/utilisateur.php';
-    include_once '../Controller/UtilisateurC.php';
+    include_once '../Model/Animaux.php';
+    include_once '../Controller/AnimauxC.php';
+	require_once ("composant/composant.php");
+
 
     $error = "";
 
@@ -63,54 +65,7 @@
 	<![endif]-->
 </head>
     <body>
-	 <center>
-        
-		</center>
-        <hr>
-        
-        <div id="error">
-            <?php echo $error; ?>
-        </div>
-	<form name="f1" action="" method="POST">
-
-<center>
-		<table>
-		
-		<tr>
-		<td><label>nom</label></td>
-		<td><input type="texte" name="nom" id="nom" max="30" placeholder="Nom" required /> </td>
-		</tr>
-		<tr>
-		<td><label>prix</label></td>
-		<td><input type="number" name="prix" id="prix"  min="5" placeholder="Prix" required /> </td>
-		</tr>
-		<tr>
-		<td> <label for="categorie">categorie </label> </td>
-	<td> <select name="categorie">
-	<option value="chien">Chien</option>
-	<option value="chat">Chat</option>
-	<option value="oiseau">Oiseau</option>
-	</select>
-	</td>
-	</tr>
-
-		<tr>
-		<td><label>quantity</label></td>
-		<td><input type="number" name="quantity" id="quantity" max="50" min="5" placeholder="quantity" required /> </td>
-		</tr>
-		<tr>
-		<td><label>image</label></td>
-		<td><input type="file" name="image" id="image" placeholder="image" required /> </td>
-		</tr>
-
-
-	
-		
-		</table>
-		</center>
-		<center>
-		<input type="submit" value="submit">
-</center>
+	 
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -343,6 +298,114 @@
 
 </ul>
 		</div><!--/.row-->
+		<div class="container">
+        <div class="row">
+            <div class="col-md-12"></div>
+        </div>
+    </div>
+
+ <form  name="f1" action="" method="POST">	
+ <div class="row">
+            <div class="col-md-0.5">
+			</div>
+			<br>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-1">
+			</div>
+			
+            <div class="col-md-6">
+                <div class="container text-center">
+             <div class="container">
+        <div class="row">
+            <div class="col-md-12"></div>
+        </div>
+        <div class="d-flex justify-content-center">
+        	<br> <div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir Nom :<td></div>
+            <form action="" method="post" class="w-50">
+			<div class="pt-4">
+				   <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
+                        </div>
+					   
+                        <input type="text" name="nom" id="nom" value="" class="form-control" placeholder="Nom" required> 
+
+                     </div>  
+			    </div><br>
+				
+                <div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir Prix :<td></div>
+                <div class="pt-4">
+				   <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-book'></i></div>
+                        </div>
+                        <input type="number" name="prix" id="prix" value="" class="form-control" placeholder="Prix" min="5" required> 
+                     </div>  
+				   
+                </div><br>
+				 <div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir categorie :<td></div>
+                <div class="pt-4">
+                  
+					   <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-table'></i></div>
+                        </div>
+						<select name="categorie" id="categorie" value="" class="form-control" required >
+						<option value="chien">Chien</option>
+						<option value="chat">Chat</option>
+	                    <option value="oiseau">Oiseau<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p></option>
+						 </select>                     </div>  
+				<div class="pt-4">
+						<br><div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir Quantités :<td> </div>
+						<div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-table'></i></div>
+                        </div>
+                       <div> <input type="number" name="quantity" id="quantity" value="" class="form-control" placeholder="quantités" required> </div>
+                     </div>  
+            
+            <br><div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir Image :<td></div>
+                    <div class="pt-4">
+					   <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class='fas fa-location-arrow'></i></i></div>
+                        </div>
+                        <input type="file" name="image" id="image" value="" class="form-control" placeholder="image" required>
+                     </div>  
+                    </div>
+                </div>
+			
+			
+           <br>
+		  
+                <div class=" ">
+						<button name="create" data-toggle="tooltip" data-placement="bottom" title="Envoyer" class="btn btn-success" id="btn-create"  ><i class='fas fa-plus'></i></button>
+
+					    <?php buttonElement("btn-read","btn btn-primary","<i class='fas fa-sync'></i>","read","data-toggle='tooltip' data-placement='bottom' title='Actualiser'"); ?>
+                       
+                </div>
+
+                
+            </form>
+
+        </div>
+ 
+ 
+ 
+ </form>
+		  <br>
+         <!-- Bootstrap table  -->
+        
+
+        
+
+
+    </div>
+            </div>
+        </div>
+    </div>
 	</div>	<!--/.main-->
 	
 	<script src="js/jquery-1.11.1.min.js"></script>
@@ -364,7 +427,6 @@
 	});
 };
 	</script>
-	</form>
 		
 </body>
 </html>
