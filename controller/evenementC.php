@@ -212,26 +212,7 @@ class evenementC {
             echo 'Erreur: '.$e->getMessage();
         }			
     }
-    function ajouterparticipe($participe){
-        $sql="INSERT INTO participe (id,nbre_participant) 
-        VALUES (:id,:nbre_participant)";
-        $db = config::getConnexion();
-        try{
-            $query = $db->prepare($sql);
-        
-            $query->execute([
-                'id' => $participe->getid_evenement(),
-                'nbre_participant' => $participe->getnbre_participant(),
-                
-                
-
-                
-            ]);			
-        }
-        catch (Exception $e){
-            echo 'Erreur: '.$e->getMessage();
-        }			
-    }
+    
     function trierevenement(){
 			
         $sql="SELECT * FROM evenement ORDER BY date DESC";
@@ -256,6 +237,54 @@ class evenementC {
         catch (Exception $e){
             die('Erreur: '.$e->getMessage());
         }	
+    }
+    function ajouterparticipe($id,$id_client){
+        $sql="INSERT INTO participe (id,id_client) 
+        VALUES (:id,:id_client)";
+        $db = config::getConnexion();
+        try{
+            $query = $db->prepare($sql);
+        
+            $query->execute([
+                'id' => $id ,
+                'id_client' => $id_client
+
+                
+                
+
+                
+            ]);			
+        }
+        catch (Exception $e){
+            echo 'Erreur: '.$e->getMessage();
+        }			
+    }
+
+    function affichertuto($nom){
+        $sql="SELECT E.type, E.description, E.categorie ,U.nom ,U.prenom,E.image ,P.id_participe FROM evenement E, utilisateur U, participe P WHERE E.id = P.id AND P.id_client = U.ID and u.Nom=\"$nom\"";
+        $db = config::getConnexion();
+        try{
+            $liste = $db->query($sql);
+            return $liste;
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }	
+    }
+    function supprimerparticipe($participe)
+    {
+        $sql="DELETE FROM participe where id_participe= :id_participe ";
+        $db = config::getConnexion();
+        $req=$db->prepare($sql);
+        
+        $req->bindValue(':id_participe',$_POST["id_participe"]);
+        try{
+            $req->execute();
+           // header('Location: index.php');
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }
     }
 
 

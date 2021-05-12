@@ -1,14 +1,8 @@
 
 <?php
 session_start();
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-require '../src/Exception.php';
-require '../src/PHPMailer.php';
-require '../src/SMTP.php';
-include "../config.php";
-include '../controller/UtilisateurC.php';
-$userC = new UtilisateurC();
+include '../controller/evenementC.php';
+$tutoC = new evenementC();
 
 $user=$_SESSION['prenom'] .' '. $_SESSION['nom'];
 $id=$_SESSION['id'];
@@ -21,45 +15,8 @@ $login=$_SESSION['login'];
 $date=$_SESSION['date'];
 $telephone=$_SESSION['telephone'];
 
- if ( 
- isset($_POST['nom'])
-&& isset($_POST['prenom'])
- && isset($_POST['date_de_naissance'])
- && isset($_POST['email'])
- && isset($_POST['telephone'])
- && isset($_POST['adresse'])
- )
- {
-if(!empty($_POST['nom'])
- &&!empty($_POST['prenom'])
- &&!empty($_POST['date_de_naissance'])
- &&!empty($_POST['email'])
-   &&!empty($_POST['telephone'])
-  &&!empty($_POST['adresse'])
- )
-  { 
-  $nomUp=$_POST["nom"];
-  $prenomUp=$_POST["prenom"];
-  $dateUp=$_POST["date_de_naissance"];
-  $emailUp=$_POST["email"];
-  $telephoneUp=$_POST["telephone"];
-  $adresseUP=$_POST["adresse"];
-  
-  $userC->modifierUtilisateur($id,$nomUp,$prenomUp,$dateUp,$emailUp,$telephoneUp,$adresseUp);
-  header('Location:evenement.php');
-  
-  $_SESSION['prenom'] = $prenomUp;
-  $_SESSION['nom'] = $nomUp;
-  $_SESSION['email'] = $emailUp;
-  $_SESSION['telephone'] = $telephoneUp;
-  $_SESSION['adresse'] = $adresseUP;
-  $_SESSION['date'] = $dateUp;
-}
-}
-else{
-  echo("");
-}
-
+ 
+$listeUsers=$tutoC->affichertuto($nom);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -256,101 +213,223 @@ else{
 			</div>
 		</div>
 	</section><!--/slider-->
-	
-     <div class="main-panel">
-          <div style="height: 100%;overflow-y: scroll;overflow-x: hidden; ">
-               <div class="col-12 grid-margin" style="margin-top: 10px">
-                <div class="card">
-                  <div class="card-body">
-                    <form class="form-sample" action="" method="POST">
-                      <p class="card-description">Informations personnelles</p>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Prenom</label>
-                            <div class="col-sm-9">
-                              <input type="text" id="prenom" name="prenom" class="form-control" disabled value='<?PHP echo $prenom; ?>' />
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Nom </label>
-                            <div class="col-sm-9">
-                              <input type="text" class="form-control" disabled name="nom" value='<?PHP echo $nom; ?>'  />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">ROLE</label>
-                            <div class="col-sm-9">
-                              <select class="form-control" disabled>
-                                <option <?=$role == 'client' ? ' selected="selected"' : '';?>>Client</option>
-                                
-                                
-                                <option <?=$role == 'Admin' ? ' selected="selected"' : '';?>>Admin</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Date de naissance</label>
-                            <div class="col-sm-9">
-                              <input class="form-control" disabled name="date_de_naissance" value='<?PHP echo $date; ?>'  />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                       <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Email</label>
-                            <div class="col-sm-9">
-                              <input type="text" name="email" class="form-control" value='<?PHP echo $email; ?>' />
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Numero de Telephone</label>
-                            <div class="col-sm-9">
-                              <input type="text" name="telephone" class="form-control" value='<?PHP echo $telephone; ?>' />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Adresse</label>
-                            <div class="col-sm-9">
-                              <input type="text" name="adresse" class="form-control" value='<?PHP echo $adresse; ?>' />
-                            </div>
-                          </div>
-                        
-                      </div>
-                      <div style="margin-top:3%">
-              <button type="submit" class="btn btn-primary mr-2"> Modifier </button>
-              <button class="btn btn-light" type="reset">Annuler </button>
-             </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-          </div> 
-         
-          <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © NaturePet  2021</span>
-            </div>
-          </footer>
-        </div>
-        <!-- main-panel ends -->
+    <style>
+    div.aa { text-align: center;
+        text-decoration: overline;
+     }
+    </style>
+	<div class="aa">
+    <td><h1>Mes  Evènements</h1></td>
+    </div>
+    <br>
+    <div >
+            <table class="table table-striped table-dark">
+               
+                    <tr >
+						<td><b>Type</b> </td>
+                        <td><b>description</b></td>
+						<td><b>Categorie</b></td>
+						<td><b>Nom Client</b></td>
+						<td><b>Prenom Client</b></td>
+						<td><b>Image</b></td>
+						<td><b>Supprimer</b></td>
 
+                    </tr>
+                
+                
+				<?PHP
+				foreach($listeUsers as $user){
+			?>
+				<tr>
+					<td><?PHP echo $user['type']; ?></td>
+					<td><?PHP echo $user['description']; ?></td>
+					<td><?PHP echo $user['categorie']; ?></td>
+					<td><?PHP echo $user['nom']; ?></td>
+					<td><?PHP echo $user['prenom']; ?></td>
+					<td><img src="images/<?= $user['image'] ?>" width = "100" height = "100"></td>
+
+
+
+					
+					
+					<td>
+						<form method="POST" action="supprimerparticipe.php">
+						<button type="submit" style="background-color:transparent; border-color:transparent;"> 
+						<img src="https://img.icons8.com/color/48/000000/delete-forever.png"/>
+                         </button>	
+						<input type="hidden" value=<?PHP echo $user['id_participe']; ?> name="id_participe">
+						</form>
+					</td>
+					<td>
+											
+					</td>
+					
+				</tr>
+			<?PHP
+				}
+			?>
+
+              
+           </table>
+        </div>
+    
+    <footer id="footer"><!--Footer-->
+		<div class="footer-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="companyinfo">
+							<h2><span>NATURE</span>PET</h2>
+							
+						</div>
+					</div>
+					<div class="col-sm-7">
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/n1.jpg" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+						
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/plante1.jpg" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+						
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/plantes2.jpg" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+						
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/an4.jpg" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="address">
+							<img src="images/home/map.png" alt="" />
+							<p>ARIANA </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-widget">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Service</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Online Help</a></li>
+								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">Order Status</a></li>
+								<li><a href="#">Change Location</a></li>
+								<li><a href="#">FAQ’s</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Quick Shop</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Animaux</a></li>
+								<li><a href="#">Nourriture</a></li>
+								<li><a href="#">Plantes</a></li>
+								<li><a href="#">Accesoires</a></li>
+								
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Policies</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Terms of Use</a></li>
+								<li><a href="#">Privecy Policy</a></li>
+								<li><a href="#">Refund Policy</a></li>
+								<li><a href="#">Billing System</a></li>
+								<li><a href="#">Ticket System</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>About Nature PET</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Company Information</a></li>
+								<li><a href="#">Careers</a></li>
+								<li><a href="#">Store Location</a></li>
+								<li><a href="#">Affillate Program</a></li>
+								<li><a href="#">Copyright</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3 col-sm-offset-1">
+						<div class="single-widget">
+							<h2>About NATURE PET</h2>
+							<form action="#" class="searchform">
+								<input type="text" placeholder="Your email address" />
+								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+								<p>Get the most recent updates from <br />our site and be updated your self...</p>
+							</form>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
+					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+				</div>
+			</div>
+		</div>
+		
+	</footer><!--/Footer-->
   
     <script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>

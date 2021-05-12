@@ -1,7 +1,21 @@
 <?PHP
 	include_once "../controller/evenementC.php";
-	require_once ("composant/composant.php");
 	
+	session_start();
+	
+	include '../controller/UtilisateurC.php';
+	
+	$user=$_SESSION['prenom'] .' '. $_SESSION['nom'];
+	$id=$_SESSION['id'];
+	$prenom=$_SESSION['prenom'];
+	$nom=$_SESSION['nom'];
+	$role=$_SESSION['role'];
+	$cin=$_SESSION['cin'];
+	$email=$_SESSION['email'];
+	$adresse=$_SESSION['adresse'];
+	$login=$_SESSION['login'];
+	$date=$_SESSION['date'];
+	$telephone=$_SESSION['telephone'];
 
 
 	$utilisateurC=new evenementC();
@@ -43,6 +57,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
     <link rel="stylesheet" href="style.css">
+	<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v10.0" nonce="VumE1b3Q"></script>
 
 </head><!--/head-->
 
@@ -316,9 +332,16 @@
 						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>
                             Close
                         </button>
+						<form  action="ajouterparticipe.php" method="POST">
+
 						<div class="col-2">
-      	             	<a href="login.php"   class="btn btn-default"> </i>Participer</a>
-      					</div>
+
+						<input   class="btn btn-default" type="submit" name="envoyer" id="envoyer" value="Participer"> 
+  						</div>
+						  <input type="hidden" value=<?PHP echo $us['id']; ?> name="id">
+						  <input type="hidden" value='<?PHP echo $id; ?>' name="id_client">
+
+					</form>	
 					</td>
 							
                         </button>
@@ -378,9 +401,17 @@
 						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>
                             Close
                         </button>
-						<div class="col-2">
-      	             	<a href="login.php"    class="btn btn-default"> </i>Participer</a>
-      					</div>
+						
+						  <form  action="ajouterparticipe.php" method="POST">
+
+							<div class="col-2">
+
+							<input   class="btn btn-default" type="submit" name="envoyer" id="envoyer" value="Participer"> 
+							</div>
+							<input type="hidden" value=<?PHP echo $uss['id']; ?> name="id">
+							<input type="hidden" value='<?PHP echo $id; ?>' name="id_client">
+
+							</form>	
 					</td>
 							
                         </button>
@@ -439,9 +470,17 @@
                         <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>
                             Close
                         </button>
+						
+						<form  action="ajouterparticipe.php" method="POST">
+
 						<div class="col-2">
-      	             	<a href="login.php"   class="btn btn-default"> </i>Participer</a>
-      					</div>
+
+						<input   class="btn btn-default" type="submit" name="envoyer" id="envoyer" value="Participer"> 
+						</div>
+						<input type="hidden" value=<?PHP echo $u['id']; ?> name="id">
+						<input type="hidden" value='<?PHP echo $id; ?>' name="id_client">
+
+						</form>	
 					</td>
 							
                         </button>
@@ -476,6 +515,7 @@
 		        </style>
 				<div class="contenir">
 				<a href="email.php"><button class="btn btn1">Inviter Participant via Email</button></a>
+				<div class="fb-share-button" data-href="http://localhost/web-masters/front/evenement.php" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%2Fweb-masters%2Ffront%2Fevenement.php&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
 	
 				</div>
 				
