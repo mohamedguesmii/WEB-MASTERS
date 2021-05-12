@@ -31,7 +31,7 @@ $error = "";
     
     
 }
-else     header('Location:login.php.php');
+else     header('Location:login.php');
 
  ?> 
 

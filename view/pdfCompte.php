@@ -37,8 +37,8 @@ include "../controller/UtilisateurC.php";
                     // Page number
                     $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
                 }
-      }
-
+      
+            }
         $pdf = new mypdf('P','mm','A4');
         $title = 'Comptes';
         $pdf->SetTitle($title);
@@ -60,7 +60,7 @@ include "../controller/UtilisateurC.php";
         foreach($listeUsers as $user){
     
 
-            {              $pdf->Ln();
+                         $pdf->Ln();
                          $pdf->Cell(20,10, $user['ID'],1,0,'C');
                          $pdf->Cell(20,10, $user['Nom'],1,0,'C');
                          $pdf->Cell(30,10, $user['Prenom'],1,0,'C');
@@ -75,5 +75,5 @@ include "../controller/UtilisateurC.php";
                      }
                
         $pdf->Output(); 
-                    }
+                
 ?>

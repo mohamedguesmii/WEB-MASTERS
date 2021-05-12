@@ -57,7 +57,7 @@ include "../controller/evenementC.php";
     
          
         foreach($listeUsers as $user)
-            {              $pdf->Ln();
+            {             $pdf->Ln();
                          $pdf->Cell(20,10,$user['id'],1,0,'C');
                          $pdf->Cell(40,10,$user['type'],1,0,'C');
                          $pdf->Cell(75,10,$user['description'],1,0,'C');
@@ -68,7 +68,7 @@ include "../controller/evenementC.php";
 
 
 
-                     }
+                 }
                
         $pdf->Output(); 
                   
