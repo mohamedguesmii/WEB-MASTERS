@@ -1,7 +1,7 @@
 <?php 
 require_once 'header.php';
-include_once '../../Model/Plante.php';
-include_once '../../Controller/PlanteC.php';
+include_once '../Model/Plante.php';
+include_once '../Controller/PlanteC.php';
 
 $PlanteC=new PlantesC() ;
 $liste=$PlanteC->trierPlantes();
@@ -21,12 +21,17 @@ $liste=$PlanteC->trierPlantes();
                 <hr> 
                 <thead>
                   <tr>
+                  <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
+                        </div> 
                     <th><i class="fa fa-user"></i> ID </th>
                     <th><i class="fa fa-user"></i> Nom </th>
                     <th><i class="fa fa-user"></i> Longeur</th>
                     <th ><i class="fa fa-user"></i> Prix</th>
-                    <th><i class="fa fa-calendar-o"></i> Type</th>
-                    <th><i class="fa fa-calendar-o"></i> image</th>
+                    <th><i class="fa fa-user"></i> Type</th>
+                    <th><i class="fa fa-user"></i> image</th>
+                    <th><b><i class="fa fa-calendar-o"></i>   Trier Prix </b></th>
+                    <th><b><i class="fa fa-calendar-o"></i>   statistiques des plantes selon le type </b></th>
 
                     <th></th>
                   </tr>
@@ -37,25 +42,29 @@ $liste=$PlanteC->trierPlantes();
 				foreach($liste as $plante):
 			?>
                   <tr>
-                    <td><?= $plante->id ?></td>
-                    <td><?= $plante->nom ?></td>
-				          	<td><?= $plante->longeur ?></td>
-					          <td><?= $plante->prix ?></td>
-					          <td><?= $plante->type ?></td>
-                   <td><a href=""><img src="image/home/<?= $plante->image ?>" alt="" height="100" width="150"></a>
- 
+                    <td><?= $plante['id'] ?></td>
+                    <td><?= $plante['nom']?></td>
+				          	<td><?= $plante['longeur'] ?></td>
+					          <td><?= $plante['prix'] ?></td>
+					          <td><?= $plante['type'] ?></td>
+                    <td><a href=""><img src="images/<?= $plante['image'] ?>"  alt="" height ="50" width="50"></a>
+                  
 
-                   </td>
+                    </td>
                   
                     <td>
-                      <button class="btn btn-danger btn-xs" onclick="window.location.href = 'supprimer.php?id=<?= $plante->id ?>';"> <i class="fa fa-trash-o "></i></button>
-					            <button class="btn btn-success btn-xs" onclick="window.location.href = 'modifier.php?id=<?= $plante->id ?>';"> <i class="fa fa-pencil "></i></button>
+                      <button class="btn btn-danger btn-xs" onclick="window.location.href = 'supprimerplante.php?id=<?= $plante['id'] ?>';"> <i class="fa fa-trash-o "></i></button>
+					            <button class="btn btn-success btn-xs" onclick="window.location.href = 'modifierplante.php?id=<?= $plante['id'] ?>';"> <i class="fa fa-pencil "></i></button>
                       <ul>
-					          <li><a href="trier.php">Tri Croissant </a></li>
-			   	          <li><a href="trierr.php">Tri Decroissant</a></li>
-					        </ul>
-                      
-                   </td>
+					              <li><a href="trier.php">Tri Croissant </a></li>
+			   	              <li><a href="trierr.php">Tri Decroissant</a></li>
+					           </ul>
+                     <td>
+                     <li><a href="stats.php"> statistiques des plantes selon le prix d'achat </a></li>
+                    
+                     </td>
+                    </td>
+                   
                   </tr>
 				  </td>
                   </tr>

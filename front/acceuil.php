@@ -173,11 +173,11 @@ if (
 							
                                     </ul>
                                 </li> 
-								<li><a href="contact-us.html"  >Reclamations</a>
+								<li><a class="" >Reclamations</a>
 								<ul role="menu" class="sub-menu">
                                     
 										<li><a href="ajouterReclamation.php">Ajouter reclamation</a></li> 
-										<li><a href="afficherReclamation.html">Afficher reclamation</a></li> 
+										<li><a href="afficherReclamation.php">Afficher reclamation</a></li> 
 										
                                     </ul></li>
 

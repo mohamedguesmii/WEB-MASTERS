@@ -11,10 +11,8 @@ include "../config.php";
   $UtilisateurC=new UtilisateurC();
 	$ReclamationC=new ReclamationC();
   
-    $nom=$_SESSION['prenom'] .' '. $_SESSION['nom'];
-	$id=$_SESSION['id'];
-
-   $listeReclamation=$ReclamationC->afficherReclamation1($id);
+    
+   $listeReclamation=$ReclamationC->afficherReclamation();
 ?>
 
 <!DOCTYPE html>
@@ -273,7 +271,7 @@ include "../config.php";
 				foreach($listeReclamation as $ReclamationC){
 			?>
 				<tr>
-                    <td><?PHP echo $id; ?></td>
+                    <td><?PHP echo $ReclamationC['id_client']; ?></td>
 					<td><?PHP echo $ReclamationC['id_reclamation']; ?></td>
 					<td><?PHP echo $ReclamationC['date_reclamation']; ?></td>
 					<td><?PHP echo $ReclamationC['objet_reclamation']; ?></td>

@@ -5,17 +5,23 @@
 	
 	include '../controller/UtilisateurC.php';
 	
-	$user=$_SESSION['prenom'] .' '. $_SESSION['nom'];
-	$id=$_SESSION['id'];
-	$prenom=$_SESSION['prenom'];
-	$nom=$_SESSION['nom'];
-	$role=$_SESSION['role'];
-	$cin=$_SESSION['cin'];
-	$email=$_SESSION['email'];
-	$adresse=$_SESSION['adresse'];
-	$login=$_SESSION['login'];
-	$date=$_SESSION['date'];
-	$telephone=$_SESSION['telephone'];
+	
+
+	if (isset($_SESSION['id']) && ! empty($_SESSION['id']) && isset($_SESSION['prenom']) && ! empty($_SESSION['prenom']) &&  isset($_SESSION['nom']) && ! empty($_SESSION['nom']))
+	{
+		$id=$_SESSION['id'];
+		$user=$_SESSION['prenom'] .' '. $_SESSION['nom'];
+		$message="Se Deconnecter";
+
+
+	}
+	else{
+	$user="";
+	$message="Se Connecter";
+     }
+
+
+	
 
 
 	$utilisateurC=new evenementC();
@@ -26,6 +32,7 @@
     $listerr=$utilisateurC->afficherevenement5();
     $listerrr=$utilisateurC->afficherevenement6();
 
+	
 
 	
 	
@@ -63,7 +70,7 @@
 </head><!--/head-->
 
 <body>
-	<header id="header"><!--header-->
+<header id="header"><!--header-->
 		<div class="header_top"><!--header_top-->
 			<div class="container">
 				<div class="row">
@@ -83,6 +90,10 @@
 								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
 								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="profile.php"><i class="fa fa-user">      <span class="profile-name"><?PHP echo $user; ?></i></a>
+								
+								    <a href="login.php"> <?PHP echo $message; ?> </a>
+							    </li>
 							</ul>
 						</div>
 					</div>
@@ -102,9 +113,9 @@
 							<ul class="nav navbar-nav">
 							
 								
-								<li><a href="checkout.php"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+								<li><a href="AjouterCommande.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+							
 							</ul>
 						</div>
 					</div>
@@ -134,11 +145,18 @@
                                     <ul role="menu" class="sub-menu">
                                     
 										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="cart.html">Cart</a></li> 
-										<li><a href="login.php">Login</a></li> 
+										<li><a href="AjouterCommande.php">Cart</a></li> 
+							
                                     </ul>
                                 </li> 
-							
+								<li><a href="contact-us.html"  >Reclamations</a>
+								<ul role="menu" class="sub-menu">
+                                    
+										<li><a href="ajouterReclamation.php">Ajouter reclamation</a></li> 
+										<li><a href="afficherReclamation.html">Afficher reclamation</a></li> 
+										
+                                    </ul></li>
+
 								<li><a href="evenement.php">Evenement</a></li>
 								<li><a href="contact-us.html">Contact</a></li>
 							</ul>

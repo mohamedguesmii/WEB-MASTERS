@@ -131,7 +131,7 @@ include "../config.php";
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.html">Home</a></li>
+								<li><a href="index.php">Home</a></li>
 								<li><a href="contact-us.html"  class="active">Reclamations</a>
 								<ul role="menu" class="sub-menu">
                                     

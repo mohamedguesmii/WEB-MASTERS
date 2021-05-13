@@ -179,7 +179,7 @@
                                     <div id="submenu11" class="collapse submenu" style="">
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
-                                                <a class="nav-link" href="afficherreclamation.php"> <em class="fa fa-book-open">&nbsp;</em>Afficher Reclamations</a>
+                                                <a class="nav-link" href="reclamationAdm.php> <em class="fa fa-book-open">&nbsp;</em>Afficher Reclamations</a>
                                             </li>
                                             
                                         </ul>

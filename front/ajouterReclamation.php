@@ -10,8 +10,19 @@ include "../config.php";
    $error = "";
   
    
-	$nom=$_SESSION['prenom'] .' '. $_SESSION['nom'];
-	$id=$_SESSION['id'];
+	
+
+		if (isset($_SESSION['id']) && ! empty($_SESSION['id']) && isset($_SESSION['prenom']) && ! empty($_SESSION['prenom']) &&  isset($_SESSION['nom']) && ! empty($_SESSION['nom']))
+	{
+		$id=$_SESSION['id'];
+		$nom=$_SESSION['prenom'] .' '. $_SESSION['nom'];
+		
+
+
+	}
+	else{
+	
+     }
 
 ?>
 <!DOCTYPE html>
