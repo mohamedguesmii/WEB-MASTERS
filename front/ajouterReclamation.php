@@ -1,41 +1,18 @@
 <?php
 session_start();
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-require '../src/Exception.php';
-require '../src/PHPMailer.php';
-require '../src/SMTP.php';
+
 include "../config.php"; 
 	include "../controller/ReclamationC.php";
 	include "../controller/UtilisateurC.php";
    $ReclamationC = new ReclamationC();
    $UtilisateurC=new UtilisateurC();
-   $user=$_SESSION['prenom'] .' '. $_SESSION['nom'];
+
    $error = "";
-   if (
-    isset($_POST['date_reclamation'])
-    && isset($_POST['objet_reclamation'])
-    && isset($_POST['description'])
+  
    
-  ) {
-      if(!empty($_POST['date_reclamation'])
-      &&!empty($_POST['objet_reclamation'])
-      &&!empty($_POST['description'])
-      
-      )
-      {
-      
-        $date_reclamation=$_POST["date_reclamation"];
-        $objet_reclamation=$_POST["objet_reclamation"];
-        $description=$_POST["description"];
-       
-        $ReclamationC->ajouterReclamation($date_reclamation,$objet_reclamation,$description);
-        header('location:acceuil.php');
-      }else{
-        $error="Missing information";
-      }
-    }
 	$nom=$_SESSION['prenom'] .' '. $_SESSION['nom'];
+	$id=$_SESSION['id'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -100,9 +77,10 @@ include "../config.php";
 								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
 								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="profile.php"><i class="fa fa-user">      <span class="profile-name"><?PHP echo $user; ?></i></a>
+								<li><a href="profile.php"><i class="fa fa-user">      <span class="profile-name"></i></a>
 								
-								<a href="index.php"> Se déconnecter </a>
+								    <a href="index.php"> Se déconnecter </a>
+							    </li>
 							</ul>
 						</div>
 					</div>
@@ -148,26 +126,17 @@ include "../config.php";
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="acceuil.php">Home</a></li>
+								<li><a href="index.html">Home</a></li>
 								<li><a href="contact-us.html"  class="active">Reclamations</a>
 								<ul role="menu" class="sub-menu">
                                     
-										<li><a href="AjouterReclamation.html" >Ajouter reclamation</a></li> 
+										<li><a href="Ajouter reclamation.html" >Ajouter reclamation</a></li> 
 										<li><a href="afficherReclamation.php">Afficher reclamation</a></li> 
 										
                                     </ul></li>
 
-									<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="cart.html">Cart</a></li> 
-										
-                                    </ul>
-                                </li> 
-
-								<li><a href="evenement.php">Evenement</a></li>							
+							
 								<li><a href="contact-us.html">Contact</a></li>
-								
 							</ul>
 						</div>
 					</div>
@@ -252,7 +221,7 @@ include "../config.php";
 				<img src="imagess/img-01.png" alt="IMG">
 			</div>
 			<?php echo $error?>
-			<form class="contact1-form validate-form" action="" method="POST">
+			<form class="contact1-form validate-form" action="test.php" method="POST">
 				<span class="contact1-form-title">
 					RECLAMATION
 				</span>
@@ -287,12 +256,13 @@ include "../config.php";
 					<span class="shadow-input1"></span>
 				</div>
 		
-
 				<div class="container-contact1-form-btn">
 					<button type="submit" class="contact1-form-btn">
 						<span>
 						Envoyer reclamation
 							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+					<input type="hidden" value='<?PHP echo $id; ?>' name="id_client">
+
 						</span>
 					</button>
 				</div>

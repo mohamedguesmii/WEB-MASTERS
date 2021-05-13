@@ -10,8 +10,11 @@ include "../config.php";
   include "../controller/UtilisateurC.php";
   $UtilisateurC=new UtilisateurC();
 	$ReclamationC=new ReclamationC();
-  $listeReclamation=$ReclamationC->afficherReclamation();
-  $nom=$_SESSION['prenom'] .' '. $_SESSION['nom'];
+  
+    $nom=$_SESSION['prenom'] .' '. $_SESSION['nom'];
+	$id=$_SESSION['id'];
+
+   $listeReclamation=$ReclamationC->afficherReclamation1($id);
 ?>
 
 <!DOCTYPE html>
@@ -256,11 +259,13 @@ include "../config.php";
                       <table class="table table-striped">
                         <thead>
                           <tr>
-                          <th>Id</th>
+                          <!--<th>Id</th>-->
+                          <th>ID Client</th>
                             <th>Id_reclamation</th>
                             <th>date_reclamation</th>
                             <th>objet_reclamation</th>
                             <th>description</th>
+                            <th> Supprimer</th>
                           </tr>
                         </thead>
                        <tbody>
@@ -268,14 +273,17 @@ include "../config.php";
 				foreach($listeReclamation as $ReclamationC){
 			?>
 				<tr>
-          <td><?PHP echo $UtilisateurC['id']; ?></td>
+                    <td><?PHP echo $id; ?></td>
 					<td><?PHP echo $ReclamationC['id_reclamation']; ?></td>
 					<td><?PHP echo $ReclamationC['date_reclamation']; ?></td>
 					<td><?PHP echo $ReclamationC['objet_reclamation']; ?></td>
 					<td><?PHP echo $ReclamationC['description']; ?></td>
-          <td><a href=""></a>
+          
+          <td>
           <form method="POST" action="supprimerReclamation.php">
-						<button type="submit" style="border:none"> <i  class="fa fa-trash"></i></button>
+          <button type="submit" name="supprimer" value="supprimer" style="background-color:transparent; border-color:transparent;"> 
+						<img src="https://img.icons8.com/color/48/000000/delete-forever.png"/>
+                         </button>
 						<input type="hidden" value=<?PHP echo $ReclamationC['id_reclamation']; ?> name="id_reclamation" >
 						</form> 
         </td>

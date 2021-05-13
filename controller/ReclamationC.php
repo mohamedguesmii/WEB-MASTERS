@@ -3,14 +3,15 @@ include_once "../config.php";
 require_once '../Model/Reclamation.php';
 class ReclamationC {
 		
-		function ajouterReclamation($date_reclamation,$objet_reclamation,$description){
-			$sql="INSERT INTO Reclamation (date_reclamation,objet_reclamation,description)
-			VALUES ('$date_reclamation','$objet_reclamation','$description')";
+		function ajouterReclamation($date_reclamation,$objet_reclamation,$description,$id_client){
+			$sql="INSERT INTO Reclamation (date_reclamation,objet_reclamation,description,id_client)
+			VALUES ('$date_reclamation','$objet_reclamation','$description','$id_client')";
 			$db = config::getConnexion();
 			try{
 				$query = $db->prepare($sql);
 			
-				$query->execute();			
+				$query->execute();
+							
 			}
 			catch (Exception $e){
 				echo 'Erreur: '.$e->getMessage();
@@ -52,7 +53,21 @@ class ReclamationC {
 			{
 				die('Erreur: '.$e->getMessage());
 			}	
-		      }
+        }
+		function afficherReclamation1($id){
+			$sql="SELECT U.ID, R.id_reclamation, R.date_reclamation, R.objet_reclamation ,R.description FROM utilisateur U, reclamation R WHERE R.id_client = U.ID and U.ID =\"$id\"";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e)
+			{
+				die('Erreur: '.$e->getMessage());
+			}	
+        }
+			
+      
 
 		
 
