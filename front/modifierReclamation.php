@@ -9,14 +9,39 @@ include "../config.php";
 	include "../controller/ReclamationC.php";
 	include "../controller/UtilisateurC.php";
    $ReclamationC = new ReclamationC();
-   $UtilisateurC=new UtilisateurC();
 
-   $nom=$_SESSION['prenom'] .' '. $_SESSION['nom'];
-	$id=$_SESSION['id'];
 
-   $listeReclamation=$ReclamationC->afficherReclamation1($id);
-   $error = "";
-   
+
+
+
+ if ( 
+ isset($_POST['nomdate_reclamation'])
+
+ )
+ {
+if(!empty($_POST['date_reclamation'])
+
+ )
+  { 
+	$date_reclamationUp=$_POST["date_reclamation"];
+	$objet_reclamationUp=$_POST["objet_reclamation"];
+	$descriptionUp=$_POST["description"];
+  
+  
+  $ReclamationC->modifierReclamation($id_reclamation,$date_reclamationUp,$objet_reclamationUp,$descriptionUp);
+  header('Location:afficherReclamation.php');
+  
+  $_SESSION['date_reclamation'] = $date_reclamationUp;
+  $_SESSION['objet_reclamation'] = $objet_reclamationUp;
+  $_SESSION['description'] = $descriptionUp;
+ 
+}
+}
+else{
+  echo("");
+}
+
+
 	
 ?>
 <!DOCTYPE html>
@@ -135,7 +160,7 @@ include "../config.php";
 								<li><a href="contact-us.html"  class="active">Reclamations</a>
 								<ul role="menu" class="sub-menu">
                                     
-										<li><a href="ajouterReclamation.php" >Ajouter reclamation</a></li> 
+										<li><a href="Ajouter reclamation.html" >Ajouter reclamation</a></li> 
 										<li><a href="afficherReclamation.php">Afficher reclamation</a></li> 
 										
                                     </ul></li>
@@ -219,54 +244,64 @@ include "../config.php";
 			</div>
 		</div>
 	</section><!--/slider-->
+	<form class="form-sample" action="" method="POST">
 	
-	<div class="main-panel">
-          <div style="height: 100%;overflow-y: scroll;overflow-x: hidden; ">
-                          <div class="col-lg-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title"><h1>Mes reclamations</h1></h4>
-                    </p>
-                    <div class="table-responsive">
-                      <table class="table table-striped">
-                        <thead>
-                          <tr>
-						    <th>ID Client</th>
-                            <th>Id_reclamation</th>
-                            <th>date_reclamation</th>
-                            <th>objet_reclamation</th>
-                            <th>description</th>
-                          </tr>
-                        </thead>
-                       <tbody>
-                       				<?PHP
-				foreach($listeReclamation as $ReclamationC){
-			?>
-				<tr>
-				   <td><?PHP echo $id ?></td>
-					<td><?PHP echo $ReclamationC['id_reclamation']; ?></td>
-					<td><?PHP echo $ReclamationC['date_reclamation']; ?></td>
-					<td><?PHP echo $ReclamationC['objet_reclamation']; ?></td>
-					<td><?PHP echo $ReclamationC['description']; ?></td>
-          <td>
-          <a href=""></a>
-          
-						<a href="modifierReclamation.php" button  type="submit" style="border:none"> <i class="fa fa-pencil-square-o"></i></button></a>
-						
-						
-        </td>
-				</tr>
-			<?PHP
-				}
-			?>
-                       </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
+		<div class="container-contact1">
+			<div class="contact1-pic js-tilt" data-tilt>
+				<img src="imagess/img-01.png" alt="IMG">
+			</div>
+			
+			<form class="contact1-form validate-form" action="" method="POST">
+				<span class="contact1-form-title">
+					RECLAMATION
+				</span>
+				<label for="exampleSelectGender">Date</label>
+				<div class="wrap-input1 validate-input" data-validate = "date is required">
+					<input class="input1" type="date" name="date_reclamation" placeholder="date"  value='<?PHP echo $date_reclamation; ?>'>
+					<span class="shadow-input1"></span>
+				</div>
+
+
+				<!--<div class="form-group">
+              <label for="exampleSelectGender">Objet reclamation</label>
+              <select class="form-control" name="objet_reclamation">
+			  <option>reclamation liéé au animaux</option>
+                <option>reclamation liéé au plante</option>
+				<option>reclamation liéé au accessoires</option>
+                
+              </select>
+            </div> -->
+			<label for="exampleSelectGender">Objet reclamation</label>
+				<div  class="wrap-input1 validate-input" data-validate = "object is required">
+	            <select class="input1" name="objet_reclamation"  value='<?PHP echo $objet_reclamation; ?>'>
+                <option>reclamation liéé au animaux</option>
+                <option>reclamation liéé au plante</option>
+				<option>reclamation liéé au accessoires</option>
+              </select>
+		
+				</div>
+				<label for="exampleSelectGender">Description</label>
+			<div class="wrap-input1 validate-input" data-validate = "Description is required">
+					<textarea class="input1" name="description" placeholder="Description"  value='<?PHP echo $description; ?>'></textarea>
+					<span class="shadow-input1"></span>
+				</div>
+		
+
+				<div class="container-contact1-form-btn">
+					<button type="submit" class="contact1-form-btn">
+						<span>
+				Modifier
+							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+
+		    </div>
+	</form>
 	
+
+
 
 
 
