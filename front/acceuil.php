@@ -4,6 +4,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 include "../controller/AnimauxC.php";
 include "../controller/PlanteC.php";
+include "../controller/accessoiresC.php";
 require '../src/Exception.php';
 require '../src/PHPMailer.php';
 require '../src/SMTP.php';
@@ -22,7 +23,16 @@ include '../controller/UtilisateurC.php';
 
 	$utilisateurC=new NourritureC();
 	$listeUser=$utilisateurC->afficherNourriture();
-	$userC = new UtilisateurC();
+	
+	
+	
+	$utilisateurC=new PlantesC();
+	$listepla=$utilisateurC->displayPlantes();
+
+	$utilisateurC=new accessoiresC();
+	$liste=$utilisateurC->displayaccessoires();
+
+
 
 $user=$_SESSION['prenom'] .' '. $_SESSION['nom'];
 if ( 
@@ -114,10 +124,6 @@ if (
 								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
 								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="profile.php"><i class="fa fa-user">      <span class="profile-name"><?PHP echo $user; ?></i></a>
-								
-								    <a href="index.php"> Se déconnecter </a>
-							    </li>
 							</ul>
 						</div>
 					</div>
@@ -139,7 +145,7 @@ if (
 								
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 								<li><a href="AjouterCommande.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-							
+								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
 					</div>
@@ -170,17 +176,10 @@ if (
                                     
 										<li><a href="checkout.html">Checkout</a></li> 
 										<li><a href="AjouterCommande.php">Cart</a></li> 
-							
+										<li><a href="login.php">Login</a></li> 
                                     </ul>
                                 </li> 
-								<li><a class="" >Reclamations</a>
-								<ul role="menu" class="sub-menu">
-                                    
-										<li><a href="ajouterReclamation.php">Ajouter reclamation</a></li> 
-										<li><a href="afficherReclamation.php">Afficher reclamation</a></li> 
-										
-                                    </ul></li>
-
+							
 								<li><a href="evenement.php">Evenement</a></li>
 								<li><a href="contact-us.html">Contact</a></li>
 							</ul>
@@ -715,14 +714,20 @@ if (
 			                ?>
 							
 							</div>
-							
 							<div class="tab-pane fade" id="sunglass" >
+							<?PHP
+							    
+								foreach($listepla as $user){
+								  
+							   
+							?>
 								<div class="col-sm-3">
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-												<img src="images/home/plantes2.jpg" alt="" />
-												<h2>$56</h2>
+											<img src="images/<?= $user['image'] ?>">
+											<h2> <?php echo $user['prix']."DT"; ?></h2>
+												<p><?PHP echo $user['nom']; ?></p>
 												
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
@@ -730,101 +735,40 @@ if (
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="images/home/plante1.jpg" alt="" />
-												<h2>$56</h2>
-												
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="images/home/plante3.jpg" alt="" />
-												<h2>$56</h2>
-												
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="images/home/plante4.jpg" alt="" />
-												<h2>$56</h2>
-												
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-							</div>
+								<?PHP
+			              	}
 							
-							<div class="tab-pane fade" id="kids" >
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="images/home/acc1.jpg" alt="" />
-												<h2>$56</h2>
-												
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="images/home/acc2.jpg" alt="" />
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="images/home/acc3.jpg" alt="" />
-												<h2>$56</h2>
-												
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-												<img src="images/home/acc4.jpg" alt="" />
-												<h2>$56</h2>
-												
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
+			                ?>
+							
 							</div>
+							<div class="tab-pane fade" id="kids" >
+							<?PHP
+							    
+								foreach($liste as $user){
+								  
+							   
+							?>
+
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+											<img src="images/<?= $user['image'] ?>">
+											<h2> <?php echo $user['prix']."DT"; ?></h2>
+												<p><?PHP echo $user['categories']; ?></p>
+												
+												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+											
+										</div>
+									</div>
+									</div>
+									<?PHP
+			              	}
+							
+			                ?>
+								</div>
+								
 							<div class="tab-pane fade" id="promoplante" >
                             <?PHP
 							 $i=0;
