@@ -91,7 +91,11 @@ include "../config.php";
                                     <div id="submenu11" class="collapse submenu" style="">
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
+<<<<<<< HEAD
                                                 <a class="nav-link" href="afficherreclamation.php"> <em class="fa fa-book-open">&nbsp;</em>Afficher Reclamations</a>
+=======
+                                                <a class="nav-link" href="reclamationAdm.php"> <em class="fa fa-book-open">&nbsp;</em>Afficher Reclamations</a>
+>>>>>>> d621535b94b93d125300d6e7b48fbf520a20873e
                                             </li>
                                             
                                         </ul>

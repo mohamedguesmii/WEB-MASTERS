@@ -28,6 +28,7 @@ $liste=$accessoiresC->displayaccessoires();
                 <hr> 
                 <thead>
                   <tr>
+<<<<<<< HEAD
                   <div class="input-group-prepend">
                             <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
                         </div> 
@@ -40,6 +41,17 @@ $liste=$accessoiresC->displayaccessoires();
                    
 
                     <th><b><i class="fa fa-calendar-o"style="color:blue" ></i>   statistiques des assecoisre selon le type </b></th>
+=======
+                  <th><i class="fa fa-user"></i> ID </th>
+                  <th><i class="fa fa-user"></i> Categories</th>
+                    <th><i class="fa fa-user"></i> matiere</th>
+                    <th ><i class="fa fa-user"></i> Prix</th>
+                    <th ><i class="fa fa-user"></i> image</th>
+                    <th ><i class="fa fa-user"></i> trier</th>
+                   
+
+                    <th><b><i class="fa fa-calendar-o"></i>   statistiques des assecoisre selon le type </b></th>
+>>>>>>> d621535b94b93d125300d6e7b48fbf520a20873e
 
                     
                     <th></th>

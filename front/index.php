@@ -25,6 +25,7 @@ include "../controller/accessoiresC.php";
 
 	$utilisateurC=new PlantesC();
 	$listepla=$utilisateurC->displayPlantes();
+<<<<<<< HEAD
 
 
 	$utilisateurC=new accessoiresC();
@@ -33,6 +34,8 @@ include "../controller/accessoiresC.php";
 
 
 
+=======
+>>>>>>> d621535b94b93d125300d6e7b48fbf520a20873e
 ?>
 
 <!DOCTYPE html>
@@ -698,9 +701,15 @@ include "../controller/accessoiresC.php";
 								</div>
 								<?PHP
 			              	}
+<<<<<<< HEAD
 							
 			                ?>
 							
+=======
+							
+			                ?>
+							
+>>>>>>> d621535b94b93d125300d6e7b48fbf520a20873e
 							</div>
 							<div class="tab-pane fade" id="kids" >
 							<?PHP

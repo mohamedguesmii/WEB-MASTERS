@@ -7,6 +7,24 @@
 	$listeUsers=$AnimauxC->afficherAnimaux();
 
 	$list=$AnimauxC->afficherpromoanimaux();
+<<<<<<< HEAD
+=======
+	session_start();
+	
+
+
+
+if (isset($_SESSION['id']) && ! empty($_SESSION['id']) && isset($_SESSION['prenom']) && ! empty($_SESSION['prenom']) &&  isset($_SESSION['nom']) && ! empty($_SESSION['nom']))
+{
+	$user=$_SESSION['prenom'] .' '. $_SESSION['nom'];
+
+
+}
+else{
+$user="ADMIN";
+
+ }
+>>>>>>> d621535b94b93d125300d6e7b48fbf520a20873e
 
 ?>
 
@@ -105,7 +123,7 @@
 				<img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
 			</div>
 			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">Moetaz</div>
+				<div class="profile-usertitle-name"><?php echo $user;?></div>
 				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
 			</div>
 			<div class="clear"></div>
