@@ -10,10 +10,6 @@ include "../config.php";
    $error = "";
   
    
-<<<<<<< HEAD
-	$nom=$_SESSION['prenom'] .' '. $_SESSION['nom'];
-	$id=$_SESSION['id'];
-=======
 	
 
 		if (isset($_SESSION['id']) && ! empty($_SESSION['id']) && isset($_SESSION['prenom']) && ! empty($_SESSION['prenom']) &&  isset($_SESSION['nom']) && ! empty($_SESSION['nom']))
@@ -27,7 +23,6 @@ include "../config.php";
 	else{
 	
      }
->>>>>>> d621535b94b93d125300d6e7b48fbf520a20873e
 
 ?>
 <!DOCTYPE html>

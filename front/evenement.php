@@ -1,7 +1,5 @@
 <?PHP
 	include_once "../controller/evenementC.php";
-<<<<<<< HEAD
-=======
 	
 	session_start();
 	
@@ -23,23 +21,7 @@
      }
 
 
->>>>>>> d621535b94b93d125300d6e7b48fbf520a20873e
 	
-	session_start();
-	
-	include '../controller/UtilisateurC.php';
-	
-	$user=$_SESSION['prenom'] .' '. $_SESSION['nom'];
-	$id=$_SESSION['id'];
-	$prenom=$_SESSION['prenom'];
-	$nom=$_SESSION['nom'];
-	$role=$_SESSION['role'];
-	$cin=$_SESSION['cin'];
-	$email=$_SESSION['email'];
-	$adresse=$_SESSION['adresse'];
-	$login=$_SESSION['login'];
-	$date=$_SESSION['date'];
-	$telephone=$_SESSION['telephone'];
 
 
 	$utilisateurC=new evenementC();

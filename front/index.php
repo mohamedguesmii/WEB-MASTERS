@@ -25,17 +25,9 @@ include "../controller/accessoiresC.php";
 
 	$utilisateurC=new PlantesC();
 	$listepla=$utilisateurC->displayPlantes();
-<<<<<<< HEAD
-
 
 	$utilisateurC=new accessoiresC();
-	$listeacc=$utilisateurC->displayaccessoires();
-
-
-
-
-=======
->>>>>>> d621535b94b93d125300d6e7b48fbf520a20873e
+	$liste=$utilisateurC->displayaccessoires();
 ?>
 
 <!DOCTYPE html>
@@ -677,7 +669,6 @@ include "../controller/accessoiresC.php";
 			                ?>
 							
 							</div>
-							
 							<div class="tab-pane fade" id="sunglass" >
 							<?PHP
 							    
@@ -701,20 +692,14 @@ include "../controller/accessoiresC.php";
 								</div>
 								<?PHP
 			              	}
-<<<<<<< HEAD
 							
 			                ?>
 							
-=======
-							
-			                ?>
-							
->>>>>>> d621535b94b93d125300d6e7b48fbf520a20873e
 							</div>
 							<div class="tab-pane fade" id="kids" >
 							<?PHP
 							    
-								foreach($listeacc as $user){
+								foreach($liste as $user){
 								  
 							   
 							?>
@@ -731,6 +716,7 @@ include "../controller/accessoiresC.php";
 											</div>
 											
 										</div>
+									</div>
 									</div>
 									<?PHP
 			              	}

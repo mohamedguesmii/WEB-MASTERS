@@ -38,7 +38,7 @@ include_once '../controller/PlanteC.php';
         <div class="row justify-content-center">
             <div class="col-lg-8 m-auto text-center col-sm-12 col-md-12">
                 <div class="banner-content content-padding">
-                    <h1 class="text-white">Modifier une plante </h1>
+                    <h1 class="text-white" style="color:green" >Modifier une plante </h1>
                 </div>
             </div>
         </div>
@@ -48,11 +48,11 @@ include_once '../controller/PlanteC.php';
 <form class="contact__form" method="post" action="">
 <div class="row">
 <div class="col-md-4 form-group">    
-<label for="nom">Nom:</label>
+<label for="nom"style="color:green">Nom:</label>
         <input name="nom" type="text" class="form-control" placeholder="Tapez le nom"  value="<?=$plante['nom']?>"required>
     </div>
     <div class="col-md-4 form-group"> 
-	<label for="longeur">Longeur:</label>   
+	<label for="longeur"style="color:green">Longeur:</label>   
         <input name="longeur" type="text" class="form-control" placeholder="Tapez la longeur" value="<?=$plante['longeur']?>" required>
     </div>
 	</div>
@@ -60,19 +60,19 @@ include_once '../controller/PlanteC.php';
 	<div class="row">
 		
       <div class="col-md-4 form-group">  
-	  <label for="prix">Prix:</label>  
+	  <label for="prix"style="color:green">Prix:</label>  
         <input name="prix" type="text" class="form-control" placeholder="Tapez le prix" value="<?=$plante['prix']?>" required>
     </div>
 	
     <div class="col-md-4 form-group">
-    <label for="type">type:</label>
+    <label for="type"style="color:green">type:</label>
         <input name="type" type="text" class="form-control" placeholder="Tapez le type" value="<?=$plante['type']?>" required>
     </div>
 	</div>
 	<div class="row">
 	<div class="col-md-4 form-group"> 
 	
-    <label for="myfile">Image:</label>
+    <label for="myfile"style="color:green">Image:</label>
     
 <input type="text" class="form-control" id="img"  name="image"value="<?=$plante['image']?>" readonly>
 </div>

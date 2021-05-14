@@ -3,7 +3,7 @@ require_once 'header.php';
  include_once '../Model/accessoires.php';
 include_once '../Controller/accessoiresC.php';
 
-$accessoiresC=new PlantesC() ;
+$accessoiresC=new accessoiresC() ;
 $liste=$accessoiresC->trieraccessoiresasc();
  
 

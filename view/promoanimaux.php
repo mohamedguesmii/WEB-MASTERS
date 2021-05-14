@@ -7,8 +7,6 @@
 	$listeUsers=$AnimauxC->afficherAnimaux();
 
 	$list=$AnimauxC->afficherpromoanimaux();
-<<<<<<< HEAD
-=======
 	session_start();
 	
 
@@ -24,7 +22,6 @@ else{
 $user="ADMIN";
 
  }
->>>>>>> d621535b94b93d125300d6e7b48fbf520a20873e
 
 ?>
 

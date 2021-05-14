@@ -36,7 +36,7 @@ include_once '../Controller/accessoiresC.php';
         <div class="row justify-content-center">
             <div class="col-lg-8 m-auto text-center col-sm-12 col-md-12">
                 <div class="banner-content content-padding">
-                    <h1 class="text-white">Modifier un accessoires </h1>
+                    <h1 class="text-white"style="color:green">Modifier un accessoires </h1>
                 </div>
             </div>
         </div>
@@ -48,27 +48,27 @@ include_once '../Controller/accessoiresC.php';
 
     <div class="row">
     <div class="col-md-4 form-group">    
-    <label for="categories">categories:</label>
+    <label for="categories"style="color:green">categories:</label>
         <input name="categories" type="text" class="form-control" placeholder="Tapez la categorie "  value="<?=$accessoires['categories']?>"required>
     </div>
 
     
     <div class="col-md-4 form-group"> 
-	<label for="matiere">matiere:</label>   
+	<label for="matiere"style="color:green">matiere:</label>   
         <input name="matiere" type="text" class="form-control" placeholder="Tapez la matiere" value="<?=$accessoires['matiere']?>" required>
     </div>
 	</div>
 	
 	<div class="row">	
     <div class="col-md-4 form-group">  
-	<label for="prix">Prix:</label>  
+	<label for="prix"style="color:green">Prix:</label>  
         <input name="prix" type="text" class="form-control" placeholder="Tapez le prix" value="<?=$accessoires['prix']?>" required>
     </div>
 	</div>
 
 	<div class="row">
 	<div class="col-md-4 form-group"> 	
-    <label for="myfile">Image:</label>
+    <label for="myfile"style="color:green">Image:</label>
     
 <input type="text" class="form-control" id="image"  name="image" value="<?=$accessoires['image']?>"readonly>
 </div>

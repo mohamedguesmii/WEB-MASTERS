@@ -8,50 +8,32 @@ $liste=$accessoiresC->displayaccessoires();
  
 
 ?>
-<?php
-            $R= rand(0,255);
-            $G= rand(0,255);
-            $B= rand(0,255);
-            echo "<div style='color:green; text-shadow: 100px 220px 330px rgb(".$R.",".$G.",".$B.");front-size:500px;text-align: center;'><b></b></div>";
-
-                ?>
 <div class='container'>
 <div class="row justify-content-center">
     <section id="main-content">
       <section class="wrapper">
-        <h3><i class="fa fa-angle-right"  ></i> Table des Accessoires</h3>
+        <h3><i class="fa fa-angle-right"style="color:blue"></i> Table des Accessoires</h3>
         <div class="row mt">
           <div class="col-md-12">
-            <div class="content-panel" >
-              <table class="table table-striped table-advance table-hover" >
-                <h4><i class="fa fa-users" style="color:green"  ></i> Accessoires Info </h4>
+            <div class="content-panel">
+              <table class="table table-striped table-advance table-hover">
+                <h4><i class="fa fa-users"style="color:green"></i> Accessoires Info</h4>
+                
                 <hr> 
+                <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
+                        </div>
                 <thead>
                   <tr>
-<<<<<<< HEAD
-                  <div class="input-group-prepend">
-                            <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
-                        </div> 
-                  <th><i class="fa fa-user"style="color:blue"  ></i> ID </th>
-                  <th><i class="fa fa-user"style="color:blue" ></i> Categories</th>
-                    <th><i class="fa fa-user"style="color:blue"  ></i> matiere</th>
-                    <th ><i class="fa fa-user"style="color:blue"  ></i> Prix</th>
-                    <th ><i class="fa fa-user"style="color:blue"  ></i> image</th>
-                    <th ><i class="fa fa-user" style="color:blue" ></i> trier</th>
+                  <th><i class="fa fa-user"style="color:green"></i> ID </th>
+                  <th><i class="fa fa-user"style="color:green"></i> Categories</th>
+                    <th><i class="fa fa-user"style="color:green"></i> matiere</th>
+                    <th ><i class="fa fa-user"style="color:green"></i> Prix</th>
+                    <th ><i class="fa fa-user"style="color:green"></i> image</th>
+                    <th ><i class="fa fa-user"style="color:green"></i> trier</th>
                    
 
-                    <th><b><i class="fa fa-calendar-o"style="color:blue" ></i>   statistiques des assecoisre selon le type </b></th>
-=======
-                  <th><i class="fa fa-user"></i> ID </th>
-                  <th><i class="fa fa-user"></i> Categories</th>
-                    <th><i class="fa fa-user"></i> matiere</th>
-                    <th ><i class="fa fa-user"></i> Prix</th>
-                    <th ><i class="fa fa-user"></i> image</th>
-                    <th ><i class="fa fa-user"></i> trier</th>
-                   
-
-                    <th><b><i class="fa fa-calendar-o"></i>   statistiques des assecoisre selon le type </b></th>
->>>>>>> d621535b94b93d125300d6e7b48fbf520a20873e
+                    <th><b><i class="fa fa-calendar-o"style="color:green"></i>   statistiques des assecoisre selon le type </b></th>
 
                     
                     <th></th>
@@ -68,19 +50,21 @@ $liste=$accessoiresC->displayaccessoires();
 					          <td><?= $accessoires['matiere'] ?></td>
 					          <td><?= $accessoires['prix'] ?></td>
                     <td><a href=""><img src="images/<?= $accessoires['image'] ?>" alt="" height ="50" width="50"></a>
-				
+                    </td>
                    
                     <td>
                       <button class="btn btn-danger btn-xs" onclick="window.location.href = 'supprimeraccessoire.php?id=<?= $accessoires['id'] ?>';"> <i class="fa fa-trash-o "></i></button>
 					            <button class="btn btn-success btn-xs" onclick="window.location.href = 'modifieraccessoire.php?id=<?= $accessoires['id'] ?>';"> <i class="fa fa-pencil "></i></button>
-                    <li><a href="trieracc.php">Tri Croissant </a></li>
-			   	          <li><a href="trierracc.php">Tri Decroissant</a></li>
+                      <ul>
+                    <li><a href="trieracc.php"style="color:black">Tri Croissant </a></li>
+			   	          <li><a href="trierracc.php"style="color:red">Tri Decroissant</a></li>
                       
-                   </td>
-                   <td>
+                     </ul>
+                     <td>
                      <li><a href="statsaccess.php"> statistiques des assecoire selon le prix d'achat </a></li>
-                    
                      </td>
+                    </td>
+                   
                   </tr>
 				  </td>
          

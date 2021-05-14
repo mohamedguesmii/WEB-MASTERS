@@ -43,32 +43,18 @@ $liste=$PlanteC->trierPlantes();
 			?>
                   <tr>
                     <td><?= $plante['id'] ?></td>
-<<<<<<< HEAD
-                    <td><?= $plante['nom'] ?></td>
-				          	<td><?= $plante['longeur'] ?></td>
-					          <td><?= $plante['prix'] ?></td>
-					          <td><?= $plante['type'] ?></td>
-                   <td><a href=""><img src="images/<?= $plante['image'] ?>" alt="" height="50" width="50"></a>
- 
-=======
                     <td><?= $plante['nom']?></td>
 				          	<td><?= $plante['longeur'] ?></td>
 					          <td><?= $plante['prix'] ?></td>
 					          <td><?= $plante['type'] ?></td>
                     <td><a href=""><img src="images/<?= $plante['image'] ?>"  alt="" height ="50" width="50"></a>
                   
->>>>>>> d621535b94b93d125300d6e7b48fbf520a20873e
 
                     </td>
                   
                     <td>
-<<<<<<< HEAD
-                      <button class="btn btn-danger btn-xs" onclick="window.location.href = 'supprimer.php?id=<?= $plante['id'] ?>';"> <i class="fa fa-trash-o "></i></button>
-					            <button class="btn btn-success btn-xs" onclick="window.location.href = 'modifier.php?id=<?= $plante['id'] ?>';"> <i class="fa fa-pencil "></i></button>
-=======
                       <button class="btn btn-danger btn-xs" onclick="window.location.href = 'supprimerplante.php?id=<?= $plante['id'] ?>';"> <i class="fa fa-trash-o "></i></button>
 					            <button class="btn btn-success btn-xs" onclick="window.location.href = 'modifierplante.php?id=<?= $plante['id'] ?>';"> <i class="fa fa-pencil "></i></button>
->>>>>>> d621535b94b93d125300d6e7b48fbf520a20873e
                       <ul>
 					              <li><a href="trier.php">Tri Croissant </a></li>
 			   	              <li><a href="trierr.php">Tri Decroissant</a></li>
