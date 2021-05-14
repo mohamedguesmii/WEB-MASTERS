@@ -1,9 +1,9 @@
 <?PHP
-	include '../config.php';
+	include_once '../config.php';
 	require_once '../Model/accessoires.php';
 
 
-	class PlantesC {
+	class accessoiresC {
 
 		function trieraccessoires(){
 			
@@ -51,7 +51,7 @@
 			}			
 		}
 		
-		function displayPlantes(){
+		function displayaccessoires(){
 			
 			$sql="SELECT * FROM accessoires";
 			$db = config::getConnexion();

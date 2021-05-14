@@ -5,7 +5,10 @@
 	require_once '../Model/Plante.php';
 
 	class PlantesC {
+		
 
+
+		
 		function trierplantes(){
 			
 			$sql="SELECT * FROM plante ORDER BY prix DESC";

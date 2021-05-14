@@ -4,7 +4,7 @@ include_once '../Controller/accessoiresC.php';
 
 
       $id=$_GET['id'];  
-      $accessoiresC=new PlantesC() ;
+      $accessoiresC=new accessoiresC() ;
       $accessoires=$accessoiresC->recoverPlantesbyid($id);
       $error= array();
      

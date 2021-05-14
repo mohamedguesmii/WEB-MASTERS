@@ -2,6 +2,7 @@
  include_once '../Model/Plante.php';
 include_once '../Controller/PlanteC.php';
 
+
 ?>
 <?php
       $plantes=NULL;
@@ -37,9 +38,22 @@ include_once '../Controller/PlanteC.php';
 
         <div class="row justify-content-center">
             <div class="col-lg-8 m-auto text-center col-sm-12 col-md-12">
+            
                 <div class="banner-content content-padding">
-                    <h1 class="text-white">Ajouter une plante </h1>
+                <?php
+            $R= rand(0,255);
+            $G= rand(0,255);
+            $B= rand(0,255);
+            echo "<div style='color:green; text-shadow: 100px 220px 330px rgb(".$R.",".$G.",".$B.");front-size:500px;text-align: center;'><b></b></div>";
+
+                ?>
+                
+                    <h1 class="text-white" style="color:blue" > Ajouter une plante  </h1>
+                
+                    
+                    
                 </div>
+                
             </div>
         </div>
   
@@ -47,15 +61,16 @@ include_once '../Controller/PlanteC.php';
 <div class="row justify-content-center">
 <form class="contact__form" method="post" action="">
 <div class="row">
-<div class="col-md-4 form-group">    
-<label for="nom">Nom:</label>
+<div class="col-md-4 form-group">  
+  
+<label for="nom" style="color:green" >Nom:</label>
                         <div class="input-group-prepend">
                             <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
                         </div>
                         <select name="nom" id="nom" class="form-control"  >
 					     <option value="select">Selectionnez nom du plante &emsp;&emsp;&emsp;&emsp;&emsp;</option>
-						 <option>plante ail des ours </option>
-						     <option>plante paquerette </option> 
+						             <option>plante ail des ours </option>
+						            <option>plante paquerette </option> 
 						             <option>plante plantain-laneole</option>
                        				<option>plante sureau-noir</option>
                          			<option>plante verte</option>
@@ -66,7 +81,7 @@ include_once '../Controller/PlanteC.php';
         
     </div>
     <div class="col-md-4 form-group"> 
-	<label for="longeur">Longeur:</label>  
+	<label for="longeur"style="color:green">Longeur:</label>  
                         <div class="input-group-prepend">
                             <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
                         </div> 
@@ -77,7 +92,7 @@ include_once '../Controller/PlanteC.php';
 	<div class="row">
 		
       <div class="col-md-4 form-group">  
-	  <label for="prix">Prix:</label>  
+	  <label for="prix" style="color:green">Prix:</label>  
                         <div class="input-group-prepend">
                             <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
                         </div> 
@@ -85,7 +100,7 @@ include_once '../Controller/PlanteC.php';
     </div>
 	
     <div class="col-md-4 form-group">
-    <label for="type">type:</label>
+    <label for="type" style="color:green">type:</label>
                         <div class="input-group-prepend">
                             <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
                         </div> 
@@ -103,7 +118,7 @@ include_once '../Controller/PlanteC.php';
 	<div class="row">
 	<div class="col-md-4 form-group"> 
 	
-    <label for="myfile">Image:</label>
+    <label for="myfile" style="color:green" >Image:</label>
                         <div class="input-group-prepend">
                             <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
                         </div> 
@@ -118,6 +133,8 @@ include_once '../Controller/PlanteC.php';
         <input name="confirm" type="submit" class=" btn btn-primary" value="Confirm">
     </div>
 	
+
+               
 </div>
 </form>
 </div>  

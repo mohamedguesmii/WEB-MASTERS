@@ -5,7 +5,7 @@ include_once '../Controller/accessoiresC.php';
 ?>
 <?php
       $plantes=NULL;
-      $accessoiresC=new PlantesC() ;
+      $accessoiresC=new accessoiresC() ;
       $error= array();
       if (
           isset($_POST['categories'])&&
@@ -36,17 +36,25 @@ include_once '../Controller/accessoiresC.php';
         <div class="row justify-content-center">
             <div class="col-lg-8 m-auto text-center col-sm-12 col-md-12">
                 <div class="banner-content content-padding">
-                    <h1 class="text-white">Ajouter un Accessoire  </h1>
+                <?php
+            $R= rand(0,255);
+            $G= rand(0,255);
+            $B= rand(0,255);
+            echo "<div style='color:green; text-shadow: 100px 220px 330px rgb(".$R.",".$G.",".$B.");front-size:500px;text-align: center;'><b></b></div>";
+
+                ?>
+                    <h1 class="text-white" style="color:blue">Ajouter un Accessoire  </h1>
                 </div>
             </div>
         </div>
   
-<div class='container'>
+<div class='container justify-content-center' >
+
 <div class="row justify-content-center">
 <form class="contact__form" method="post" action="">
-<div class="row">
+
 <div class="col-md-4 form-group">    
-<label for="categories">categories:</label>
+<label for="categories"style="color:green"> Categories :</label>
 <div class="input-group-prepend">
                             <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
                         </div>
@@ -57,7 +65,7 @@ include_once '../Controller/accessoiresC.php';
 						</select>
     </div>
     <div class="col-md-4 form-group"> 
-	<label for="matiere">matiere:</label> 
+	<label for="matiere"style="color:green"> Matiere :</label> 
     <div class="input-group-prepend">
                             <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
                         </div>  
@@ -78,7 +86,7 @@ include_once '../Controller/accessoiresC.php';
 	<div class="row">
 		
       <div class="col-md-4 form-group">  
-	  <label for="prix">Prix:</label>  
+	  <label for="prix"  style="color:green"> Prix :</label>  
       <div class="input-group-prepend">
                             <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
                         </div>
@@ -87,7 +95,7 @@ include_once '../Controller/accessoiresC.php';
 	</div>
 	<div class="row">
 	<div class="col-md-4 form-group"> 
-    <label for="myfile">Image:</label>
+    <label for="myfile" style="color:green" >Image:</label>
 
 
 

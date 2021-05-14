@@ -5,7 +5,7 @@ include_once '../controller/accessoiresC.php';
 if (isset($_GET["id"]))
 {
 $id=$_GET['id'];
- $accessoiresC=new PlantesC() ;
+ $accessoiresC=new accessoiresC() ;
  $accessoiresC->deletePlantes($id);
  header('location:afficheraccessoire.php');
 }
