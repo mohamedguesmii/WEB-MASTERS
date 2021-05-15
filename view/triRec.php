@@ -12,7 +12,7 @@ include "../config.php";
 	$ReclamationC=new ReclamationC();
   
     
-   $listeReclamation=$ReclamationC->afficherReclamation();
+   $listeReclamation=$ReclamationC->trierReclamation();
 ?>
 
 <!DOCTYPE html>
@@ -263,7 +263,7 @@ include "../config.php";
                             <th>date_reclamation</th>
                             <th>objet_reclamation</th>
                             <th>description</th>
-                            <th> Supprimer</th>
+                          
                           </tr>
                         </thead>
                        <tbody>
@@ -277,14 +277,6 @@ include "../config.php";
 					<td><?PHP echo $ReclamationC['objet_reclamation']; ?></td>
 					<td><?PHP echo $ReclamationC['description']; ?></td>
           
-          <td>
-          <form method="POST" action="supprimerReclamation.php">
-          <button type="submit" name="supprimer" value="supprimer" style="background-color:transparent; border-color:transparent;"> 
-						<img src="https://img.icons8.com/color/48/000000/delete-forever.png"/>
-                         </button>
-						<input type="hidden" value=<?PHP echo $ReclamationC['id_reclamation']; ?> name="id_reclamation" >
-						</form> 
-        </td>
 				</tr>
 			<?PHP
 				}
@@ -301,6 +293,12 @@ include "../config.php";
 				<a href="triRec2.php"  class="btn btn-lg btn-outline">
 				<i class="fas fa-arrow-alt-circle-down"></i></i></i> Tri Decroissant Selon Date
                 </a>
+         </div>
+         <div>
+         <a href="reclamationAdm.php"  class="btn btn-lg btn-outline">
+				<i class= "fas fa-long-arrow-alt-left"></i></i></i> BACK
+                </a>
+
          </div>
                   </div>
                 </div>

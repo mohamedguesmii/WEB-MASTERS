@@ -24,6 +24,7 @@ $telephone=$_SESSION['telephone'];
  if ( 
  isset($_POST['nom'])
 && isset($_POST['prenom'])
+&& isset($_POST['role'])
  && isset($_POST['date_de_naissance'])
  && isset($_POST['email'])
  && isset($_POST['telephone'])
@@ -32,6 +33,7 @@ $telephone=$_SESSION['telephone'];
  {
 if(!empty($_POST['nom'])
  &&!empty($_POST['prenom'])
+ &&!empty($_POST['role'])
  &&!empty($_POST['date_de_naissance'])
  &&!empty($_POST['email'])
    &&!empty($_POST['telephone'])
@@ -40,13 +42,14 @@ if(!empty($_POST['nom'])
   { 
   $nomUp=$_POST["nom"];
   $prenomUp=$_POST["prenom"];
+  $roleUp=$_POST["role"];
   $dateUp=$_POST["date_de_naissance"];
   $emailUp=$_POST["email"];
   $telephoneUp=$_POST["telephone"];
   $adresseUP=$_POST["adresse"];
   
-  $userC->modifierUtilisateur($id,$nomUp,$prenomUp,$dateUp,$emailUp,$telephoneUp,$adresseUp);
-  header('Location:evenement.php');
+  $userC->modifierUtilisateur($id,$nomUp,$prenomUp,$dateUp,$emailUp,$telephoneUp,$adresseUp,$roleUp);
+  header('Location:profile.php');
   
   $_SESSION['prenom'] = $prenomUp;
   $_SESSION['nom'] = $nomUp;
@@ -54,6 +57,7 @@ if(!empty($_POST['nom'])
   $_SESSION['telephone'] = $telephoneUp;
   $_SESSION['adresse'] = $adresseUP;
   $_SESSION['date'] = $dateUp;
+  $_SESSION['role'] = $roleUp;
 }
 }
 else{
@@ -287,12 +291,11 @@ else{
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">ROLE</label>
                             <div class="col-sm-9">
-                              <select class="form-control" disabled>
-                                <option <?=$role == 'client' ? ' selected="selected"' : '';?>>Client</option>
+                            <input type="text" class="form-control" disabled name="role" value='<?PHP echo $role; ?>'  />
+                               
                                 
                                 
-                                <option <?=$role == 'Admin' ? ' selected="selected"' : '';?>>Admin</option>
-                              </select>
+                             
                             </div>
                           </div>
                         </div>

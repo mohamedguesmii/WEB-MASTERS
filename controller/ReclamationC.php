@@ -83,7 +83,31 @@ class ReclamationC {
 				die('Erreur: '.$e->getMessage());
 			}
 		}
-
+		function trierReclamation(){
+			
+			$sql="SELECT * FROM Reclamation ORDER BY date_reclamation DESC";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
+	
+		function trieReclamation2(){
+				
+			$sql="SELECT * FROM Reclamation ORDER BY date_reclamation ASC";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
 
 	}
 ?>
