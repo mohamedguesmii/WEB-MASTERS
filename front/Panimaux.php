@@ -318,518 +318,326 @@ include "../controller/accessoiresC.php";
 				</div>
 				
 				<div class="col-sm-9 padding-right">
-				<div class="features_items"><!--features_items-->
-						<h2 class="title text-center">SOME OF WHAT WE OFFRE</h2>
+					<div class="features_items"><!--features_items-->
+						<h2 class="title text-center">Nos Produits</h2>
 						<div class="col-sm-4">
-                        <form action="manage_cart.php" method="POST">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-										<div class="productinfo text-center">
-											<img src="images/home/1.jpg" alt="" />
-                                            <h2>66DT</h2>
-											
-											<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                            <input type="hidden" name="Item_Name" value='Cat'>
-											<input type="hidden" name="Item_id" value='1'>
-                                            <input type="hidden" name="price" value="66">
-											</div>
-										<div class="product-overlay">
-											<div class="overlay-content">
-                                            <h2>66DT</h2>
-												<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                                <input type="hidden" name="Item_Name" value='Cat'>
-												<input type="hidden" name="Item_id" value='1'>
-                                                <input type="hidden" name="price" value="66">
-											</div>
-										</div>
-								</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-									</ul>
-								</div>
-							</div>
-                            </form>
-						</div>
-						<div class="col-sm-4">
-                        <form action="manage_cart.php" method="POST">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/home/2.jpg" alt="" />
-										<h2>54DT</h2>
-										
-										<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                        <input type="hidden" name="Item_Name" value='Mouse'>
-										<input type="hidden" name="Item_id" value='2'>
-                                        <input type="hidden" name="price" value="54">
+										<img src="images/shop/product12.jpg" alt="" />
+										<h2>$56</h2>
+										<p>Easy Polo Black Edition</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>54DT</h2>
-											
-											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                            <input type="hidden" name="Item_Name" value='Mouse'>
-											<input type="hidden" name="Item_id" value='2'>
-                                            <input type="hidden" name="price" value="54">
+											<h2>$56</h2>
+											<p>Easy Polo Black Edition</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 									</div>
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
 									</ul>
 								</div>
 							</div>
-                            </form>
 						</div>
 						<div class="col-sm-4">
-                        <form action="manage_cart.php" method="POST">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/home/3.jpg" alt="" />
-										<h2>60DT</h2>
-										
-										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                        <input type="hidden" name="Item_Name" value='DOG'>
-										<input type="hidden" name="Item_id" value='3'>
-                                        <input type="hidden" name="price" value="60">
+										<img src="images/shop/product11.jpg" alt="" />
+										<h2>$56</h2>
+										<p>Easy Polo Black Edition</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>60DT</h2>
-											
-											<button type ="submit"  name="addtocart"class="btn btn-default add-to-cart">Add to cart</button>
-                                            <input type="hidden" name="Item_Name" value='DOG'>
-											<input type="hidden" name="Item_id" value='3'>
-                                            <input type="hidden" name="price" value="60">
+											<h2>$56</h2>
+											<p>Easy Polo Black Edition</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 									</div>
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
 									</ul>
 								</div>
 							</div>
-                            </form>
 						</div>
 						<div class="col-sm-4">
-                        <form action="manage_cart.php" method="POST">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/home/4.jpg" alt="" />
-										<h2>56DT</h2>
-										
-										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                        <input type="hidden" name="Item_Name" value='Bird'>
-										<input type="hidden" name="Item_id" value='4'>
-                                        <input type="hidden" name="price" value="56">
+										<img src="images/shop/product10.jpg" alt="" />
+										<h2>$56</h2>
+										<p>Easy Polo Black Edition</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>56DT</h2>
-											
-											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                            <input type="hidden" name="Item_Name" value='Bird'>
-											<input type="hidden" name="Item_id" value='4'>
-                                            <input type="hidden" name="price" value="56">
+											<h2>$56</h2>
+											<p>Easy Polo Black Edition</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="images/shop/product9.jpg" alt="" />
+										<h2>$56</h2>
+										<p>Easy Polo Black Edition</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<h2>$56</h2>
+											<p>Easy Polo Black Edition</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 									</div>
 									<img src="images/home/new.png" class="new" alt="" />
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
 									</ul>
 								</div>
 							</div>
-                        </form>
 						</div>
 						<div class="col-sm-4">
-                        <form action="manage_cart.php" method="POST">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/home/5.jpg" alt="" />
-										<h2>39DT</h2>
-										
-										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                        <input type="hidden" name="Item_Name" value='Tortoise'>
-										<input type="hidden" name="Item_id" value='5'>
-                                        <input type="hidden" name="price" value="39">
+										<img src="images/shop/product8.jpg" alt="" />
+										<h2>$56</h2>
+										<p>Easy Polo Black Edition</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>39DT</h2>
-											
-											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                            <input type="hidden" name="Item_Name" value='Tortoise'>
-											<input type="hidden" name="Item_id" value='5'>
-                                            <input type="hidden" name="price" value="39">
+											<h2>$56</h2>
+											<p>Easy Polo Black Edition</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 									</div>
 									<img src="images/home/sale.png" class="new" alt="" />
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
 									</ul>
 								</div>
 							</div>
-                            </form>
 						</div>
 						<div class="col-sm-4">
-                            <form action="manage_cart.php" method="POST">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/home/an4.jpg" alt="" />
-										<h2>46DT</h2>
-										
-										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                        <input type="hidden" name="Item_Name" value='Rabbit'>
-										<input type="hidden" name="Item_id" value='6'>
-                                        <input type="hidden" name="price" value="46">
+										<img src="images/shop/product7.jpg" alt="" />
+										<h2>$56</h2>
+										<p>Easy Polo Black Edition</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>46DT</h2>
-											
-											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                            <input type="hidden" name="Item_Name" value='Rabit'>
-											<input type="hidden" name="Item_id" value='6'>
-                                            <input type="hidden" name="price" value="46">
+											<h2>$56</h2>
+											<p>Easy Polo Black Edition</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 									</div>
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
 									</ul>
 								</div>
 							</div>
-                            </form>
 						</div>
 						
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="images/home/product6.jpg" alt="" />
+										<h2>$56</h2>
+										<p>Easy Polo Black Edition</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<h2>$56</h2>
+											<p>Easy Polo Black Edition</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="images/home/product5.jpg" alt="" />
+										<h2>$56</h2>
+										<p>Easy Polo Black Edition</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<h2>$56</h2>
+											<p>Easy Polo Black Edition</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="images/home/product4.jpg" alt="" />
+										<h2>$56</h2>
+										<p>Easy Polo Black Edition</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<h2>$56</h2>
+											<p>Easy Polo Black Edition</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="images/home/product3.jpg" alt="" />
+										<h2>$56</h2>
+										<p>Easy Polo Black Edition</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<h2>$56</h2>
+											<p>Easy Polo Black Edition</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+						
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="images/home/product2.jpg" alt="" />
+										<h2>$56</h2>
+										<p>Easy Polo Black Edition</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<h2>$56</h2>
+											<p>Easy Polo Black Edition</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="images/home/product1.jpg" alt="" />
+										<h2>$56</h2>
+										<p>Easy Polo Black Edition</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<h2>$56</h2>
+											<p>Easy Polo Black Edition</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+						<ul class="pagination">
+							<li class="active"><a href="">1</a></li>
+							<li><a href="">2</a></li>
+							<li><a href="">3</a></li>
+							<li><a href="">&raquo;</a></li>
+						</ul>
 					</div><!--features_items-->
-					
-					
-					<div class="category-tab"><!--category-tab-->
-						<div class="col-sm-12">
-							<ul class="nav nav-tabs">
-								<li class="active"><a href="#tshirt" data-toggle="tab">Animaux</a></li>
-								<li><a href="#blazers" data-toggle="tab">Nourriture</a></li>
-								<li><a href="#sunglass" data-toggle="tab">Plantes</a></li>
-                                <li><a href="#promoplante" data-toggle="tab">Promotions Plantes</a></li> 
-								<li><a href="#promoanimaux" data-toggle="tab">Promotions animaux</a></li>
-								<li><a href="#kids" data-toggle="tab">Accessoires</a></li>
-								
-							</ul>
-						</div>
-						<div class="tab-content">
-
-						
-
-							<div class="tab-pane fade active in" id="tshirt" >
-							<form action="manage_cart.php" method="POST">
-							<?PHP
-							    
-								foreach($listeUsers as $user){
-								
-							   
-							?>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-											<img src="images/<?= $user['image'] ?>">
-												<h2> <?php echo $user['prix']."DT"; ?></h2>
-												<p><?PHP echo $user['typee']; ?></p>
-												<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-
-												</div>
-											
-										</div>
-									</div>
-								</div>
-								<?PHP
-			              	}
-							
-			                ?>
-							
-                                            <input type="hidden" name="Item_Name" value='<?php echo $user['typee']; ?>'>
-											<input type="hidden" name="Item_id" value='<?php echo $user['id_animaux']; ?>'>
-                                            <input type="hidden" name="price" value="<?php echo $user['prix']; ?>">
-							</div>
-							</form>
-
-                            
-							<div class="tab-pane fade" id="promoanimaux" >
-								
-							   <?PHP
-							    
-				                  foreach($list as $user){
-									$prix = $user['prix'];
-									$prixr= $user['prix_promotions'];
-									$p= $prix *$prixr* 0.01;
-									$pe = $prix - $p;
-					             
-			                  ?>
-								
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-											<img src="images/<?= $user['image'] ?>">
-											<h2>Prix : <?PHP echo $pe ?>DT</h2> <div ><td>Solde : <?php echo $user['prix_promotions']; ?>%</td></div>
-												<p><?PHP echo $user['typee']; ?></p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-							
-							
-								</div>
-								<?PHP
-			              	}
-							
-			                ?>
-							</div>		
-							<div class="tab-pane fade" id="blazers" >
-							<?PHP
-							    
-								foreach($listeUser as $user){
-								  
-							   
-							?>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-											<img src="images/<?= $user['image'] ?>">
-											<h2> <?php echo $user['prix']."DT"; ?></h2>
-												<p><?PHP echo $user['nom']; ?></p>
-											
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<?PHP
-			              	}
-							
-			                ?>
-							
-							</div>
-							<div class="tab-pane fade" id="sunglass" >
-							<?PHP
-							    
-								foreach($listepla as $user){
-								  
-							   
-							?>
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-											<img src="images/<?= $user['image'] ?>">
-											<h2> <?php echo $user['prix']."DT"; ?></h2>
-												<p><?PHP echo $user['nom']; ?></p>
-												
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								<?PHP
-			              	}
-							
-			                ?>
-							
-							</div>
-							<div class="tab-pane fade" id="kids" >
-							<?PHP
-							    
-								foreach($liste as $user){
-								  
-							   
-							?>
-
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-											<img src="images/<?= $user['image'] ?>">
-											<h2> <?php echo $user['prix']."DT"; ?></h2>
-												<p><?PHP echo $user['categories']; ?></p>
-												
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-									</div>
-									<?PHP
-			              	}
-							
-			                ?>
-								</div>
-								
-							<div class="tab-pane fade" id="promoplante" >
-                            <?PHP
-							 $i=0;
-				foreach($listU as $usr){
-					$prix = $usr['prix'];
-						$prixr= $usr['prix_promoplante'];
-						$p= $prix *$prixr* 0.01;
-						$pe = $prix - $p;
-			                   ?>
-                           
-
-							
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-                                            <img src="images/<?= $usr['image'] ?>">
-												<h2>Prix : <?PHP echo $pe ?>DT</h2> <div ><td>Solde : <?php echo $usr['prix_promoplante']; ?>%</td></div>
-												<p><?PHP echo $usr['nom']; ?></p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-								
-								
-							
-							
-                            
-                            <?PHP
-			              	}
-							
-			                ?>
-</div>
-
-
-
-						</div>
-                        
-					</div><!--/category-tab-->
-					
-					
-					
 				</div>
-			</div>
-			<div class="recommended_items"><!--recommended_items-->
-						<h2 class="title text-center">
-						
-						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-							<div class="carousel-inner">
-													
-								<div class="item active">	
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="images/home/an5.jpg" alt="" />
-													<h2>$56</h2>
-													
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="images/home/an6.jpg" alt="" />
-													<h2>$56</h2>
-													
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="images/home/an7.jpg" alt="" />
-													<h2>$56</h2>
-													
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">	
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="images/home/1.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="images/home/2.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="images/home/3.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							
-							  <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-								<i class="fa fa-angle-right"></i>
-							  </a>			
-							  
-						</div>
-					</div><!--/recommended_items-->
 		</div>
 	</section>
 	
