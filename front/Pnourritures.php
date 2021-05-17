@@ -23,11 +23,6 @@ include "../controller/accessoiresC.php";
 
 	
 
-	$utilisateurC=new PlantesC();
-	$listepla=$utilisateurC->displayPlantes();
-
-	$utilisateurC=new accessoiresC();
-	$liste=$utilisateurC->displayaccessoires();
 ?>
 
 <!DOCTYPE html>

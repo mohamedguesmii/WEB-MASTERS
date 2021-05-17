@@ -7,27 +7,17 @@ include "../controller/accessoiresC.php";
 
 
 
-	$utilisateurC=new AnimauxC();
-	$list=$utilisateurC->afficherpromoanimaux ();
-
-	$PlantesC=new PlantesC();
-	$listU=$PlantesC->afficherpromoplante();
+	
 
 
 	$utilisateurC=new AnimauxC();
 	$listeUsers=$utilisateurC->afficherAnimaux();
 	
 
-	$utilisateurC=new NourritureC();
-	$listeUser=$utilisateurC->afficherNourriture();
-
+	
 	
 
-	$utilisateurC=new PlantesC();
-	$listepla=$utilisateurC->displayPlantes();
-
-	$utilisateurC=new accessoiresC();
-	$liste=$utilisateurC->displayaccessoires();
+	
 ?>
 
 <!DOCTYPE html>
