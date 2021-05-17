@@ -21,6 +21,13 @@ include "../controller/accessoiresC.php";
 	$utilisateurC=new NourritureC();
 	$listeUser=$utilisateurC->afficherNourriture();
 
+    $utilisateurC=new PlantesC();
+	$listepla=$utilisateurC->displayPlantes();
+
+	$utilisateurC=new accessoiresC();
+	$liste=$utilisateurC->displayaccessoires();
+
+
 	
 
 ?>
@@ -315,27 +322,28 @@ include "../controller/accessoiresC.php";
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Nos Produits</h2>
-						<?PHP
+                        <?PHP
 							    
-								foreach($listeUser as $user){
+								foreach($liste as $user){
 								  
 							   
 							?>
+
 								<div class="col-sm-3">
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
 											<img src="images/<?= $user['image'] ?>">
 											<h2> <?php echo $user['prix']."DT"; ?></h2>
-												<p><?PHP echo $user['nom']; ?></p>
-											
+												<p><?PHP echo $user['categories']; ?></p>
+												
 												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
 											
 										</div>
 									</div>
-								</div>
-								<?PHP
+									</div>
+									<?PHP
 			              	}
 							
 			                ?>
