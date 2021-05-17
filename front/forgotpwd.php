@@ -34,7 +34,7 @@ include '../controller/UtilisateurC.php';
 				$mail->AddAddress($_POST["email"], $_POST["email"]);
 				$mail->setFrom('nature.pet1@gmail.com', 'NaturePet');
 				$mail->Subject = "Modification de ton mot de passe";
-				$content = "<b>Bonjour , Pour modifier ton mot de passe il faut cliquer sur ce <a href='http://localhost/project/views/updatepwd.php?Id=$message'>Lien</a></b>";
+				$content = "<b>Bonjour , Pour modifier ton mot de passe il faut cliquer sur ce <a href='http://localhost/web-masters/front/updatepwd.php?Id=$message'>Lien</a></b>";
 
 				//Send the email and catch required exceptions:
 				$mail->MsgHTML($content); 

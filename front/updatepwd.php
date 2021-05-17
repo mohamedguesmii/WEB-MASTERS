@@ -20,7 +20,7 @@ include '../controller/UtilisateurC.php';
     parse_str($url_components['query'], $params); 
     $id=$params['Id']; 
     $userC->updatePassword($id,$_POST["confirmpassword"]);
-    header('location:Index.php');
+    header('location:index.php');
    }	
 ?>
 <!DOCTYPE html>
