@@ -41,7 +41,7 @@
 		<meta charset="utf-8">
     
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Lumino - Dashboard</title>
+	<title>NATUREPET</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	
@@ -233,10 +233,10 @@
 									<div id="submenu0" class="collapse submenu" style="">
 										<ul class="nav flex-column">
 											<li class="nav-item">
-												<a class="nav-link" href="ajoutercompte.php"> <em class="fas fa-user-alt">&nbsp;</em>Afficher les comptes</a>
+												<a class="nav-link" href="comptes.php"> <em class="fas fa-user-alt">&nbsp;</em>Afficher les comptes</a>
 											</li>
 											<li class="nav-item">
-												<a class="nav-link" href="validercompte.php"> <em class="fas fa-check-square">&nbsp;</em>Validation</a>
+												<a class="nav-link" href="validation.php"> <em class="fas fa-check-square">&nbsp;</em>Validation</a>
 											</li>
 											
 										</ul>
@@ -247,7 +247,7 @@
 									<div id="submenu11" class="collapse submenu" style="">
 										<ul class="nav flex-column">
 											<li class="nav-item">
-												<a class="nav-link" href="afficherreclamation.php"> <em class="fa fa-book-open">&nbsp;</em>Afficher Reclamations</a>
+												<a class="nav-link" href="reclamationAdm.php"> <em class="fa fa-book-open">&nbsp;</em>Afficher Reclamations</a>
 											</li>
 											
 										</ul>
