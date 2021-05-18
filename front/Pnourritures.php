@@ -2,7 +2,7 @@
 include "../controller/AnimauxC.php";
 include "../controller/PlanteC.php";
 include "../controller/accessoiresC.php";
-
+session_start();
 if (isset($_SESSION['id']) && ! empty($_SESSION['id']) && isset($_SESSION['prenom']) && ! empty($_SESSION['prenom']) &&  isset($_SESSION['nom']) && ! empty($_SESSION['nom']))
    {
 	   $id=$_SESSION['id'];
@@ -53,7 +53,7 @@ if (isset($_SESSION['id']) && ! empty($_SESSION['id']) && isset($_SESSION['preno
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-	<?php session_start(); ?> 
+	 
 </head><!--/head-->
 
 <body>

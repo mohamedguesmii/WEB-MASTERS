@@ -5,8 +5,19 @@ include "../controller/PlanteC.php";
 
 	$PlantesC=new PlantesC();
 	$listU=$PlantesC->afficherpromoplante();
-
-
+	session_start();
+	if (isset($_SESSION['id']) && ! empty($_SESSION['id']) && isset($_SESSION['prenom']) && ! empty($_SESSION['prenom']) &&  isset($_SESSION['nom']) && ! empty($_SESSION['nom']))
+	{
+		$id=$_SESSION['id'];
+		$user=$_SESSION['prenom'] .' '. $_SESSION['nom'];
+		$message="Se Deconnecter";
+ 
+ 
+	}
+	else{
+	$user="";
+	$message="Se Connecter";
+	 }
 	
 ?>
 
@@ -35,12 +46,11 @@ include "../controller/PlanteC.php";
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-	<?php session_start(); ?> 
 </head><!--/head-->
 
 <body>
 	<header id="header"><!--header-->
-		<div class="header_top"><!--header_top-->
+	<div class="header_top"><!--header_top-->
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6">
@@ -59,8 +69,15 @@ include "../controller/PlanteC.php";
 								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
 								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								
+								<li><a href="profile.php"><i class="fa fa-user">      <span class="profile-name"><?PHP echo $user; ?></i></a>
+								
+								    <a href="deconnexion.php"> <?PHP echo $message; ?> </a>
+							    </li>
+								
 							</ul>
 						</div>
+						
 					</div>
 				</div>
 			</div>

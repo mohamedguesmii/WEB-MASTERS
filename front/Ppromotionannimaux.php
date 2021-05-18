@@ -1,9 +1,20 @@
 <?PHP
 include "../controller/AnimauxC.php";
-
+session_start();
 $utilisateurC=new AnimauxC();
 $listU=$utilisateurC->afficherpromoanimaux ();
+if (isset($_SESSION['id']) && ! empty($_SESSION['id']) && isset($_SESSION['prenom']) && ! empty($_SESSION['prenom']) &&  isset($_SESSION['nom']) && ! empty($_SESSION['nom']))
+   {
+	   $id=$_SESSION['id'];
+	   $user=$_SESSION['prenom'] .' '. $_SESSION['nom'];
+	   $message="Se Deconnecter";
 
+
+   }
+   else{
+   $user="";
+   $message="Se Connecter";
+	}
 	
 ?>
 
@@ -32,12 +43,11 @@ $listU=$utilisateurC->afficherpromoanimaux ();
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-	<?php session_start(); ?> 
 </head><!--/head-->
 
 <body>
 	<header id="header"><!--header-->
-		<div class="header_top"><!--header_top-->
+	<div class="header_top"><!--header_top-->
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6">
@@ -56,8 +66,15 @@ $listU=$utilisateurC->afficherpromoanimaux ();
 								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
 								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								
+								<li><a href="profile.php"><i class="fa fa-user">      <span class="profile-name"><?PHP echo $user; ?></i></a>
+								
+								    <a href="deconnexion.php"> <?PHP echo $message; ?> </a>
+							    </li>
+								
 							</ul>
 						</div>
+						
 					</div>
 				</div>
 			</div>
