@@ -1,26 +1,25 @@
 <?php
-
+session_start();
 include_once "../model/livraisons.php";
 include "../controller/livraisonsC.php";
 $suc=0;
 $L1=null;
 $error="";
-    if(isset($_POST['nom']) 
-    && isset($_POST['tel']) 
-    && isset($_POST['adresse'])
-    && isset($_POST['email'])) 
+    if(
+   isset($_POST['adresse'])
+	 )
     
-    {if((!empty($_POST['nom'])) 
-        && (!empty($_POST['tel'])) 
-        && (!empty($_POST['adresse']))
-        &&(!empty($_POST['email'])) ) {
-    $nom=$_POST['nom'];
-    $tel=$_POST['tel'];
+    {if(
+       (!empty($_POST['adresse']))
+       ) {
+    $nom=$_SESSION['nom'];
+    $tel=$_SESSION['telephone'];
     $adresse=$_POST['adresse'];
-    $email=$_POST['email'];
+    $email=$_SESSION['email'];
+	$idCommande=$_POST['idcomande'];
 
 
-$L1 = new livraisons($nom,$tel,$adresse,$email);
+$L1 = new livraisons($nom,$tel,$adresse,$email,$idCommande);
 $LC = new livraisonsC();
 $suc=1;  
 }else echo" Veuillez remplir toutes les cases";
@@ -187,6 +186,8 @@ $error="Missing Information";
             <?php
 if($suc==1)
 $LC->ajouter_livraison($L1);
+$db=config::getConnexion();
+$id=$db->lastInsertId ();
 ?>
 <div class="AjouterLivraison">
 				<div class="row">
@@ -195,9 +196,10 @@ $LC->ajouter_livraison($L1);
 						<div class="shopper-info">
 							<p>Livraison Information</p>
 							<form action="" method="POST">
-                                <input type="text" name="nom" id="nom" placeholder="Full Name">
-								<input type="email" name="email" id="email" placeholder="Email*">
-                                <input type="text" name="tel" id="tel" placeholder="Mobile Phone">
+                                <input type="text" name="nom" id="nom" placeholder="<?php echo $_SESSION['nom'];?>"disabled>
+								<input type="email" name="email" id="email" placeholder="<?php echo $_SESSION['email'];?>"disabled>
+                                <input type="text" name="tel" id="tel" placeholder="<?php echo $_SESSION['telephone'];?>"disabled>
+								<input type="number" name="idcomande" id="idcommande" placeholder="ID COMMANDE">
                                     <select name="adresse" id="adresse">
 										<option>-- Region --</option>
 										<option>Tunis</option>
@@ -207,6 +209,7 @@ $LC->ajouter_livraison($L1);
 										<option>Sousse</option>
 										<option>Sfax</option>	
 									</select>
+									
                                      <input type="submit" class="btn btn-primary" value="Valider" onclick ="return verifL();">
 							         <input type="reset" class="btn btn-primary" value="Return">
                            </form>

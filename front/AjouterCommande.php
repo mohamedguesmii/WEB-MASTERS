@@ -6,6 +6,7 @@ include_once "manage_cart.php";
 						include_once "../model/Ligne.php";
 						include "../controller/LigneC.php";
 
+
 ?>
 
 
@@ -250,22 +251,20 @@ include_once "manage_cart.php";
 					<div class="chose_area">
 						<?php
 						
- 						if(isset($_POST['cli'])
- 						&& isset($_POST['paiment'])
+ 						if(isset($_POST['paiment'])
  
  						)
 
 						{
-						 if((!empty($_POST['cli']))
-						 && (!empty($_POST['paiment']))
+						 if((!empty($_POST['paiment']))
 	 
 						 ) 
 						 {
 
-	 
-						$client = $_POST['cli'];
+						$idClient=$_SESSION['id'];
+						
 						$paiment = $_POST['paiment'];
-						$C1 = new Commandes($_POST['cli'],$_POST['paiment'],$total);
+						$C1 = new Commandes($idClient,$_POST['paiment'],$total);
 						$CO = new CommandesC();
 						$CO->ajouter_commande($C1);
 						
@@ -281,15 +280,16 @@ include_once "manage_cart.php";
 							
 
 							$total=$total+($value['Price']*$value['Quantity']);
-
+							
 							$L0 = new LigneC();			
 							$L1= new Ligne($prod,$idP,$id);
 							
 							
 							$L0->ajouter_Ligne($L1);
 						}
+						
 
-		
+	
 			
 			//echo"Last inserted id is $id";
 	
@@ -313,7 +313,7 @@ $suc=1;
 	}else echo" Veuillez remplir toutes les cases";
 		}else echo"Missing Information";
 
-
+		
 
 						?>
 
@@ -321,7 +321,7 @@ $suc=1;
 						<ul class="user_info">
 							<li class="single_field">
 								<label>Client:</label>
-								<input type="number" name="cli" id="cli" placeholder="ID Client">
+								<input type="number" name="cli" id="cli" placeholder="<?php echo $_SESSION['id'];?>"disabled>
 								
 							</li>
 							
@@ -361,6 +361,7 @@ $suc=1;
 </div>
  
 								<?php
+		
 									}
 								?>
 			<script>

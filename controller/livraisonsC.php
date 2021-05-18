@@ -4,7 +4,7 @@ require_once '../model/livraisons.php';
 class LivraisonsC{
     public function ajouter_livraison($livraisons)
     {
-        $sql="insert into livraisons(nom,tel,adresse,email) values(:nom,:tel,:adresse,:email)";
+        $sql="insert into livraisons(nom,tel,adresse,email,idCommande) values(:nom,:tel,:adresse,:email,:idCommande)";
         $db=config::getConnexion();
         try{
             $querry=$db->prepare($sql);
@@ -12,7 +12,8 @@ class LivraisonsC{
                 'nom'=>$livraisons->getnom(),
                 'tel'=>$livraisons->gettel(),
                 'adresse'=>$livraisons->getadresse(),
-                'email'=>$livraisons->getemail()
+                'email'=>$livraisons->getemail(),
+                'idCommande'=>$livraisons->getidcommande()
                 
                 ]);
                 
@@ -72,6 +73,7 @@ class LivraisonsC{
                     adresse= :adresse,
                     email = :email,
                     DemAnnulation=:DemAnnulation,
+                    idCommande=:idCommande,
                     id_livraison=:id
                     
                 WHERE id_livraison = :id'
@@ -81,7 +83,8 @@ class LivraisonsC{
                 'nom' => $livraisons->getnom(),
                 'tel' => $livraisons->gettel(),
                 'adresse' => $livraisons->getadresse(),
-                'email' => $livraisons->getemail(),               
+                'email' => $livraisons->getemail(), 
+                'idCommande' =>$livraisons->getidcommande(),            
                 'DemAnnulation'=> "OUI",
                 
                 'id' => $id
