@@ -90,12 +90,15 @@
 								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
 								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								
 								<li><a href="profile.php"><i class="fa fa-user">      <span class="profile-name"><?PHP echo $user; ?></i></a>
 								
-								    <a href="login.php"> <?PHP echo $message; ?> </a>
+								    <a href="deconnexion.php"> <?PHP echo $message; ?> </a>
 							    </li>
+								
 							</ul>
 						</div>
+						
 					</div>
 				</div>
 			</div>
