@@ -5,7 +5,19 @@ include_once "manage_cart.php";
 						include "../controller/CommandesC.php";
 						include_once "../model/Ligne.php";
 						include "../controller/LigneC.php";
-
+						
+						if (isset($_SESSION['id']) && ! empty($_SESSION['id']) && isset($_SESSION['prenom']) && ! empty($_SESSION['prenom']) &&  isset($_SESSION['nom']) && ! empty($_SESSION['nom']))
+						{
+							$id=$_SESSION['id'];
+							$user=$_SESSION['prenom'] .' '. $_SESSION['nom'];
+							$message="Se Deconnecter";
+					
+					
+						}
+						else{
+						$user="";
+						$message="Se Connecter";
+						 }
 
 ?>
 
@@ -37,28 +49,35 @@ include_once "manage_cart.php";
 </head><!--/head-->
 
 <body>
-	<header id="header"><!--header-->
+<header id="header"><!--header-->
 		<div class="header_top"><!--header_top-->
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href=""><i class="fa fa-phone"></i> +216 22 222 222</a></li>
-								<li><a href=""><i class="fa fa-envelope"></i> NATUREPET@esprit.tn</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> NATUREPET@esprit.tn</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="social-icons pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href=""><i class="fa fa-facebook"></i></a></li>
-								<li><a href=""><i class="fa fa-twitter"></i></a></li>
-								<li><a href=""><i class="fa fa-linkedin"></i></a></li>
-								<li><a href=""><i class="fa fa-dribbble"></i></a></li>
-								<li><a href=""><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								
+								<li><a href="profile.php"><i class="fa fa-user">      <span class="profile-name"><?PHP echo $user; ?></i></a>
+								
+								    <a href="deconnexion.php"> <?PHP echo $message; ?> </a>
+							    </li>
+								
 							</ul>
 						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -251,6 +270,7 @@ include_once "manage_cart.php";
 					<div class="chose_area">
 						<?php
 						
+						
  						if(isset($_POST['paiment'])
  
  						)
@@ -261,7 +281,9 @@ include_once "manage_cart.php";
 						 ) 
 						 {
 
+
 						$idClient=$_SESSION['id'];
+						
 						
 						$paiment = $_POST['paiment'];
 						$C1 = new Commandes($idClient,$_POST['paiment'],$total);
@@ -313,7 +335,7 @@ $suc=1;
 	}else echo" Veuillez remplir toutes les cases";
 		}else echo"Missing Information";
 
-		
+	
 
 						?>
 
@@ -347,11 +369,11 @@ $suc=1;
 								</li>
 							
 								</ul>
-
+								
 							<input type="reset" class='btn btn-default update' value="Back">
 							<input type="submit" class='btn btn-default update' value="Make Purchase">
 						
-						
+							 
 					 </form>
 				 </div>
 			   </div>
@@ -361,7 +383,7 @@ $suc=1;
 </div>
  
 								<?php
-		
+						
 									}
 								?>
 			<script>

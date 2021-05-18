@@ -17,6 +17,19 @@ include "../config.php";
    $listeReclamation=$ReclamationC->afficherReclamation1($id);
    $error = "";
    
+   if (isset($_SESSION['id']) && ! empty($_SESSION['id']) && isset($_SESSION['prenom']) && ! empty($_SESSION['prenom']) &&  isset($_SESSION['nom']) && ! empty($_SESSION['nom']))
+   {
+	   $id=$_SESSION['id'];
+	   $user=$_SESSION['prenom'] .' '. $_SESSION['nom'];
+	   $message="Se Deconnecter";
+
+
+   }
+   else{
+   $user="";
+   $message="Se Connecter";
+	}
+
 	
 ?>
 <!DOCTYPE html>
@@ -62,8 +75,8 @@ include "../config.php";
 </head><!--/head-->
 
 <body>
-	<header id="header"><!--header-->
-		<div class="header_top"><!--header_top-->
+<header id="header"><!--header-->
+	<div class="header_top"><!--header_top-->
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6">
@@ -82,16 +95,20 @@ include "../config.php";
 								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
 								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="profile.php"><i class="fa fa-user">      <span class="profile-name"></i></a>
 								
-								    <a href="index.php"> Se déconnecter </a>
+								<li><a href="profile.php"><i class="fa fa-user">      <span class="profile-name"><?PHP echo $user; ?></i></a>
+								
+								    <a href="deconnexion.php"> <?PHP echo $message; ?> </a>
 							    </li>
+								
 							</ul>
 						</div>
+						
 					</div>
 				</div>
 			</div>
 		</div><!--/header_top-->
+		
 		
 		<div class="header-middle"><!--header-middle-->
 			<div class="container">
@@ -131,16 +148,24 @@ include "../config.php";
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.php">Home</a></li>
-								<li><a href="contact-us.html"  class="active">Reclamations</a>
+								<li><a href="index.php" class="active">Home</a></li>
+								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+                                    
+										<li><a href="checkout.html">Checkout</a></li> 
+										<li><a href="AjouterCommande.php">Cart</a></li> 
+							
+                                    </ul>
+                                </li> 
+								<li><a href=""  >Reclamations</a>
 								<ul role="menu" class="sub-menu">
                                     
-										<li><a href="ajouterReclamation.php" >Ajouter reclamation</a></li> 
+										<li><a href="ajouterReclamation.php">Ajouter reclamation</a></li> 
 										<li><a href="afficherReclamation.php">Afficher reclamation</a></li> 
 										
                                     </ul></li>
 
-							
+								<li><a href="evenement.php">Evenement</a></li>
 								<li><a href="contact-us.html">Contact</a></li>
 							</ul>
 						</div>
@@ -154,7 +179,6 @@ include "../config.php";
 			</div>
 		</div><!--/header-bottom-->
 	</header><!--/header-->
-     
             
            
 	

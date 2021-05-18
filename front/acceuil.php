@@ -1,14 +1,11 @@
 <?PHP
-session_start();
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 include "../controller/AnimauxC.php";
 include "../controller/PlanteC.php";
 include "../controller/accessoiresC.php";
-require '../src/Exception.php';
-require '../src/PHPMailer.php';
-require '../src/SMTP.php';
-include '../controller/UtilisateurC.php';
+
+
+
+
 
 	$utilisateurC=new AnimauxC();
 	$list=$utilisateurC->afficherpromoanimaux ();
@@ -23,56 +20,27 @@ include '../controller/UtilisateurC.php';
 
 	$utilisateurC=new NourritureC();
 	$listeUser=$utilisateurC->afficherNourriture();
+
 	
-	
-	
+
 	$utilisateurC=new PlantesC();
 	$listepla=$utilisateurC->displayPlantes();
 
 	$utilisateurC=new accessoiresC();
 	$liste=$utilisateurC->displayaccessoires();
 
-
-
-$user=$_SESSION['prenom'] .' '. $_SESSION['nom'];
-if ( 
-	isset($_POST['nom'])
-	&& isset($_POST['prenom'])
-	&& isset($_POST['date_de_naissance'])
-	&& isset($_POST['email'])
-	&& isset($_POST['telephone'])
-	&& isset($_POST['adresse'])
-	)
+	if (isset($_SESSION['id']) && ! empty($_SESSION['id']) && isset($_SESSION['prenom']) && ! empty($_SESSION['prenom']) &&  isset($_SESSION['nom']) && ! empty($_SESSION['nom']))
 	{
-   if(!empty($_POST['nom'])
-	&&!empty($_POST['prenom'])
-	  &&!empty($_POST['date_de_naissance'])
-	 &&!empty($_POST['email'])
-	  &&!empty($_POST['telephone'])
-	  &&!empty($_POST['adresse'])
-	)
-	 { 
-	 $nomUp=$_POST["nom"];
-	 $prenomUp=$_POST["prenom"];
-	 $dateUp=$_POST["date_de_naissance"];
-	 $emailUp=$_POST["email"];
-	 $telephoneUp=$_POST["telephone"];
-	 $adresseUP=$_POST["adresse"];
-	 
-	 
-	 
-	 $_SESSION['prenom'] = $prenomUp;
-	 $_SESSION['nom'] = $nomUp;
-	 $_SESSION['email'] = $emailUp;
-	 $_SESSION['telephone'] = $telephoneUp;
-	 $_SESSION['adresse'] = $adresseUP;
-	 $_SESSION['date'] = $dateUp;
-   }
-   }
-   else{
-	 echo("");
-   }
+		$id=$_SESSION['id'];
+		$user=$_SESSION['prenom'] .' '. $_SESSION['nom'];
+		$message="Se Deconnecter";
 
+
+	}
+	else{
+	$user="";
+	$message="Se Connecter";
+	 }
 ?>
 
 <!DOCTYPE html>
@@ -100,12 +68,12 @@ if (
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-	
+	<?php session_start(); ?> 
 </head><!--/head-->
 
 <body>
 	<header id="header"><!--header-->
-		<div class="header_top"><!--header_top-->
+	<div class="header_top"><!--header_top-->
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6">
@@ -124,8 +92,15 @@ if (
 								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
 								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								
+								<li><a href="profile.php"><i class="fa fa-user">      <span class="profile-name"><?PHP echo $user; ?></i></a>
+								
+								    <a href="deconnexion.php"> <?PHP echo $message; ?> </a>
+							    </li>
+								
 							</ul>
 						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -267,102 +242,65 @@ if (
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+										<a   href="Panimaux.php">
 											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
 											Animaux
 										</a>
 									</h4>
 								</div>
-								<div id="sportswear" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="#">DOGS</a></li>
-											<li><a href="#">CATS </a></li>
-											<li><a href="#">BIRDS </a></li>
-											<li><a href="#">HAMSTERS</a></li>
-											
-										</ul>
-									</div>
-								</div>
+								
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
+										<a href="Pnourritures.php">
 											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
 											Nourriture
+										</a>
+									</h4>
+								</div>
+								
+							</div>
+							
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="Pplantes.php">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Plantes
+										</a>
+									</h4>
+								</div>
+								
+							</div>
+
+                            <div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Promotions
 										</a>
 									</h4>
 								</div>
 								<div id="mens" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul>
-											<li><a href="#"></a></li>
-											<li><a href="#"></a></li>
-											<li><a href="#"></a></li>
-											<li><a href="#"></a></li>
-											<li><a href="#"></a></li>
-											<li><a href="#"></a></li>
-											<li><a href="#"></a></li>
-											<li><a href="#"></a></li>
-											<li><a href="#"></a></li>
-											<li><a href="#"></a></li>
+											<li><a href="Ppromotionplantes.php">Plantes</a></li>
+											<li><a href="Ppromotionannimaux.php">Annimaux</a></li>
 										</ul>
 									</div>
 								</div>
-							</div>
-							
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#womens">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Plantes
-										</a>
-									</h4>
-								</div>
-								<div id="womens" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="#">Fendi</a></li>
-											<li><a href="#">Guess</a></li>
-											<li><a href="#">Valentino</a></li>
-											<li><a href="#">Dior</a></li>
-											<li><a href="#">Versace</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-
-                            <div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#promotions">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Promotions
-										</a>
-									</h4>
-								</div>
-								<div id="promotions" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="#poloshirt">Animaux</a></li>
-											<li><a href="#promoplante"> Plantes</a></li>
-											<li><a href="#"></a></li>
-											<li><a href="#"></a></li>
-											<li><a href="#"></a></li>
-											<li><a href="#"></a></li>
-											<li><a href="#"></a></li>
-											<li><a href="#"></a></li>
-											<li><a href="#"></a></li>
-											<li><a href="#"></a></li>
-										</ul>
-									</div>
-								</div>
+								
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Accesoires</a></h4>
+									<h4 class="panel-title">
+										<a href="Paccessoires.php">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Accessoires
+										</a>
+									</h4>
 								</div>
 							</div>
                             
@@ -403,7 +341,7 @@ if (
 				<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">SOME OF WHAT WE OFFRE</h2>
 						<div class="col-sm-4">
-                        <form action="manage_cart.php" method="POST">
+                        <form action="logiiin.php" method="POST">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
@@ -435,7 +373,7 @@ if (
                             </form>
 						</div>
 						<div class="col-sm-4">
-                        <form action="manage_cart.php" method="POST">
+						<form action="logiiin.php" method="POST">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
@@ -468,7 +406,7 @@ if (
                             </form>
 						</div>
 						<div class="col-sm-4">
-                        <form action="manage_cart.php" method="POST">
+                        <form action="logiiin.php" method="POST">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
@@ -501,7 +439,7 @@ if (
                             </form>
 						</div>
 						<div class="col-sm-4">
-                        <form action="manage_cart.php" method="POST">
+                        <form action="logiiin.php" method="POST">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
@@ -535,7 +473,7 @@ if (
                         </form>
 						</div>
 						<div class="col-sm-4">
-                        <form action="manage_cart.php" method="POST">
+                        <form action="logiiin.php" method="POST">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
@@ -569,7 +507,7 @@ if (
                             </form>
 						</div>
 						<div class="col-sm-4">
-                            <form action="manage_cart.php" method="POST">
+						<form action="logiiin.php" method="POST">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
@@ -622,7 +560,7 @@ if (
 						
 
 							<div class="tab-pane fade active in" id="tshirt" >
-							<form action="manage_cart.php" method="POST">
+							<form action="logiiin.php" method="POST">
 							<?PHP
 							    
 								foreach($listeUsers as $user){
@@ -656,7 +594,7 @@ if (
 
                             
 							<div class="tab-pane fade" id="promoanimaux" >
-								
+							<form action="logiiin.php" method="POST">
 							   <?PHP
 							    
 				                  foreach($list as $user){
@@ -686,8 +624,10 @@ if (
 			              	}
 							
 			                ?>
+							</form>
 							</div>		
 							<div class="tab-pane fade" id="blazers" >
+							<form action="logiiin.php" method="POST">
 							<?PHP
 							    
 								foreach($listeUser as $user){
@@ -712,7 +652,7 @@ if (
 			              	}
 							
 			                ?>
-							
+							</form>
 							</div>
 							<div class="tab-pane fade" id="sunglass" >
 							<?PHP
@@ -742,6 +682,7 @@ if (
 							
 							</div>
 							<div class="tab-pane fade" id="kids" >
+							<form action="logiiin.php" method="POST">
 							<?PHP
 							    
 								foreach($liste as $user){
@@ -767,9 +708,11 @@ if (
 			              	}
 							
 			                ?>
+							</form>
 								</div>
 								
 							<div class="tab-pane fade" id="promoplante" >
+							<form action="logiiin.php" method="POST">
                             <?PHP
 							 $i=0;
 				foreach($listU as $usr){
@@ -803,6 +746,7 @@ if (
 			              	}
 							
 			                ?>
+							</form>
 </div>
 
 
