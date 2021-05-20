@@ -157,10 +157,9 @@ include "../config.php";
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="acceuil.php">Home</a></li>
+								<li><a href="index.php">Home</a></li>
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-										<li><a href="login.php">Checkout</a></li> 
 										<li><a href="login.php">Cart</a></li> 
 										<li><a href="login.php" class="active">Login</a></li> 
                                     </ul>

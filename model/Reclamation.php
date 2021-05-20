@@ -6,13 +6,13 @@
 		private $description = null;
 		private $id = null;
 		
-		function __construct( $id_reclamation,$date_reclamation, $objet_reclamation, $description,$id){
+		function __construct($date_reclamation, $objet_reclamation, $description){
 			
-			$this->$id_reclamation=$id_reclamation;	
+			
 			$this->date_reclamation=$date_reclamation;
 			$this->objet_reclamation=$objet_reclamation;
 			$this->description=$description;
-			$this->id=$id;
+		
 		}
 		
 		function getId_reclamation()

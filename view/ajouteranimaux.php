@@ -347,24 +347,7 @@
                      </div>  
 			    </div><br>
 				
-                <div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir Le Type :<td></div>
-                <div class="pt-4">
-				   <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
-                        </div>
-					   <select name="typee" id="typee" class="form-control"  >
-					     <option value="chiwawa">chiwawa&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>
-							<option value="berger allmend">berger allmend</option>
-							<option value="labrador">labrador</option>
-							<option value="huskey">huskey</option>
-							<option value="siamois">siamois</option>
-							<option value="ragdol">ragdol</option>
-							<option value="Accenteur mouchet">Accenteur mouchet</option>
-						</select>
-
-                     </div>  
-			        </div><br>
+                
 					<div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir Age :<td></div>
                 <div class="pt-4">
 				   <div class="input-group mb-2">
@@ -395,8 +378,40 @@
 					     <option value="chien">Chien&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>
 						<option value="chat">Chat</option>
 						<option value="oiseau">Oiseau</option>
+						<option value="tortue">Tortue</option>
+						<option value="Sourie">Sourie</option>
+						<option value="lapin">Lapin</option>
+
+
 						</select>
                      </div> <br>
+
+					 <div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir Le Type :<td></div>
+                <div class="pt-4">
+				   <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-warning"><i class="fas fa-book"></i></div>
+                        </div>
+					   <select name="typee" id="typee" class="form-control"  >
+					     <option value="chiwawa">chiwawa&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>
+							<option value="berger allmend">berger allmend</option>
+							<option value="labrador">labrador</option>
+							<option value="huskey">huskey</option>
+							<option value="siamois">siamois</option>
+							<option value="ragdol">ragdol</option>
+							<option value="Accenteur mouchet">Accenteur mouchet</option>
+							<option value="tortue">Tortue</option>
+							<option value="Humster">Humster</option>
+							<option value="goldenretriever">Golden Retriever</option>
+							<option value="lapin">Lapin</option>
+
+
+
+
+						</select>
+
+                     </div>  
+			        </div><br>
             
   				<div class="col-md-5"><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<td>Saisir Couleur :<td></div>
                     <div class="pt-4">
@@ -407,7 +422,14 @@
 						<select name="couleur" id="couleur" class="form-control"  >
 					     <option value="chien">jaune&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>
 						 <option value="noir">noir</option>
+						 <option value="gris">gris</option>
+						 <option value="vert">vert</option>
+						 <option value="noir et blanc">Noir et Blanc</option>
+						 <option value="noir feu">Noir Feu</option>
+						 <option value="blanc">Blanc</option>
 						<option value="rouge">rouge</option>
+						<option value="marron">Marron</option>
+
 							<option value="bleu">bleu</option>
 						</select>
                      </div>  

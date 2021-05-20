@@ -17,31 +17,52 @@ class ReclamationC {
 				echo 'Erreur: '.$e->getMessage();
 			}			
 		}
-		function modifierReclamation($id_reclamation,$date_reclamation,$objet_reclamation,$description,$id){
-			try {
-				$db= config::getConnexion();
-				$query = $db->prepare(
-					"UPDATE Reclamation  SET
-					Date_reclamation = '$date_reclamation',
-					Objet_reclamation = '$objet_reclamation',
-					Description = '$description',
-					
-					WHERE id_reclamation = '$id_reclamation'" 
-				);
-				$query->execute([
+		
+
+	   function modifierReclamation($Reclamation, $id_reclamation){
+        try {
+            $db = config::getConnexion();
+            $query = $db->prepare(
+                'UPDATE Reclamation SET 
+                    date_reclamation = :date_reclamation, 
+                    objet_reclamation = :objet_reclamation, 
+                    description = :description
+                   
+
+                   
+                WHERE id_reclamation = :id_reclamation'
+            );
+            $query->execute([
+                'date_reclamation' => $Reclamation-> getDate_reclamation(),
+                'objet_reclamation' => $Reclamation->getObjet_reclamation(),
+                'description' => $Reclamation->getDescription(),
+             
 				
-						'date_reclamation' => $Reclamation->getDate_reclamation(),
-						'objet_reclamation' => $Reclamation->getlObjet_reclamation(),
-						'description' => $Reclamation->getDescription(),
-						
-	
-					'id_reclamation' => $id_reclamation
-				]);
-			 echo $query->rowCount() . "records UPDATER" ;
-			} catch (PDOException $e) {
-				 $e->getMessage();
-		   }
-	   }
+               
+
+                'id_reclamation' => $id_reclamation
+            ]);
+            echo $query->rowCount() . " records UPDATED successfully <br>";
+        } catch (PDOException $e) {
+            $e->getMessage();
+        }
+    }
+
+	   function recupereretat($id_reclamation)
+    {
+        $sql="SELECT * from Reclamation where id_reclamation=$id_reclamation";
+        $db = config::getConnexion();
+        try{
+            $query=$db->prepare($sql);
+            $query->execute();
+
+            $user=$query->fetch();
+            return $user;
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }
+    }
 		function afficherReclamation(){
 			$sql="SELECT * FROM Reclamation ";
 			$db = config::getConnexion();

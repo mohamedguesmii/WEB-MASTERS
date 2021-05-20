@@ -113,9 +113,8 @@ include_once "manage_cart.php";
 							<ul class="nav navbar-nav">
 								
 							
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href="ajouterCommande.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
 					</div>
@@ -141,15 +140,13 @@ include_once "manage_cart.php";
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                 
-										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="cart.html" class="active">Cart</a></li> 
-										<li><a href="login.html">Login</a></li> 
+										<li><a href="cart.php" class="active">Cart</a></li> 
+										<li><a href="login.php">Login</a></li> 
                                     </ul>
                                 </li> 
-								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
+								
                                       
-								<li><a href="contact-us.html">Contact</a></li>
+								<li><a href="contact-us.php">Contact</a></li>
 							</ul>
 						</div>
 					</div>

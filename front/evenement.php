@@ -12,12 +12,18 @@
 		$id=$_SESSION['id'];
 		$user=$_SESSION['prenom'] .' '. $_SESSION['nom'];
 		$message="Se Deconnecter";
+		$ajout="ajouterReclamation.php"; 
+        $affiche="afficherReclamation.php";	
+		$addtocart="AjouterCommande.php";	
 
 
 	}
 	else{
 	$user="";
 	$message="Se Connecter";
+	$ajout="login.php"; 
+	$affiche="login.php"; 
+	$addtocart="login.php";
      }
 
 
@@ -116,9 +122,9 @@
 							<ul class="nav navbar-nav">
 							
 								
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="AjouterCommande.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-							
+								
+								<li><a href="<?php echo $addtocart ?>"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
 					</div>
@@ -147,21 +153,21 @@
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                     
-										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="AjouterCommande.php">Cart</a></li> 
+									 
+										<li><a href="<?php echo $addtocart ?>">Cart</a></li> 
 							
                                     </ul>
                                 </li> 
 								<li><a href=""  >Reclamations</a>
 								<ul role="menu" class="sub-menu">
                                     
-										<li><a href="ajouterReclamation.php">Ajouter reclamation</a></li> 
-										<li><a href="afficherReclamation.php">Afficher reclamation</a></li> 
+										<li><a href="<?php echo $ajout ?>">Ajouter reclamation</a></li> 
+										<li><a href="<?php echo $affiche ?>">Afficher reclamation</a></li> 
 										
                                     </ul></li>
 
 								<li><a href="evenement.php">Evenement</a></li>
-								<li><a href="contact-us.html">Contact</a></li>
+								<li><a href="contact-us.php">Contact</a></li>
 							</ul>
 						</div>
 					</div>

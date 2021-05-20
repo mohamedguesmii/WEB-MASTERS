@@ -2,23 +2,8 @@
 include "../controller/AnimauxC.php";
 include "../controller/PlanteC.php";
 include "../controller/accessoiresC.php";
-session_start();
+require_once "headerA.php";
 
-if (isset($_SESSION['id']) && ! empty($_SESSION['id']) && isset($_SESSION['prenom']) && ! empty($_SESSION['prenom']) &&  isset($_SESSION['nom']) && ! empty($_SESSION['nom']))
-   {
-	   $id=$_SESSION['id'];
-	   $user=$_SESSION['prenom'] .' '. $_SESSION['nom'];
-	   $message="Se Deconnecter";
-
-
-   }
-   else{
-   $user="";
-   $message="Se Connecter";
-	}
-
-
-	
 
 	
 
@@ -58,103 +43,7 @@ if (isset($_SESSION['id']) && ! empty($_SESSION['id']) && isset($_SESSION['preno
 </head><!--/head-->
 
 <body>
-	<header id="header"><!--header-->
-	<div class="header_top"><!--header_top-->
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="contactinfo">
-							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> NATUREPET@esprit.tn</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="social-icons pull-right">
-							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								
-								<li><a href="profile.php"><i class="fa fa-user">      <span class="profile-name"><?PHP echo $user; ?></i></a>
-								
-								    <a href="deconnexion.php"> <?PHP echo $message; ?> </a>
-							    </li>
-								
-							</ul>
-						</div>
-						
-					</div>
-				</div>
-			</div>
-		</div><!--/header_top-->
-		
-		<div class="header-middle"><!--header-middle-->
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4 clearfix">
-						<div class="logo pull-left">
-						
-						</div>
-				
-						<div class="shop-menu clearfix pull-right">
-							<ul class="nav navbar-nav">
-							
-								
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="AjouterCommande.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-				
-					
-		<!--/header-middle-->
 	
-		<div class="header-bottom"><!--header-bottom-->
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-9">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-						</div>
-						<div class="mainmenu pull-left">
-							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.php" class="active">Home</a></li>
-								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                    
-										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="AjouterCommande.php">Cart</a></li> 
-										<li><a href="login.php">Login</a></li> 
-                                    </ul>
-                                </li> 
-							
-								<li><a href="evenement.php">Evenement</a></li>
-								<li><a href="contact-us.html">Contact</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="search_box pull-right">
-							<input type="text" placeholder="Search"/>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!--/header-bottom-->
-	</header><!--/header-->
 	
 	<section id="slider"><!--slider-->
 		<div class="container">
@@ -315,10 +204,7 @@ if (isset($_SESSION['id']) && ! empty($_SESSION['id']) && isset($_SESSION['preno
 								 <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
 							</div>
 						</div><!--/price-range-->
-						
-						<div class="shipping text-center"><!--shipping-->
-							<img src="images/home/shipping.jpg" alt="" />
-						</div><!--/shipping-->
+					
 					
 					</div>
 				</div>
@@ -337,7 +223,7 @@ if (isset($_SESSION['id']) && ! empty($_SESSION['id']) && isset($_SESSION['preno
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-											<img src="images/<?= $user['image'] ?>">
+											<img src="images/<?= $user['image'] ?>" width = "100" height = "300" >
 											<h2> <?php echo $user['prix']."DT"; ?></h2>
 												<p><?PHP echo $user['nom']; ?></p>
 												

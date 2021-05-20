@@ -122,8 +122,8 @@ include "../config.php";
 							<ul class="nav navbar-nav">
 							
 								
-								<li><a href="#"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="#"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+							<li><a href="<?php echo $addtocart ?>"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="login.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 							</ul>
 						</div>
 					</div>
@@ -152,7 +152,6 @@ include "../config.php";
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                     
-										<li><a href="checkout.html">Checkout</a></li> 
 										<li><a href="AjouterCommande.php">Cart</a></li> 
 							
                                     </ul>
@@ -275,7 +274,7 @@ include "../config.php";
           <td>
           <a href=""></a>
           
-						<a href="modifierReclamation.php" button  type="submit" style="border:none"> <i class="fa fa-pencil-square-o"></i></button></a>
+						<a href="modifierReclamation.php?id_reclamation=<?PHP echo $ReclamationC['id_reclamation']; ?>" button  type="submit" style="border:none"> <i class="fa fa-pencil-square-o"></i></button></a>
 						
 						
         </td>

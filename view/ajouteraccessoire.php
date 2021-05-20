@@ -67,11 +67,18 @@ include_once '../Controller/accessoiresC.php';
 					     <option value="select">Selectionnez la matiere  &emsp;&emsp;&emsp;&emsp;&emsp;</option>
 						 <option>  collier chien </option>
                          <option>  panier chien </option>
+                         <option>  panier Chat </option>
+                         <option>  panier Oiseau </option>
                          <option>  harnais chien </option>
+                         <option>  harnais chat </option>
+
                     <option>................................</option>
 						 <option>  greffage plante </option>
                          <option>  etagere plante </option>
                          <option>  cache bois plante  </option>
+                         <option>  Boll  </option>
+                         <option> Cache Bois Plante</option>
+
 						</select>
     </div>
 	</div>
