@@ -333,6 +333,7 @@ if (isset($_SESSION['id']) && ! empty($_SESSION['id']) && isset($_SESSION['preno
 								
 							   
 							?>
+							<form action="manage_cart.php" method="POST">
 								<div class="col-sm-3">
 									<div class="product-image-wrapper">
 										<div class="single-products">
@@ -351,7 +352,11 @@ if (isset($_SESSION['id']) && ! empty($_SESSION['id']) && isset($_SESSION['preno
 			              	}
 							
 			                ?>
-						
+						<input type="hidden" name="Item_Name" value='<?php echo $user['typee']; ?>'>
+							<input type="hidden" name="Item_id" value='<?php echo $user['id_animaux']; ?>'>
+							<input type="hidden" name="price" value="<?php echo $user['prix']; ?>">
+							</form>
+							
 						<ul class="pagination">
 							<li class="active"><a href="">1</a></li>
 							<li><a href="">2</a></li>

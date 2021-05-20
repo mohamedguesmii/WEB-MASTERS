@@ -600,39 +600,9 @@ session_start();
 							</form>
 
                             
-							<div class="tab-pane fade" id="promoanimaux" >
-								
-							   <?PHP
-							    
-				                  foreach($list as $user){
-									$prix = $user['prix'];
-									$prixr= $user['prix_promotions'];
-									$p= $prix *$prixr* 0.01;
-									$pe = $prix - $p;
-					             
-			                  ?>
-								
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-											<img src="images/<?= $user['image'] ?>">
-											<h2>Prix : <?PHP echo $pe ?>DT</h2> <div ><td>Solde : <?php echo $user['prix_promotions']; ?>%</td></div>
-												<p><?PHP echo $user['typee']; ?></p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
 							
-							
-								</div>
-								<?PHP
-			              	}
-							
-			                ?>
-							</div>		
 							<div class="tab-pane fade" id="blazers" >
+							<form action="manage_cart.php" method="POST">
 							<?PHP
 							    
 								foreach($listeUser as $user){
@@ -646,9 +616,8 @@ session_start();
 											<img src="images/<?= $user['image'] ?>">
 											<h2> <?php echo $user['prix']."DT"; ?></h2>
 												<p><?PHP echo $user['nom']; ?></p>
-											
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
+												<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+												</div>
 											
 										</div>
 									</div>
@@ -657,9 +626,51 @@ session_start();
 			              	}
 							
 			                ?>
+											<input type="hidden" name="Item_Name" value='<?php echo $user['nom']; ?>'>
+											<input type="hidden" name="Item_id" value='<?php echo $user['id']; ?>'>
+                                            <input type="hidden" name="price" value="<?php echo $user['prix']; ?>">
+											</form>
 							
 							</div>
+							<div class="tab-pane fade" id="promoanimaux" >
+							<form action="manage_cart.php" method="POST">
+							   <?PHP
+							    
+				                  foreach($list as $useer){
+									$prix = $useer['prix'];
+									$prixr= $useer['prix_promotions'];
+									$p= $prix *$prixr* 0.01;
+									$pe = $prix - $p;
+					             
+			                  ?>
+								
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+											<img src="images/<?= $useer['image'] ?>">
+											<h2>Prix : <?PHP echo $pe ?>DT</h2> <div ><td>Solde : <?php echo $useer['prix_promotions']; ?>%</td></div>
+												<p><?PHP echo $useer['typee']; ?></p>
+												<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+											</div>
+											
+										</div>
+									</div>
+							
+							
+								</div>
+								<?PHP
+			              	}
+							
+			                ?>
+											<input type="hidden" name="Item_Name" value='<?php echo $useer['typee']; ?>'>
+											<input type="hidden" name="Item_id" value='<?php echo $useer['id_promoanimaux']; ?>'>
+                                            <input type="hidden" name="price" value="<?php echo $useer['prix']; ?>">
+											</form>
+							</div>	
+
 							<div class="tab-pane fade" id="sunglass" >
+							<form action="manage_cart.php" method="POST">
 							<?PHP
 							    
 								foreach($listepla as $user){
@@ -673,9 +684,8 @@ session_start();
 											<img src="images/<?= $user['image'] ?>">
 											<h2> <?php echo $user['prix']."DT"; ?></h2>
 												<p><?PHP echo $user['nom']; ?></p>
-												
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
+												<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>										
+												</div>
 											
 										</div>
 									</div>
@@ -684,9 +694,14 @@ session_start();
 			              	}
 							
 			                ?>
+							<input type="hidden" name="Item_Name" value='<?php echo $user['nom']; ?>'>
+											<input type="hidden" name="Item_id" value='<?php echo $user['id']; ?>'>
+                                            <input type="hidden" name="price" value="<?php echo $user['prix']; ?>">
+											</form>
 							
 							</div>
 							<div class="tab-pane fade" id="kids" >
+							<form action="manage_cart.php" method="POST">
 							<?PHP
 							    
 								foreach($liste as $user){
@@ -702,8 +717,8 @@ session_start();
 											<h2> <?php echo $user['prix']."DT"; ?></h2>
 												<p><?PHP echo $user['categories']; ?></p>
 												
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
+												<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>										
+												</div>
 											
 										</div>
 									</div>
@@ -712,9 +727,14 @@ session_start();
 			              	}
 							
 			                ?>
+							<input type="hidden" name="Item_Name" value='<?php echo $user['categories']; ?>'>
+											<input type="hidden" name="Item_id" value='<?php echo $user['id']; ?>'>
+                                            <input type="hidden" name="price" value="<?php echo $user['prix']; ?>">
+											</form>
 								</div>
 								
 							<div class="tab-pane fade" id="promoplante" >
+							<form action="manage_cart.php" method="POST">
                             <?PHP
 							 $i=0;
 				foreach($listU as $usr){
@@ -733,8 +753,8 @@ session_start();
                                             <img src="images/<?= $usr['image'] ?>">
 												<h2>Prix : <?PHP echo $pe ?>DT</h2> <div ><td>Solde : <?php echo $usr['prix_promoplante']; ?>%</td></div>
 												<p><?PHP echo $usr['nom']; ?></p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
+												<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>										
+												</div>
 											
 										</div>
 									</div>
@@ -748,6 +768,10 @@ session_start();
 			              	}
 							
 			                ?>
+							<input type="hidden" name="Item_Name" value='<?php echo $usr['nom']; ?>'>
+											<input type="hidden" name="Item_id" value='<?php echo $usr['id_promo']; ?>'>
+                                            <input type="hidden" name="price" value="<?php echo $usr['prix']; ?>">
+											</form>
 </div>
 
 

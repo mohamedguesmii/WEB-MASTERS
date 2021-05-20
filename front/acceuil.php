@@ -119,7 +119,7 @@ include "../controller/accessoiresC.php";
 							
 								
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="AjouterCommande.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="login.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
@@ -150,12 +150,12 @@ include "../controller/accessoiresC.php";
                                     <ul role="menu" class="sub-menu">
                                     
 										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="AjouterCommande.php">Cart</a></li> 
+										<li><a href="login.php">Cart</a></li> 
 										<li><a href="login.php">Login</a></li> 
                                     </ul>
                                 </li> 
 							
-								<li><a href="evenement.php">Evenement</a></li>
+								<li><a href="login.php">Evenement</a></li>
 								<li><a href="contact-us.html">Contact</a></li>
 							</ul>
 						</div>

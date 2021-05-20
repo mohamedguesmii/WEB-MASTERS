@@ -325,6 +325,7 @@ include "../controller/PlanteC.php";
 						$p= $prix *$prixr* 0.01;
 						$pe = $prix - $p;
 			                   ?>
+							     <form action="manage_cart.php" method="POST">
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
@@ -332,7 +333,8 @@ include "../controller/PlanteC.php";
                                     <img src="images/<?= $usr['image'] ?>">
                                     <h2>Prix : <?PHP echo $pe ?>DT</h2> <div ><td>Solde : <?php echo $usr['prix_promoplante']; ?>%</td></div>
 									<p><?PHP echo $usr['nom']; ?></p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+									<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+								
 									</div>
 									
 								</div>
@@ -342,6 +344,10 @@ include "../controller/PlanteC.php";
 			              	}
 							
 			                ?>
+							<input type="hidden" name="Item_Name" value='<?php echo $usr['nom']; ?>'>
+							<input type="hidden" name="Item_id" value='<?php echo $usr['id_promo']; ?>'>
+							<input type="hidden" name="price" value="<?php echo $usr['prix']; ?>">
+							</form>
 						
 						<ul class="pagination">
 							<li class="active"><a href="">1</a></li>

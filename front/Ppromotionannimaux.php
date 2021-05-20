@@ -322,6 +322,7 @@ if (isset($_SESSION['id']) && ! empty($_SESSION['id']) && isset($_SESSION['preno
 						$p= $prix *$prixr* 0.01;
 						$pe = $prix - $p;
 			                   ?>
+							   <form action="manage_cart.php" method="POST">
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
@@ -329,7 +330,7 @@ if (isset($_SESSION['id']) && ! empty($_SESSION['id']) && isset($_SESSION['preno
                                     <img src="images/<?= $usr['image'] ?>">
                                     <h2>Prix : <?PHP echo $pe ?>DT</h2> <div ><td>Solde : <?php echo $usr['prix_promotions']; ?>%</td></div>
 									<p><?PHP echo $usr['typee']; ?></p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+									<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
 									</div>
 									
 								</div>
@@ -339,6 +340,10 @@ if (isset($_SESSION['id']) && ! empty($_SESSION['id']) && isset($_SESSION['preno
 			              	}
 							
 			                ?>
+							<input type="hidden" name="Item_Name" value='<?php echo $usr['typee']; ?>'>
+							<input type="hidden" name="Item_id" value='<?php echo $usr['id_promoanimaux']; ?>'>
+							<input type="hidden" name="price" value="<?php echo $usr['prix']; ?>">
+							</form>
 						
 						<ul class="pagination">
 							<li class="active"><a href="">1</a></li>
