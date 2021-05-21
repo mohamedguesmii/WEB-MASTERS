@@ -133,65 +133,102 @@ require_once "headerA.php";
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a   href="Panimaux.php">
+										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
 											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
 											Animaux
 										</a>
 									</h4>
 								</div>
-								
+								<div id="sportswear" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#">DOGS</a></li>
+											<li><a href="#">CATS </a></li>
+											<li><a href="#">BIRDS </a></li>
+											<li><a href="#">HAMSTERS</a></li>
+											
+										</ul>
+									</div>
+								</div>
 							</div>
 							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a href="Pnourritures.php">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Nourriture
-										</a>
-									</h4>
-								</div>
-								
-							</div>
-							
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a href="Pplantes.php">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Plantes
-										</a>
-									</h4>
-								</div>
-								
-							</div>
-
-                            <div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
 										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
 											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Promotions
+											Nourriture
 										</a>
 									</h4>
 								</div>
 								<div id="mens" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul>
-											<li><a href="Ppromotionplantes.php">Plantes</a></li>
-											<li><a href="Ppromotionannimaux.php">Annimaux</a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
 										</ul>
 									</div>
 								</div>
-								
 							</div>
+							
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a href="Paccessoires.php">
+										<a data-toggle="collapse" data-parent="#accordian" href="#womens">
 											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Accessoires
+											Plantes
 										</a>
 									</h4>
+								</div>
+								<div id="womens" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#">Fendi</a></li>
+											<li><a href="#">Guess</a></li>
+											<li><a href="#">Valentino</a></li>
+											<li><a href="#">Dior</a></li>
+											<li><a href="#">Versace</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+                            <div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#promotions">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Promotions
+										</a>
+									</h4>
+								</div>
+								<div id="promotions" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#poloshirt">Animaux</a></li>
+											<li><a href="#promoplante"> Plantes</a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+											<li><a href="#"></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Accesoires</a></h4>
 								</div>
 							</div>
                             

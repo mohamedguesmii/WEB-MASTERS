@@ -300,6 +300,7 @@ else{
                 <option>reclamation liéé au animaux</option>
                 <option>reclamation liéé au plante</option>
 				<option>reclamation liéé au accessoires</option>
+				<option>reclamation liéé au evenement</option>
               </select>
 		
 				</div>

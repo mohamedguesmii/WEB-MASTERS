@@ -29,7 +29,7 @@ include "../config.php";
 		$mail->IsHTML(true);
 		$mail->AddAddress($email, $name);
 		$mail->setFrom('nature.pet1@gmail.com', 'NaturePet');
-		$mail->Subject = "Validation de votre compte healNaturePet";
+		$mail->Subject = "Validation de votre compte NaturePet";
 		$content = "<b>Bonjour $name,  Votre compte a été validé avec succés.</b>";
 
 		//Send the email and catch required exceptions:
