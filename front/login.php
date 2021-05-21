@@ -166,7 +166,7 @@ include "../config.php";
                                 </li> 
 
 								<li><a href="evenement.php">Evenement</a></li>							
-								<li><a href="contact-us.html">Contact</a></li>
+								<li><a href="contact-us.php">Contact</a></li>
 							</ul>
 						</div>
 					</div>

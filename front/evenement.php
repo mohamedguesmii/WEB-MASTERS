@@ -543,7 +543,7 @@
 		        </style>
 				<div class="contenir">
 				<a href="email.php"><button class="btn btn1">Inviter Participant via Email</button></a>
-				<div class="fb-share-button" data-href="http://listeP.php" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2FlisteP.php%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
+				<div class="fb-share-button" data-href="http://nature-pet.php" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2FlisteP.php%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
 				</div>
 				
 			</div>
