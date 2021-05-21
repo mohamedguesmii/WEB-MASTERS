@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 21 mai 2021 à 10:57
--- Version du serveur :  10.4.18-MariaDB
--- Version de PHP : 7.4.16
+-- Généré le : ven. 21 mai 2021 à 15:20
+-- Version du serveur :  10.4.17-MariaDB
+-- Version de PHP : 7.4.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -104,7 +104,8 @@ CREATE TABLE `commandes` (
 --
 
 INSERT INTO `commandes` (`idCommande`, `idClient`, `paiment`, `montant`, `DemAnnulation`) VALUES
-(164, 32, 'Cash', 820, 'NON');
+(169, 33, 'Cash', 1210, 'NON'),
+(173, 33, 'Carte Bancaire', 1717, 'NON');
 
 -- --------------------------------------------------------
 
@@ -151,10 +152,13 @@ CREATE TABLE `lignecommandes` (
 --
 
 INSERT INTO `lignecommandes` (`idLigne`, `Produit`, `idProduit`, `idCommande`) VALUES
-(382, 'berger allmend * 1 ', 14, 164),
-(383, 'Cat * 1 ', 1, 164),
-(384, 'Accenteur mouchet * 1 ', 18, 164),
-(385, 'Mouse * 1 ', 2, 164);
+(393, 'Harnais Chien * 2 ', 6, 169),
+(394, 'Croquette * 4 ', 2, 169),
+(395, 'Chien Labrador * 2 ', 3, 169),
+(405, 'Chat * 4 ', 1, 173),
+(406, 'Niche Chat * 2 ', 4, 173),
+(407, 'Croquette * 10 ', 2, 173),
+(408, 'Bol en bois * 3 ', 5, 173);
 
 -- --------------------------------------------------------
 
@@ -177,7 +181,8 @@ CREATE TABLE `livraisons` (
 --
 
 INSERT INTO `livraisons` (`id_livraison`, `nom`, `tel`, `adresse`, `email`, `idCommande`, `DemAnnulation`) VALUES
-(13, 'Doghman', 52464649, 'Beja', 'moetaz.doghman@espri', 164, 'NON');
+(17, 'Skander', 55203244, 'Bizerte', 'mohamedskander.zouao', 169, 'NON'),
+(18, 'Skander', 55203244, 'Bizerte', 'mohamedskander.zouao', 169, 'NON');
 
 -- --------------------------------------------------------
 
@@ -199,7 +204,12 @@ CREATE TABLE `nourriture` (
 --
 
 INSERT INTO `nourriture` (`id`, `nom`, `prix`, `image`, `quantity`, `categorie`) VALUES
-(28, 'croquette', 20, 'n6.jpg', 10, 'chien');
+(30, 'Chat', 25, 'n8.png', 50, 'chat'),
+(31, 'Oiseau', 15, 'n10.png', 50, 'oiseau'),
+(32, 'Chien', 50, 'n5.png', 40, 'chien'),
+(33, 'Chien', 30, 'n4.png', 40, 'chien'),
+(34, 'Croquette', 39, 'n2.jpg', 100, 'chien'),
+(35, 'Chien', 10, 'n3.jpg', 3, 'chien');
 
 -- --------------------------------------------------------
 
@@ -473,7 +483,7 @@ ALTER TABLE `animaux`
 -- AUTO_INCREMENT pour la table `commandes`
 --
 ALTER TABLE `commandes`
-  MODIFY `idCommande` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=165;
+  MODIFY `idCommande` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=175;
 
 --
 -- AUTO_INCREMENT pour la table `evenement`
@@ -485,19 +495,19 @@ ALTER TABLE `evenement`
 -- AUTO_INCREMENT pour la table `lignecommandes`
 --
 ALTER TABLE `lignecommandes`
-  MODIFY `idLigne` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=386;
+  MODIFY `idLigne` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=413;
 
 --
 -- AUTO_INCREMENT pour la table `livraisons`
 --
 ALTER TABLE `livraisons`
-  MODIFY `id_livraison` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_livraison` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT pour la table `nourriture`
 --
 ALTER TABLE `nourriture`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT pour la table `participe`

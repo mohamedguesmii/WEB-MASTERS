@@ -203,12 +203,10 @@ require_once "headerA.php";
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
 									<li><a href="#"> <span class="pull-right">(50)</span>german shepeard</a></li>
-									<li><a href="#"> <span class="pull-right">(56)</span>labrador</a></li>
-									<li><a href="#"> <span class="pull-right">(27)</span>pitbull</a></li>
+									<li><a href="#"> <span class="pull-right">(56)</span>labrador</a></li>						
 									<li><a href="#"> <span class="pull-right">(32)</span>golden retreiver</a></li>
 									<li><a href="#"> <span class="pull-right">(5)</span>bulldog</a></li>
-									<li><a href="#"> <span class="pull-right">(9)</span>poodle</a></li>
-									<li><a href="#"> <span class="pull-right">(4)</span>beagle</a></li>
+									
 								</ul>
 							</div>
 						</div><!--/brands_products-->
@@ -217,7 +215,7 @@ require_once "headerA.php";
 							<h2>Price Range</h2>
 							<div class="well text-center">
 								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
-								 <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
+								 <b class="pull-left">0DT</b> <b class="pull-right">600DT</b>
 							</div>
 						</div><!--/price-range-->
 						
@@ -236,21 +234,23 @@ require_once "headerA.php";
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
-											<img src="images/home/1.jpg" alt="" />
-                                            <h2>66DT</h2>
+											<img src="images/home/an7.jpg" alt="" />
+                                            <h2>150DT</h2>
+											<h5>Chat</h5>
 											
 											<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                            <input type="hidden" name="Item_Name" value='Cat'>
+                                            <input type="hidden" name="Item_Name" value='Chat'>
 											<input type="hidden" name="Item_id" value='1'>
-                                            <input type="hidden" name="price" value="66">
+                                            <input type="hidden" name="price" value="150">
 											</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
-                                            <h2>66DT</h2>
+                                            <h2>150DT</h2>
+											<h5>Chat</h5>
 												<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                                <input type="hidden" name="Item_Name" value='Cat'>
+                                                <input type="hidden" name="Item_Name" value='Chat'>
 												<input type="hidden" name="Item_id" value='1'>
-                                                <input type="hidden" name="price" value="66">
+                                                <input type="hidden" name="price" value="150">
 											</div>
 										</div>
 								</div>
@@ -268,23 +268,26 @@ require_once "headerA.php";
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/home/2.jpg" alt="" />
-										<h2>54DT</h2>
+										<img src="images/home/n2.jpg" alt="" />
+										<h2>20DT</h2>
+										<h5>Croquette</h5>
 										
 										<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                        <input type="hidden" name="Item_Name" value='Mouse'>
+                                        <input type="hidden" name="Item_Name" value='Croquette'>
 										<input type="hidden" name="Item_id" value='2'>
-                                        <input type="hidden" name="price" value="54">
+                                        <input type="hidden" name="price" value="20">
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>54DT</h2>
+											<h2>20DT</h2>
+											<h5>Croquette</h5>
 											
 											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                            <input type="hidden" name="Item_Name" value='Mouse'>
+                                            <input type="hidden" name="Item_Name" value='Croquette'>
 											<input type="hidden" name="Item_id" value='2'>
-                                            <input type="hidden" name="price" value="54">
+                                            <input type="hidden" name="price" value="20">
 										</div>
+										<img src="images/home/sale.png" class="new" alt="" />
 									</div>
 								</div>
 								<div class="choose">
@@ -301,22 +304,24 @@ require_once "headerA.php";
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/home/3.jpg" alt="" />
-										<h2>60DT</h2>
+										<img src="images/home/an8.jpg" alt="" />
+										<h2>500DT</h2>
+										<h5>Labrador</h5>
 										
 										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                        <input type="hidden" name="Item_Name" value='DOG'>
+                                        <input type="hidden" name="Item_Name" value='Chien Labrador'>
 										<input type="hidden" name="Item_id" value='3'>
-                                        <input type="hidden" name="price" value="60">
+                                        <input type="hidden" name="price" value="500">
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>60DT</h2>
+											<h2>500DT</h2>
+											<h5>Labrador</h5>
 											
 											<button type ="submit"  name="addtocart"class="btn btn-default add-to-cart">Add to cart</button>
-                                            <input type="hidden" name="Item_Name" value='DOG'>
+                                            <input type="hidden" name="Item_Name" value='Chien Labrador'>
 											<input type="hidden" name="Item_id" value='3'>
-                                            <input type="hidden" name="price" value="60">
+                                            <input type="hidden" name="price" value="500">
 										</div>
 									</div>
 								</div>
@@ -334,22 +339,24 @@ require_once "headerA.php";
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/home/4.jpg" alt="" />
-										<h2>56DT</h2>
+										<img src="images/home/acc3.jpg" alt="" />
+										<h2>400DT</h2>
+										<h5>Niche Chat</h5>
 										
 										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                        <input type="hidden" name="Item_Name" value='Bird'>
+                                        <input type="hidden" name="Item_Name" value='Niche Chat'>
 										<input type="hidden" name="Item_id" value='4'>
-                                        <input type="hidden" name="price" value="56">
+                                        <input type="hidden" name="price" value="400">
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>56DT</h2>
+											<h2>400DT</h2>
+											<h5>Niche Chat</h5>
 											
 											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                            <input type="hidden" name="Item_Name" value='Bird'>
+                                            <input type="hidden" name="Item_Name" value='Niche Chat'>
 											<input type="hidden" name="Item_id" value='4'>
-                                            <input type="hidden" name="price" value="56">
+                                            <input type="hidden" name="price" value="400">
 										</div>
 									</div>
 									<img src="images/home/new.png" class="new" alt="" />
@@ -364,24 +371,62 @@ require_once "headerA.php";
                         </form>
 						</div>
 						<div class="col-sm-4">
+                            <form action="manage_cart.php" method="POST">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="images/17.jpg" alt="" />
+										<h2>65DT</h2>
+										<h5>Harnais Chien</h5>
+										
+										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+                                        <input type="hidden" name="Item_Name" value='Harnais Chien'>
+										<input type="hidden" name="Item_id" value='6'>
+                                        <input type="hidden" name="price" value="65">
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<h2>65DT</h2>
+											<h5>Harnais Chien</h5>
+											
+											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+                                            <input type="hidden" name="Item_Name" value='Harnais Chien'>
+											<input type="hidden" name="Item_id" value='6'>
+                                            <input type="hidden" name="price" value="65">
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+									</ul>
+								</div>
+							</div>
+                            </form>
+						</div>
+						
+						<div class="col-sm-4">
                         <form action="manage_cart.php" method="POST">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/home/5.jpg" alt="" />
+										<img src="images/cache bois plante.jpg" alt="" />
 										<h2>39DT</h2>
+										<h5>Bol en bois</h5>
 										
 										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                        <input type="hidden" name="Item_Name" value='Tortoise'>
+                                        <input type="hidden" name="Item_Name" value='Bol en bois'>
 										<input type="hidden" name="Item_id" value='5'>
                                         <input type="hidden" name="price" value="39">
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
 											<h2>39DT</h2>
+											<h5>Bol en bois</h5>
 											
 											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                            <input type="hidden" name="Item_Name" value='Tortoise'>
+                                            <input type="hidden" name="Item_Name" value='Bol en bois'>
 											<input type="hidden" name="Item_id" value='5'>
                                             <input type="hidden" name="price" value="39">
 										</div>
@@ -397,44 +442,146 @@ require_once "headerA.php";
 							</div>
                             </form>
 						</div>
-						<div class="col-sm-4">
-                            <form action="manage_cart.php" method="POST">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="images/home/an4.jpg" alt="" />
-										<h2>46DT</h2>
-										
-										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                        <input type="hidden" name="Item_Name" value='Rabbit'>
-										<input type="hidden" name="Item_id" value='6'>
-                                        <input type="hidden" name="price" value="46">
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<h2>46DT</h2>
-											
-											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                            <input type="hidden" name="Item_Name" value='Rabit'>
-											<input type="hidden" name="Item_id" value='6'>
-                                            <input type="hidden" name="price" value="46">
-										</div>
-									</div>
-								</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-									</ul>
-								</div>
-							</div>
-                            </form>
-						</div>
+						
 						
 					</div><!--features_items-->
 					
 					
-					<div class="category-tab"><!--category-tab-->
+
+					
+					
+				</div>
+			</div>
+			<div class="recommended_items"><!--recommended_items-->
+						
+						<h2 class="title text-center">Recommended Items</h2>
+						
+						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+							<div class="carousel-inner">
+													
+								<div class="item active">	
+									<div class="col-sm-4">
+									<form action="manage_cart.php" method="POST">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/an5.jpg" alt="" />
+													<h2>500DT</h2>
+													<p>Bulldog</p>
+													<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+														<input type="hidden" name="Item_Name" value='Chien Bulldog'>
+														<input type="hidden" name="Item_id" value='7'>
+														<input type="hidden" name="price" value="500">
+										</form>
+ 										</div>	
+												
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+									<form action="manage_cart.php" method="POST">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/n2.jpg" alt="" />
+													<h2>20DT</h2>
+													<p>Croquette</p>
+													<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+														<input type="hidden" name="Item_Name" value='Croquette'>
+														<input type="hidden" name="Item_id" value='8'>
+														<input type="hidden" name="price" value="20">
+										</form>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+									<form action="manage_cart.php" method="POST">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/an7.jpg" alt="" />
+													<h2>250DT</h2>
+													<p>Chat</p>
+													
+													<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+														<input type="hidden" name="Item_Name" value='Chat'>
+														<input type="hidden" name="Item_id" value='9'>
+														<input type="hidden" name="price" value="250">
+										</form>
+										</div>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">	
+									<div class="col-sm-4">
+									<form action="manage_cart.php" method="POST">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/acc3.jpg" alt="" />
+													<h2>560DT</h2>
+													<p>Niche Chat</p>
+													<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+														<input type="hidden" name="Item_Name" value='Niche Chat'>
+														<input type="hidden" name="Item_id" value='10'>
+														<input type="hidden" name="price" value="560">
+										</form>
+										</div>
+												
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+									<form action="manage_cart.php" method="POST">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/acc2.jpg" alt="" />
+													<h2>40DT</h2>
+													<p>Laisse Chien</p>
+													<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+														<input type="hidden" name="Item_Name" value='Laisse Chien'>
+														<input type="hidden" name="Item_id" value='11'>
+														<input type="hidden" name="price" value="400">
+										</form>
+											</div>
+												
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+									<form action="manage_cart.php" method="POST">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/Kes.png" alt="" />
+													<h2>15DT</h2>
+													<p>Tasse de Cafe</p>
+													<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+														<input type="hidden" name="Item_Name" value='Tasse de Cafe'>
+														<input type="hidden" name="Item_id" value='12'>
+														<input type="hidden" name="price" value="15">
+										</form>
+										</div>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							
+							  <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+								<i class="fa fa-angle-right"></i>
+							  </a>			
+							  
+						</div>
+						<div class="category-tab"><!--category-tab-->
+						<h2 class="title text-center">NOS PRODUITS</h2>
 						<div class="col-sm-12">
 							<ul class="nav nav-tabs">
 								<li class="active"><a href="#tshirt" data-toggle="tab">Animaux</a></li>
@@ -664,108 +811,9 @@ require_once "headerA.php";
                         
 					</div><!--/category-tab-->
 					
-					
-					
-				</div>
-			</div>
-			<div class="recommended_items"><!--recommended_items-->
-						<h2 class="title text-center">
-						
-						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-							<div class="carousel-inner">
-													
-								<div class="item active">	
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="images/home/an5.jpg" alt="" />
-													<h2>$56</h2>
-													
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="images/home/an6.jpg" alt="" />
-													<h2>$56</h2>
-													
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="images/home/an7.jpg" alt="" />
-													<h2>$56</h2>
-													
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">	
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="images/home/1.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="images/home/2.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="images/home/3.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							
-							  <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-								<i class="fa fa-angle-right"></i>
-							  </a>			
-							  
-						</div>
 					</div><!--/recommended_items-->
 		</div>
+		
 	</section>
 	
 	<footer id="footer"><!--Footer-->

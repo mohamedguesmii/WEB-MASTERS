@@ -46,6 +46,8 @@ include_once "manage_cart.php";
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+
+	<script src="script.js"></script>
 </head><!--/head-->
 
 <body>
@@ -121,7 +123,6 @@ include_once "manage_cart.php";
 				</div>
 			</div>
 		</div><!--/header-middle-->
-	
 		<div class="header-bottom"><!--header-bottom-->
 			<div class="container">
 				<div class="row">
@@ -137,16 +138,10 @@ include_once "manage_cart.php";
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.php">Home</a></li>
-								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                
-										<li><a href="cart.php" class="active">Cart</a></li> 
-										<li><a href="login.php">Login</a></li> 
-                                    </ul>
-                                </li> 
-								
-                                      
-								<li><a href="contact-us.php">Contact</a></li>
+								<li class=""><a href="AjouterCommande.php">Cart</a></li>
+								<li><a href="ModifierCommande.php">Modifier Commande</a></li> 							
+								<li><a href="login.php">Login</a></li> 
+								<li><a href="contact-us.html">Contact</a></li>
 							</ul>
 						</div>
 					</div>
@@ -165,10 +160,8 @@ include_once "manage_cart.php";
         
 			<div class="breadcrumbs">
 				<ol class="breadcrumb">
-				  <li><a href="#">Home</a></li>
-				  <li><a href="ModifierCommande.php">Modifier Commande</a></li>
-				</ol>
-			        </div>
+				  <li><a href="index.php">Home</a></li>
+			
                     <div class="col-lg-12 text-center border rounded bg-light my-5" >
                      <h1>MY CART</h1>
                     </div>
@@ -347,12 +340,14 @@ $suc=1;
 							<li class="single_field">
 								<label>Methode de paiment:</label>
 								    <select id="paiment" name="paiment">
+									<option>-- Paiment --</option>
 									<option>Cash</option>
 									<option>Cheque</option>
 									<option>Carte Bancaire</option>
 								</select>
 									
 						    </li>
+							
                            		<li class="single_field"> 
 								   <label>TOTAL:</label>
                                   <label id='gtot'></label>
@@ -368,10 +363,11 @@ $suc=1;
 								</ul>
 								
 							<input type="reset" class='btn btn-default update' value="Back">
-							<input type="submit" class='btn btn-default update' value="Make Purchase">
+							<input type="submit" class="btn btn-primary" value="Valider" onclick ="return verifC();">
 						
 							 
 					 </form>
+					 
 				 </div>
 			   </div>
 			</div>
@@ -380,9 +376,10 @@ $suc=1;
 </div>
  
 								<?php
-						
+									
 									}
 								?>
+							
 			<script>
 			var gt=0;
 			var iprice=document.getElementsByClassName('iprice');

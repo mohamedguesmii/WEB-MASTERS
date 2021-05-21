@@ -238,12 +238,7 @@ $listU=$utilisateurC->afficherpromoanimaux ();
 							<input type="hidden" name="price" value="<?php echo $usr['prix']; ?>">
 							</form>
 						
-						<ul class="pagination">
-							<li class="active"><a href="">1</a></li>
-							<li><a href="">2</a></li>
-							<li><a href="">3</a></li>
-							<li><a href="">&raquo;</a></li>
-						</ul>
+					
 					</div><!--features_items-->
 				</div>
 		</div>
