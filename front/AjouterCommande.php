@@ -138,7 +138,7 @@ include_once "manage_cart.php";
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.php">Home</a></li>
-								<li class=""><a href="AjouterCommande.php">Cart</a></li>
+							
 								<li><a href="ModifierCommande.php">Modifier Commande</a></li> 							
 								<li><a href="login.php">Login</a></li> 
 								<li><a href="contact-us.html">Contact</a></li>
