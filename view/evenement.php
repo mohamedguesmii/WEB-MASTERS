@@ -353,7 +353,10 @@
                 </a>
 				<a href="tri.php">Tri Croissant Selon Date </a></li>
 			   	    <a href="tri2.php">Tri Decroissant Selon Date</a></li>
+
+					 
          </div>
+		 
 
 
     </div>
