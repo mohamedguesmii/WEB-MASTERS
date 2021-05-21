@@ -81,6 +81,18 @@
 				die('Erreur: '.$e->getMessage());
 			}	
 		}
+		function afficherAnimaux1(){
+			
+			$sql="SELECT * FROM animaux limit 4";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
 		function supprimerAnimaux($id_animaux){
 			$sql="DELETE FROM animaux WHERE id_animaux= :id_animaux";
 			$db = config::getConnexion();
@@ -147,6 +159,18 @@
 		function afficherpromoanimaux(){
 			
 			$sql="SELECT * FROM promoanimaux";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
+		function afficherpromoanimaux1(){
+			
+			$sql="SELECT * FROM promoanimaux limit 4";
 			$db = config::getConnexion();
 			try{
 				$liste = $db->query($sql);
@@ -300,6 +324,18 @@
 		function afficherNourriture(){
 			
 			$sql="SELECT * FROM nourriture";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
+		function afficherNourriture1(){
+			
+			$sql="SELECT * FROM nourriture limit 4";
 			$db = config::getConnexion();
 			try{
 				$liste = $db->query($sql);

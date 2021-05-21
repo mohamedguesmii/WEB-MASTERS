@@ -1,35 +1,30 @@
 <?php
-
+session_start();
 include_once "../model/livraisons.php";
 include "../controller/livraisonsC.php";
 
 $LC = new livraisonsC();
 $error="";
-    if(
-    isset($_POST['nom']) 
-    && isset($_POST['tel']) 
-    && isset($_POST['adresse'])
-    && isset($_POST['email'])
-    && isset($_POST['DemAnnulation']) 
-    ){
+if(
+	isset($_POST['adresse'])
+	&& isset($_POST['DemAnnulation']) 
+	  )
+	 
+	 {
+if(
+		(!empty($_POST['adresse']))
+		&&(!empty($_POST['DemAnnulation']))
+		) {
+	 $nom=$_SESSION['nom'];
+	 $tel=$_SESSION['telephone'];
+	 $adresse=$_POST['adresse'];
+	 $email=$_SESSION['email'];   
+	 $idCommande=$_POST['idcomande'];
+
     
-    if(
-        (!empty($_POST['nom'])) 
-        && (!empty($_POST['tel'])) 
-        && (!empty($_POST['adresse']))
-        &&(!empty($_POST['email'])) 
-        &&(!empty($_POST['DemAnnulation']))
-        ) 
-        
-    {
-        $L1= new livraisons(
-            $_POST['nom'],   
-            $_POST['tel'],
-            $_POST['adresse'],
-            $_POST['email'],
-            $_POST['DemAnnulation']
-        );
-    
+        $L1 = new livraisons($nom,$tel,$adresse,$email,$idCommande,$_POST['DemAnnulation']);
+		
+	
 
 $LC->modifierLivraison($L1,$_POST['id']);
  
@@ -199,11 +194,12 @@ $LC->modifierLivraison($L1,$_POST['id']);
 						<div class="shopper-info">
 							<p> Modifier Livraison</p>
 							<form action="" method="POST">
-                                <input type="number" name="id" id="id" placeholder="ID"required> 
-                                <input type="text" name="nom" id="nom" placeholder="Name"required>
-								<input type="email" name="email" id="email" placeholder="Email*"required>
-                                <input type="text" name="tel" id="tel" maxlenght=8 placeholder="Mobile Phone" required>
-                                <select name="adresse" id="adresse" required>
+								<input type="number" name="id" id="id" placeholder="ID LIVRAISON">
+                                <input type="text" name="nom" id="nom" placeholder="<?php echo $_SESSION['nom'];?>"disabled>
+								<input type="email" name="email" id="email" placeholder="<?php echo $_SESSION['email'];?>"disabled>
+                                <input type="text" name="tel" id="tel" placeholder="<?php echo $_SESSION['telephone'];?>"disabled>
+								<input type="number" name="idcomande" id="idcommande" placeholder="ID COMMANDE">
+                                    <select name="adresse" id="adresse">
 										<option>-- Region --</option>
 										<option>Tunis</option>
 										<option>Bizerte</option>

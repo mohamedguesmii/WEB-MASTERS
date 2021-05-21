@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 use PHPMailer\PHPMailer\PHPMailer;
@@ -23,32 +22,29 @@ $telephone=$_SESSION['telephone'];
 
  if ( 
  isset($_POST['nom'])
-&& isset($_POST['prenom'])
-&& isset($_POST['role'])
- && isset($_POST['date_de_naissance'])
- && isset($_POST['email'])
- && isset($_POST['telephone'])
- && isset($_POST['adresse'])
+// && isset($_POST['prenom'])
+// && isset($_POST['date_de_naissance'])
+// && isset($_POST['email'])
+// && isset($_POST['telephone'])
+// && isset($_POST['adresse'])
  )
  {
 if(!empty($_POST['nom'])
- &&!empty($_POST['prenom'])
- &&!empty($_POST['role'])
- &&!empty($_POST['date_de_naissance'])
- &&!empty($_POST['email'])
-   &&!empty($_POST['telephone'])
-  &&!empty($_POST['adresse'])
+// &&!empty($_POST['prenom'])
+//   &&!empty($_POST['date_de_naissance'])
+//   &&!empty($_POST['email'])
+//   &&!empty($_POST['telephone'])
+//   &&!empty($_POST['adresse'])
  )
   { 
   $nomUp=$_POST["nom"];
   $prenomUp=$_POST["prenom"];
-  $roleUp=$_POST["role"];
   $dateUp=$_POST["date_de_naissance"];
   $emailUp=$_POST["email"];
   $telephoneUp=$_POST["telephone"];
   $adresseUP=$_POST["adresse"];
   
-  $userC->modifierUtilisateur($id,$nomUp,$prenomUp,$dateUp,$emailUp,$telephoneUp,$adresseUp,$roleUp);
+  $userC->modifierUtilisateur($id,$nomUp,$prenomUp,$dateUp,$emailUp,$telephoneUp,$adresseUp);
   header('Location:profile.php');
   
   $_SESSION['prenom'] = $prenomUp;
@@ -57,7 +53,6 @@ if(!empty($_POST['nom'])
   $_SESSION['telephone'] = $telephoneUp;
   $_SESSION['adresse'] = $adresseUP;
   $_SESSION['date'] = $dateUp;
-  $_SESSION['role'] = $roleUp;
 }
 }
 else{
@@ -65,6 +60,7 @@ else{
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -260,8 +256,9 @@ else{
 			</div>
 		</div>
 	</section><!--/slider-->
-	
-     <div class="main-panel">
+
+
+  <div class="main-panel">
           <div style="height: 100%;overflow-y: scroll;overflow-x: hidden; ">
                <div class="col-12 grid-margin" style="margin-top: 10px">
                 <div class="card">
@@ -273,15 +270,15 @@ else{
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Prenom</label>
                             <div class="col-sm-9">
-                              <input type="text" id="prenom" name="prenom" class="form-control" disabled value='<?PHP echo $prenom; ?>' />
+                              <input type="text" name="prenom" class="form-control" value='<?PHP echo $prenom; ?>' />
                             </div>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Nom </label>
+                            <label class="col-sm-3 col-form-label">Nom de famille</label>
                             <div class="col-sm-9">
-                              <input type="text" class="form-control" disabled name="nom" value='<?PHP echo $nom; ?>'  />
+                              <input type="text" class="form-control" name="nom" value='<?PHP echo $nom; ?>'  />
                             </div>
                           </div>
                         </div>
@@ -291,11 +288,12 @@ else{
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">ROLE</label>
                             <div class="col-sm-9">
-                            <input type="text" class="form-control" disabled name="role" value='<?PHP echo $role; ?>'  />
-                               
+                              <select class="form-control" disabled>
+                                <option <?=$role == 'client' ? ' selected="selected"' : '';?>>Client</option>
                                 
                                 
-                             
+                                <option <?=$role == 'Admin' ? ' selected="selected"' : '';?>>Admin</option>
+                              </select>
                             </div>
                           </div>
                         </div>
@@ -303,7 +301,7 @@ else{
                           <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Date de naissance</label>
                             <div class="col-sm-9">
-                              <input class="form-control" disabled name="date_de_naissance" value='<?PHP echo $date; ?>'  />
+                              <input class="form-control" name="date_de_naissance" value='<?PHP echo $date; ?>'  />
                             </div>
                           </div>
                         </div>
@@ -334,18 +332,18 @@ else{
                               <input type="text" name="adresse" class="form-control" value='<?PHP echo $adresse; ?>' />
                             </div>
                           </div>
-                        
-                      </div>
+                        </div>
+            
+
                       <div style="margin-top:3%">
               <button type="submit" class="btn btn-primary mr-2"> Modifier </button>
               <button class="btn btn-light" type="reset">Annuler </button>
-             </div>
+          </div>
                     </form>
                   </div>
                 </div>
               </div>
-          </div> 
-         
+          </div>
           <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
               <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © NaturePet  2021</span>

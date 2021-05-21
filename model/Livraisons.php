@@ -6,12 +6,14 @@ class Livraisons{
     private ?string $adresse=null;
     private ?string $email=null;
     private ?string $DemAnnulation=null;
+    private ?int $idCommande=null;
 //Getters
-    public function  __construct ($nom,$tel,$adresse,$email){
+    public function  __construct ($nom,$tel,$adresse,$email,$idCommande){
         $this->nom=$nom;
         $this->tel=$tel;
         $this->adresse=$adresse;
         $this->email=$email;
+        $this->idCommande=$idCommande;
         $this->DemAnnulation="NON";
     }
 
@@ -30,6 +32,9 @@ class Livraisons{
     public function getemail():string{
         return $this->email;
     }  
+    public function getidcommande():int{
+        return $this->idCommande;
+    }
     public function getannulation():string{
         return $this->DemAnnulation;
     }

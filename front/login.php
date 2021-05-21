@@ -37,7 +37,7 @@ include "../config.php";
 			if($role == "Admin"){
 				header('location:login.php');
 			}else{
-				header('location:Acceuil.php');
+				header('location:index.php');
 			}
 	   }
    }	
@@ -102,7 +102,7 @@ include "../config.php";
 				<div class="row">
 					<div class="col-md-4 clearfix">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="images/home/logo.jpg" alt="" /></a>
+							<a href="acceuil.php"><img src="images/home/logo.jpg" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right clearfix">
 							<div class="btn-group">
@@ -133,8 +133,8 @@ include "../config.php";
 							<ul class="nav navbar-nav">
 							
 							
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="login.php"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+								<li><a href="login.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
@@ -160,14 +160,13 @@ include "../config.php";
 								<li><a href="index.php">Home</a></li>
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="cart.html">Cart</a></li> 
-										<li><a href="login.html" class="active">Login</a></li> 
+										<li><a href="login.php">Cart</a></li> 
+										<li><a href="login.php" class="active">Login</a></li> 
                                     </ul>
                                 </li> 
 
 								<li><a href="evenement.php">Evenement</a></li>							
-								<li><a href="contact-us.html">Contact</a></li>
+								<li><a href="contact-us.php">Contact</a></li>
 							</ul>
 						</div>
 					</div>

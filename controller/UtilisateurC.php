@@ -17,7 +17,8 @@
 				echo 'Erreur: '.$e->getMessage();
 			}			
 		}
-		function modifierUtilisateur($id,$nom,$prenom,$date,$email,$telephone,$adresse,$role){
+	
+		function modifierUtilisateur($id,$nom,$prenom,$date,$email,$telephone,$adresse){
 			try {
 				$db= config::getConnexion();
 				$query = $db->prepare(
@@ -26,7 +27,7 @@
 					Prenom = '$prenom',
 					Email = '$email',
 					Adresse = '$adresse',
-					Role = '$role',
+					
 					Date_de_naissance = '$date',
 					Telephone = '$telephone'
 					WHERE ID = '$id'"

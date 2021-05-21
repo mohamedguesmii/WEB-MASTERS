@@ -1,32 +1,46 @@
 <?php
-
+session_start();
 include_once "../model/livraisons.php";
 include "../controller/livraisonsC.php";
 $suc=0;
 $L1=null;
 $error="";
-    if(isset($_POST['nom']) 
-    && isset($_POST['tel']) 
-    && isset($_POST['adresse'])
-    && isset($_POST['email'])) 
+    if(
+   isset($_POST['adresse'])
+	 )
     
-    {if((!empty($_POST['nom'])) 
-        && (!empty($_POST['tel'])) 
-        && (!empty($_POST['adresse']))
-        &&(!empty($_POST['email'])) ) {
-    $nom=$_POST['nom'];
-    $tel=$_POST['tel'];
+    {if(
+       (!empty($_POST['adresse']))
+       ) {
+    $nom=$_SESSION['nom'];
+    $tel=$_SESSION['telephone'];
     $adresse=$_POST['adresse'];
-    $email=$_POST['email'];
+    $email=$_SESSION['email'];
+	$idCommande=$_POST['idcomande'];
 
 
-$L1 = new livraisons($nom,$tel,$adresse,$email);
+$L1 = new livraisons($nom,$tel,$adresse,$email,$idCommande);
 $LC = new livraisonsC();
 $suc=1;  
 }else echo" Veuillez remplir toutes les cases";
 }
 else
 $error="Missing Information";
+
+
+if (isset($_SESSION['id']) && ! empty($_SESSION['id']) && isset($_SESSION['prenom']) && ! empty($_SESSION['prenom']) &&  isset($_SESSION['nom']) && ! empty($_SESSION['nom']))
+						{
+							$id=$_SESSION['id'];
+							$user=$_SESSION['prenom'] .' '. $_SESSION['nom'];
+							$message="Se Deconnecter";
+					
+					
+						}
+						else{
+						$user="";
+						$message="Se Connecter";
+						 }
+
 ?>
 
 <!DOCTYPE html>
@@ -60,27 +74,34 @@ $error="Missing Information";
 
 <body>
 	<header id="header"><!--header-->
-		<div class="header_top"><!--header_top-->
+	<div class="header_top"><!--header_top-->
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href=""><i class="fa fa-phone"></i> +216 22 222 222</a></li>
-								<li><a href=""><i class="fa fa-envelope"></i> NATUREPET@esprit.tn</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> NATUREPET@esprit.tn</a></li>
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="social-icons pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href=""><i class="fa fa-facebook"></i></a></li>
-								<li><a href=""><i class="fa fa-twitter"></i></a></li>
-								<li><a href=""><i class="fa fa-linkedin"></i></a></li>
-								<li><a href=""><i class="fa fa-dribbble"></i></a></li>
-								<li><a href=""><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								
+								<li><a href="profile.php"><i class="fa fa-user">      <span class="profile-name"><?PHP echo $user; ?></i></a>
+								
+								    <a href="deconnexion.php"> <?PHP echo $message; ?> </a>
+							    </li>
+								
 							</ul>
 						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -116,9 +137,9 @@ $error="Missing Information";
 							<ul class="nav navbar-nav">
 							
 								
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+								
+								<li><a href="AjouterCommande.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
 					</div>
@@ -141,16 +162,9 @@ $error="Missing Information";
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.php">Home</a></li>
-								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-
-										<li><a href="checkout.html" class="active">Checkout</a></li> 
-										<li><a href="cart.php">Cart</a></li> 
-										<li><a href="login.html">Login</a></li> 
-                                    </ul>
-                                </li> 
-							
-							
+								<li class="dropdown"><a href="AjouterCommande.php">Shop<i class="fa fa-angle-down"></i></a></li>
+								<li><a href="ModifierLivraison.php">Modifier Livraison</a></li> 							
+								<li><a href="login.php">Login</a></li> 
 								<li><a href="contact-us.html">Contact</a></li>
 							</ul>
 						</div>
@@ -167,18 +181,6 @@ $error="Missing Information";
 
 	<section id="cart_items">
 		<div class="container">
-			<div class="breadcrumbs">
-				<ol class="breadcrumb">
-				  <li><a href="index.php">Home</a></li>
-				  <li><a href="ModifierLivraison.php">Modifier Livraison</a></li>
-				
-				 
-				</ol>
-				
-				
-				
-			</div><!--/breadcrums-->
-
 		
 
 			<div class="register-req">
@@ -187,6 +189,8 @@ $error="Missing Information";
             <?php
 if($suc==1)
 $LC->ajouter_livraison($L1);
+$db=config::getConnexion();
+$id=$db->lastInsertId ();
 ?>
 <div class="AjouterLivraison">
 				<div class="row">
@@ -195,9 +199,10 @@ $LC->ajouter_livraison($L1);
 						<div class="shopper-info">
 							<p>Livraison Information</p>
 							<form action="" method="POST">
-                                <input type="text" name="nom" id="nom" placeholder="Full Name">
-								<input type="email" name="email" id="email" placeholder="Email*">
-                                <input type="text" name="tel" id="tel" placeholder="Mobile Phone">
+                                <input type="text" name="nom" id="nom" placeholder="<?php echo $_SESSION['nom'];?>"disabled>
+								<input type="email" name="email" id="email" placeholder="<?php echo $_SESSION['email'];?>"disabled>
+                                <input type="text" name="tel" id="tel" placeholder="<?php echo $_SESSION['telephone'];?>"disabled>
+								<input type="number" name="idcomande" id="idcommande" placeholder="ID COMMANDE">
                                     <select name="adresse" id="adresse">
 										<option>-- Region --</option>
 										<option>Tunis</option>
@@ -207,6 +212,7 @@ $LC->ajouter_livraison($L1);
 										<option>Sousse</option>
 										<option>Sfax</option>	
 									</select>
+									
                                      <input type="submit" class="btn btn-primary" value="Valider" onclick ="return verifL();">
 							         <input type="reset" class="btn btn-primary" value="Return">
                            </form>

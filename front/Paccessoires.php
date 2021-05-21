@@ -2,28 +2,11 @@
 include "../controller/AnimauxC.php";
 include "../controller/PlanteC.php";
 include "../controller/accessoiresC.php";
+require_once "headerA.php";
 
 
 
-
-
-	$utilisateurC=new AnimauxC();
-	$list=$utilisateurC->afficherpromoanimaux ();
-
-	$PlantesC=new PlantesC();
-	$listU=$PlantesC->afficherpromoplante();
-
-
-	$utilisateurC=new AnimauxC();
-	$listeUsers=$utilisateurC->afficherAnimaux();
 	
-
-	$utilisateurC=new NourritureC();
-	$listeUser=$utilisateurC->afficherNourriture();
-
-    $utilisateurC=new PlantesC();
-	$listepla=$utilisateurC->displayPlantes();
-
 	$utilisateurC=new accessoiresC();
 	$liste=$utilisateurC->displayaccessoires();
 
@@ -57,100 +40,10 @@ include "../controller/accessoiresC.php";
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-	<?php session_start(); ?> 
 </head><!--/head-->
 
 <body>
-	<header id="header"><!--header-->
-		<div class="header_top"><!--header_top-->
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="contactinfo">
-							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> NATUREPET@esprit.tn</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="social-icons pull-right">
-							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!--/header_top-->
-		
-		<div class="header-middle"><!--header-middle-->
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4 clearfix">
-						<div class="logo pull-left">
-						
-						</div>
-				
-						<div class="shop-menu clearfix pull-right">
-							<ul class="nav navbar-nav">
-							
-								
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="AjouterCommande.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-				
-					
-		<!--/header-middle-->
 	
-		<div class="header-bottom"><!--header-bottom-->
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-9">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-						</div>
-						<div class="mainmenu pull-left">
-							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.php" class="active">Home</a></li>
-								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                    
-										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="AjouterCommande.php">Cart</a></li> 
-										<li><a href="login.php">Login</a></li> 
-                                    </ul>
-                                </li> 
-							
-								<li><a href="evenement.php">Evenement</a></li>
-								<li><a href="contact-us.html">Contact</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="search_box pull-right">
-							<input type="text" placeholder="Search"/>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!--/header-bottom-->
-	</header><!--/header-->
 	
 	<section id="slider"><!--slider-->
 		<div class="container">
@@ -312,9 +205,7 @@ include "../controller/accessoiresC.php";
 							</div>
 						</div><!--/price-range-->
 						
-						<div class="shipping text-center"><!--shipping-->
-							<img src="images/home/shipping.jpg" alt="" />
-						</div><!--/shipping-->
+						
 					
 					</div>
 				</div>
@@ -322,23 +213,24 @@ include "../controller/accessoiresC.php";
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Nos Produits</h2>
+					
                         <?PHP
 							    
 								foreach($liste as $user){
 								  
 							   
 							?>
-
+							<form action="manage_cart.php" method="POST">
 								<div class="col-sm-3">
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-											<img src="images/<?= $user['image'] ?>">
+											<img src="images/<?= $user['image'] ?>"  width = "100" height = "300">
 											<h2> <?php echo $user['prix']."DT"; ?></h2>
 												<p><?PHP echo $user['categories']; ?></p>
 												
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
+												<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+													</div>
 											
 										</div>
 									</div>
@@ -347,13 +239,12 @@ include "../controller/accessoiresC.php";
 			              	}
 							
 			                ?>
+							<input type="hidden" name="Item_Name" value='<?php echo $user['categories']; ?>'>
+							<input type="hidden" name="Item_id" value='<?php echo $user['id']; ?>'>
+							<input type="hidden" name="price" value="<?php echo $user['prix']; ?>">
+							</form>
 						
-						<ul class="pagination">
-							<li class="active"><a href="">1</a></li>
-							<li><a href="">2</a></li>
-							<li><a href="">3</a></li>
-							<li><a href="">&raquo;</a></li>
-						</ul>
+					
 					</div><!--features_items-->
 				</div>
 		</div>

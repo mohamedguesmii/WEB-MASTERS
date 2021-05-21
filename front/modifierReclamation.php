@@ -7,6 +7,8 @@ require '../src/PHPMailer.php';
 require '../src/SMTP.php';
 include "../config.php"; 
 	include "../controller/ReclamationC.php";
+	include_once "../Model/Reclamation.php";
+
 	include "../controller/UtilisateurC.php";
    $ReclamationC = new ReclamationC();
 
@@ -15,20 +17,27 @@ include "../config.php";
 
 
  if ( 
- isset($_POST['nomdate_reclamation'])
-
+ isset($_POST['date_reclamation']) &&
+ isset($_POST['objet_reclamation']) &&
+ isset($_POST['description']) 
  )
  {
-if(!empty($_POST['date_reclamation'])
+if(!empty($_POST['date_reclamation']) &&
+!empty($_POST['objet_reclamation']) &&
+!empty($_POST['description'])
 
  )
   { 
-	$date_reclamationUp=$_POST["date_reclamation"];
-	$objet_reclamationUp=$_POST["objet_reclamation"];
-	$descriptionUp=$_POST["description"];
+	$rec = new Reclamation(
+		$_POST['date_reclamation'],
+		$_POST['objet_reclamation'],
+		$_POST['description']
+
+
+	);
   
   
-  $ReclamationC->modifierReclamation($id_reclamation,$date_reclamationUp,$objet_reclamationUp,$descriptionUp);
+  $ReclamationC->modifierReclamation($rec, $_GET['id_reclamation']);
   header('Location:afficherReclamation.php');
   
   $_SESSION['date_reclamation'] = $date_reclamationUp;
@@ -44,6 +53,7 @@ else{
 
 	
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -244,6 +254,12 @@ else{
 			</div>
 		</div>
 	</section><!--/slider-->
+
+	<?php
+			if (isset($_GET['id_reclamation'])){
+				$user = $ReclamationC->recupereretat($_GET['id_reclamation']);
+				
+		?>
 	<form class="form-sample" action="" method="POST">
 	
 		<div class="container-contact1">
@@ -255,9 +271,16 @@ else{
 				<span class="contact1-form-title">
 					RECLAMATION
 				</span>
+
+				<label for="exampleSelectGender"></label>
+				<div class="wrap-input1 validate-input" data-validate = "date is required">
+					<input class="input1" type="hidden" name="id_reclamation"   value = "<?php echo $user['id_reclamation']; ?>">
+					<span class="shadow-input1"></span>
+				</div>
+
 				<label for="exampleSelectGender">Date</label>
 				<div class="wrap-input1 validate-input" data-validate = "date is required">
-					<input class="input1" type="date" name="date_reclamation" placeholder="date"  value='<?PHP echo $date_reclamation; ?>'>
+					<input class="input1" type="date" name="date_reclamation" id="date_reclamation" placeholder="date"   value = "<?php echo $user['date_reclamation']; ?>">
 					<span class="shadow-input1"></span>
 				</div>
 
@@ -273,16 +296,17 @@ else{
             </div> -->
 			<label for="exampleSelectGender">Objet reclamation</label>
 				<div  class="wrap-input1 validate-input" data-validate = "object is required">
-	            <select class="input1" name="objet_reclamation"  value='<?PHP echo $objet_reclamation; ?>'>
+	            <select class="input1" name="objet_reclamation" id="objet_reclamation"  value = "<?php echo $user['objet_reclamation']; ?>">
                 <option>reclamation liéé au animaux</option>
                 <option>reclamation liéé au plante</option>
 				<option>reclamation liéé au accessoires</option>
+				<option>reclamation liéé au evenement</option>
               </select>
 		
 				</div>
 				<label for="exampleSelectGender">Description</label>
 			<div class="wrap-input1 validate-input" data-validate = "Description is required">
-					<textarea class="input1" name="description" placeholder="Description"  value='<?PHP echo $description; ?>'></textarea>
+			<input class="input1" name="description" id="description" placeholder="Description"  value = "<?php echo $user['description']; ?>">
 					<span class="shadow-input1"></span>
 				</div>
 		
@@ -299,6 +323,7 @@ else{
 
 		    </div>
 	</form>
+	<?php } ?>
 	
 
 

@@ -14,7 +14,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Lumino - Dashboard</title>
+	<title>NATUREPET</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
@@ -298,6 +298,7 @@
 						<td><b>Date debut</b></td>
 						<td><b>Date fin</b></td>
 						<td><b>Categorie</b></td>
+						<td><b>Image</b></td>
                         <td><b>Edit</b></td>
 						<td><b>Supprimer</b></td>
 						
@@ -316,6 +317,7 @@
 					<td><?PHP echo $user['date']; ?></td>
 					<td><?PHP echo $user['datef']; ?></td>
 					<td><?PHP echo $user['categorie']; ?></td>
+					<td><img src="images/<?= $user['image'] ?>" width = "50" height = "50"></td>
 
 
 					

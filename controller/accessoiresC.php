@@ -63,6 +63,18 @@
 				die('Erreur: '.$e->getMessage());
 			}	
 		}
+		function displayaccessoires1(){
+			
+			$sql="SELECT * FROM accessoires limit 4";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
 
 		function deletePlantes($id){
 			$sql="DELETE FROM accessoires WHERE id= :id";

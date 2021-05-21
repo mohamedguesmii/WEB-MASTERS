@@ -12,12 +12,18 @@
 		$id=$_SESSION['id'];
 		$user=$_SESSION['prenom'] .' '. $_SESSION['nom'];
 		$message="Se Deconnecter";
+		$ajout="ajouterReclamation.php"; 
+        $affiche="afficherReclamation.php";	
+		$addtocart="AjouterCommande.php";	
 
 
 	}
 	else{
 	$user="";
 	$message="Se Connecter";
+	$ajout="login.php"; 
+	$affiche="login.php"; 
+	$addtocart="login.php";
      }
 
 
@@ -57,7 +63,8 @@
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
-    <![endif]-->       
+    <![endif]--> 
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v10.0" nonce="lzRpfdmx"></script>
     <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/home/4.jpg">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
@@ -90,12 +97,15 @@
 								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
 								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								
 								<li><a href="profile.php"><i class="fa fa-user">      <span class="profile-name"><?PHP echo $user; ?></i></a>
 								
-								    <a href="login.php"> <?PHP echo $message; ?> </a>
+								    <a href="deconnexion.php"> <?PHP echo $message; ?> </a>
 							    </li>
+								
 							</ul>
 						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -113,9 +123,9 @@
 							<ul class="nav navbar-nav">
 							
 								
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="AjouterCommande.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-							
+								
+								<li><a href="<?php echo $addtocart ?>"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
 					</div>
@@ -144,21 +154,21 @@
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                     
-										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="AjouterCommande.php">Cart</a></li> 
+									 
+										<li><a href="<?php echo $addtocart ?>">Cart</a></li> 
 							
                                     </ul>
                                 </li> 
-								<li><a href="contact-us.html"  >Reclamations</a>
+								<li><a href=""  >Reclamations</a>
 								<ul role="menu" class="sub-menu">
                                     
-										<li><a href="ajouterReclamation.php">Ajouter reclamation</a></li> 
-										<li><a href="afficherReclamation.html">Afficher reclamation</a></li> 
+										<li><a href="<?php echo $ajout ?>">Ajouter reclamation</a></li> 
+										<li><a href="<?php echo $affiche ?>">Afficher reclamation</a></li> 
 										
                                     </ul></li>
 
 								<li><a href="evenement.php">Evenement</a></li>
-								<li><a href="contact-us.html">Contact</a></li>
+								<li><a href="contact-us.php">Contact</a></li>
 							</ul>
 						</div>
 					</div>
@@ -533,8 +543,7 @@
 		        </style>
 				<div class="contenir">
 				<a href="email.php"><button class="btn btn1">Inviter Participant via Email</button></a>
-				<div class="fb-share-button" data-href="http://localhost/web-masters/front/evenement.php" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%2Fweb-masters%2Ffront%2Fevenement.php&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
-	
+				<div class="fb-share-button" data-href="http://nature-pet.php" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2FlisteP.php%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
 				</div>
 				
 			</div>

@@ -2,32 +2,32 @@
 include "../controller/AnimauxC.php";
 include "../controller/PlanteC.php";
 include "../controller/accessoiresC.php";
-
-
-
+require_once "headerA.php";
 
 
 	$utilisateurC=new AnimauxC();
-	$list=$utilisateurC->afficherpromoanimaux ();
+	$list=$utilisateurC->afficherpromoanimaux1 ();
 
 	$PlantesC=new PlantesC();
-	$listU=$PlantesC->afficherpromoplante();
+	$listU=$PlantesC->afficherpromoplante1();
 
 
 	$utilisateurC=new AnimauxC();
-	$listeUsers=$utilisateurC->afficherAnimaux();
+	$listeUsers=$utilisateurC->afficherAnimaux1();
 	
 
 	$utilisateurC=new NourritureC();
-	$listeUser=$utilisateurC->afficherNourriture();
+	$listeUser=$utilisateurC->afficherNourriture1();
 
 	
 
 	$utilisateurC=new PlantesC();
-	$listepla=$utilisateurC->displayPlantes();
+	$listepla=$utilisateurC->displayPlantes1();
 
 	$utilisateurC=new accessoiresC();
-	$liste=$utilisateurC->displayaccessoires();
+	$liste=$utilisateurC->displayaccessoires1();
+	
+	
 ?>
 
 <!DOCTYPE html>
@@ -55,100 +55,11 @@ include "../controller/accessoiresC.php";
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-	<?php session_start(); ?> 
+	
 </head><!--/head-->
 
 <body>
-	<header id="header"><!--header-->
-		<div class="header_top"><!--header_top-->
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="contactinfo">
-							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> NATUREPET@esprit.tn</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="social-icons pull-right">
-							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!--/header_top-->
-		
-		<div class="header-middle"><!--header-middle-->
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4 clearfix">
-						<div class="logo pull-left">
-						
-						</div>
-				
-						<div class="shop-menu clearfix pull-right">
-							<ul class="nav navbar-nav">
-							
-								
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="AjouterCommande.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-				
-					
-		<!--/header-middle-->
 	
-		<div class="header-bottom"><!--header-bottom-->
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-9">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-						</div>
-						<div class="mainmenu pull-left">
-							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.php" class="active">Home</a></li>
-								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                    
-										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="AjouterCommande.php">Cart</a></li> 
-										<li><a href="login.php">Login</a></li> 
-                                    </ul>
-                                </li> 
-							
-								<li><a href="evenement.php">Evenement</a></li>
-								<li><a href="contact-us.html">Contact</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="search_box pull-right">
-							<input type="text" placeholder="Search"/>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!--/header-bottom-->
-	</header><!--/header-->
 	
 	<section id="slider"><!--slider-->
 		<div class="container">
@@ -329,12 +240,10 @@ include "../controller/accessoiresC.php";
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
 									<li><a href="#"> <span class="pull-right">(50)</span>german shepeard</a></li>
-									<li><a href="#"> <span class="pull-right">(56)</span>labrador</a></li>
-									<li><a href="#"> <span class="pull-right">(27)</span>pitbull</a></li>
+									<li><a href="#"> <span class="pull-right">(56)</span>labrador</a></li>						
 									<li><a href="#"> <span class="pull-right">(32)</span>golden retreiver</a></li>
 									<li><a href="#"> <span class="pull-right">(5)</span>bulldog</a></li>
-									<li><a href="#"> <span class="pull-right">(9)</span>poodle</a></li>
-									<li><a href="#"> <span class="pull-right">(4)</span>beagle</a></li>
+									
 								</ul>
 							</div>
 						</div><!--/brands_products-->
@@ -343,7 +252,7 @@ include "../controller/accessoiresC.php";
 							<h2>Price Range</h2>
 							<div class="well text-center">
 								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
-								 <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
+								 <b class="pull-left">0DT</b> <b class="pull-right">600DT</b>
 							</div>
 						</div><!--/price-range-->
 						
@@ -362,21 +271,23 @@ include "../controller/accessoiresC.php";
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
-											<img src="images/home/1.jpg" alt="" />
-                                            <h2>66DT</h2>
+											<img src="images/home/an7.jpg" alt="" />
+                                            <h2>150DT</h2>
+											<h5>Chat</h5>
 											
 											<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                            <input type="hidden" name="Item_Name" value='Cat'>
+                                            <input type="hidden" name="Item_Name" value='Chat'>
 											<input type="hidden" name="Item_id" value='1'>
-                                            <input type="hidden" name="price" value="66">
+                                            <input type="hidden" name="price" value="150">
 											</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
-                                            <h2>66DT</h2>
+                                            <h2>150DT</h2>
+											<h5>Chat</h5>
 												<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                                <input type="hidden" name="Item_Name" value='Cat'>
+                                                <input type="hidden" name="Item_Name" value='Chat'>
 												<input type="hidden" name="Item_id" value='1'>
-                                                <input type="hidden" name="price" value="66">
+                                                <input type="hidden" name="price" value="150">
 											</div>
 										</div>
 								</div>
@@ -394,23 +305,26 @@ include "../controller/accessoiresC.php";
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/home/2.jpg" alt="" />
-										<h2>54DT</h2>
+										<img src="images/home/n2.jpg" alt="" />
+										<h2>20DT</h2>
+										<h5>Croquette</h5>
 										
 										<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                        <input type="hidden" name="Item_Name" value='Mouse'>
+                                        <input type="hidden" name="Item_Name" value='Croquette'>
 										<input type="hidden" name="Item_id" value='2'>
-                                        <input type="hidden" name="price" value="54">
+                                        <input type="hidden" name="price" value="20">
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>54DT</h2>
+											<h2>20DT</h2>
+											<h5>Croquette</h5>
 											
 											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                            <input type="hidden" name="Item_Name" value='Mouse'>
+                                            <input type="hidden" name="Item_Name" value='Croquette'>
 											<input type="hidden" name="Item_id" value='2'>
-                                            <input type="hidden" name="price" value="54">
+                                            <input type="hidden" name="price" value="20">
 										</div>
+										<img src="images/home/sale.png" class="new" alt="" />
 									</div>
 								</div>
 								<div class="choose">
@@ -427,22 +341,24 @@ include "../controller/accessoiresC.php";
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/home/3.jpg" alt="" />
-										<h2>60DT</h2>
+										<img src="images/home/an8.jpg" alt="" />
+										<h2>500DT</h2>
+										<h5>Labrador</h5>
 										
 										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                        <input type="hidden" name="Item_Name" value='DOG'>
+                                        <input type="hidden" name="Item_Name" value='Chien Labrador'>
 										<input type="hidden" name="Item_id" value='3'>
-                                        <input type="hidden" name="price" value="60">
+                                        <input type="hidden" name="price" value="500">
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>60DT</h2>
+											<h2>500DT</h2>
+											<h5>Labrador</h5>
 											
 											<button type ="submit"  name="addtocart"class="btn btn-default add-to-cart">Add to cart</button>
-                                            <input type="hidden" name="Item_Name" value='DOG'>
+                                            <input type="hidden" name="Item_Name" value='Chien Labrador'>
 											<input type="hidden" name="Item_id" value='3'>
-                                            <input type="hidden" name="price" value="60">
+                                            <input type="hidden" name="price" value="500">
 										</div>
 									</div>
 								</div>
@@ -460,22 +376,24 @@ include "../controller/accessoiresC.php";
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/home/4.jpg" alt="" />
-										<h2>56DT</h2>
+										<img src="images/home/acc3.jpg" alt="" />
+										<h2>400DT</h2>
+										<h5>Niche Chat</h5>
 										
 										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                        <input type="hidden" name="Item_Name" value='Bird'>
+                                        <input type="hidden" name="Item_Name" value='Niche Chat'>
 										<input type="hidden" name="Item_id" value='4'>
-                                        <input type="hidden" name="price" value="56">
+                                        <input type="hidden" name="price" value="400">
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>56DT</h2>
+											<h2>400DT</h2>
+											<h5>Niche Chat</h5>
 											
 											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                            <input type="hidden" name="Item_Name" value='Bird'>
+                                            <input type="hidden" name="Item_Name" value='Niche Chat'>
 											<input type="hidden" name="Item_id" value='4'>
-                                            <input type="hidden" name="price" value="56">
+                                            <input type="hidden" name="price" value="400">
 										</div>
 									</div>
 									<img src="images/home/new.png" class="new" alt="" />
@@ -490,24 +408,62 @@ include "../controller/accessoiresC.php";
                         </form>
 						</div>
 						<div class="col-sm-4">
+                            <form action="manage_cart.php" method="POST">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="images/17.jpg" alt="" />
+										<h2>65DT</h2>
+										<h5>Harnais Chien</h5>
+										
+										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+                                        <input type="hidden" name="Item_Name" value='Harnais Chien'>
+										<input type="hidden" name="Item_id" value='6'>
+                                        <input type="hidden" name="price" value="65">
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<h2>65DT</h2>
+											<h5>Harnais Chien</h5>
+											
+											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+                                            <input type="hidden" name="Item_Name" value='Harnais Chien'>
+											<input type="hidden" name="Item_id" value='6'>
+                                            <input type="hidden" name="price" value="65">
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+									</ul>
+								</div>
+							</div>
+                            </form>
+						</div>
+						
+						<div class="col-sm-4">
                         <form action="manage_cart.php" method="POST">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="images/home/5.jpg" alt="" />
+										<img src="images/cache bois plante.jpg" alt="" />
 										<h2>39DT</h2>
+										<h5>Bol en bois</h5>
 										
 										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                        <input type="hidden" name="Item_Name" value='Tortoise'>
+                                        <input type="hidden" name="Item_Name" value='Bol en bois'>
 										<input type="hidden" name="Item_id" value='5'>
                                         <input type="hidden" name="price" value="39">
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
 											<h2>39DT</h2>
+											<h5>Bol en bois</h5>
 											
 											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                            <input type="hidden" name="Item_Name" value='Tortoise'>
+                                            <input type="hidden" name="Item_Name" value='Bol en bois'>
 											<input type="hidden" name="Item_id" value='5'>
                                             <input type="hidden" name="price" value="39">
 										</div>
@@ -523,44 +479,146 @@ include "../controller/accessoiresC.php";
 							</div>
                             </form>
 						</div>
-						<div class="col-sm-4">
-                            <form action="manage_cart.php" method="POST">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="images/home/an4.jpg" alt="" />
-										<h2>46DT</h2>
-										
-										<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                        <input type="hidden" name="Item_Name" value='Rabbit'>
-										<input type="hidden" name="Item_id" value='6'>
-                                        <input type="hidden" name="price" value="46">
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<h2>46DT</h2>
-											
-											<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
-                                            <input type="hidden" name="Item_Name" value='Rabit'>
-											<input type="hidden" name="Item_id" value='6'>
-                                            <input type="hidden" name="price" value="46">
-										</div>
-									</div>
-								</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-									</ul>
-								</div>
-							</div>
-                            </form>
-						</div>
+						
 						
 					</div><!--features_items-->
 					
 					
-					<div class="category-tab"><!--category-tab-->
+
+					
+					
+				</div>
+			</div>
+			<div class="recommended_items"><!--recommended_items-->
+						
+						<h2 class="title text-center">Recommended Items</h2>
+						
+						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+							<div class="carousel-inner">
+													
+								<div class="item active">	
+									<div class="col-sm-4">
+									<form action="manage_cart.php" method="POST">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/an5.jpg" alt="" />
+													<h2>500DT</h2>
+													<p>Bulldog</p>
+													<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+														<input type="hidden" name="Item_Name" value='Chien Bulldog'>
+														<input type="hidden" name="Item_id" value='7'>
+														<input type="hidden" name="price" value="500">
+										</form>
+ 										</div>	
+												
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+									<form action="manage_cart.php" method="POST">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/n2.jpg" alt="" />
+													<h2>20DT</h2>
+													<p>Croquette</p>
+													<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+														<input type="hidden" name="Item_Name" value='Croquette'>
+														<input type="hidden" name="Item_id" value='8'>
+														<input type="hidden" name="price" value="20">
+										</form>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+									<form action="manage_cart.php" method="POST">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/an7.jpg" alt="" />
+													<h2>250DT</h2>
+													<p>Chat</p>
+													
+													<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+														<input type="hidden" name="Item_Name" value='Chat'>
+														<input type="hidden" name="Item_id" value='9'>
+														<input type="hidden" name="price" value="250">
+										</form>
+										</div>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">	
+									<div class="col-sm-4">
+									<form action="manage_cart.php" method="POST">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/acc3.jpg" alt="" />
+													<h2>560DT</h2>
+													<p>Niche Chat</p>
+													<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+														<input type="hidden" name="Item_Name" value='Niche Chat'>
+														<input type="hidden" name="Item_id" value='10'>
+														<input type="hidden" name="price" value="560">
+										</form>
+										</div>
+												
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+									<form action="manage_cart.php" method="POST">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/acc2.jpg" alt="" />
+													<h2>40DT</h2>
+													<p>Laisse Chien</p>
+													<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+														<input type="hidden" name="Item_Name" value='Laisse Chien'>
+														<input type="hidden" name="Item_id" value='11'>
+														<input type="hidden" name="price" value="400">
+										</form>
+											</div>
+												
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+									<form action="manage_cart.php" method="POST">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/Kes.png" alt="" />
+													<h2>15DT</h2>
+													<p>Tasse de Cafe</p>
+													<button type ="submit" name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+														<input type="hidden" name="Item_Name" value='Tasse de Cafe'>
+														<input type="hidden" name="Item_id" value='12'>
+														<input type="hidden" name="price" value="15">
+										</form>
+										</div>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							
+							  <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+								<i class="fa fa-angle-right"></i>
+							  </a>			
+							  
+						</div>
+						<div class="category-tab"><!--category-tab-->
+						<h2 class="title text-center">NOS PRODUITS</h2>
 						<div class="col-sm-12">
 							<ul class="nav nav-tabs">
 								<li class="active"><a href="#tshirt" data-toggle="tab">Animaux</a></li>
@@ -588,7 +646,7 @@ include "../controller/accessoiresC.php";
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-											<img src="images/<?= $user['image'] ?>">
+											<img src="images/<?= $user['image'] ?>"  width = "100" height = "300">
 												<h2> <?php echo $user['prix']."DT"; ?></h2>
 												<p><?PHP echo $user['typee']; ?></p>
 												<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
@@ -610,39 +668,9 @@ include "../controller/accessoiresC.php";
 							</form>
 
                             
-							<div class="tab-pane fade" id="promoanimaux" >
-								
-							   <?PHP
-							    
-				                  foreach($list as $user){
-									$prix = $user['prix'];
-									$prixr= $user['prix_promotions'];
-									$p= $prix *$prixr* 0.01;
-									$pe = $prix - $p;
-					             
-			                  ?>
-								
-								<div class="col-sm-3">
-									<div class="product-image-wrapper">
-										<div class="single-products">
-											<div class="productinfo text-center">
-											<img src="images/<?= $user['image'] ?>">
-											<h2>Prix : <?PHP echo $pe ?>DT</h2> <div ><td>Solde : <?php echo $user['prix_promotions']; ?>%</td></div>
-												<p><?PHP echo $user['typee']; ?></p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
-											
-										</div>
-									</div>
 							
-							
-								</div>
-								<?PHP
-			              	}
-							
-			                ?>
-							</div>		
 							<div class="tab-pane fade" id="blazers" >
+							<form action="manage_cart.php" method="POST">
 							<?PHP
 							    
 								foreach($listeUser as $user){
@@ -653,12 +681,11 @@ include "../controller/accessoiresC.php";
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-											<img src="images/<?= $user['image'] ?>">
+											<img src="images/<?= $user['image'] ?>"   width = "100" height = "300">
 											<h2> <?php echo $user['prix']."DT"; ?></h2>
 												<p><?PHP echo $user['nom']; ?></p>
-											
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
+												<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+												</div>
 											
 										</div>
 									</div>
@@ -667,9 +694,51 @@ include "../controller/accessoiresC.php";
 			              	}
 							
 			                ?>
+											<input type="hidden" name="Item_Name" value='<?php echo $user['nom']; ?>'>
+											<input type="hidden" name="Item_id" value='<?php echo $user['id']; ?>'>
+                                            <input type="hidden" name="price" value="<?php echo $user['prix']; ?>">
+											</form>
 							
 							</div>
+							<div class="tab-pane fade" id="promoanimaux" >
+							<form action="manage_cart.php" method="POST">
+							   <?PHP
+							    
+				                  foreach($list as $useer){
+									$prix = $useer['prix'];
+									$prixr= $useer['prix_promotions'];
+									$p= $prix *$prixr* 0.01;
+									$pe = $prix - $p;
+					             
+			                  ?>
+								
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+											<img src="images/<?= $useer['image'] ?>"  width = "100" height = "300">
+											<h2>Prix : <?PHP echo $pe ?>DT</h2> <div ><td>Solde : <?php echo $useer['prix_promotions']; ?>%</td></div>
+												<p><?PHP echo $useer['typee']; ?></p>
+												<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
+											</div>
+											
+										</div>
+									</div>
+							
+							
+								</div>
+								<?PHP
+			              	}
+							
+			                ?>
+											<input type="hidden" name="Item_Name" value='<?php echo $useer['typee']; ?>'>
+											<input type="hidden" name="Item_id" value='<?php echo $useer['id_promoanimaux']; ?>'>
+                                            <input type="hidden" name="price" value="<?php echo $useer['prix']; ?>">
+											</form>
+							</div>	
+
 							<div class="tab-pane fade" id="sunglass" >
+							<form action="manage_cart.php" method="POST">
 							<?PHP
 							    
 								foreach($listepla as $user){
@@ -680,12 +749,11 @@ include "../controller/accessoiresC.php";
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-											<img src="images/<?= $user['image'] ?>">
+											<img src="images/<?= $user['image'] ?>"  width = "100" height = "300">
 											<h2> <?php echo $user['prix']."DT"; ?></h2>
 												<p><?PHP echo $user['nom']; ?></p>
-												
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
+												<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>										
+												</div>
 											
 										</div>
 									</div>
@@ -694,9 +762,14 @@ include "../controller/accessoiresC.php";
 			              	}
 							
 			                ?>
+							<input type="hidden" name="Item_Name" value='<?php echo $user['nom']; ?>'>
+											<input type="hidden" name="Item_id" value='<?php echo $user['id']; ?>'>
+                                            <input type="hidden" name="price" value="<?php echo $user['prix']; ?>">
+											</form>
 							
 							</div>
 							<div class="tab-pane fade" id="kids" >
+							<form action="manage_cart.php" method="POST">
 							<?PHP
 							    
 								foreach($liste as $user){
@@ -708,12 +781,12 @@ include "../controller/accessoiresC.php";
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-											<img src="images/<?= $user['image'] ?>">
+											<img src="images/<?= $user['image'] ?>"  width = "100" height = "300">
 											<h2> <?php echo $user['prix']."DT"; ?></h2>
 												<p><?PHP echo $user['categories']; ?></p>
 												
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
+												<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>										
+												</div>
 											
 										</div>
 									</div>
@@ -722,9 +795,14 @@ include "../controller/accessoiresC.php";
 			              	}
 							
 			                ?>
+							<input type="hidden" name="Item_Name" value='<?php echo $user['categories']; ?>'>
+											<input type="hidden" name="Item_id" value='<?php echo $user['id']; ?>'>
+                                            <input type="hidden" name="price" value="<?php echo $user['prix']; ?>">
+											</form>
 								</div>
 								
 							<div class="tab-pane fade" id="promoplante" >
+							<form action="manage_cart.php" method="POST">
                             <?PHP
 							 $i=0;
 				foreach($listU as $usr){
@@ -740,11 +818,11 @@ include "../controller/accessoiresC.php";
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-                                            <img src="images/<?= $usr['image'] ?>">
+                                            <img src="images/<?= $usr['image'] ?>"  width = "100" height = "300">
 												<h2>Prix : <?PHP echo $pe ?>DT</h2> <div ><td>Solde : <?php echo $usr['prix_promoplante']; ?>%</td></div>
 												<p><?PHP echo $usr['nom']; ?></p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-											</div>
+												<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>										
+												</div>
 											
 										</div>
 									</div>
@@ -758,6 +836,10 @@ include "../controller/accessoiresC.php";
 			              	}
 							
 			                ?>
+							<input type="hidden" name="Item_Name" value='<?php echo $usr['nom']; ?>'>
+											<input type="hidden" name="Item_id" value='<?php echo $usr['id_promo']; ?>'>
+                                            <input type="hidden" name="price" value="<?php echo $usr['prix']; ?>">
+											</form>
 </div>
 
 
@@ -766,108 +848,9 @@ include "../controller/accessoiresC.php";
                         
 					</div><!--/category-tab-->
 					
-					
-					
-				</div>
-			</div>
-			<div class="recommended_items"><!--recommended_items-->
-						<h2 class="title text-center">
-						
-						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-							<div class="carousel-inner">
-													
-								<div class="item active">	
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="images/home/an5.jpg" alt="" />
-													<h2>$56</h2>
-													
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="images/home/an6.jpg" alt="" />
-													<h2>$56</h2>
-													
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="images/home/an7.jpg" alt="" />
-													<h2>$56</h2>
-													
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">	
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="images/home/1.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="images/home/2.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="images/home/3.jpg" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							
-							  <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-								<i class="fa fa-angle-right"></i>
-							  </a>			
-							  
-						</div>
 					</div><!--/recommended_items-->
 		</div>
+		
 	</section>
 	
 	<footer id="footer"><!--Footer-->
