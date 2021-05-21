@@ -87,18 +87,15 @@ $listeUsers=$tutoC->affichertuto($nom);
 							<ul class="nav navbar-nav">
 							
 								
-              <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+								
 								<li><a href="AjouterCommande.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-							
+								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-				
-					
-		<!--/header-middle-->
 	
 		<div class="header-bottom"><!--header-bottom-->
 			<div class="container">
@@ -114,20 +111,19 @@ $listeUsers=$tutoC->affichertuto($nom);
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-              <li><a href="acceuil.php" >Home</a></li>
+              <li><a href="index.php" >Home</a></li>
               <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                     
-										<li><a href="checkout.html">Checkout</a></li> 
 										<li><a href="AjouterCommande.php">Cart</a></li> 
 							
                                     </ul>
                                 </li> 
-								<li><a href="contact-us.html"  >Reclamations</a>
+								<li><a href="contact-us.php"  >Reclamations</a>
 								<ul role="menu" class="sub-menu">
                                     
 										<li><a href="ajouterReclamation.php">Ajouter reclamation</a></li> 
-										<li><a href="afficherReclamation.html">Afficher reclamation</a></li> 
+										<li><a href="afficherReclamation.php">Afficher reclamation</a></li> 
 										
                                     </ul></li>
               <li class="dropdown"><a href="#">Evenement<i class="fa fa-angle-down"></i></a>
@@ -136,7 +132,7 @@ $listeUsers=$tutoC->affichertuto($nom);
 								<li><a href="consulterevenement.php">Consulter Mes Evenements</a></li>
               </ul>
               
-               <li><a href="contact-us.html" >Contact</a></li>
+               <li><a href="contact-us.php" >Contact</a></li>
 
 						</div>
 					</div>

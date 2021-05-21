@@ -6,26 +6,26 @@ require_once "headerA.php";
 
 
 	$utilisateurC=new AnimauxC();
-	$list=$utilisateurC->afficherpromoanimaux ();
+	$list=$utilisateurC->afficherpromoanimaux1 ();
 
 	$PlantesC=new PlantesC();
-	$listU=$PlantesC->afficherpromoplante();
+	$listU=$PlantesC->afficherpromoplante1();
 
 
 	$utilisateurC=new AnimauxC();
-	$listeUsers=$utilisateurC->afficherAnimaux();
+	$listeUsers=$utilisateurC->afficherAnimaux1();
 	
 
 	$utilisateurC=new NourritureC();
-	$listeUser=$utilisateurC->afficherNourriture();
+	$listeUser=$utilisateurC->afficherNourriture1();
 
 	
 
 	$utilisateurC=new PlantesC();
-	$listepla=$utilisateurC->displayPlantes();
+	$listepla=$utilisateurC->displayPlantes1();
 
 	$utilisateurC=new accessoiresC();
-	$liste=$utilisateurC->displayaccessoires();
+	$liste=$utilisateurC->displayaccessoires1();
 	
 	
 ?>
@@ -462,7 +462,7 @@ require_once "headerA.php";
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-											<img src="images/<?= $user['image'] ?>">
+											<img src="images/<?= $user['image'] ?>"  width = "100" height = "300">
 												<h2> <?php echo $user['prix']."DT"; ?></h2>
 												<p><?PHP echo $user['typee']; ?></p>
 												<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
@@ -497,7 +497,7 @@ require_once "headerA.php";
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-											<img src="images/<?= $user['image'] ?>">
+											<img src="images/<?= $user['image'] ?>"   width = "100" height = "300">
 											<h2> <?php echo $user['prix']."DT"; ?></h2>
 												<p><?PHP echo $user['nom']; ?></p>
 												<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
@@ -532,7 +532,7 @@ require_once "headerA.php";
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-											<img src="images/<?= $useer['image'] ?>">
+											<img src="images/<?= $useer['image'] ?>"  width = "100" height = "300">
 											<h2>Prix : <?PHP echo $pe ?>DT</h2> <div ><td>Solde : <?php echo $useer['prix_promotions']; ?>%</td></div>
 												<p><?PHP echo $useer['typee']; ?></p>
 												<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>
@@ -565,7 +565,7 @@ require_once "headerA.php";
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-											<img src="images/<?= $user['image'] ?>">
+											<img src="images/<?= $user['image'] ?>"  width = "100" height = "300">
 											<h2> <?php echo $user['prix']."DT"; ?></h2>
 												<p><?PHP echo $user['nom']; ?></p>
 												<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>										
@@ -597,7 +597,7 @@ require_once "headerA.php";
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-											<img src="images/<?= $user['image'] ?>">
+											<img src="images/<?= $user['image'] ?>"  width = "100" height = "300">
 											<h2> <?php echo $user['prix']."DT"; ?></h2>
 												<p><?PHP echo $user['categories']; ?></p>
 												
@@ -634,7 +634,7 @@ require_once "headerA.php";
 									<div class="product-image-wrapper">
 										<div class="single-products">
 											<div class="productinfo text-center">
-                                            <img src="images/<?= $usr['image'] ?>">
+                                            <img src="images/<?= $usr['image'] ?>"  width = "100" height = "300">
 												<h2>Prix : <?PHP echo $pe ?>DT</h2> <div ><td>Solde : <?php echo $usr['prix_promoplante']; ?>%</td></div>
 												<p><?PHP echo $usr['nom']; ?></p>
 												<button type ="submit"  name="addtocart" class="btn btn-default add-to-cart">Add to cart</button>										

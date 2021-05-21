@@ -396,6 +396,7 @@
 					     <option value="chiwawa">chiwawa&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</option>
 							<option value="berger allmend">berger allmend</option>
 							<option value="labrador">labrador</option>
+							<option value="pit">Pit</option>
 							<option value="huskey">huskey</option>
 							<option value="siamois">siamois</option>
 							<option value="ragdol">ragdol</option>

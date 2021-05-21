@@ -83,6 +83,18 @@
 				die('Erreur: '.$e->getMessage());
 			}	
 		}
+		function displayPlantes1(){
+			
+			$sql="SELECT * FROM plante limit 4";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
 
 		function deletePlantes($id){
 			$sql="DELETE FROM plante WHERE id= :id";
@@ -139,6 +151,18 @@
 		function afficherpromoplante(){
 			
 			$sql="SELECT * FROM promoplante";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
+		function afficherpromoplante1(){
+			
+			$sql="SELECT * FROM promoplante limit 4";
 			$db = config::getConnexion();
 			try{
 				$liste = $db->query($sql);
